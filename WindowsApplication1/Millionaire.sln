@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Control Program", "WindowsApplication1\Control Program.vbproj", "{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Fastest Finger First", "WindowsApplication2\Fastest Finger First.vbproj", "{29860B36-71EF-46D3-8FE6-012CB44EA621}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Debug|x86.ActiveCfg = Debug|x86
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Debug|x86.Build.0 = Debug|x86
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Release|x86.ActiveCfg = Release|x86
+		{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}.Release|x86.Build.0 = Release|x86
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Debug|x86.ActiveCfg = Debug|x86
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Debug|x86.Build.0 = Debug|x86
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Release|x86.ActiveCfg = Release|x86
+		{29860B36-71EF-46D3-8FE6-012CB44EA621}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
