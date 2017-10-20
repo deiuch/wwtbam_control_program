@@ -8,4 +8,4 @@ Now freezed.
 
 All media rights reserved by (C) Celador Prod.
 Music by: Keith & Matthew Strachan.
-Some graphic and game info: http://gameshows.ru/forum/
+Some graphics and game info are from Gameshows forum: http://gameshows.ru/forum/
