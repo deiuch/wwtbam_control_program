@@ -3,4 +3,9 @@ Source code for a "WWTBAM Control Program" for making your own "Who wants to be 
 Visual Studio 2013 recommended.
 
 Developing period: 2014-2016.
+
 Now freezed.
+
+All media rights reserved by (C) Celador Prod.
+Music by: Keith & Matthew Strachan.
+Some graphic and game info: http://gameshows.ru/forum/
