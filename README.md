@@ -2,10 +2,10 @@
 Source code for a "WWTBAM Control Program" for making your own "Who wants to be a millionaire?" show by old format.
 Visual Studio 2013 recommended.
 
-Developing period: 2014-2016.
+Developing period: March 2014 to May 2016.
 
-Now freezed.
+Now freezed. Future is uknkown...
 
-All media rights reserved by (C) Celador Prod.
+All rights for media are reserved by (C) Celador Prod. (now doesn't exist).
 Music by: Keith & Matthew Strachan.
 Some graphics and game info are from Gameshows forum: http://gameshows.ru/forum/
