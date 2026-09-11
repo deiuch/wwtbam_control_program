@@ -5,27 +5,27 @@
         Me.MaximizeBox = False
         'Перевод "D" FormPAF
         Me.Text = Project.currentBlock1(106, 3) '0
-        Button1.Text = Project.currentBlock1(107, 3) '1
-        Button2.Text = Project.currentBlock1(108, 3) '2
-        Button3.Text = Project.currentBlock1(109, 3) '3
+        StartPhoneAFriendButton.Text = Project.currentBlock1(107, 3) '1
+        StartClockButton.Text = Project.currentBlock1(108, 3) '2
+        StopClockButton.Text = Project.currentBlock1(109, 3) '3
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Timer1.Stop()
+    Private Sub StartPhoneAFriendButton_Click(sender As Object, e As EventArgs) Handles StartPhoneAFriendButton.Click
+        ClockTimer.Stop()
         My.Computer.Audio.Play("source\MUSIC\Phone a Friend.wav", AudioPlayMode.Background)
         If Project.winampOn <> 0 Then
             Shell("source\BAT\stop_back_music1.bat")
             Project.winampOn = 0
         End If
-        PictureBox1.ImageLocation = "source\CLOCK\Clock (1).png"
-        Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-        Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-        Audience.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-        Host.PictureBox8.Visible = False
-        Player.PictureBox8.Visible = False
-        Audience.PictureBox8.Visible = False
+        ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Audience.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Host.ClockPictureBox.Visible = False
+        Player.ClockPictureBox.Visible = False
+        Audience.ClockPictureBox.Visible = False
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@paf_button1|"
@@ -34,24 +34,24 @@
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub StartClockButton_Click(sender As Object, e As EventArgs) Handles StartClockButton.Click
         If Project.winampOn <> 0 Then
             Shell("source\BAT\stop_back_music1.bat")
             Project.winampOn = 0
         End If
-        Timer1.Stop()
+        ClockTimer.Stop()
         clockFrame = 1
-        PictureBox1.ImageLocation = "source\CLOCK\Clock (1).png"
-        Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-        Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-        Audience.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-        Timer1.Start()
+        ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        Audience.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+        ClockTimer.Start()
         My.Computer.Audio.Play("source\MUSIC\Friend Clock.wav", AudioPlayMode.Background)
-        Host.PictureBox8.Visible = True
-        Player.PictureBox8.Visible = True
-        Audience.PictureBox8.Visible = True
+        Host.ClockPictureBox.Visible = True
+        Player.ClockPictureBox.Visible = True
+        Audience.ClockPictureBox.Visible = True
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@paf_button2|"
@@ -60,32 +60,32 @@
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub ClockTimer_Tick(sender As Object, e As EventArgs) Handles ClockTimer.Tick
         clockFrame = clockFrame + 1
-        PictureBox1.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
-        Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
-        Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
-        Audience.PictureBox8.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
+        ClockPictureBox.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
+        Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
+        Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
+        Audience.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (" & clockFrame & ").png"
         If clockFrame = 61 Then
-            Timer1.Stop()
-            Project.CheckBox2.Checked = False
+            ClockTimer.Stop()
+            Project.PhoneAFriendAvailableCheckBox.Checked = False
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub StopClockButton_Click(sender As Object, e As EventArgs) Handles StopClockButton.Click
         My.Computer.Audio.Play("source\MUSIC\Interrupted Clock.wav", AudioPlayMode.Background)
-        Timer1.Stop()
+        ClockTimer.Stop()
         If Project.winampOn <> 0 Then
             Shell("source\BAT\stop_back_music1.bat")
             Project.winampOn = 0
         End If
-        Project.CheckBox2.Checked = False
-        PictureBox1.ImageLocation = "source\CLOCK\Clock (62).png"
-        Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (62).png"
-        Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (62).png"
-        Audience.PictureBox8.ImageLocation = "source\CLOCK\Clock (62).png"
+        Project.PhoneAFriendAvailableCheckBox.Checked = False
+        ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
+        Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
+        Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
+        Audience.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@paf_button3|"
@@ -95,11 +95,11 @@
     End Sub
 
     Private Sub FormPAF_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
-        Timer1.Stop()
+        ClockTimer.Stop()
         My.Computer.Audio.Stop()
-        Host.PictureBox8.Visible = False
-        Player.PictureBox8.Visible = False
-        Audience.PictureBox8.Visible = False
+        Host.ClockPictureBox.Visible = False
+        Player.ClockPictureBox.Visible = False
+        Audience.ClockPictureBox.Visible = False
         Select Case Project.questionNumber
             Case 0 To 5
                 'Обращение к *.bat файлу для включения внешнего проигрывателя
@@ -169,12 +169,12 @@
                     Project.winampOn = 1
                 End If
         End Select
-        Project.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Project.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@paf_closed|"

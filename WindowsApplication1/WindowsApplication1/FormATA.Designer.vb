@@ -23,402 +23,402 @@ Partial Class FormATA
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormATA))
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.NumericUpDown8 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown7 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TotalPercentLabel = New System.Windows.Forms.Label()
+        Me.ExecuteButton = New System.Windows.Forms.Button()
+        Me.StartVotingButton = New System.Windows.Forms.Button()
+        Me.TotalVotesLabel = New System.Windows.Forms.Label()
+        Me.AnswerDPercentSignLabel = New System.Windows.Forms.Label()
+        Me.AnswerCPercentSignLabel = New System.Windows.Forms.Label()
+        Me.AnswerBPercentSignLabel = New System.Windows.Forms.Label()
+        Me.AnswerAPercentSignLabel = New System.Windows.Forms.Label()
+        Me.AnswerDOrLabel = New System.Windows.Forms.Label()
+        Me.AnswerCOrLabel = New System.Windows.Forms.Label()
+        Me.AnswerBOrLabel = New System.Windows.Forms.Label()
+        Me.AnswerAOrLabel = New System.Windows.Forms.Label()
+        Me.AnswerDLetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerCLetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerBLetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerALetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerDPercentNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerCPercentNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerBPercentNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerAPercentNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerDVotesNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerCVotesNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerBVotesNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerAVotesNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AnswerDChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerCChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerBChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerAChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerDResultLabel = New System.Windows.Forms.Label()
+        Me.AnswerCResultLabel = New System.Windows.Forms.Label()
+        Me.AnswerBResultLabel = New System.Windows.Forms.Label()
+        Me.AnswerAResultLabel = New System.Windows.Forms.Label()
+        Me.StartAskTheAudienceButton = New System.Windows.Forms.Button()
+        CType(Me.AnswerDPercentNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerCPercentNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerBPercentNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerAPercentNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerDVotesNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerCVotesNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerBVotesNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerAVotesNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerDChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerCChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerBChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerAChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(122, 279)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(68, 13)
-        Me.Label18.TabIndex = 76
-        Me.Label18.Text = "All percents: "
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Location = New System.Drawing.Point(19, 305)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(206, 23)
-        Me.Button3.TabIndex = 75
-        Me.Button3.Text = "Execute"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(125, 36)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 74
-        Me.Button2.Text = "Start Voiting"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(16, 279)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(58, 13)
-        Me.Label17.TabIndex = 73
-        Me.Label17.Text = "All voices: "
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(215, 237)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(15, 13)
-        Me.Label13.TabIndex = 72
-        Me.Label13.Text = "%"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(215, 187)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(15, 13)
-        Me.Label14.TabIndex = 71
-        Me.Label14.Text = "%"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(215, 137)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(15, 13)
-        Me.Label15.TabIndex = 70
-        Me.Label15.Text = "%"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(215, 86)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(15, 13)
-        Me.Label16.TabIndex = 69
-        Me.Label16.Text = "%"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(119, 236)
-        Me.Label12.MinimumSize = New System.Drawing.Size(30, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(30, 13)
-        Me.Label12.TabIndex = 68
-        Me.Label12.Text = "or"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(119, 186)
-        Me.Label11.MinimumSize = New System.Drawing.Size(30, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(30, 13)
-        Me.Label11.TabIndex = 67
-        Me.Label11.Text = "or"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(119, 136)
-        Me.Label10.MinimumSize = New System.Drawing.Size(30, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(30, 13)
-        Me.Label10.TabIndex = 66
-        Me.Label10.Text = "or"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(119, 85)
-        Me.Label9.MinimumSize = New System.Drawing.Size(30, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(30, 13)
-        Me.Label9.TabIndex = 65
-        Me.Label9.Text = "or"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(13, 227)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(34, 31)
-        Me.Label5.TabIndex = 64
-        Me.Label5.Text = "D"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(13, 177)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(34, 31)
-        Me.Label6.TabIndex = 63
-        Me.Label6.Text = "C"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(13, 127)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(32, 31)
-        Me.Label7.TabIndex = 62
-        Me.Label7.Text = "B"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(13, 77)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(32, 31)
-        Me.Label8.TabIndex = 61
-        Me.Label8.Text = "A"
-        '
-        'NumericUpDown8
-        '
-        Me.NumericUpDown8.Location = New System.Drawing.Point(149, 234)
-        Me.NumericUpDown8.Name = "NumericUpDown8"
-        Me.NumericUpDown8.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown8.TabIndex = 60
-        '
-        'NumericUpDown7
-        '
-        Me.NumericUpDown7.Location = New System.Drawing.Point(149, 184)
-        Me.NumericUpDown7.Name = "NumericUpDown7"
-        Me.NumericUpDown7.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown7.TabIndex = 59
-        '
-        'NumericUpDown6
-        '
-        Me.NumericUpDown6.Location = New System.Drawing.Point(149, 134)
-        Me.NumericUpDown6.Name = "NumericUpDown6"
-        Me.NumericUpDown6.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown6.TabIndex = 58
-        '
-        'NumericUpDown5
-        '
-        Me.NumericUpDown5.Location = New System.Drawing.Point(149, 84)
-        Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown5.TabIndex = 57
-        '
-        'NumericUpDown4
-        '
-        Me.NumericUpDown4.Location = New System.Drawing.Point(56, 234)
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown4.TabIndex = 56
-        '
-        'NumericUpDown3
-        '
-        Me.NumericUpDown3.Location = New System.Drawing.Point(56, 184)
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown3.TabIndex = 55
-        '
-        'NumericUpDown2
-        '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(56, 134)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown2.TabIndex = 54
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(56, 84)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(60, 20)
-        Me.NumericUpDown1.TabIndex = 53
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(409, 60)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(37, 240)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 52
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(360, 60)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(37, 240)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 51
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(311, 60)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(37, 240)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 50
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(262, 60)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 240)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 49
-        Me.PictureBox2.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(404, 35)
-        Me.Label4.MinimumSize = New System.Drawing.Size(50, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(50, 21)
-        Me.Label4.TabIndex = 48
-        Me.Label4.Text = "0%"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label4.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(354, 35)
-        Me.Label3.MinimumSize = New System.Drawing.Size(50, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(50, 21)
-        Me.Label3.TabIndex = 47
-        Me.Label3.Text = "0%"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label3.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(305, 35)
-        Me.Label2.MinimumSize = New System.Drawing.Size(50, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 21)
-        Me.Label2.TabIndex = 46
-        Me.Label2.Text = "0%"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label2.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(256, 35)
-        Me.Label1.MinimumSize = New System.Drawing.Size(50, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 21)
-        Me.Label1.TabIndex = 45
-        Me.Label1.Text = "0%"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label1.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(19, 36)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
-        Me.Button1.TabIndex = 44
-        Me.Button1.Text = "Start ATA"
-        Me.Button1.UseVisualStyleBackColor = False
+        'TotalPercentLabel
+        '
+        Me.TotalPercentLabel.AutoSize = True
+        Me.TotalPercentLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.TotalPercentLabel.ForeColor = System.Drawing.Color.White
+        Me.TotalPercentLabel.Location = New System.Drawing.Point(122, 279)
+        Me.TotalPercentLabel.Name = "TotalPercentLabel"
+        Me.TotalPercentLabel.Size = New System.Drawing.Size(68, 13)
+        Me.TotalPercentLabel.TabIndex = 76
+        Me.TotalPercentLabel.Text = "All percents: "
+        '
+        'ExecuteButton
+        '
+        Me.ExecuteButton.BackColor = System.Drawing.Color.White
+        Me.ExecuteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ExecuteButton.Location = New System.Drawing.Point(19, 305)
+        Me.ExecuteButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ExecuteButton.Name = "ExecuteButton"
+        Me.ExecuteButton.Size = New System.Drawing.Size(206, 23)
+        Me.ExecuteButton.TabIndex = 75
+        Me.ExecuteButton.Text = "Execute"
+        Me.ExecuteButton.UseVisualStyleBackColor = False
+        '
+        'StartVotingButton
+        '
+        Me.StartVotingButton.BackColor = System.Drawing.Color.White
+        Me.StartVotingButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.StartVotingButton.Location = New System.Drawing.Point(125, 36)
+        Me.StartVotingButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.StartVotingButton.Name = "StartVotingButton"
+        Me.StartVotingButton.Size = New System.Drawing.Size(100, 23)
+        Me.StartVotingButton.TabIndex = 74
+        Me.StartVotingButton.Text = "Start Voiting"
+        Me.StartVotingButton.UseVisualStyleBackColor = False
+        '
+        'TotalVotesLabel
+        '
+        Me.TotalVotesLabel.AutoSize = True
+        Me.TotalVotesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.TotalVotesLabel.ForeColor = System.Drawing.Color.White
+        Me.TotalVotesLabel.Location = New System.Drawing.Point(16, 279)
+        Me.TotalVotesLabel.Name = "TotalVotesLabel"
+        Me.TotalVotesLabel.Size = New System.Drawing.Size(58, 13)
+        Me.TotalVotesLabel.TabIndex = 73
+        Me.TotalVotesLabel.Text = "All voices: "
+        '
+        'AnswerDPercentSignLabel
+        '
+        Me.AnswerDPercentSignLabel.AutoSize = True
+        Me.AnswerDPercentSignLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDPercentSignLabel.Location = New System.Drawing.Point(215, 237)
+        Me.AnswerDPercentSignLabel.Name = "AnswerDPercentSignLabel"
+        Me.AnswerDPercentSignLabel.Size = New System.Drawing.Size(15, 13)
+        Me.AnswerDPercentSignLabel.TabIndex = 72
+        Me.AnswerDPercentSignLabel.Text = "%"
+        '
+        'AnswerCPercentSignLabel
+        '
+        Me.AnswerCPercentSignLabel.AutoSize = True
+        Me.AnswerCPercentSignLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCPercentSignLabel.Location = New System.Drawing.Point(215, 187)
+        Me.AnswerCPercentSignLabel.Name = "AnswerCPercentSignLabel"
+        Me.AnswerCPercentSignLabel.Size = New System.Drawing.Size(15, 13)
+        Me.AnswerCPercentSignLabel.TabIndex = 71
+        Me.AnswerCPercentSignLabel.Text = "%"
+        '
+        'AnswerBPercentSignLabel
+        '
+        Me.AnswerBPercentSignLabel.AutoSize = True
+        Me.AnswerBPercentSignLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBPercentSignLabel.Location = New System.Drawing.Point(215, 137)
+        Me.AnswerBPercentSignLabel.Name = "AnswerBPercentSignLabel"
+        Me.AnswerBPercentSignLabel.Size = New System.Drawing.Size(15, 13)
+        Me.AnswerBPercentSignLabel.TabIndex = 70
+        Me.AnswerBPercentSignLabel.Text = "%"
+        '
+        'AnswerAPercentSignLabel
+        '
+        Me.AnswerAPercentSignLabel.AutoSize = True
+        Me.AnswerAPercentSignLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerAPercentSignLabel.Location = New System.Drawing.Point(215, 86)
+        Me.AnswerAPercentSignLabel.Name = "AnswerAPercentSignLabel"
+        Me.AnswerAPercentSignLabel.Size = New System.Drawing.Size(15, 13)
+        Me.AnswerAPercentSignLabel.TabIndex = 69
+        Me.AnswerAPercentSignLabel.Text = "%"
+        '
+        'AnswerDOrLabel
+        '
+        Me.AnswerDOrLabel.AutoSize = True
+        Me.AnswerDOrLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDOrLabel.Location = New System.Drawing.Point(119, 236)
+        Me.AnswerDOrLabel.MinimumSize = New System.Drawing.Size(30, 0)
+        Me.AnswerDOrLabel.Name = "AnswerDOrLabel"
+        Me.AnswerDOrLabel.Size = New System.Drawing.Size(30, 13)
+        Me.AnswerDOrLabel.TabIndex = 68
+        Me.AnswerDOrLabel.Text = "or"
+        Me.AnswerDOrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerCOrLabel
+        '
+        Me.AnswerCOrLabel.AutoSize = True
+        Me.AnswerCOrLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCOrLabel.Location = New System.Drawing.Point(119, 186)
+        Me.AnswerCOrLabel.MinimumSize = New System.Drawing.Size(30, 0)
+        Me.AnswerCOrLabel.Name = "AnswerCOrLabel"
+        Me.AnswerCOrLabel.Size = New System.Drawing.Size(30, 13)
+        Me.AnswerCOrLabel.TabIndex = 67
+        Me.AnswerCOrLabel.Text = "or"
+        Me.AnswerCOrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerBOrLabel
+        '
+        Me.AnswerBOrLabel.AutoSize = True
+        Me.AnswerBOrLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBOrLabel.Location = New System.Drawing.Point(119, 136)
+        Me.AnswerBOrLabel.MinimumSize = New System.Drawing.Size(30, 0)
+        Me.AnswerBOrLabel.Name = "AnswerBOrLabel"
+        Me.AnswerBOrLabel.Size = New System.Drawing.Size(30, 13)
+        Me.AnswerBOrLabel.TabIndex = 66
+        Me.AnswerBOrLabel.Text = "or"
+        Me.AnswerBOrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerAOrLabel
+        '
+        Me.AnswerAOrLabel.AutoSize = True
+        Me.AnswerAOrLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerAOrLabel.Location = New System.Drawing.Point(119, 85)
+        Me.AnswerAOrLabel.MinimumSize = New System.Drawing.Size(30, 0)
+        Me.AnswerAOrLabel.Name = "AnswerAOrLabel"
+        Me.AnswerAOrLabel.Size = New System.Drawing.Size(30, 13)
+        Me.AnswerAOrLabel.TabIndex = 65
+        Me.AnswerAOrLabel.Text = "or"
+        Me.AnswerAOrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerDLetterLabel
+        '
+        Me.AnswerDLetterLabel.AutoSize = True
+        Me.AnswerDLetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerDLetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDLetterLabel.Location = New System.Drawing.Point(13, 227)
+        Me.AnswerDLetterLabel.Name = "AnswerDLetterLabel"
+        Me.AnswerDLetterLabel.Size = New System.Drawing.Size(34, 31)
+        Me.AnswerDLetterLabel.TabIndex = 64
+        Me.AnswerDLetterLabel.Text = "D"
+        '
+        'AnswerCLetterLabel
+        '
+        Me.AnswerCLetterLabel.AutoSize = True
+        Me.AnswerCLetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerCLetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCLetterLabel.Location = New System.Drawing.Point(13, 177)
+        Me.AnswerCLetterLabel.Name = "AnswerCLetterLabel"
+        Me.AnswerCLetterLabel.Size = New System.Drawing.Size(34, 31)
+        Me.AnswerCLetterLabel.TabIndex = 63
+        Me.AnswerCLetterLabel.Text = "C"
+        '
+        'AnswerBLetterLabel
+        '
+        Me.AnswerBLetterLabel.AutoSize = True
+        Me.AnswerBLetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerBLetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBLetterLabel.Location = New System.Drawing.Point(13, 127)
+        Me.AnswerBLetterLabel.Name = "AnswerBLetterLabel"
+        Me.AnswerBLetterLabel.Size = New System.Drawing.Size(32, 31)
+        Me.AnswerBLetterLabel.TabIndex = 62
+        Me.AnswerBLetterLabel.Text = "B"
+        '
+        'AnswerALetterLabel
+        '
+        Me.AnswerALetterLabel.AutoSize = True
+        Me.AnswerALetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerALetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerALetterLabel.Location = New System.Drawing.Point(13, 77)
+        Me.AnswerALetterLabel.Name = "AnswerALetterLabel"
+        Me.AnswerALetterLabel.Size = New System.Drawing.Size(32, 31)
+        Me.AnswerALetterLabel.TabIndex = 61
+        Me.AnswerALetterLabel.Text = "A"
+        '
+        'AnswerDPercentNumericUpDown
+        '
+        Me.AnswerDPercentNumericUpDown.Location = New System.Drawing.Point(149, 234)
+        Me.AnswerDPercentNumericUpDown.Name = "AnswerDPercentNumericUpDown"
+        Me.AnswerDPercentNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerDPercentNumericUpDown.TabIndex = 60
+        '
+        'AnswerCPercentNumericUpDown
+        '
+        Me.AnswerCPercentNumericUpDown.Location = New System.Drawing.Point(149, 184)
+        Me.AnswerCPercentNumericUpDown.Name = "AnswerCPercentNumericUpDown"
+        Me.AnswerCPercentNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerCPercentNumericUpDown.TabIndex = 59
+        '
+        'AnswerBPercentNumericUpDown
+        '
+        Me.AnswerBPercentNumericUpDown.Location = New System.Drawing.Point(149, 134)
+        Me.AnswerBPercentNumericUpDown.Name = "AnswerBPercentNumericUpDown"
+        Me.AnswerBPercentNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerBPercentNumericUpDown.TabIndex = 58
+        '
+        'AnswerAPercentNumericUpDown
+        '
+        Me.AnswerAPercentNumericUpDown.Location = New System.Drawing.Point(149, 84)
+        Me.AnswerAPercentNumericUpDown.Name = "AnswerAPercentNumericUpDown"
+        Me.AnswerAPercentNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerAPercentNumericUpDown.TabIndex = 57
+        '
+        'AnswerDVotesNumericUpDown
+        '
+        Me.AnswerDVotesNumericUpDown.Location = New System.Drawing.Point(56, 234)
+        Me.AnswerDVotesNumericUpDown.Name = "AnswerDVotesNumericUpDown"
+        Me.AnswerDVotesNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerDVotesNumericUpDown.TabIndex = 56
+        '
+        'AnswerCVotesNumericUpDown
+        '
+        Me.AnswerCVotesNumericUpDown.Location = New System.Drawing.Point(56, 184)
+        Me.AnswerCVotesNumericUpDown.Name = "AnswerCVotesNumericUpDown"
+        Me.AnswerCVotesNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerCVotesNumericUpDown.TabIndex = 55
+        '
+        'AnswerBVotesNumericUpDown
+        '
+        Me.AnswerBVotesNumericUpDown.Location = New System.Drawing.Point(56, 134)
+        Me.AnswerBVotesNumericUpDown.Name = "AnswerBVotesNumericUpDown"
+        Me.AnswerBVotesNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerBVotesNumericUpDown.TabIndex = 54
+        '
+        'AnswerAVotesNumericUpDown
+        '
+        Me.AnswerAVotesNumericUpDown.Location = New System.Drawing.Point(56, 84)
+        Me.AnswerAVotesNumericUpDown.Name = "AnswerAVotesNumericUpDown"
+        Me.AnswerAVotesNumericUpDown.Size = New System.Drawing.Size(60, 20)
+        Me.AnswerAVotesNumericUpDown.TabIndex = 53
+        '
+        'AnswerDChartPictureBox
+        '
+        Me.AnswerDChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerDChartPictureBox.Image = CType(resources.GetObject("AnswerDChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerDChartPictureBox.Location = New System.Drawing.Point(409, 60)
+        Me.AnswerDChartPictureBox.Name = "AnswerDChartPictureBox"
+        Me.AnswerDChartPictureBox.Size = New System.Drawing.Size(37, 240)
+        Me.AnswerDChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerDChartPictureBox.TabIndex = 52
+        Me.AnswerDChartPictureBox.TabStop = False
+        '
+        'AnswerCChartPictureBox
+        '
+        Me.AnswerCChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerCChartPictureBox.Image = CType(resources.GetObject("AnswerCChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerCChartPictureBox.Location = New System.Drawing.Point(360, 60)
+        Me.AnswerCChartPictureBox.Name = "AnswerCChartPictureBox"
+        Me.AnswerCChartPictureBox.Size = New System.Drawing.Size(37, 240)
+        Me.AnswerCChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerCChartPictureBox.TabIndex = 51
+        Me.AnswerCChartPictureBox.TabStop = False
+        '
+        'AnswerBChartPictureBox
+        '
+        Me.AnswerBChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerBChartPictureBox.Image = CType(resources.GetObject("AnswerBChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerBChartPictureBox.Location = New System.Drawing.Point(311, 60)
+        Me.AnswerBChartPictureBox.Name = "AnswerBChartPictureBox"
+        Me.AnswerBChartPictureBox.Size = New System.Drawing.Size(37, 240)
+        Me.AnswerBChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerBChartPictureBox.TabIndex = 50
+        Me.AnswerBChartPictureBox.TabStop = False
+        '
+        'AnswerAChartPictureBox
+        '
+        Me.AnswerAChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerAChartPictureBox.Image = CType(resources.GetObject("AnswerAChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerAChartPictureBox.Location = New System.Drawing.Point(262, 60)
+        Me.AnswerAChartPictureBox.Name = "AnswerAChartPictureBox"
+        Me.AnswerAChartPictureBox.Size = New System.Drawing.Size(37, 240)
+        Me.AnswerAChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerAChartPictureBox.TabIndex = 49
+        Me.AnswerAChartPictureBox.TabStop = False
+        '
+        'AnswerDResultLabel
+        '
+        Me.AnswerDResultLabel.AutoSize = True
+        Me.AnswerDResultLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerDResultLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AnswerDResultLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDResultLabel.Location = New System.Drawing.Point(404, 35)
+        Me.AnswerDResultLabel.MinimumSize = New System.Drawing.Size(50, 0)
+        Me.AnswerDResultLabel.Name = "AnswerDResultLabel"
+        Me.AnswerDResultLabel.Size = New System.Drawing.Size(50, 21)
+        Me.AnswerDResultLabel.TabIndex = 48
+        Me.AnswerDResultLabel.Text = "0%"
+        Me.AnswerDResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerDResultLabel.Visible = False
+        '
+        'AnswerCResultLabel
+        '
+        Me.AnswerCResultLabel.AutoSize = True
+        Me.AnswerCResultLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerCResultLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AnswerCResultLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCResultLabel.Location = New System.Drawing.Point(354, 35)
+        Me.AnswerCResultLabel.MinimumSize = New System.Drawing.Size(50, 0)
+        Me.AnswerCResultLabel.Name = "AnswerCResultLabel"
+        Me.AnswerCResultLabel.Size = New System.Drawing.Size(50, 21)
+        Me.AnswerCResultLabel.TabIndex = 47
+        Me.AnswerCResultLabel.Text = "0%"
+        Me.AnswerCResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerCResultLabel.Visible = False
+        '
+        'AnswerBResultLabel
+        '
+        Me.AnswerBResultLabel.AutoSize = True
+        Me.AnswerBResultLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerBResultLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AnswerBResultLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBResultLabel.Location = New System.Drawing.Point(305, 35)
+        Me.AnswerBResultLabel.MinimumSize = New System.Drawing.Size(50, 0)
+        Me.AnswerBResultLabel.Name = "AnswerBResultLabel"
+        Me.AnswerBResultLabel.Size = New System.Drawing.Size(50, 21)
+        Me.AnswerBResultLabel.TabIndex = 46
+        Me.AnswerBResultLabel.Text = "0%"
+        Me.AnswerBResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerBResultLabel.Visible = False
+        '
+        'AnswerAResultLabel
+        '
+        Me.AnswerAResultLabel.AutoSize = True
+        Me.AnswerAResultLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerAResultLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AnswerAResultLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerAResultLabel.Location = New System.Drawing.Point(256, 35)
+        Me.AnswerAResultLabel.MinimumSize = New System.Drawing.Size(50, 0)
+        Me.AnswerAResultLabel.Name = "AnswerAResultLabel"
+        Me.AnswerAResultLabel.Size = New System.Drawing.Size(50, 21)
+        Me.AnswerAResultLabel.TabIndex = 45
+        Me.AnswerAResultLabel.Text = "0%"
+        Me.AnswerAResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerAResultLabel.Visible = False
+        '
+        'StartAskTheAudienceButton
+        '
+        Me.StartAskTheAudienceButton.BackColor = System.Drawing.Color.White
+        Me.StartAskTheAudienceButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.StartAskTheAudienceButton.Location = New System.Drawing.Point(19, 36)
+        Me.StartAskTheAudienceButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.StartAskTheAudienceButton.Name = "StartAskTheAudienceButton"
+        Me.StartAskTheAudienceButton.Size = New System.Drawing.Size(100, 23)
+        Me.StartAskTheAudienceButton.TabIndex = 44
+        Me.StartAskTheAudienceButton.Text = "Start ATA"
+        Me.StartAskTheAudienceButton.UseVisualStyleBackColor = False
         '
         'FormATA
         '
@@ -427,39 +427,39 @@ Partial Class FormATA
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(484, 361)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.NumericUpDown8)
-        Me.Controls.Add(Me.NumericUpDown7)
-        Me.Controls.Add(Me.NumericUpDown6)
-        Me.Controls.Add(Me.NumericUpDown5)
-        Me.Controls.Add(Me.NumericUpDown4)
-        Me.Controls.Add(Me.NumericUpDown3)
-        Me.Controls.Add(Me.NumericUpDown2)
-        Me.Controls.Add(Me.NumericUpDown1)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TotalPercentLabel)
+        Me.Controls.Add(Me.ExecuteButton)
+        Me.Controls.Add(Me.StartVotingButton)
+        Me.Controls.Add(Me.TotalVotesLabel)
+        Me.Controls.Add(Me.AnswerDPercentSignLabel)
+        Me.Controls.Add(Me.AnswerCPercentSignLabel)
+        Me.Controls.Add(Me.AnswerBPercentSignLabel)
+        Me.Controls.Add(Me.AnswerAPercentSignLabel)
+        Me.Controls.Add(Me.AnswerDOrLabel)
+        Me.Controls.Add(Me.AnswerCOrLabel)
+        Me.Controls.Add(Me.AnswerBOrLabel)
+        Me.Controls.Add(Me.AnswerAOrLabel)
+        Me.Controls.Add(Me.AnswerDLetterLabel)
+        Me.Controls.Add(Me.AnswerCLetterLabel)
+        Me.Controls.Add(Me.AnswerBLetterLabel)
+        Me.Controls.Add(Me.AnswerALetterLabel)
+        Me.Controls.Add(Me.AnswerDPercentNumericUpDown)
+        Me.Controls.Add(Me.AnswerCPercentNumericUpDown)
+        Me.Controls.Add(Me.AnswerBPercentNumericUpDown)
+        Me.Controls.Add(Me.AnswerAPercentNumericUpDown)
+        Me.Controls.Add(Me.AnswerDVotesNumericUpDown)
+        Me.Controls.Add(Me.AnswerCVotesNumericUpDown)
+        Me.Controls.Add(Me.AnswerBVotesNumericUpDown)
+        Me.Controls.Add(Me.AnswerAVotesNumericUpDown)
+        Me.Controls.Add(Me.AnswerDChartPictureBox)
+        Me.Controls.Add(Me.AnswerCChartPictureBox)
+        Me.Controls.Add(Me.AnswerBChartPictureBox)
+        Me.Controls.Add(Me.AnswerAChartPictureBox)
+        Me.Controls.Add(Me.AnswerDResultLabel)
+        Me.Controls.Add(Me.AnswerCResultLabel)
+        Me.Controls.Add(Me.AnswerBResultLabel)
+        Me.Controls.Add(Me.AnswerAResultLabel)
+        Me.Controls.Add(Me.StartAskTheAudienceButton)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -468,53 +468,53 @@ Partial Class FormATA
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Ask The Audience"
         Me.TopMost = True
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerDPercentNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerCPercentNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerBPercentNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerAPercentNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerDVotesNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerCVotesNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerBVotesNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerAVotesNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerDChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerCChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerBChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerAChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown8 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown7 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown6 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown5 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown4 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown3 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown2 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TotalPercentLabel As System.Windows.Forms.Label
+    Friend WithEvents ExecuteButton As System.Windows.Forms.Button
+    Friend WithEvents StartVotingButton As System.Windows.Forms.Button
+    Friend WithEvents TotalVotesLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerDPercentSignLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCPercentSignLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBPercentSignLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerAPercentSignLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerDOrLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCOrLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBOrLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerAOrLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerDLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerALetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerDPercentNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerCPercentNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerBPercentNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerAPercentNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerDVotesNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerCVotesNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerBVotesNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerAVotesNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AnswerDChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerCChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerBChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerAChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerDResultLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCResultLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBResultLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerAResultLabel As System.Windows.Forms.Label
+    Friend WithEvents StartAskTheAudienceButton As System.Windows.Forms.Button
 End Class

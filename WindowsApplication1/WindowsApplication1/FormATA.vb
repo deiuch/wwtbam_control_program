@@ -12,36 +12,36 @@
 
     Private Sub FormATA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MaximizeBox = False
-        PictureBox2.ImageLocation = "source\GRAPH COLUMN.png"
-        PictureBox3.ImageLocation = "source\GRAPH COLUMN.png"
-        PictureBox4.ImageLocation = "source\GRAPH COLUMN.png"
-        PictureBox5.ImageLocation = "source\GRAPH COLUMN.png"
-        PictureBox2.Height = percentsA * 2.4
-        PictureBox3.Height = percentsB * 2.4
-        PictureBox4.Height = percentsC * 2.4
-        PictureBox5.Height = percentsD * 2.4
-        PictureBox2.Top = 300 - percentsA * 2.4
-        PictureBox3.Top = 300 - percentsB * 2.4
-        PictureBox4.Top = 300 - percentsC * 2.4
-        PictureBox5.Top = 300 - percentsD * 2.4
+        AnswerAChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        AnswerBChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        AnswerCChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        AnswerDChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        AnswerAChartPictureBox.Height = percentsA * 2.4
+        AnswerBChartPictureBox.Height = percentsB * 2.4
+        AnswerCChartPictureBox.Height = percentsC * 2.4
+        AnswerDChartPictureBox.Height = percentsD * 2.4
+        AnswerAChartPictureBox.Top = 300 - percentsA * 2.4
+        AnswerBChartPictureBox.Top = 300 - percentsB * 2.4
+        AnswerCChartPictureBox.Top = 300 - percentsC * 2.4
+        AnswerDChartPictureBox.Top = 300 - percentsD * 2.4
         'Перевод "E" FormATA
         Text = Project.currentBlock1(110, 3) '0
-        Button1.Text = Project.currentBlock1(111, 3) '1
-        Button2.Text = Project.currentBlock1(112, 3) '2
-        Label9.Text = Project.currentBlock1(113, 3) '3
-        Label10.Text = Project.currentBlock1(113, 3) '3
-        Label11.Text = Project.currentBlock1(113, 3) '3
-        Label12.Text = Project.currentBlock1(113, 3) '3
-        Label17.Text = Project.currentBlock1(114, 3) '4
-        Label18.Text = Project.currentBlock1(115, 3) '5
-        Button3.Text = Project.currentBlock1(116, 3) '6
-        Label1.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
-        Label2.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
-        Label3.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
-        Label4.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
+        StartAskTheAudienceButton.Text = Project.currentBlock1(111, 3) '1
+        StartVotingButton.Text = Project.currentBlock1(112, 3) '2
+        AnswerAOrLabel.Text = Project.currentBlock1(113, 3) '3
+        AnswerBOrLabel.Text = Project.currentBlock1(113, 3) '3
+        AnswerCOrLabel.Text = Project.currentBlock1(113, 3) '3
+        AnswerDOrLabel.Text = Project.currentBlock1(113, 3) '3
+        TotalVotesLabel.Text = Project.currentBlock1(114, 3) '4
+        TotalPercentLabel.Text = Project.currentBlock1(115, 3) '5
+        ExecuteButton.Text = Project.currentBlock1(116, 3) '6
+        AnswerAResultLabel.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
+        AnswerBResultLabel.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
+        AnswerCResultLabel.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
+        AnswerDResultLabel.Font = New Font(Project.currentBlock1(6, 3), Int(Project.currentBlock1(6, 4)))
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub StartAskTheAudienceButton_Click(sender As Object, e As EventArgs) Handles StartAskTheAudienceButton.Click
         If Project.winampOn <> 0 Then
             Shell("source\BAT\stop_back_music1.bat")
             Project.winampOn = 0
@@ -49,7 +49,7 @@
         My.Computer.Audio.Play("source\MUSIC\Ask the Audience.wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub StartVotingButton_Click(sender As Object, e As EventArgs) Handles StartVotingButton.Click
         Host.BackgroundImage = System.Drawing.Bitmap.FromFile(Project.langSource & "\Host Screen ATA.png")
         Player.BackgroundImage = System.Drawing.Bitmap.FromFile(Project.langSource & "\Player Screen ATA.png")
         Audience.BackgroundImage = System.Drawing.Bitmap.FromFile(Project.langSource & "\Audience Screen ATA.png")
@@ -59,7 +59,7 @@
         End If
         My.Computer.Audio.Play("source\MUSIC\Audience Keyboards.wav", AudioPlayMode.Background)
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@ata_button2|"
@@ -68,182 +68,182 @@
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If percentsA < 1 Then percentsA = NumericUpDown5.Value
-        If percentsB < 1 Then percentsB = NumericUpDown6.Value
-        If percentsC < 1 Then percentsC = NumericUpDown7.Value
-        If percentsD < 1 Then percentsD = NumericUpDown8.Value
+    Private Sub ExecuteButton_Click(sender As Object, e As EventArgs) Handles ExecuteButton.Click
+        If percentsA < 1 Then percentsA = AnswerAPercentNumericUpDown.Value
+        If percentsB < 1 Then percentsB = AnswerBPercentNumericUpDown.Value
+        If percentsC < 1 Then percentsC = AnswerCPercentNumericUpDown.Value
+        If percentsD < 1 Then percentsD = AnswerDPercentNumericUpDown.Value
         'Окно режиссёра
-        Label1.Text = NumericUpDown5.Value & "%"
-        Label2.Text = NumericUpDown6.Value & "%"
-        Label3.Text = NumericUpDown7.Value & "%"
-        Label4.Text = NumericUpDown8.Value & "%"
-        Label1.Visible = True
-        Label2.Visible = True
-        Label3.Visible = True
-        Label4.Visible = True
-        PictureBox2.Height = percentsA * 2.4
-        PictureBox3.Height = percentsB * 2.4
-        PictureBox4.Height = percentsC * 2.4
-        PictureBox5.Height = percentsD * 2.4
-        PictureBox2.Top = 300 - percentsA * 2.4
-        PictureBox3.Top = 300 - percentsB * 2.4
-        PictureBox4.Top = 300 - percentsC * 2.4
-        PictureBox5.Top = 300 - percentsD * 2.4
+        AnswerAResultLabel.Text = AnswerAPercentNumericUpDown.Value & "%"
+        AnswerBResultLabel.Text = AnswerBPercentNumericUpDown.Value & "%"
+        AnswerCResultLabel.Text = AnswerCPercentNumericUpDown.Value & "%"
+        AnswerDResultLabel.Text = AnswerDPercentNumericUpDown.Value & "%"
+        AnswerAResultLabel.Visible = True
+        AnswerBResultLabel.Visible = True
+        AnswerCResultLabel.Visible = True
+        AnswerDResultLabel.Visible = True
+        AnswerAChartPictureBox.Height = percentsA * 2.4
+        AnswerBChartPictureBox.Height = percentsB * 2.4
+        AnswerCChartPictureBox.Height = percentsC * 2.4
+        AnswerDChartPictureBox.Height = percentsD * 2.4
+        AnswerAChartPictureBox.Top = 300 - percentsA * 2.4
+        AnswerBChartPictureBox.Top = 300 - percentsB * 2.4
+        AnswerCChartPictureBox.Top = 300 - percentsC * 2.4
+        AnswerDChartPictureBox.Top = 300 - percentsD * 2.4
         'Экран ведущего
-        Host.Label10.Text = NumericUpDown5.Value & "%"
-        Host.Label9.Text = NumericUpDown6.Value & "%"
-        Host.Label8.Text = NumericUpDown7.Value & "%"
-        Host.Label7.Text = NumericUpDown8.Value & "%"
-        Host.Label10.Visible = True
-        Host.Label9.Visible = True
-        Host.Label8.Visible = True
-        Host.Label7.Visible = True
-        Host.PictureBox12.Visible = True
-        Host.PictureBox11.Visible = True
-        Host.PictureBox10.Visible = True
-        Host.PictureBox9.Visible = True
-        Host.PictureBox12.Height = percentsA * 1.2
-        Host.PictureBox11.Height = percentsB * 1.2
-        Host.PictureBox10.Height = percentsC * 1.2
-        Host.PictureBox9.Height = percentsD * 1.2
-        Host.PictureBox12.Top = 515 - percentsA * 1.2
-        Host.PictureBox11.Top = 515 - percentsB * 1.2
-        Host.PictureBox10.Top = 515 - percentsC * 1.2
-        Host.PictureBox9.Top = 515 - percentsD * 1.2
+        Host.AnswerAPercentLabel.Text = AnswerAPercentNumericUpDown.Value & "%"
+        Host.AnswerBPercentLabel.Text = AnswerBPercentNumericUpDown.Value & "%"
+        Host.AnswerCPercentLabel.Text = AnswerCPercentNumericUpDown.Value & "%"
+        Host.AnswerDPercentLabel.Text = AnswerDPercentNumericUpDown.Value & "%"
+        Host.AnswerAPercentLabel.Visible = True
+        Host.AnswerBPercentLabel.Visible = True
+        Host.AnswerCPercentLabel.Visible = True
+        Host.AnswerDPercentLabel.Visible = True
+        Host.AnswerAChartPictureBox.Visible = True
+        Host.AnswerBChartPictureBox.Visible = True
+        Host.AnswerCChartPictureBox.Visible = True
+        Host.AnswerDChartPictureBox.Visible = True
+        Host.AnswerAChartPictureBox.Height = percentsA * 1.2
+        Host.AnswerBChartPictureBox.Height = percentsB * 1.2
+        Host.AnswerCChartPictureBox.Height = percentsC * 1.2
+        Host.AnswerDChartPictureBox.Height = percentsD * 1.2
+        Host.AnswerAChartPictureBox.Top = 515 - percentsA * 1.2
+        Host.AnswerBChartPictureBox.Top = 515 - percentsB * 1.2
+        Host.AnswerCChartPictureBox.Top = 515 - percentsC * 1.2
+        Host.AnswerDChartPictureBox.Top = 515 - percentsD * 1.2
         'Экран игрока
-        Player.Label1.Text = NumericUpDown5.Value & "%"
-        Player.Label2.Text = NumericUpDown6.Value & "%"
-        Player.Label3.Text = NumericUpDown7.Value & "%"
-        Player.Label4.Text = NumericUpDown8.Value & "%"
-        Player.Label1.Visible = True
-        Player.Label2.Visible = True
-        Player.Label3.Visible = True
-        Player.Label4.Visible = True
-        Player.PictureBox11.Visible = True
-        Player.PictureBox10.Visible = True
-        Player.PictureBox9.Visible = True
-        Player.PictureBox1.Visible = True
-        Player.PictureBox11.Height = percentsA * 2.4
-        Player.PictureBox10.Height = percentsB * 2.4
-        Player.PictureBox9.Height = percentsC * 2.4
-        Player.PictureBox1.Height = percentsD * 2.4
-        Player.PictureBox11.Top = 538 - percentsA * 2.4
-        Player.PictureBox10.Top = 538 - percentsB * 2.4
-        Player.PictureBox9.Top = 538 - percentsC * 2.4
-        Player.PictureBox1.Top = 538 - percentsD * 2.4
+        Player.AnswerAPercentLabel.Text = AnswerAPercentNumericUpDown.Value & "%"
+        Player.AnswerBPercentLabel.Text = AnswerBPercentNumericUpDown.Value & "%"
+        Player.AnswerCPercentLabel.Text = AnswerCPercentNumericUpDown.Value & "%"
+        Player.AnswerDPercentLabel.Text = AnswerDPercentNumericUpDown.Value & "%"
+        Player.AnswerAPercentLabel.Visible = True
+        Player.AnswerBPercentLabel.Visible = True
+        Player.AnswerCPercentLabel.Visible = True
+        Player.AnswerDPercentLabel.Visible = True
+        Player.AnswerAChartPictureBox.Visible = True
+        Player.AnswerBChartPictureBox.Visible = True
+        Player.AnswerCChartPictureBox.Visible = True
+        Player.AnswerDChartPictureBox.Visible = True
+        Player.AnswerAChartPictureBox.Height = percentsA * 2.4
+        Player.AnswerBChartPictureBox.Height = percentsB * 2.4
+        Player.AnswerCChartPictureBox.Height = percentsC * 2.4
+        Player.AnswerDChartPictureBox.Height = percentsD * 2.4
+        Player.AnswerAChartPictureBox.Top = 538 - percentsA * 2.4
+        Player.AnswerBChartPictureBox.Top = 538 - percentsB * 2.4
+        Player.AnswerCChartPictureBox.Top = 538 - percentsC * 2.4
+        Player.AnswerDChartPictureBox.Top = 538 - percentsD * 2.4
         'Экран зрителей
-        Audience.Label1.Text = NumericUpDown5.Value & "%"
-        Audience.Label2.Text = NumericUpDown6.Value & "%"
-        Audience.Label3.Text = NumericUpDown7.Value & "%"
-        Audience.Label4.Text = NumericUpDown8.Value & "%"
-        Audience.Label1.Visible = True
-        Audience.Label2.Visible = True
-        Audience.Label3.Visible = True
-        Audience.Label4.Visible = True
-        Audience.PictureBox12.Visible = True
-        Audience.PictureBox11.Visible = True
-        Audience.PictureBox10.Visible = True
-        Audience.PictureBox9.Visible = True
-        Audience.PictureBox12.Height = percentsA * 2.4
-        Audience.PictureBox11.Height = percentsB * 2.4
-        Audience.PictureBox10.Height = percentsC * 2.4
-        Audience.PictureBox9.Height = percentsD * 2.4
-        Audience.PictureBox12.Top = 347 - percentsA * 2.4
-        Audience.PictureBox11.Top = 347 - percentsB * 2.4
-        Audience.PictureBox10.Top = 347 - percentsC * 2.4
-        Audience.PictureBox9.Top = 347 - percentsD * 2.4
+        Audience.AnswerAPercentLabel.Text = AnswerAPercentNumericUpDown.Value & "%"
+        Audience.AnswerBPercentLabel.Text = AnswerBPercentNumericUpDown.Value & "%"
+        Audience.AnswerCPercentLabel.Text = AnswerCPercentNumericUpDown.Value & "%"
+        Audience.AnswerDPercentLabel.Text = AnswerDPercentNumericUpDown.Value & "%"
+        Audience.AnswerAPercentLabel.Visible = True
+        Audience.AnswerBPercentLabel.Visible = True
+        Audience.AnswerCPercentLabel.Visible = True
+        Audience.AnswerDPercentLabel.Visible = True
+        Audience.AnswerAChartPictureBox.Visible = True
+        Audience.AnswerBChartPictureBox.Visible = True
+        Audience.AnswerCChartPictureBox.Visible = True
+        Audience.AnswerDChartPictureBox.Visible = True
+        Audience.AnswerAChartPictureBox.Height = percentsA * 2.4
+        Audience.AnswerBChartPictureBox.Height = percentsB * 2.4
+        Audience.AnswerCChartPictureBox.Height = percentsC * 2.4
+        Audience.AnswerDChartPictureBox.Height = percentsD * 2.4
+        Audience.AnswerAChartPictureBox.Top = 347 - percentsA * 2.4
+        Audience.AnswerBChartPictureBox.Top = 347 - percentsB * 2.4
+        Audience.AnswerCChartPictureBox.Top = 347 - percentsC * 2.4
+        Audience.AnswerDChartPictureBox.Top = 347 - percentsD * 2.4
         My.Computer.Audio.Play("source\MUSIC\Audience Decide.wav", AudioPlayMode.Background)
-        Project.TextBox10.Text = "-A: " & percentsA & "% -B: " & percentsB & "% -C: " & percentsC & "% -D: " & percentsD & "%"
-        Host.Label12.Text = "-A: " & percentsA & "% -B: " & percentsB & "% -C: " & percentsC & "% -D: " & percentsD & "%"
-        Project.CheckBox3.Checked = False
+        Project.HostMessageTextBox.Text = "-A: " & percentsA & "% -B: " & percentsB & "% -C: " & percentsC & "% -D: " & percentsD & "%"
+        Host.HostMessageLabel.Text = "-A: " & percentsA & "% -B: " & percentsB & "% -C: " & percentsC & "% -D: " & percentsD & "%"
+        Project.AskTheAudienceAvailableCheckBox.Checked = False
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@ata_button3|" & percentsA & "|" & percentsB & "|" & percentsC & "|" & percentsD & "|" & NumericUpDown5.Value & "|" & NumericUpDown6.Value & "|" & NumericUpDown7.Value & "|" & NumericUpDown8.Value & "|" & Project.TextBox10.Text & "|"
+                .Command = "@ata_button3|" & percentsA & "|" & percentsB & "|" & percentsC & "|" & percentsD & "|" & AnswerAPercentNumericUpDown.Value & "|" & AnswerBPercentNumericUpDown.Value & "|" & AnswerCPercentNumericUpDown.Value & "|" & AnswerDPercentNumericUpDown.Value & "|" & Project.HostMessageTextBox.Text & "|"
             End With
             Project.Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged, NumericUpDown2.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown4.ValueChanged
-        voicesSum = NumericUpDown1.Value + NumericUpDown2.Value + NumericUpDown3.Value + NumericUpDown4.Value
-        If NumericUpDown1.Value < 1 Then
+    Private Sub AnswerAVotesNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles AnswerAVotesNumericUpDown.ValueChanged, AnswerBVotesNumericUpDown.ValueChanged, AnswerCVotesNumericUpDown.ValueChanged, AnswerDVotesNumericUpDown.ValueChanged
+        voicesSum = AnswerAVotesNumericUpDown.Value + AnswerBVotesNumericUpDown.Value + AnswerCVotesNumericUpDown.Value + AnswerDVotesNumericUpDown.Value
+        If AnswerAVotesNumericUpDown.Value < 1 Then
             percentsA = 0
         Else
-            percentsA = NumericUpDown1.Value / voicesSum * 100
+            percentsA = AnswerAVotesNumericUpDown.Value / voicesSum * 100
         End If
-        If NumericUpDown2.Value < 1 Then
+        If AnswerBVotesNumericUpDown.Value < 1 Then
             percentsB = 0
         Else
-            percentsB = NumericUpDown2.Value / voicesSum * 100
+            percentsB = AnswerBVotesNumericUpDown.Value / voicesSum * 100
         End If
-        If NumericUpDown3.Value < 1 Then
+        If AnswerCVotesNumericUpDown.Value < 1 Then
             percentsC = 0
         Else
-            percentsC = NumericUpDown3.Value / voicesSum * 100
+            percentsC = AnswerCVotesNumericUpDown.Value / voicesSum * 100
         End If
-        If NumericUpDown4.Value < 1 Then
+        If AnswerDVotesNumericUpDown.Value < 1 Then
             percentsD = 0
         Else
-            percentsD = NumericUpDown4.Value / voicesSum * 100
+            percentsD = AnswerDVotesNumericUpDown.Value / voicesSum * 100
         End If
-        NumericUpDown5.Value = percentsA
-        NumericUpDown6.Value = percentsB
-        NumericUpDown7.Value = percentsC
-        NumericUpDown8.Value = percentsD
-        percentsSum = NumericUpDown5.Value + NumericUpDown6.Value + NumericUpDown7.Value + NumericUpDown8.Value
-        Label17.Text = Project.currentBlock1(114, 3) & voicesSum
-        Label18.Text = Project.currentBlock1(115, 3) & percentsSum & "%"
+        AnswerAPercentNumericUpDown.Value = percentsA
+        AnswerBPercentNumericUpDown.Value = percentsB
+        AnswerCPercentNumericUpDown.Value = percentsC
+        AnswerDPercentNumericUpDown.Value = percentsD
+        percentsSum = AnswerAPercentNumericUpDown.Value + AnswerBPercentNumericUpDown.Value + AnswerCPercentNumericUpDown.Value + AnswerDPercentNumericUpDown.Value
+        TotalVotesLabel.Text = Project.currentBlock1(114, 3) & voicesSum
+        TotalPercentLabel.Text = Project.currentBlock1(115, 3) & percentsSum & "%"
         If percentsSum <> 100 Then
-            Label18.ForeColor = Color.Red
+            TotalPercentLabel.ForeColor = Color.Red
         Else
-            Label18.ForeColor = Color.White
+            TotalPercentLabel.ForeColor = Color.White
         End If
     End Sub
 
-    Private Sub NumericUpDown5_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown8.ValueChanged
-        percentsSum = NumericUpDown5.Value + NumericUpDown6.Value + NumericUpDown7.Value + NumericUpDown8.Value
-        Label18.Text = Project.currentBlock1(115, 3) & percentsSum & "%"
+    Private Sub AnswerAPercentNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles AnswerAPercentNumericUpDown.ValueChanged, AnswerBPercentNumericUpDown.ValueChanged, AnswerCPercentNumericUpDown.ValueChanged, AnswerDPercentNumericUpDown.ValueChanged
+        percentsSum = AnswerAPercentNumericUpDown.Value + AnswerBPercentNumericUpDown.Value + AnswerCPercentNumericUpDown.Value + AnswerDPercentNumericUpDown.Value
+        TotalPercentLabel.Text = Project.currentBlock1(115, 3) & percentsSum & "%"
         If percentsSum <> 100 Then
-            Label18.ForeColor = Color.Red
+            TotalPercentLabel.ForeColor = Color.Red
         Else
-            Label18.ForeColor = Color.White
+            TotalPercentLabel.ForeColor = Color.White
         End If
     End Sub
 
     Private Sub FormATA_Closed(sender As Object, e As EventArgs) Handles MyBase.FormClosed
         'Экран ведущего
         Host.BackgroundImage = System.Drawing.Bitmap.FromFile(Project.langSource & "\Player Screen.png")
-        Host.Label10.Visible = False
-        Host.Label9.Visible = False
-        Host.Label8.Visible = False
-        Host.Label7.Visible = False
-        Host.PictureBox12.Visible = False
-        Host.PictureBox11.Visible = False
-        Host.PictureBox10.Visible = False
-        Host.PictureBox9.Visible = False
+        Host.AnswerAPercentLabel.Visible = False
+        Host.AnswerBPercentLabel.Visible = False
+        Host.AnswerCPercentLabel.Visible = False
+        Host.AnswerDPercentLabel.Visible = False
+        Host.AnswerAChartPictureBox.Visible = False
+        Host.AnswerBChartPictureBox.Visible = False
+        Host.AnswerCChartPictureBox.Visible = False
+        Host.AnswerDChartPictureBox.Visible = False
         'Экран игрока
         Player.BackgroundImage = System.Drawing.Bitmap.FromFile(Project.langSource & "\Player Screen.png")
-        Player.Label1.Visible = False
-        Player.Label2.Visible = False
-        Player.Label3.Visible = False
-        Player.Label4.Visible = False
-        Player.PictureBox11.Visible = False
-        Player.PictureBox10.Visible = False
-        Player.PictureBox9.Visible = False
-        Player.PictureBox1.Visible = False
+        Player.AnswerAPercentLabel.Visible = False
+        Player.AnswerBPercentLabel.Visible = False
+        Player.AnswerCPercentLabel.Visible = False
+        Player.AnswerDPercentLabel.Visible = False
+        Player.AnswerAChartPictureBox.Visible = False
+        Player.AnswerBChartPictureBox.Visible = False
+        Player.AnswerCChartPictureBox.Visible = False
+        Player.AnswerDChartPictureBox.Visible = False
         'Экран зрителей
         Audience.BackgroundImage = System.Drawing.Bitmap.FromFile(Project.langSource & "\BG4.jpg")
-        Audience.Label1.Visible = False
-        Audience.Label2.Visible = False
-        Audience.Label3.Visible = False
-        Audience.Label4.Visible = False
-        Audience.PictureBox12.Visible = False
-        Audience.PictureBox11.Visible = False
-        Audience.PictureBox10.Visible = False
-        Audience.PictureBox9.Visible = False
+        Audience.AnswerAPercentLabel.Visible = False
+        Audience.AnswerBPercentLabel.Visible = False
+        Audience.AnswerCPercentLabel.Visible = False
+        Audience.AnswerDPercentLabel.Visible = False
+        Audience.AnswerAChartPictureBox.Visible = False
+        Audience.AnswerBChartPictureBox.Visible = False
+        Audience.AnswerCChartPictureBox.Visible = False
+        Audience.AnswerDChartPictureBox.Visible = False
         My.Computer.Audio.Stop()
         Select Case Project.questionNumber
             Case 0 To 5
@@ -314,12 +314,12 @@
                     Project.winampOn = 1
                 End If
         End Select
-        Project.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Project.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & Project.activ50 & Project.activPAF & Project.activATA & ".png"
         'Сеть
-        If Project.Button7.BackColor = Color.Green Then
+        If Project.ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@ata_closed|"

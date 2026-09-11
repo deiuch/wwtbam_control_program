@@ -1,0 +1,15 @@
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Control Program.vbprojResolveAssemblyReference.cache
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.AboutUs.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Audience.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.EditorFFF.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Form50_50.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.FormATA.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Editor.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.FormFFF.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.FormPAF.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.FormStart.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Host.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Project.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Resources.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Millionaire.Player.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication1\obj\Debug\Control Program.vbproj.GenerateResource.Cache

@@ -24,1011 +24,1011 @@ Partial Class FastestFingerFirst
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FastestFingerFirst))
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.QuestionFieldLabel20 = New System.Windows.Forms.Label()
+        Me.QuestionFieldLabel19 = New System.Windows.Forms.Label()
+        Me.QuestionFieldLabel18 = New System.Windows.Forms.Label()
+        Me.QuestionFieldLabel17 = New System.Windows.Forms.Label()
+        Me.AnswerDFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerCFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerBFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerAFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.QuestionFieldLabel16 = New System.Windows.Forms.Label()
+        Me.QuestionFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.RightFromHeaderLabel = New System.Windows.Forms.Label()
+        Me.RightNameHeaderLabel = New System.Windows.Forms.Label()
+        Me.LeftFromHeaderLabel = New System.Windows.Forms.Label()
+        Me.LeftNameHeaderLabel = New System.Windows.Forms.Label()
+        Me.Podium10NumberLabel = New System.Windows.Forms.Label()
+        Me.Podium5NumberLabel = New System.Windows.Forms.Label()
+        Me.ContestantFieldTextBox20 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox10 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox15 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox5 = New System.Windows.Forms.TextBox()
+        Me.Podium9NumberLabel = New System.Windows.Forms.Label()
+        Me.Podium4NumberLabel = New System.Windows.Forms.Label()
+        Me.ContestantFieldTextBox19 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox9 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox14 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox4 = New System.Windows.Forms.TextBox()
+        Me.Podium8NumberLabel = New System.Windows.Forms.Label()
+        Me.Podium3NumberLabel = New System.Windows.Forms.Label()
+        Me.ContestantFieldTextBox18 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox8 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox13 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox3 = New System.Windows.Forms.TextBox()
+        Me.Podium7NumberLabel = New System.Windows.Forms.Label()
+        Me.Podium2NumberLabel = New System.Windows.Forms.Label()
+        Me.ContestantFieldTextBox17 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox7 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox12 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox2 = New System.Windows.Forms.TextBox()
+        Me.Podium6NumberLabel = New System.Windows.Forms.Label()
+        Me.Podium1NumberLabel = New System.Windows.Forms.Label()
+        Me.ContestantFieldTextBox16 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox6 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox11 = New System.Windows.Forms.TextBox()
+        Me.ContestantFieldTextBox1 = New System.Windows.Forms.TextBox()
+        Me.FullQuestionTextLabel = New System.Windows.Forms.Label()
+        Me.FullQuestionTextHeaderLabel = New System.Windows.Forms.Label()
+        Me.OpenQuestionBaseButton = New System.Windows.Forms.Button()
+        Me.StartFffButton = New System.Windows.Forms.Button()
+        Me.QuestionListBox = New System.Windows.Forms.ListBox()
+        Me.EnterNamesLaterCheckBox = New System.Windows.Forms.CheckBox()
+        Me.InstructionsLabel = New System.Windows.Forms.Label()
+        Me.AnswerOrderLabel26 = New System.Windows.Forms.Label()
+        Me.AnswerOrderLabel27 = New System.Windows.Forms.Label()
+        Me.AnswerOrderLabel28 = New System.Windows.Forms.Label()
+        Me.AnswerOrderLabel29 = New System.Windows.Forms.Label()
+        Me.KeypadPictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.KeypadPictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.KeypadPictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.KeypadPictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.KeypadPictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.KeypadPictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.DelKeyLabel = New System.Windows.Forms.Label()
+        Me.OkKeyLabel = New System.Windows.Forms.Label()
+        Me.OpenQuestionBaseDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.LanguageComboBox = New System.Windows.Forms.ComboBox()
+        Me.LanguageLabel = New System.Windows.Forms.Label()
+        Me.OpenContestantsListDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.ContestantTownHeaderLabel = New System.Windows.Forms.Label()
+        Me.ContestantNameHeaderLabel = New System.Windows.Forms.Label()
+        Me.ContestantTownTextBox = New System.Windows.Forms.TextBox()
+        Me.ContestantNameTextBox = New System.Windows.Forms.TextBox()
+        Me.ContestantNumberLabel = New System.Windows.Forms.Label()
+        Me.StartContestantButton = New System.Windows.Forms.Button()
+        Me.TimeLimitTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.SaveContestantsListDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.ClockTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.ClockPictureBox = New System.Windows.Forms.PictureBox()
+        CType(Me.AnswerDFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerCFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerBFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerAFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.QuestionFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KeypadPictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KeypadPictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KeypadPictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KeypadPictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KeypadPictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KeypadPictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClockPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label20.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label20.Location = New System.Drawing.Point(591, 581)
-        Me.Label20.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label20.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(147, 39)
-        Me.Label20.TabIndex = 199
-        Me.Label20.Text = "Answer D"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label19.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label19.Location = New System.Drawing.Point(132, 582)
-        Me.Label19.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label19.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(145, 39)
-        Me.Label19.TabIndex = 198
-        Me.Label19.Text = "Answer C"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label18.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label18.Location = New System.Drawing.Point(591, 516)
-        Me.Label18.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label18.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(147, 39)
-        Me.Label18.TabIndex = 197
-        Me.Label18.Text = "Answer B"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label17.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label17.Location = New System.Drawing.Point(133, 516)
-        Me.Label17.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label17.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(144, 39)
-        Me.Label17.TabIndex = 196
-        Me.Label17.Text = "Answer A"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox5.Location = New System.Drawing.Point(512, 572)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox5.TabIndex = 203
-        Me.PictureBox5.TabStop = False
-        Me.PictureBox5.Visible = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox4.InitialImage = CType(resources.GetObject("PictureBox4.InitialImage"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(0, 572)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox4.TabIndex = 202
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox3.Location = New System.Drawing.Point(512, 507)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox3.TabIndex = 201
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 507)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox2.TabIndex = 200
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label16.Location = New System.Drawing.Point(128, 401)
-        Me.Label16.MaximumSize = New System.Drawing.Size(766, 90)
-        Me.Label16.MinimumSize = New System.Drawing.Size(766, 90)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(766, 90)
-        Me.Label16.TabIndex = 195
-        Me.Label16.Text = "Question Text"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 396)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1024, 102)
-        Me.PictureBox1.TabIndex = 194
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(421, 214)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(30, 13)
-        Me.Label2.TabIndex = 253
-        Me.Label2.Text = "From"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(292, 214)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 13)
-        Me.Label3.TabIndex = 252
-        Me.Label3.Text = "Name"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label14.Location = New System.Drawing.Point(154, 214)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(30, 13)
-        Me.Label14.TabIndex = 250
-        Me.Label14.Text = "From"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label13.Location = New System.Drawing.Point(25, 214)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(35, 13)
-        Me.Label13.TabIndex = 249
-        Me.Label13.Text = "Name"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label11.Location = New System.Drawing.Point(271, 336)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(19, 13)
-        Me.Label11.TabIndex = 248
-        Me.Label11.Text = "10"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label12.Location = New System.Drawing.Point(11, 336)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(13, 13)
-        Me.Label12.TabIndex = 247
-        Me.Label12.Text = "5"
-        '
-        'TextBox20
-        '
-        Me.TextBox20.AllowDrop = True
-        Me.TextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox20.Location = New System.Drawing.Point(424, 334)
-        Me.TextBox20.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox20.TabIndex = 245
-        Me.TextBox20.Text = "Town10"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.AllowDrop = True
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox10.Location = New System.Drawing.Point(295, 334)
-        Me.TextBox10.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox10.TabIndex = 244
-        Me.TextBox10.Text = "Contestant10"
-        '
-        'TextBox15
-        '
-        Me.TextBox15.AllowDrop = True
-        Me.TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox15.Location = New System.Drawing.Point(157, 334)
-        Me.TextBox15.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox15.TabIndex = 242
-        Me.TextBox15.Text = "Town5"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.AllowDrop = True
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Location = New System.Drawing.Point(28, 334)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox5.TabIndex = 241
-        Me.TextBox5.Text = "Contestant5"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label9.Location = New System.Drawing.Point(276, 310)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 13)
-        Me.Label9.TabIndex = 240
-        Me.Label9.Text = "9"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label10.Location = New System.Drawing.Point(11, 310)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(13, 13)
-        Me.Label10.TabIndex = 239
-        Me.Label10.Text = "4"
-        '
-        'TextBox19
-        '
-        Me.TextBox19.AllowDrop = True
-        Me.TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox19.Location = New System.Drawing.Point(424, 308)
-        Me.TextBox19.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox19.TabIndex = 237
-        Me.TextBox19.Text = "Town9"
-        '
-        'TextBox9
-        '
-        Me.TextBox9.AllowDrop = True
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox9.Location = New System.Drawing.Point(295, 308)
-        Me.TextBox9.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox9.TabIndex = 236
-        Me.TextBox9.Text = "Contestant9"
-        '
-        'TextBox14
-        '
-        Me.TextBox14.AllowDrop = True
-        Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox14.Location = New System.Drawing.Point(157, 308)
-        Me.TextBox14.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox14.TabIndex = 234
-        Me.TextBox14.Text = "Town4"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.AllowDrop = True
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Location = New System.Drawing.Point(28, 308)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox4.TabIndex = 233
-        Me.TextBox4.Text = "Contestant4"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label7.Location = New System.Drawing.Point(276, 284)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 13)
-        Me.Label7.TabIndex = 232
-        Me.Label7.Text = "8"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label8.Location = New System.Drawing.Point(11, 284)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(13, 13)
-        Me.Label8.TabIndex = 231
-        Me.Label8.Text = "3"
-        '
-        'TextBox18
-        '
-        Me.TextBox18.AllowDrop = True
-        Me.TextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox18.Location = New System.Drawing.Point(424, 282)
-        Me.TextBox18.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox18.TabIndex = 229
-        Me.TextBox18.Text = "Town8"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.AllowDrop = True
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox8.Location = New System.Drawing.Point(295, 282)
-        Me.TextBox8.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox8.TabIndex = 228
-        Me.TextBox8.Text = "Contestant8"
-        '
-        'TextBox13
-        '
-        Me.TextBox13.AllowDrop = True
-        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox13.Location = New System.Drawing.Point(157, 282)
-        Me.TextBox13.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox13.TabIndex = 226
-        Me.TextBox13.Text = "Town3"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.AllowDrop = True
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(28, 282)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox3.TabIndex = 225
-        Me.TextBox3.Text = "Contestant3"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label5.Location = New System.Drawing.Point(276, 258)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(13, 13)
-        Me.Label5.TabIndex = 224
-        Me.Label5.Text = "7"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label6.Location = New System.Drawing.Point(11, 258)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(13, 13)
-        Me.Label6.TabIndex = 223
-        Me.Label6.Text = "2"
-        '
-        'TextBox17
-        '
-        Me.TextBox17.AllowDrop = True
-        Me.TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox17.Location = New System.Drawing.Point(424, 256)
-        Me.TextBox17.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox17.TabIndex = 221
-        Me.TextBox17.Text = "Town7"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.AllowDrop = True
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox7.Location = New System.Drawing.Point(295, 256)
-        Me.TextBox7.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox7.TabIndex = 220
-        Me.TextBox7.Text = "Contestant7"
-        '
-        'TextBox12
-        '
-        Me.TextBox12.AllowDrop = True
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox12.Location = New System.Drawing.Point(157, 256)
-        Me.TextBox12.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox12.TabIndex = 218
-        Me.TextBox12.Text = "Town2"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.AllowDrop = True
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(28, 256)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox2.TabIndex = 217
-        Me.TextBox2.Text = "Contestant2"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label4.Location = New System.Drawing.Point(276, 232)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(13, 13)
-        Me.Label4.TabIndex = 216
-        Me.Label4.Text = "6"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label21.Location = New System.Drawing.Point(11, 232)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(13, 13)
-        Me.Label21.TabIndex = 215
-        Me.Label21.Text = "1"
-        '
-        'TextBox16
-        '
-        Me.TextBox16.AllowDrop = True
-        Me.TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox16.Location = New System.Drawing.Point(424, 230)
-        Me.TextBox16.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox16.TabIndex = 213
-        Me.TextBox16.Text = "Town6"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.AllowDrop = True
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Location = New System.Drawing.Point(295, 230)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox6.TabIndex = 212
-        Me.TextBox6.Text = "Contestant6"
-        '
-        'TextBox11
-        '
-        Me.TextBox11.AllowDrop = True
-        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox11.Location = New System.Drawing.Point(157, 230)
-        Me.TextBox11.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox11.TabIndex = 210
-        Me.TextBox11.Text = "Town1"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.AllowDrop = True
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(28, 230)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox1.TabIndex = 209
-        Me.TextBox1.Text = "Contestant1"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label22.Location = New System.Drawing.Point(11, 142)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label22.MaximumSize = New System.Drawing.Size(785, 40)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(94, 13)
-        Me.Label22.TabIndex = 208
-        Me.Label22.Text = "QUESTION TEXT"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label23.Location = New System.Drawing.Point(11, 126)
-        Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(43, 13)
-        Me.Label23.TabIndex = 207
-        Me.Label23.Text = "Full text"
-        '
-        'Button13
-        '
-        Me.Button13.BackColor = System.Drawing.Color.White
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button13.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button13.Location = New System.Drawing.Point(394, 12)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(100, 23)
-        Me.Button13.TabIndex = 206
-        Me.Button13.Text = "Open base file..."
-        Me.Button13.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button1.Location = New System.Drawing.Point(394, 97)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
-        Me.Button1.TabIndex = 205
-        Me.Button1.Text = "Start FFF"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'ListBox1
-        '
-        Me.ListBox1.Enabled = False
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"FFF1", "FFF2", "FFF3", "FFF4", "FFF5", "FFF6", "FFF7", "FFF8"})
-        Me.ListBox1.Location = New System.Drawing.Point(11, 12)
-        Me.ListBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(379, 108)
-        Me.ListBox1.TabIndex = 204
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.ForeColor = System.Drawing.Color.White
-        Me.CheckBox1.Location = New System.Drawing.Point(14, 184)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(108, 17)
-        Me.CheckBox1.TabIndex = 255
-        Me.CheckBox1.Text = "Enter names later"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.BackColor = System.Drawing.Color.Transparent
-        Me.Label24.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label24.Location = New System.Drawing.Point(531, 12)
-        Me.Label24.MaximumSize = New System.Drawing.Size(460, 460)
-        Me.Label24.MinimumSize = New System.Drawing.Size(460, 350)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(460, 350)
-        Me.Label24.TabIndex = 256
-        Me.Label24.Text = resources.GetString("Label24.Text")
-        Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.Label26.Location = New System.Drawing.Point(242, 661)
-        Me.Label26.MaximumSize = New System.Drawing.Size(69, 53)
-        Me.Label26.MinimumSize = New System.Drawing.Size(69, 53)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(69, 53)
-        Me.Label26.TabIndex = 257
-        Me.Label26.Text = "A:"
-        Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.BackColor = System.Drawing.Color.Transparent
-        Me.Label27.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.Label27.Location = New System.Drawing.Point(404, 662)
-        Me.Label27.MaximumSize = New System.Drawing.Size(69, 53)
-        Me.Label27.MinimumSize = New System.Drawing.Size(69, 53)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(69, 53)
-        Me.Label27.TabIndex = 258
-        Me.Label27.Text = "B:"
-        Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.BackColor = System.Drawing.Color.Transparent
-        Me.Label28.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.Label28.Location = New System.Drawing.Point(561, 662)
-        Me.Label28.MaximumSize = New System.Drawing.Size(69, 53)
-        Me.Label28.MinimumSize = New System.Drawing.Size(69, 53)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(69, 53)
-        Me.Label28.TabIndex = 259
-        Me.Label28.Text = "C:"
-        Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.BackColor = System.Drawing.Color.Transparent
-        Me.Label29.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.Label29.Location = New System.Drawing.Point(725, 662)
-        Me.Label29.MaximumSize = New System.Drawing.Size(69, 53)
-        Me.Label29.MinimumSize = New System.Drawing.Size(69, 53)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(69, 53)
-        Me.Label29.TabIndex = 260
-        Me.Label29.Text = "D:"
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox6.Location = New System.Drawing.Point(193, 640)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(156, 97)
-        Me.PictureBox6.TabIndex = 261
-        Me.PictureBox6.TabStop = False
-        Me.PictureBox6.Visible = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.BackgroundImage = CType(resources.GetObject("PictureBox7.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox7.Location = New System.Drawing.Point(355, 640)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(154, 97)
-        Me.PictureBox7.TabIndex = 262
-        Me.PictureBox7.TabStop = False
-        Me.PictureBox7.Visible = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox8.BackgroundImage = CType(resources.GetObject("PictureBox8.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox8.Location = New System.Drawing.Point(515, 640)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(154, 97)
-        Me.PictureBox8.TabIndex = 263
-        Me.PictureBox8.TabStop = False
-        Me.PictureBox8.Visible = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox9.BackgroundImage = CType(resources.GetObject("PictureBox9.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox9.Location = New System.Drawing.Point(675, 640)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(154, 97)
-        Me.PictureBox9.TabIndex = 264
-        Me.PictureBox9.TabStop = False
-        Me.PictureBox9.Visible = False
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox10.BackgroundImage = CType(resources.GetObject("PictureBox10.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox10.Location = New System.Drawing.Point(13, 640)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(154, 97)
-        Me.PictureBox10.TabIndex = 265
-        Me.PictureBox10.TabStop = False
-        Me.PictureBox10.Visible = False
-        '
-        'PictureBox11
-        '
-        Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox11.BackgroundImage = CType(resources.GetObject("PictureBox11.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox11.Location = New System.Drawing.Point(857, 640)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(154, 97)
-        Me.PictureBox11.TabIndex = 266
-        Me.PictureBox11.TabStop = False
-        Me.PictureBox11.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("a_CopperGothCaps", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(52, 667)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 41)
-        Me.Label1.TabIndex = 267
-        Me.Label1.Text = "Del"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Font = New System.Drawing.Font("a_CopperGothCaps", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(902, 667)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(70, 41)
-        Me.Label15.TabIndex = 268
-        Me.Label15.Text = "OK"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "Bases\Qualify.fff"
-        Me.OpenFileDialog1.Filter = "Question base for FFF|*.fff|All files|*.*"
-        Me.OpenFileDialog1.InitialDirectory = "Bases\"
-        Me.OpenFileDialog1.Title = "Open FFF question base file"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"English"})
-        Me.ComboBox1.Location = New System.Drawing.Point(295, 182)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(199, 21)
-        Me.ComboBox1.TabIndex = 270
-        Me.ComboBox1.Text = "Languages list"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label25.Location = New System.Drawing.Point(231, 185)
-        Me.Label25.MaximumSize = New System.Drawing.Size(340, 13)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(58, 13)
-        Me.Label25.TabIndex = 269
-        Me.Label25.Text = "Language:"
-        '
-        'OpenFileDialog2
-        '
-        Me.OpenFileDialog2.FileName = "Bases\Contestants.con"
-        Me.OpenFileDialog2.Filter = "Contestants List File|*.con"
-        Me.OpenFileDialog2.InitialDirectory = "Bases\"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.ForeColor = System.Drawing.Color.White
-        Me.Label32.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label32.Location = New System.Drawing.Point(507, 131)
-        Me.Label32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(30, 13)
-        Me.Label32.TabIndex = 274
-        Me.Label32.Text = "From"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.ForeColor = System.Drawing.Color.White
-        Me.Label31.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label31.Location = New System.Drawing.Point(378, 131)
-        Me.Label31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(35, 13)
-        Me.Label31.TabIndex = 273
-        Me.Label31.Text = "Name"
-        '
-        'TextBox22
-        '
-        Me.TextBox22.AllowDrop = True
-        Me.TextBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox22.Location = New System.Drawing.Point(510, 147)
-        Me.TextBox22.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(70, 20)
-        Me.TextBox22.TabIndex = 272
-        '
-        'TextBox21
-        '
-        Me.TextBox21.AllowDrop = True
-        Me.TextBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox21.Location = New System.Drawing.Point(381, 147)
-        Me.TextBox21.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox21.TabIndex = 271
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.ForeColor = System.Drawing.Color.White
-        Me.Label30.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label30.Location = New System.Drawing.Point(364, 149)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(13, 13)
-        Me.Label30.TabIndex = 275
-        Me.Label30.Text = "1"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button2.Location = New System.Drawing.Point(584, 146)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 276
-        Me.Button2.Text = "START"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 20000
-        '
-        'SaveFileDialog1
-        '
-        Me.SaveFileDialog1.CreatePrompt = True
-        Me.SaveFileDialog1.Filter = "Contestants List File|*.con"
-        Me.SaveFileDialog1.InitialDirectory = "Bases\"
-        Me.SaveFileDialog1.Title = "Save question base file"
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 500
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
-        Me.PictureBox12.Location = New System.Drawing.Point(355, 44)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(315, 315)
-        Me.PictureBox12.TabIndex = 277
-        Me.PictureBox12.TabStop = False
-        Me.PictureBox12.Visible = False
+        'QuestionFieldLabel20
+        '
+        Me.QuestionFieldLabel20.AutoSize = True
+        Me.QuestionFieldLabel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.QuestionFieldLabel20.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionFieldLabel20.ForeColor = System.Drawing.Color.White
+        Me.QuestionFieldLabel20.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionFieldLabel20.Location = New System.Drawing.Point(591, 581)
+        Me.QuestionFieldLabel20.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.QuestionFieldLabel20.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.QuestionFieldLabel20.Name = "QuestionFieldLabel20"
+        Me.QuestionFieldLabel20.Size = New System.Drawing.Size(147, 39)
+        Me.QuestionFieldLabel20.TabIndex = 199
+        Me.QuestionFieldLabel20.Text = "Answer D"
+        Me.QuestionFieldLabel20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'QuestionFieldLabel19
+        '
+        Me.QuestionFieldLabel19.AutoSize = True
+        Me.QuestionFieldLabel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.QuestionFieldLabel19.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionFieldLabel19.ForeColor = System.Drawing.Color.White
+        Me.QuestionFieldLabel19.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionFieldLabel19.Location = New System.Drawing.Point(132, 582)
+        Me.QuestionFieldLabel19.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.QuestionFieldLabel19.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.QuestionFieldLabel19.Name = "QuestionFieldLabel19"
+        Me.QuestionFieldLabel19.Size = New System.Drawing.Size(145, 39)
+        Me.QuestionFieldLabel19.TabIndex = 198
+        Me.QuestionFieldLabel19.Text = "Answer C"
+        Me.QuestionFieldLabel19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'QuestionFieldLabel18
+        '
+        Me.QuestionFieldLabel18.AutoSize = True
+        Me.QuestionFieldLabel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.QuestionFieldLabel18.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionFieldLabel18.ForeColor = System.Drawing.Color.White
+        Me.QuestionFieldLabel18.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionFieldLabel18.Location = New System.Drawing.Point(591, 516)
+        Me.QuestionFieldLabel18.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.QuestionFieldLabel18.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.QuestionFieldLabel18.Name = "QuestionFieldLabel18"
+        Me.QuestionFieldLabel18.Size = New System.Drawing.Size(147, 39)
+        Me.QuestionFieldLabel18.TabIndex = 197
+        Me.QuestionFieldLabel18.Text = "Answer B"
+        Me.QuestionFieldLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'QuestionFieldLabel17
+        '
+        Me.QuestionFieldLabel17.AutoSize = True
+        Me.QuestionFieldLabel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.QuestionFieldLabel17.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionFieldLabel17.ForeColor = System.Drawing.Color.White
+        Me.QuestionFieldLabel17.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionFieldLabel17.Location = New System.Drawing.Point(133, 516)
+        Me.QuestionFieldLabel17.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.QuestionFieldLabel17.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.QuestionFieldLabel17.Name = "QuestionFieldLabel17"
+        Me.QuestionFieldLabel17.Size = New System.Drawing.Size(144, 39)
+        Me.QuestionFieldLabel17.TabIndex = 196
+        Me.QuestionFieldLabel17.Text = "Answer A"
+        Me.QuestionFieldLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'AnswerDFramePictureBox
+        '
+        Me.AnswerDFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerDFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerDFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerDFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerDFramePictureBox.Location = New System.Drawing.Point(512, 572)
+        Me.AnswerDFramePictureBox.Name = "AnswerDFramePictureBox"
+        Me.AnswerDFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerDFramePictureBox.TabIndex = 203
+        Me.AnswerDFramePictureBox.TabStop = False
+        Me.AnswerDFramePictureBox.Visible = False
+        '
+        'AnswerCFramePictureBox
+        '
+        Me.AnswerCFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerCFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerCFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerCFramePictureBox.InitialImage = CType(resources.GetObject("AnswerCFramePictureBox.InitialImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.Location = New System.Drawing.Point(0, 572)
+        Me.AnswerCFramePictureBox.Name = "AnswerCFramePictureBox"
+        Me.AnswerCFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerCFramePictureBox.TabIndex = 202
+        Me.AnswerCFramePictureBox.TabStop = False
+        Me.AnswerCFramePictureBox.Visible = False
+        '
+        'AnswerBFramePictureBox
+        '
+        Me.AnswerBFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerBFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerBFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerBFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerBFramePictureBox.Location = New System.Drawing.Point(512, 507)
+        Me.AnswerBFramePictureBox.Name = "AnswerBFramePictureBox"
+        Me.AnswerBFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerBFramePictureBox.TabIndex = 201
+        Me.AnswerBFramePictureBox.TabStop = False
+        Me.AnswerBFramePictureBox.Visible = False
+        '
+        'AnswerAFramePictureBox
+        '
+        Me.AnswerAFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerAFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerAFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerAFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerAFramePictureBox.Location = New System.Drawing.Point(0, 507)
+        Me.AnswerAFramePictureBox.Name = "AnswerAFramePictureBox"
+        Me.AnswerAFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerAFramePictureBox.TabIndex = 200
+        Me.AnswerAFramePictureBox.TabStop = False
+        Me.AnswerAFramePictureBox.Visible = False
+        '
+        'QuestionFieldLabel16
+        '
+        Me.QuestionFieldLabel16.AutoSize = True
+        Me.QuestionFieldLabel16.BackColor = System.Drawing.Color.Transparent
+        Me.QuestionFieldLabel16.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionFieldLabel16.ForeColor = System.Drawing.Color.White
+        Me.QuestionFieldLabel16.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionFieldLabel16.Location = New System.Drawing.Point(128, 401)
+        Me.QuestionFieldLabel16.MaximumSize = New System.Drawing.Size(766, 90)
+        Me.QuestionFieldLabel16.MinimumSize = New System.Drawing.Size(766, 90)
+        Me.QuestionFieldLabel16.Name = "QuestionFieldLabel16"
+        Me.QuestionFieldLabel16.Size = New System.Drawing.Size(766, 90)
+        Me.QuestionFieldLabel16.TabIndex = 195
+        Me.QuestionFieldLabel16.Text = "Question Text"
+        Me.QuestionFieldLabel16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'QuestionFramePictureBox
+        '
+        Me.QuestionFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.QuestionFramePictureBox.BackgroundImage = CType(resources.GetObject("QuestionFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.QuestionFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionFramePictureBox.InitialImage = Nothing
+        Me.QuestionFramePictureBox.Location = New System.Drawing.Point(0, 396)
+        Me.QuestionFramePictureBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.QuestionFramePictureBox.Name = "QuestionFramePictureBox"
+        Me.QuestionFramePictureBox.Size = New System.Drawing.Size(1024, 102)
+        Me.QuestionFramePictureBox.TabIndex = 194
+        Me.QuestionFramePictureBox.TabStop = False
+        Me.QuestionFramePictureBox.Visible = False
+        '
+        'RightFromHeaderLabel
+        '
+        Me.RightFromHeaderLabel.AutoSize = True
+        Me.RightFromHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.RightFromHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.RightFromHeaderLabel.Location = New System.Drawing.Point(421, 214)
+        Me.RightFromHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.RightFromHeaderLabel.Name = "RightFromHeaderLabel"
+        Me.RightFromHeaderLabel.Size = New System.Drawing.Size(30, 13)
+        Me.RightFromHeaderLabel.TabIndex = 253
+        Me.RightFromHeaderLabel.Text = "From"
+        '
+        'RightNameHeaderLabel
+        '
+        Me.RightNameHeaderLabel.AutoSize = True
+        Me.RightNameHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.RightNameHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.RightNameHeaderLabel.Location = New System.Drawing.Point(292, 214)
+        Me.RightNameHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.RightNameHeaderLabel.Name = "RightNameHeaderLabel"
+        Me.RightNameHeaderLabel.Size = New System.Drawing.Size(35, 13)
+        Me.RightNameHeaderLabel.TabIndex = 252
+        Me.RightNameHeaderLabel.Text = "Name"
+        '
+        'LeftFromHeaderLabel
+        '
+        Me.LeftFromHeaderLabel.AutoSize = True
+        Me.LeftFromHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.LeftFromHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LeftFromHeaderLabel.Location = New System.Drawing.Point(154, 214)
+        Me.LeftFromHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LeftFromHeaderLabel.Name = "LeftFromHeaderLabel"
+        Me.LeftFromHeaderLabel.Size = New System.Drawing.Size(30, 13)
+        Me.LeftFromHeaderLabel.TabIndex = 250
+        Me.LeftFromHeaderLabel.Text = "From"
+        '
+        'LeftNameHeaderLabel
+        '
+        Me.LeftNameHeaderLabel.AutoSize = True
+        Me.LeftNameHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.LeftNameHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LeftNameHeaderLabel.Location = New System.Drawing.Point(25, 214)
+        Me.LeftNameHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LeftNameHeaderLabel.Name = "LeftNameHeaderLabel"
+        Me.LeftNameHeaderLabel.Size = New System.Drawing.Size(35, 13)
+        Me.LeftNameHeaderLabel.TabIndex = 249
+        Me.LeftNameHeaderLabel.Text = "Name"
+        '
+        'Podium10NumberLabel
+        '
+        Me.Podium10NumberLabel.AutoSize = True
+        Me.Podium10NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium10NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium10NumberLabel.Location = New System.Drawing.Point(271, 336)
+        Me.Podium10NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium10NumberLabel.Name = "Podium10NumberLabel"
+        Me.Podium10NumberLabel.Size = New System.Drawing.Size(19, 13)
+        Me.Podium10NumberLabel.TabIndex = 248
+        Me.Podium10NumberLabel.Text = "10"
+        '
+        'Podium5NumberLabel
+        '
+        Me.Podium5NumberLabel.AutoSize = True
+        Me.Podium5NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium5NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium5NumberLabel.Location = New System.Drawing.Point(11, 336)
+        Me.Podium5NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium5NumberLabel.Name = "Podium5NumberLabel"
+        Me.Podium5NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium5NumberLabel.TabIndex = 247
+        Me.Podium5NumberLabel.Text = "5"
+        '
+        'ContestantFieldTextBox20
+        '
+        Me.ContestantFieldTextBox20.AllowDrop = True
+        Me.ContestantFieldTextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox20.Location = New System.Drawing.Point(424, 334)
+        Me.ContestantFieldTextBox20.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox20.Name = "ContestantFieldTextBox20"
+        Me.ContestantFieldTextBox20.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox20.TabIndex = 245
+        Me.ContestantFieldTextBox20.Text = "Town10"
+        '
+        'ContestantFieldTextBox10
+        '
+        Me.ContestantFieldTextBox10.AllowDrop = True
+        Me.ContestantFieldTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox10.Location = New System.Drawing.Point(295, 334)
+        Me.ContestantFieldTextBox10.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox10.Name = "ContestantFieldTextBox10"
+        Me.ContestantFieldTextBox10.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox10.TabIndex = 244
+        Me.ContestantFieldTextBox10.Text = "Contestant10"
+        '
+        'ContestantFieldTextBox15
+        '
+        Me.ContestantFieldTextBox15.AllowDrop = True
+        Me.ContestantFieldTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox15.Location = New System.Drawing.Point(157, 334)
+        Me.ContestantFieldTextBox15.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox15.Name = "ContestantFieldTextBox15"
+        Me.ContestantFieldTextBox15.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox15.TabIndex = 242
+        Me.ContestantFieldTextBox15.Text = "Town5"
+        '
+        'ContestantFieldTextBox5
+        '
+        Me.ContestantFieldTextBox5.AllowDrop = True
+        Me.ContestantFieldTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox5.Location = New System.Drawing.Point(28, 334)
+        Me.ContestantFieldTextBox5.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox5.Name = "ContestantFieldTextBox5"
+        Me.ContestantFieldTextBox5.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox5.TabIndex = 241
+        Me.ContestantFieldTextBox5.Text = "Contestant5"
+        '
+        'Podium9NumberLabel
+        '
+        Me.Podium9NumberLabel.AutoSize = True
+        Me.Podium9NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium9NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium9NumberLabel.Location = New System.Drawing.Point(276, 310)
+        Me.Podium9NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium9NumberLabel.Name = "Podium9NumberLabel"
+        Me.Podium9NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium9NumberLabel.TabIndex = 240
+        Me.Podium9NumberLabel.Text = "9"
+        '
+        'Podium4NumberLabel
+        '
+        Me.Podium4NumberLabel.AutoSize = True
+        Me.Podium4NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium4NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium4NumberLabel.Location = New System.Drawing.Point(11, 310)
+        Me.Podium4NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium4NumberLabel.Name = "Podium4NumberLabel"
+        Me.Podium4NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium4NumberLabel.TabIndex = 239
+        Me.Podium4NumberLabel.Text = "4"
+        '
+        'ContestantFieldTextBox19
+        '
+        Me.ContestantFieldTextBox19.AllowDrop = True
+        Me.ContestantFieldTextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox19.Location = New System.Drawing.Point(424, 308)
+        Me.ContestantFieldTextBox19.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox19.Name = "ContestantFieldTextBox19"
+        Me.ContestantFieldTextBox19.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox19.TabIndex = 237
+        Me.ContestantFieldTextBox19.Text = "Town9"
+        '
+        'ContestantFieldTextBox9
+        '
+        Me.ContestantFieldTextBox9.AllowDrop = True
+        Me.ContestantFieldTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox9.Location = New System.Drawing.Point(295, 308)
+        Me.ContestantFieldTextBox9.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox9.Name = "ContestantFieldTextBox9"
+        Me.ContestantFieldTextBox9.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox9.TabIndex = 236
+        Me.ContestantFieldTextBox9.Text = "Contestant9"
+        '
+        'ContestantFieldTextBox14
+        '
+        Me.ContestantFieldTextBox14.AllowDrop = True
+        Me.ContestantFieldTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox14.Location = New System.Drawing.Point(157, 308)
+        Me.ContestantFieldTextBox14.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox14.Name = "ContestantFieldTextBox14"
+        Me.ContestantFieldTextBox14.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox14.TabIndex = 234
+        Me.ContestantFieldTextBox14.Text = "Town4"
+        '
+        'ContestantFieldTextBox4
+        '
+        Me.ContestantFieldTextBox4.AllowDrop = True
+        Me.ContestantFieldTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox4.Location = New System.Drawing.Point(28, 308)
+        Me.ContestantFieldTextBox4.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox4.Name = "ContestantFieldTextBox4"
+        Me.ContestantFieldTextBox4.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox4.TabIndex = 233
+        Me.ContestantFieldTextBox4.Text = "Contestant4"
+        '
+        'Podium8NumberLabel
+        '
+        Me.Podium8NumberLabel.AutoSize = True
+        Me.Podium8NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium8NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium8NumberLabel.Location = New System.Drawing.Point(276, 284)
+        Me.Podium8NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium8NumberLabel.Name = "Podium8NumberLabel"
+        Me.Podium8NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium8NumberLabel.TabIndex = 232
+        Me.Podium8NumberLabel.Text = "8"
+        '
+        'Podium3NumberLabel
+        '
+        Me.Podium3NumberLabel.AutoSize = True
+        Me.Podium3NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium3NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium3NumberLabel.Location = New System.Drawing.Point(11, 284)
+        Me.Podium3NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium3NumberLabel.Name = "Podium3NumberLabel"
+        Me.Podium3NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium3NumberLabel.TabIndex = 231
+        Me.Podium3NumberLabel.Text = "3"
+        '
+        'ContestantFieldTextBox18
+        '
+        Me.ContestantFieldTextBox18.AllowDrop = True
+        Me.ContestantFieldTextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox18.Location = New System.Drawing.Point(424, 282)
+        Me.ContestantFieldTextBox18.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox18.Name = "ContestantFieldTextBox18"
+        Me.ContestantFieldTextBox18.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox18.TabIndex = 229
+        Me.ContestantFieldTextBox18.Text = "Town8"
+        '
+        'ContestantFieldTextBox8
+        '
+        Me.ContestantFieldTextBox8.AllowDrop = True
+        Me.ContestantFieldTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox8.Location = New System.Drawing.Point(295, 282)
+        Me.ContestantFieldTextBox8.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox8.Name = "ContestantFieldTextBox8"
+        Me.ContestantFieldTextBox8.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox8.TabIndex = 228
+        Me.ContestantFieldTextBox8.Text = "Contestant8"
+        '
+        'ContestantFieldTextBox13
+        '
+        Me.ContestantFieldTextBox13.AllowDrop = True
+        Me.ContestantFieldTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox13.Location = New System.Drawing.Point(157, 282)
+        Me.ContestantFieldTextBox13.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox13.Name = "ContestantFieldTextBox13"
+        Me.ContestantFieldTextBox13.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox13.TabIndex = 226
+        Me.ContestantFieldTextBox13.Text = "Town3"
+        '
+        'ContestantFieldTextBox3
+        '
+        Me.ContestantFieldTextBox3.AllowDrop = True
+        Me.ContestantFieldTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox3.Location = New System.Drawing.Point(28, 282)
+        Me.ContestantFieldTextBox3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox3.Name = "ContestantFieldTextBox3"
+        Me.ContestantFieldTextBox3.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox3.TabIndex = 225
+        Me.ContestantFieldTextBox3.Text = "Contestant3"
+        '
+        'Podium7NumberLabel
+        '
+        Me.Podium7NumberLabel.AutoSize = True
+        Me.Podium7NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium7NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium7NumberLabel.Location = New System.Drawing.Point(276, 258)
+        Me.Podium7NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium7NumberLabel.Name = "Podium7NumberLabel"
+        Me.Podium7NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium7NumberLabel.TabIndex = 224
+        Me.Podium7NumberLabel.Text = "7"
+        '
+        'Podium2NumberLabel
+        '
+        Me.Podium2NumberLabel.AutoSize = True
+        Me.Podium2NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium2NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium2NumberLabel.Location = New System.Drawing.Point(11, 258)
+        Me.Podium2NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium2NumberLabel.Name = "Podium2NumberLabel"
+        Me.Podium2NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium2NumberLabel.TabIndex = 223
+        Me.Podium2NumberLabel.Text = "2"
+        '
+        'ContestantFieldTextBox17
+        '
+        Me.ContestantFieldTextBox17.AllowDrop = True
+        Me.ContestantFieldTextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox17.Location = New System.Drawing.Point(424, 256)
+        Me.ContestantFieldTextBox17.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox17.Name = "ContestantFieldTextBox17"
+        Me.ContestantFieldTextBox17.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox17.TabIndex = 221
+        Me.ContestantFieldTextBox17.Text = "Town7"
+        '
+        'ContestantFieldTextBox7
+        '
+        Me.ContestantFieldTextBox7.AllowDrop = True
+        Me.ContestantFieldTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox7.Location = New System.Drawing.Point(295, 256)
+        Me.ContestantFieldTextBox7.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox7.Name = "ContestantFieldTextBox7"
+        Me.ContestantFieldTextBox7.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox7.TabIndex = 220
+        Me.ContestantFieldTextBox7.Text = "Contestant7"
+        '
+        'ContestantFieldTextBox12
+        '
+        Me.ContestantFieldTextBox12.AllowDrop = True
+        Me.ContestantFieldTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox12.Location = New System.Drawing.Point(157, 256)
+        Me.ContestantFieldTextBox12.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox12.Name = "ContestantFieldTextBox12"
+        Me.ContestantFieldTextBox12.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox12.TabIndex = 218
+        Me.ContestantFieldTextBox12.Text = "Town2"
+        '
+        'ContestantFieldTextBox2
+        '
+        Me.ContestantFieldTextBox2.AllowDrop = True
+        Me.ContestantFieldTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox2.Location = New System.Drawing.Point(28, 256)
+        Me.ContestantFieldTextBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox2.Name = "ContestantFieldTextBox2"
+        Me.ContestantFieldTextBox2.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox2.TabIndex = 217
+        Me.ContestantFieldTextBox2.Text = "Contestant2"
+        '
+        'Podium6NumberLabel
+        '
+        Me.Podium6NumberLabel.AutoSize = True
+        Me.Podium6NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium6NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium6NumberLabel.Location = New System.Drawing.Point(276, 232)
+        Me.Podium6NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium6NumberLabel.Name = "Podium6NumberLabel"
+        Me.Podium6NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium6NumberLabel.TabIndex = 216
+        Me.Podium6NumberLabel.Text = "6"
+        '
+        'Podium1NumberLabel
+        '
+        Me.Podium1NumberLabel.AutoSize = True
+        Me.Podium1NumberLabel.ForeColor = System.Drawing.Color.White
+        Me.Podium1NumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Podium1NumberLabel.Location = New System.Drawing.Point(11, 232)
+        Me.Podium1NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Podium1NumberLabel.Name = "Podium1NumberLabel"
+        Me.Podium1NumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.Podium1NumberLabel.TabIndex = 215
+        Me.Podium1NumberLabel.Text = "1"
+        '
+        'ContestantFieldTextBox16
+        '
+        Me.ContestantFieldTextBox16.AllowDrop = True
+        Me.ContestantFieldTextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox16.Location = New System.Drawing.Point(424, 230)
+        Me.ContestantFieldTextBox16.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox16.Name = "ContestantFieldTextBox16"
+        Me.ContestantFieldTextBox16.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox16.TabIndex = 213
+        Me.ContestantFieldTextBox16.Text = "Town6"
+        '
+        'ContestantFieldTextBox6
+        '
+        Me.ContestantFieldTextBox6.AllowDrop = True
+        Me.ContestantFieldTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox6.Location = New System.Drawing.Point(295, 230)
+        Me.ContestantFieldTextBox6.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox6.Name = "ContestantFieldTextBox6"
+        Me.ContestantFieldTextBox6.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox6.TabIndex = 212
+        Me.ContestantFieldTextBox6.Text = "Contestant6"
+        '
+        'ContestantFieldTextBox11
+        '
+        Me.ContestantFieldTextBox11.AllowDrop = True
+        Me.ContestantFieldTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox11.Location = New System.Drawing.Point(157, 230)
+        Me.ContestantFieldTextBox11.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox11.Name = "ContestantFieldTextBox11"
+        Me.ContestantFieldTextBox11.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantFieldTextBox11.TabIndex = 210
+        Me.ContestantFieldTextBox11.Text = "Town1"
+        '
+        'ContestantFieldTextBox1
+        '
+        Me.ContestantFieldTextBox1.AllowDrop = True
+        Me.ContestantFieldTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantFieldTextBox1.Location = New System.Drawing.Point(28, 230)
+        Me.ContestantFieldTextBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantFieldTextBox1.Name = "ContestantFieldTextBox1"
+        Me.ContestantFieldTextBox1.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantFieldTextBox1.TabIndex = 209
+        Me.ContestantFieldTextBox1.Text = "Contestant1"
+        '
+        'FullQuestionTextLabel
+        '
+        Me.FullQuestionTextLabel.AutoSize = True
+        Me.FullQuestionTextLabel.Cursor = System.Windows.Forms.Cursors.Default
+        Me.FullQuestionTextLabel.ForeColor = System.Drawing.Color.White
+        Me.FullQuestionTextLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.FullQuestionTextLabel.Location = New System.Drawing.Point(11, 142)
+        Me.FullQuestionTextLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.FullQuestionTextLabel.MaximumSize = New System.Drawing.Size(785, 40)
+        Me.FullQuestionTextLabel.Name = "FullQuestionTextLabel"
+        Me.FullQuestionTextLabel.Size = New System.Drawing.Size(94, 13)
+        Me.FullQuestionTextLabel.TabIndex = 208
+        Me.FullQuestionTextLabel.Text = "QUESTION TEXT"
+        '
+        'FullQuestionTextHeaderLabel
+        '
+        Me.FullQuestionTextHeaderLabel.AutoSize = True
+        Me.FullQuestionTextHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.FullQuestionTextHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.FullQuestionTextHeaderLabel.Location = New System.Drawing.Point(11, 126)
+        Me.FullQuestionTextHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.FullQuestionTextHeaderLabel.Name = "FullQuestionTextHeaderLabel"
+        Me.FullQuestionTextHeaderLabel.Size = New System.Drawing.Size(43, 13)
+        Me.FullQuestionTextHeaderLabel.TabIndex = 207
+        Me.FullQuestionTextHeaderLabel.Text = "Full text"
+        '
+        'OpenQuestionBaseButton
+        '
+        Me.OpenQuestionBaseButton.BackColor = System.Drawing.Color.White
+        Me.OpenQuestionBaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.OpenQuestionBaseButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OpenQuestionBaseButton.Location = New System.Drawing.Point(394, 12)
+        Me.OpenQuestionBaseButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.OpenQuestionBaseButton.Name = "OpenQuestionBaseButton"
+        Me.OpenQuestionBaseButton.Size = New System.Drawing.Size(100, 23)
+        Me.OpenQuestionBaseButton.TabIndex = 206
+        Me.OpenQuestionBaseButton.Text = "Open base file..."
+        Me.OpenQuestionBaseButton.UseVisualStyleBackColor = False
+        '
+        'StartFffButton
+        '
+        Me.StartFffButton.BackColor = System.Drawing.Color.White
+        Me.StartFffButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.StartFffButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.StartFffButton.Location = New System.Drawing.Point(394, 97)
+        Me.StartFffButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.StartFffButton.Name = "StartFffButton"
+        Me.StartFffButton.Size = New System.Drawing.Size(100, 23)
+        Me.StartFffButton.TabIndex = 205
+        Me.StartFffButton.Text = "Start FFF"
+        Me.StartFffButton.UseVisualStyleBackColor = False
+        '
+        'QuestionListBox
+        '
+        Me.QuestionListBox.Enabled = False
+        Me.QuestionListBox.FormattingEnabled = True
+        Me.QuestionListBox.Items.AddRange(New Object() {"FFF1", "FFF2", "FFF3", "FFF4", "FFF5", "FFF6", "FFF7", "FFF8"})
+        Me.QuestionListBox.Location = New System.Drawing.Point(11, 12)
+        Me.QuestionListBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.QuestionListBox.Name = "QuestionListBox"
+        Me.QuestionListBox.Size = New System.Drawing.Size(379, 108)
+        Me.QuestionListBox.TabIndex = 204
+        '
+        'EnterNamesLaterCheckBox
+        '
+        Me.EnterNamesLaterCheckBox.AutoSize = True
+        Me.EnterNamesLaterCheckBox.ForeColor = System.Drawing.Color.White
+        Me.EnterNamesLaterCheckBox.Location = New System.Drawing.Point(14, 184)
+        Me.EnterNamesLaterCheckBox.Name = "EnterNamesLaterCheckBox"
+        Me.EnterNamesLaterCheckBox.Size = New System.Drawing.Size(108, 17)
+        Me.EnterNamesLaterCheckBox.TabIndex = 255
+        Me.EnterNamesLaterCheckBox.Text = "Enter names later"
+        Me.EnterNamesLaterCheckBox.UseVisualStyleBackColor = True
+        '
+        'InstructionsLabel
+        '
+        Me.InstructionsLabel.AutoSize = True
+        Me.InstructionsLabel.BackColor = System.Drawing.Color.Transparent
+        Me.InstructionsLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.InstructionsLabel.ForeColor = System.Drawing.Color.White
+        Me.InstructionsLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.InstructionsLabel.Location = New System.Drawing.Point(531, 12)
+        Me.InstructionsLabel.MaximumSize = New System.Drawing.Size(460, 460)
+        Me.InstructionsLabel.MinimumSize = New System.Drawing.Size(460, 350)
+        Me.InstructionsLabel.Name = "InstructionsLabel"
+        Me.InstructionsLabel.Size = New System.Drawing.Size(460, 350)
+        Me.InstructionsLabel.TabIndex = 256
+        Me.InstructionsLabel.Text = resources.GetString("InstructionsLabel.Text")
+        Me.InstructionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerOrderLabel26
+        '
+        Me.AnswerOrderLabel26.AutoSize = True
+        Me.AnswerOrderLabel26.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerOrderLabel26.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerOrderLabel26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.AnswerOrderLabel26.Location = New System.Drawing.Point(242, 661)
+        Me.AnswerOrderLabel26.MaximumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel26.MinimumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel26.Name = "AnswerOrderLabel26"
+        Me.AnswerOrderLabel26.Size = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel26.TabIndex = 257
+        Me.AnswerOrderLabel26.Text = "A:"
+        Me.AnswerOrderLabel26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerOrderLabel27
+        '
+        Me.AnswerOrderLabel27.AutoSize = True
+        Me.AnswerOrderLabel27.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerOrderLabel27.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerOrderLabel27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.AnswerOrderLabel27.Location = New System.Drawing.Point(404, 662)
+        Me.AnswerOrderLabel27.MaximumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel27.MinimumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel27.Name = "AnswerOrderLabel27"
+        Me.AnswerOrderLabel27.Size = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel27.TabIndex = 258
+        Me.AnswerOrderLabel27.Text = "B:"
+        Me.AnswerOrderLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerOrderLabel28
+        '
+        Me.AnswerOrderLabel28.AutoSize = True
+        Me.AnswerOrderLabel28.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerOrderLabel28.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerOrderLabel28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.AnswerOrderLabel28.Location = New System.Drawing.Point(561, 662)
+        Me.AnswerOrderLabel28.MaximumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel28.MinimumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel28.Name = "AnswerOrderLabel28"
+        Me.AnswerOrderLabel28.Size = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel28.TabIndex = 259
+        Me.AnswerOrderLabel28.Text = "C:"
+        Me.AnswerOrderLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AnswerOrderLabel29
+        '
+        Me.AnswerOrderLabel29.AutoSize = True
+        Me.AnswerOrderLabel29.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerOrderLabel29.Font = New System.Drawing.Font("a_CopperGothCaps", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerOrderLabel29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.AnswerOrderLabel29.Location = New System.Drawing.Point(725, 662)
+        Me.AnswerOrderLabel29.MaximumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel29.MinimumSize = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel29.Name = "AnswerOrderLabel29"
+        Me.AnswerOrderLabel29.Size = New System.Drawing.Size(69, 53)
+        Me.AnswerOrderLabel29.TabIndex = 260
+        Me.AnswerOrderLabel29.Text = "D:"
+        Me.AnswerOrderLabel29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'KeypadPictureBox6
+        '
+        Me.KeypadPictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.KeypadPictureBox6.BackgroundImage = CType(resources.GetObject("KeypadPictureBox6.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.KeypadPictureBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.KeypadPictureBox6.Location = New System.Drawing.Point(193, 640)
+        Me.KeypadPictureBox6.Name = "KeypadPictureBox6"
+        Me.KeypadPictureBox6.Size = New System.Drawing.Size(156, 97)
+        Me.KeypadPictureBox6.TabIndex = 261
+        Me.KeypadPictureBox6.TabStop = False
+        Me.KeypadPictureBox6.Visible = False
+        '
+        'KeypadPictureBox7
+        '
+        Me.KeypadPictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.KeypadPictureBox7.BackgroundImage = CType(resources.GetObject("KeypadPictureBox7.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.KeypadPictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.KeypadPictureBox7.Location = New System.Drawing.Point(355, 640)
+        Me.KeypadPictureBox7.Name = "KeypadPictureBox7"
+        Me.KeypadPictureBox7.Size = New System.Drawing.Size(154, 97)
+        Me.KeypadPictureBox7.TabIndex = 262
+        Me.KeypadPictureBox7.TabStop = False
+        Me.KeypadPictureBox7.Visible = False
+        '
+        'KeypadPictureBox8
+        '
+        Me.KeypadPictureBox8.BackColor = System.Drawing.Color.Transparent
+        Me.KeypadPictureBox8.BackgroundImage = CType(resources.GetObject("KeypadPictureBox8.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.KeypadPictureBox8.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.KeypadPictureBox8.Location = New System.Drawing.Point(515, 640)
+        Me.KeypadPictureBox8.Name = "KeypadPictureBox8"
+        Me.KeypadPictureBox8.Size = New System.Drawing.Size(154, 97)
+        Me.KeypadPictureBox8.TabIndex = 263
+        Me.KeypadPictureBox8.TabStop = False
+        Me.KeypadPictureBox8.Visible = False
+        '
+        'KeypadPictureBox9
+        '
+        Me.KeypadPictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.KeypadPictureBox9.BackgroundImage = CType(resources.GetObject("KeypadPictureBox9.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.KeypadPictureBox9.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.KeypadPictureBox9.Location = New System.Drawing.Point(675, 640)
+        Me.KeypadPictureBox9.Name = "KeypadPictureBox9"
+        Me.KeypadPictureBox9.Size = New System.Drawing.Size(154, 97)
+        Me.KeypadPictureBox9.TabIndex = 264
+        Me.KeypadPictureBox9.TabStop = False
+        Me.KeypadPictureBox9.Visible = False
+        '
+        'KeypadPictureBox10
+        '
+        Me.KeypadPictureBox10.BackColor = System.Drawing.Color.Transparent
+        Me.KeypadPictureBox10.BackgroundImage = CType(resources.GetObject("KeypadPictureBox10.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.KeypadPictureBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.KeypadPictureBox10.Location = New System.Drawing.Point(13, 640)
+        Me.KeypadPictureBox10.Name = "KeypadPictureBox10"
+        Me.KeypadPictureBox10.Size = New System.Drawing.Size(154, 97)
+        Me.KeypadPictureBox10.TabIndex = 265
+        Me.KeypadPictureBox10.TabStop = False
+        Me.KeypadPictureBox10.Visible = False
+        '
+        'KeypadPictureBox11
+        '
+        Me.KeypadPictureBox11.BackColor = System.Drawing.Color.Transparent
+        Me.KeypadPictureBox11.BackgroundImage = CType(resources.GetObject("KeypadPictureBox11.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.KeypadPictureBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.KeypadPictureBox11.Location = New System.Drawing.Point(857, 640)
+        Me.KeypadPictureBox11.Name = "KeypadPictureBox11"
+        Me.KeypadPictureBox11.Size = New System.Drawing.Size(154, 97)
+        Me.KeypadPictureBox11.TabIndex = 266
+        Me.KeypadPictureBox11.TabStop = False
+        Me.KeypadPictureBox11.Visible = False
+        '
+        'DelKeyLabel
+        '
+        Me.DelKeyLabel.AutoSize = True
+        Me.DelKeyLabel.BackColor = System.Drawing.Color.Transparent
+        Me.DelKeyLabel.Font = New System.Drawing.Font("a_CopperGothCaps", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.DelKeyLabel.ForeColor = System.Drawing.Color.White
+        Me.DelKeyLabel.Location = New System.Drawing.Point(52, 667)
+        Me.DelKeyLabel.Name = "DelKeyLabel"
+        Me.DelKeyLabel.Size = New System.Drawing.Size(82, 41)
+        Me.DelKeyLabel.TabIndex = 267
+        Me.DelKeyLabel.Text = "Del"
+        Me.DelKeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'OkKeyLabel
+        '
+        Me.OkKeyLabel.AutoSize = True
+        Me.OkKeyLabel.BackColor = System.Drawing.Color.Transparent
+        Me.OkKeyLabel.Font = New System.Drawing.Font("a_CopperGothCaps", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.OkKeyLabel.ForeColor = System.Drawing.Color.White
+        Me.OkKeyLabel.Location = New System.Drawing.Point(902, 667)
+        Me.OkKeyLabel.Name = "OkKeyLabel"
+        Me.OkKeyLabel.Size = New System.Drawing.Size(70, 41)
+        Me.OkKeyLabel.TabIndex = 268
+        Me.OkKeyLabel.Text = "OK"
+        Me.OkKeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'OpenQuestionBaseDialog
+        '
+        Me.OpenQuestionBaseDialog.FileName = "Bases\Qualify.fff"
+        Me.OpenQuestionBaseDialog.Filter = "Question base for FFF|*.fff|All files|*.*"
+        Me.OpenQuestionBaseDialog.InitialDirectory = "Bases\"
+        Me.OpenQuestionBaseDialog.Title = "Open FFF question base file"
+        '
+        'LanguageComboBox
+        '
+        Me.LanguageComboBox.FormattingEnabled = True
+        Me.LanguageComboBox.Items.AddRange(New Object() {"English"})
+        Me.LanguageComboBox.Location = New System.Drawing.Point(295, 182)
+        Me.LanguageComboBox.Name = "LanguageComboBox"
+        Me.LanguageComboBox.Size = New System.Drawing.Size(199, 21)
+        Me.LanguageComboBox.TabIndex = 270
+        Me.LanguageComboBox.Text = "Languages list"
+        '
+        'LanguageLabel
+        '
+        Me.LanguageLabel.AutoSize = True
+        Me.LanguageLabel.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LanguageLabel.ForeColor = System.Drawing.Color.White
+        Me.LanguageLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LanguageLabel.Location = New System.Drawing.Point(231, 185)
+        Me.LanguageLabel.MaximumSize = New System.Drawing.Size(340, 13)
+        Me.LanguageLabel.Name = "LanguageLabel"
+        Me.LanguageLabel.Size = New System.Drawing.Size(58, 13)
+        Me.LanguageLabel.TabIndex = 269
+        Me.LanguageLabel.Text = "Language:"
+        '
+        'OpenContestantsListDialog
+        '
+        Me.OpenContestantsListDialog.FileName = "Bases\Contestants.con"
+        Me.OpenContestantsListDialog.Filter = "Contestants List File|*.con"
+        Me.OpenContestantsListDialog.InitialDirectory = "Bases\"
+        '
+        'ContestantTownHeaderLabel
+        '
+        Me.ContestantTownHeaderLabel.AutoSize = True
+        Me.ContestantTownHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.ContestantTownHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.ContestantTownHeaderLabel.Location = New System.Drawing.Point(507, 131)
+        Me.ContestantTownHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.ContestantTownHeaderLabel.Name = "ContestantTownHeaderLabel"
+        Me.ContestantTownHeaderLabel.Size = New System.Drawing.Size(30, 13)
+        Me.ContestantTownHeaderLabel.TabIndex = 274
+        Me.ContestantTownHeaderLabel.Text = "From"
+        '
+        'ContestantNameHeaderLabel
+        '
+        Me.ContestantNameHeaderLabel.AutoSize = True
+        Me.ContestantNameHeaderLabel.ForeColor = System.Drawing.Color.White
+        Me.ContestantNameHeaderLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.ContestantNameHeaderLabel.Location = New System.Drawing.Point(378, 131)
+        Me.ContestantNameHeaderLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.ContestantNameHeaderLabel.Name = "ContestantNameHeaderLabel"
+        Me.ContestantNameHeaderLabel.Size = New System.Drawing.Size(35, 13)
+        Me.ContestantNameHeaderLabel.TabIndex = 273
+        Me.ContestantNameHeaderLabel.Text = "Name"
+        '
+        'ContestantTownTextBox
+        '
+        Me.ContestantTownTextBox.AllowDrop = True
+        Me.ContestantTownTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantTownTextBox.Location = New System.Drawing.Point(510, 147)
+        Me.ContestantTownTextBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantTownTextBox.Name = "ContestantTownTextBox"
+        Me.ContestantTownTextBox.Size = New System.Drawing.Size(70, 20)
+        Me.ContestantTownTextBox.TabIndex = 272
+        '
+        'ContestantNameTextBox
+        '
+        Me.ContestantNameTextBox.AllowDrop = True
+        Me.ContestantNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ContestantNameTextBox.Location = New System.Drawing.Point(381, 147)
+        Me.ContestantNameTextBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ContestantNameTextBox.Name = "ContestantNameTextBox"
+        Me.ContestantNameTextBox.Size = New System.Drawing.Size(130, 20)
+        Me.ContestantNameTextBox.TabIndex = 271
+        '
+        'ContestantNumberLabel
+        '
+        Me.ContestantNumberLabel.AutoSize = True
+        Me.ContestantNumberLabel.ForeColor = System.Drawing.Color.White
+        Me.ContestantNumberLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.ContestantNumberLabel.Location = New System.Drawing.Point(364, 149)
+        Me.ContestantNumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.ContestantNumberLabel.Name = "ContestantNumberLabel"
+        Me.ContestantNumberLabel.Size = New System.Drawing.Size(13, 13)
+        Me.ContestantNumberLabel.TabIndex = 275
+        Me.ContestantNumberLabel.Text = "1"
+        '
+        'StartContestantButton
+        '
+        Me.StartContestantButton.BackColor = System.Drawing.Color.White
+        Me.StartContestantButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.StartContestantButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.StartContestantButton.Location = New System.Drawing.Point(584, 146)
+        Me.StartContestantButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.StartContestantButton.Name = "StartContestantButton"
+        Me.StartContestantButton.Size = New System.Drawing.Size(100, 23)
+        Me.StartContestantButton.TabIndex = 276
+        Me.StartContestantButton.Text = "START"
+        Me.StartContestantButton.UseVisualStyleBackColor = False
+        '
+        'TimeLimitTimer
+        '
+        Me.TimeLimitTimer.Interval = 20000
+        '
+        'SaveContestantsListDialog
+        '
+        Me.SaveContestantsListDialog.CreatePrompt = True
+        Me.SaveContestantsListDialog.Filter = "Contestants List File|*.con"
+        Me.SaveContestantsListDialog.InitialDirectory = "Bases\"
+        Me.SaveContestantsListDialog.Title = "Save question base file"
+        '
+        'ClockTimer
+        '
+        Me.ClockTimer.Interval = 500
+        '
+        'ClockPictureBox
+        '
+        Me.ClockPictureBox.Image = CType(resources.GetObject("ClockPictureBox.Image"), System.Drawing.Image)
+        Me.ClockPictureBox.Location = New System.Drawing.Point(355, 44)
+        Me.ClockPictureBox.Name = "ClockPictureBox"
+        Me.ClockPictureBox.Size = New System.Drawing.Size(315, 315)
+        Me.ClockPictureBox.TabIndex = 277
+        Me.ClockPictureBox.TabStop = False
+        Me.ClockPictureBox.Visible = False
         '
         'FastestFingerFirst
         '
@@ -1036,175 +1036,175 @@ Partial Class FastestFingerFirst
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 768)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label30)
-        Me.Controls.Add(Me.Label32)
-        Me.Controls.Add(Me.Label31)
-        Me.Controls.Add(Me.TextBox22)
-        Me.Controls.Add(Me.TextBox21)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label25)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox11)
-        Me.Controls.Add(Me.PictureBox10)
-        Me.Controls.Add(Me.Label29)
-        Me.Controls.Add(Me.Label28)
-        Me.Controls.Add(Me.Label27)
-        Me.Controls.Add(Me.Label26)
-        Me.Controls.Add(Me.PictureBox9)
-        Me.Controls.Add(Me.PictureBox8)
-        Me.Controls.Add(Me.PictureBox7)
-        Me.Controls.Add(Me.PictureBox6)
-        Me.Controls.Add(Me.Label24)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.TextBox20)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.TextBox15)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox19)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.TextBox14)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox18)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.TextBox13)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox17)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox12)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.TextBox16)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox11)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ListBox1)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox12)
+        Me.Controls.Add(Me.StartContestantButton)
+        Me.Controls.Add(Me.ContestantNumberLabel)
+        Me.Controls.Add(Me.ContestantTownHeaderLabel)
+        Me.Controls.Add(Me.ContestantNameHeaderLabel)
+        Me.Controls.Add(Me.ContestantTownTextBox)
+        Me.Controls.Add(Me.ContestantNameTextBox)
+        Me.Controls.Add(Me.LanguageComboBox)
+        Me.Controls.Add(Me.LanguageLabel)
+        Me.Controls.Add(Me.OkKeyLabel)
+        Me.Controls.Add(Me.DelKeyLabel)
+        Me.Controls.Add(Me.KeypadPictureBox11)
+        Me.Controls.Add(Me.KeypadPictureBox10)
+        Me.Controls.Add(Me.AnswerOrderLabel29)
+        Me.Controls.Add(Me.AnswerOrderLabel28)
+        Me.Controls.Add(Me.AnswerOrderLabel27)
+        Me.Controls.Add(Me.AnswerOrderLabel26)
+        Me.Controls.Add(Me.KeypadPictureBox9)
+        Me.Controls.Add(Me.KeypadPictureBox8)
+        Me.Controls.Add(Me.KeypadPictureBox7)
+        Me.Controls.Add(Me.KeypadPictureBox6)
+        Me.Controls.Add(Me.InstructionsLabel)
+        Me.Controls.Add(Me.EnterNamesLaterCheckBox)
+        Me.Controls.Add(Me.RightFromHeaderLabel)
+        Me.Controls.Add(Me.RightNameHeaderLabel)
+        Me.Controls.Add(Me.LeftFromHeaderLabel)
+        Me.Controls.Add(Me.LeftNameHeaderLabel)
+        Me.Controls.Add(Me.Podium10NumberLabel)
+        Me.Controls.Add(Me.Podium5NumberLabel)
+        Me.Controls.Add(Me.ContestantFieldTextBox20)
+        Me.Controls.Add(Me.ContestantFieldTextBox10)
+        Me.Controls.Add(Me.ContestantFieldTextBox15)
+        Me.Controls.Add(Me.ContestantFieldTextBox5)
+        Me.Controls.Add(Me.Podium9NumberLabel)
+        Me.Controls.Add(Me.Podium4NumberLabel)
+        Me.Controls.Add(Me.ContestantFieldTextBox19)
+        Me.Controls.Add(Me.ContestantFieldTextBox9)
+        Me.Controls.Add(Me.ContestantFieldTextBox14)
+        Me.Controls.Add(Me.ContestantFieldTextBox4)
+        Me.Controls.Add(Me.Podium8NumberLabel)
+        Me.Controls.Add(Me.Podium3NumberLabel)
+        Me.Controls.Add(Me.ContestantFieldTextBox18)
+        Me.Controls.Add(Me.ContestantFieldTextBox8)
+        Me.Controls.Add(Me.ContestantFieldTextBox13)
+        Me.Controls.Add(Me.ContestantFieldTextBox3)
+        Me.Controls.Add(Me.Podium7NumberLabel)
+        Me.Controls.Add(Me.Podium2NumberLabel)
+        Me.Controls.Add(Me.ContestantFieldTextBox17)
+        Me.Controls.Add(Me.ContestantFieldTextBox7)
+        Me.Controls.Add(Me.ContestantFieldTextBox12)
+        Me.Controls.Add(Me.ContestantFieldTextBox2)
+        Me.Controls.Add(Me.Podium6NumberLabel)
+        Me.Controls.Add(Me.Podium1NumberLabel)
+        Me.Controls.Add(Me.ContestantFieldTextBox16)
+        Me.Controls.Add(Me.ContestantFieldTextBox6)
+        Me.Controls.Add(Me.ContestantFieldTextBox11)
+        Me.Controls.Add(Me.ContestantFieldTextBox1)
+        Me.Controls.Add(Me.FullQuestionTextLabel)
+        Me.Controls.Add(Me.FullQuestionTextHeaderLabel)
+        Me.Controls.Add(Me.OpenQuestionBaseButton)
+        Me.Controls.Add(Me.StartFffButton)
+        Me.Controls.Add(Me.QuestionListBox)
+        Me.Controls.Add(Me.QuestionFieldLabel20)
+        Me.Controls.Add(Me.QuestionFieldLabel19)
+        Me.Controls.Add(Me.QuestionFieldLabel18)
+        Me.Controls.Add(Me.QuestionFieldLabel17)
+        Me.Controls.Add(Me.AnswerDFramePictureBox)
+        Me.Controls.Add(Me.AnswerCFramePictureBox)
+        Me.Controls.Add(Me.AnswerBFramePictureBox)
+        Me.Controls.Add(Me.AnswerAFramePictureBox)
+        Me.Controls.Add(Me.QuestionFieldLabel16)
+        Me.Controls.Add(Me.QuestionFramePictureBox)
+        Me.Controls.Add(Me.ClockPictureBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FastestFingerFirst"
         Me.Text = "Fastest Finger First"
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerDFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerCFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerBFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerAFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.QuestionFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KeypadPictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KeypadPictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KeypadPictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KeypadPictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KeypadPictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KeypadPictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClockPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Button13 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents Label27 As System.Windows.Forms.Label
-    Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
-    Friend WithEvents PictureBox12 As System.Windows.Forms.PictureBox
+    Friend WithEvents QuestionFieldLabel20 As System.Windows.Forms.Label
+    Friend WithEvents QuestionFieldLabel19 As System.Windows.Forms.Label
+    Friend WithEvents QuestionFieldLabel18 As System.Windows.Forms.Label
+    Friend WithEvents QuestionFieldLabel17 As System.Windows.Forms.Label
+    Friend WithEvents AnswerDFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerCFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerBFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerAFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents QuestionFieldLabel16 As System.Windows.Forms.Label
+    Friend WithEvents QuestionFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents RightFromHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents RightNameHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents LeftFromHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents LeftNameHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents Podium10NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents Podium5NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantFieldTextBox20 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents Podium9NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents Podium4NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantFieldTextBox19 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox14 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents Podium8NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents Podium3NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantFieldTextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents Podium7NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents Podium2NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantFieldTextBox17 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Podium6NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents Podium1NumberLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantFieldTextBox16 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantFieldTextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents FullQuestionTextLabel As System.Windows.Forms.Label
+    Friend WithEvents FullQuestionTextHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents OpenQuestionBaseButton As System.Windows.Forms.Button
+    Friend WithEvents StartFffButton As System.Windows.Forms.Button
+    Friend WithEvents QuestionListBox As System.Windows.Forms.ListBox
+    Friend WithEvents EnterNamesLaterCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents InstructionsLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerOrderLabel26 As System.Windows.Forms.Label
+    Friend WithEvents AnswerOrderLabel27 As System.Windows.Forms.Label
+    Friend WithEvents AnswerOrderLabel28 As System.Windows.Forms.Label
+    Friend WithEvents AnswerOrderLabel29 As System.Windows.Forms.Label
+    Friend WithEvents KeypadPictureBox6 As System.Windows.Forms.PictureBox
+    Friend WithEvents KeypadPictureBox7 As System.Windows.Forms.PictureBox
+    Friend WithEvents KeypadPictureBox8 As System.Windows.Forms.PictureBox
+    Friend WithEvents KeypadPictureBox9 As System.Windows.Forms.PictureBox
+    Friend WithEvents KeypadPictureBox10 As System.Windows.Forms.PictureBox
+    Friend WithEvents KeypadPictureBox11 As System.Windows.Forms.PictureBox
+    Friend WithEvents DelKeyLabel As System.Windows.Forms.Label
+    Friend WithEvents OkKeyLabel As System.Windows.Forms.Label
+    Friend WithEvents OpenQuestionBaseDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents LanguageComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents LanguageLabel As System.Windows.Forms.Label
+    Friend WithEvents OpenContestantsListDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ContestantTownHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantNameHeaderLabel As System.Windows.Forms.Label
+    Friend WithEvents ContestantTownTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantNameTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ContestantNumberLabel As System.Windows.Forms.Label
+    Friend WithEvents StartContestantButton As System.Windows.Forms.Button
+    Friend WithEvents TimeLimitTimer As System.Windows.Forms.Timer
+    Friend WithEvents SaveContestantsListDialog As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents ClockTimer As System.Windows.Forms.Timer
+    Friend WithEvents ClockPictureBox As System.Windows.Forms.PictureBox
 
 End Class

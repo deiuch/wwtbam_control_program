@@ -5,7 +5,7 @@
     Dim currentBlock0(,) As String 'Временный массив
     Public currentBlock1(150, 8) As String 'Массив русификации
     Public currentBlock2(,) As String 'Массив вопросов
-    Dim rightAnswerNumber As Integer 'Номер правильного ответа (1-4) РЕЖИССЁРУ (см. ListBox1; numberRightAnswer то же самое ДЛЯ ВСЕХ)
+    Dim rightAnswerNumber As Integer 'Номер правильного ответа (1-4) РЕЖИССЁРУ (см. QuestionListBox; numberRightAnswer то же самое ДЛЯ ВСЕХ)
     Public rightAnswerText As String 'Текст правильного ответа РЕЖИССЁРУ
     Public textAnswerA As String 'Текст ответа A ИГРОКУ/ВЕДУЩЕМУ
     Public textAnswerB As String 'Текст ответа B ИГРОКУ/ВЕДУЩЕМУ
@@ -38,224 +38,224 @@
     End Sub
 
     Private Sub Project_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Audience.Label9.Visible = False
-        Audience.Label21.Visible = False
-        Audience.Label31.Visible = False
-        NumericUpDown2.Value = FormStart.NumericUpDown2.Value
-        NumericUpDown3.Value = FormStart.NumericUpDown3.Value
-        NumericUpDown4.Value = FormStart.NumericUpDown4.Value
-        NumericUpDown5.Value = FormStart.NumericUpDown5.Value
-        NumericUpDown6.Value = FormStart.NumericUpDown6.Value
-        NumericUpDown7.Value = FormStart.NumericUpDown7.Value
+        Audience.FffAnswer1Label.Visible = False
+        Audience.FffResultName5Label.Visible = False
+        Audience.FffResultTime5Label.Visible = False
+        HostScreenXNumericUpDown.Value = FormStart.HostScreenXNumericUpDown.Value
+        HostScreenYNumericUpDown.Value = FormStart.HostScreenYNumericUpDown.Value
+        PlayerScreenXNumericUpDown.Value = FormStart.PlayerScreenXNumericUpDown.Value
+        PlayerScreenYNumericUpDown.Value = FormStart.PlayerScreenYNumericUpDown.Value
+        AudienceScreenXNumericUpDown.Value = FormStart.AudienceScreenXNumericUpDown.Value
+        AudienceScreenYNumericUpDown.Value = FormStart.AudienceScreenYNumericUpDown.Value
         Me.MaximizeBox = False
         Host.Show()
         Player.Show()
         Audience.Show()
-        If FormStart.CheckBox1.Checked = False Then
+        If FormStart.HostScreenCheckBox.Checked = False Then
             Host.Hide()
-            CheckBox7.Checked = False
+            HostVisibleCheckBox.Checked = False
         End If
-        If FormStart.CheckBox2.Checked = False Then
+        If FormStart.PlayerScreenCheckBox.Checked = False Then
             Player.Hide()
-            CheckBox8.Checked = False
+            PlayerVisibleCheckBox.Checked = False
         End If
-        If FormStart.CheckBox3.Checked = False Then
+        If FormStart.AudienceScreenCheckBox.Checked = False Then
             Audience.Hide()
-            CheckBox9.Checked = False
+            AudienceVisibleCheckBox.Checked = False
         End If
-        Host.Location = New Point(NumericUpDown2.Value, NumericUpDown3.Value)
-        Player.Location = New Point(NumericUpDown4.Value, NumericUpDown5.Value)
-        Audience.Location = New Point(NumericUpDown6.Value, NumericUpDown7.Value)
+        Host.Location = New Point(HostScreenXNumericUpDown.Value, HostScreenYNumericUpDown.Value)
+        Player.Location = New Point(PlayerScreenXNumericUpDown.Value, PlayerScreenYNumericUpDown.Value)
+        Audience.Location = New Point(AudienceScreenXNumericUpDown.Value, AudienceScreenYNumericUpDown.Value)
         FormStart.Close()
-        Host.PictureBox0.Size = New System.Drawing.Size(1024, 768)
-        Player.PictureBox0.Size = New System.Drawing.Size(1024, 768)
-        Audience.PictureBox0.Size = New System.Drawing.Size(1024, 768)
+        Host.LogoPictureBox.Size = New System.Drawing.Size(1024, 768)
+        Player.LogoPictureBox.Size = New System.Drawing.Size(1024, 768)
+        Audience.LogoPictureBox.Size = New System.Drawing.Size(1024, 768)
         sourcePath = CurDir() & "\Source" 'Задание пути ресурсной папки
         langSource = CurDir() & currentBlock1(3, 3)
-        TextBox1.Text = ini(12)
-        TextBox2.Text = ini(13)
+        ServerIpTextBox.Text = ini(12)
+        ServerPortTextBox.Text = ini(13)
         'Подсвечивание кнопок-подсказок
-        Button16.BackColor = Color.FromArgb(255, 128, 128)
-        Button53.BackColor = Color.FromArgb(255, 128, 128)
-        Button24.BackColor = Color.FromArgb(255, 128, 128)
-        Button30.BackColor = Color.Green
+        ToggleLogoButton.BackColor = Color.FromArgb(255, 128, 128)
+        OpeningTitlesButton.BackColor = Color.FromArgb(255, 128, 128)
+        ClearFormsButton.BackColor = Color.FromArgb(255, 128, 128)
+        StartTheGameButton.BackColor = Color.Green
         'Перевод "B" Project
         Text = currentBlock1(21, 3) '0
-        Label2.Text = currentBlock1(22, 3) '1
-        Label1.Text = currentBlock1(23, 3) '2
-        Button46.Text = currentBlock1(24, 3) '3
-        Button1.Text = currentBlock1(25, 3) '4
-        Label6.Text = currentBlock1(26, 3) '5
-        Button2.Text = currentBlock1(27, 3) '6
-        Button3.Text = currentBlock1(28, 3) '7
-        Button4.Text = currentBlock1(29, 3) '8
-        Button5.Text = currentBlock1(30, 3) '9
-        Button6.Text = currentBlock1(31, 3) '10
-        Label4.Text = currentBlock1(32, 3) '11
-        Button7.Text = currentBlock1(33, 3) '12
-        Label8.Text = currentBlock1(34, 3) '13
-        Button8.Text = currentBlock1(35, 3) '14
-        Button9.Text = currentBlock1(36, 3) '15
-        Button10.Text = currentBlock1(37, 3) '16
-        Button11.Text = currentBlock1(38, 3) '17
-        Label7.Text = currentBlock1(39, 3) '18 |Right Answer|Wrong Answer|
-        Button12.Text = currentBlock1(40, 3) '19
-        Button13.Text = currentBlock1(41, 3) '20
-        Button14.Text = currentBlock1(42, 3) '21 |Hide Hint|
-        Label15.Text = currentBlock1(43, 3) '22
-        Button44.Text = currentBlock1(44, 3) '23
-        Button16.Text = currentBlock1(45, 3) '24 |Hide logo|
-        Label9.Text = currentBlock1(46, 3) '25
-        Button17.Text = currentBlock1(47, 3) '26
-        Button15.Text = currentBlock1(48, 3) '27
-        Button18.Text = currentBlock1(49, 3) '28
-        CheckBox1.Text = currentBlock1(50, 3) '29
-        CheckBox2.Text = currentBlock1(51, 3) '30
-        CheckBox3.Text = currentBlock1(52, 3) '31
-        Button19.Text = currentBlock1(53, 3) '32 |Hide panel|
-        Button45.Text = currentBlock1(54, 3) '33
-        Button24.Text = currentBlock1(55, 3) '34
-        Label10.Text = currentBlock1(56, 3) '35
-        Button20.Text = currentBlock1(57, 3) '36
-        Button47.Text = currentBlock1(58, 3) '37
-        Button48.Text = currentBlock1(59, 3) '38
-        CheckBox10.Text = currentBlock1(60, 3) '39
-        Button42.Text = currentBlock1(61, 3) '40
-        Button43.Text = currentBlock1(62, 3) '41
-        Label11.Text = currentBlock1(63, 3) '42
-        Button53.Text = currentBlock1(64, 3) '43
-        Button22.Text = currentBlock1(65, 3) '44
-        Button23.Text = currentBlock1(66, 3) '45
-        Button25.Text = currentBlock1(67, 3) '46
-        Button29.Text = currentBlock1(68, 3) '47
-        Button26.Text = currentBlock1(69, 3) '48
-        Button27.Text = currentBlock1(70, 3) '49
-        Button28.Text = currentBlock1(71, 3) '50
-        Button30.Text = currentBlock1(72, 3) '51
-        Button31.Text = currentBlock1(73, 3) '52
-        Button32.Text = currentBlock1(74, 3) '53
-        Button33.Text = currentBlock1(75, 3) '54
-        Button34.Text = currentBlock1(76, 3) '55
-        Button35.Text = currentBlock1(77, 3) '56
-        Button36.Text = currentBlock1(78, 3) '57
-        Button37.Text = currentBlock1(79, 3) '58
-        Button38.Text = currentBlock1(80, 3) '59
-        Button39.Text = currentBlock1(81, 3) '60
-        Button40.Text = currentBlock1(82, 3) '61
-        Button41.Text = currentBlock1(83, 3) '62
-        Label12.Text = currentBlock1(84, 3) '63
-        Label3.Text = currentBlock1(85, 3) '64
-        Label23.Text = currentBlock1(86, 3) '65
-        Label24.Text = currentBlock1(87, 3) '66
-        Label13.Text = currentBlock1(88, 3) '67
-        CheckBox4.Text = currentBlock1(89, 3) '68
-        CheckBox5.Text = currentBlock1(90, 3) '69
-        CheckBox6.Text = currentBlock1(91, 3) '70
-        Label14.Text = currentBlock1(92, 3) '71
-        CheckBox7.Text = currentBlock1(93, 3) '72
-        CheckBox8.Text = currentBlock1(94, 3) '73
-        CheckBox9.Text = currentBlock1(95, 3) '74
-        Label21.Text = currentBlock1(96, 3) '75
-        TextBox11.Text = currentBlock1(97, 3) '76
-        Button21.Text = currentBlock1(98, 3) '77
-        Host.PictureBox0.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LOGO_FEEL.png")
-        Player.PictureBox0.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LOGO_FEEL.png")
-        Audience.PictureBox0.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LOGO_FEEL.png")
+        ConnectSettingsLabel.Text = currentBlock1(22, 3) '1
+        QuestionsLabel.Text = currentBlock1(23, 3) '2
+        OpenQuestionBaseButton.Text = currentBlock1(24, 3) '3
+        AskQuestionButton.Text = currentBlock1(25, 3) '4
+        EnableAnswersLabel.Text = currentBlock1(26, 3) '5
+        EnableAnswerAButton.Text = currentBlock1(27, 3) '6
+        EnableAnswerBButton.Text = currentBlock1(28, 3) '7
+        EnableAnswerCButton.Text = currentBlock1(29, 3) '8
+        EnableAnswerDButton.Text = currentBlock1(30, 3) '9
+        EnableAllAnswersButton.Text = currentBlock1(31, 3) '10
+        FullQuestionTextLabel.Text = currentBlock1(32, 3) '11
+        ConnectButton.Text = currentBlock1(33, 3) '12
+        AnswersLabel.Text = currentBlock1(34, 3) '13
+        ReceiveAnswerAButton.Text = currentBlock1(35, 3) '14
+        ReceiveAnswerBButton.Text = currentBlock1(36, 3) '15
+        ReceiveAnswerCButton.Text = currentBlock1(37, 3) '16
+        ReceiveAnswerDButton.Text = currentBlock1(38, 3) '17
+        AnswerIndicatorLabel.Text = currentBlock1(39, 3) '18 |Right Answer|Wrong Answer|
+        RevealCorrectAnswerButton.Text = currentBlock1(40, 3) '19
+        LightsDownButton.Text = currentBlock1(41, 3) '20
+        ToggleHintButton.Text = currentBlock1(42, 3) '21 |Hide Hint|
+        HostMessageLabel.Text = currentBlock1(43, 3) '22
+        SendHostMessageButton.Text = currentBlock1(44, 3) '23
+        ToggleLogoButton.Text = currentBlock1(45, 3) '24 |Hide logo|
+        LifelinesLabel.Text = currentBlock1(46, 3) '25
+        FiftyFiftyButton.Text = currentBlock1(47, 3) '26
+        PhoneAFriendButton.Text = currentBlock1(48, 3) '27
+        AskTheAudienceButton.Text = currentBlock1(49, 3) '28
+        FiftyFiftyAvailableCheckBox.Text = currentBlock1(50, 3) '29
+        PhoneAFriendAvailableCheckBox.Text = currentBlock1(51, 3) '30
+        AskTheAudienceAvailableCheckBox.Text = currentBlock1(52, 3) '31
+        ToggleLifelinesPanelButton.Text = currentBlock1(53, 3) '32 |Hide panel|
+        ClearHostMessageButton.Text = currentBlock1(54, 3) '33
+        ClearFormsButton.Text = currentBlock1(55, 3) '34
+        MoneyLabel.Text = currentBlock1(56, 3) '35
+        TakeTheMoneyButton.Text = currentBlock1(57, 3) '36
+        LittleQuitButton.Text = currentBlock1(58, 3) '37
+        BigQuitButton.Text = currentBlock1(59, 3) '38
+        MoneyTakenCheckBox.Text = currentBlock1(60, 3) '39
+        MoneyTreeUpButton.Text = currentBlock1(61, 3) '40
+        MoneyTreeDownButton.Text = currentBlock1(62, 3) '41
+        MusicLabel.Text = currentBlock1(63, 3) '42
+        OpeningTitlesButton.Text = currentBlock1(64, 3) '43
+        HostEntranceButton.Text = currentBlock1(65, 3) '44
+        LetsPlayButton.Text = currentBlock1(66, 3) '45
+        LifelineExplanationsButton.Text = currentBlock1(67, 3) '46
+        LightsToCentreButton.Text = currentBlock1(68, 3) '47
+        FiftyFiftyMusicButton.Text = currentBlock1(69, 3) '48
+        PhoneAFriendMusicButton.Text = currentBlock1(70, 3) '49
+        AskTheAudienceMusicButton.Text = currentBlock1(71, 3) '50
+        StartTheGameButton.Text = currentBlock1(72, 3) '51
+        SeeYouLaterButton.Text = currentBlock1(73, 3) '52
+        HelloAgainButton.Text = currentBlock1(74, 3) '53
+        GoodbyePunterButton.Text = currentBlock1(75, 3) '54
+        TimesUpButton.Text = currentBlock1(76, 3) '55
+        TomorrowsNamesButton.Text = currentBlock1(77, 3) '56
+        ClosingTitlesButton.Text = currentBlock1(78, 3) '57
+        StereoTestButton.Text = currentBlock1(79, 3) '58
+        SmsClockButton.Text = currentBlock1(80, 3) '59
+        StopSoundButton.Text = currentBlock1(81, 3) '60
+        StopMusicButton.Text = currentBlock1(82, 3) '61
+        FastestFingerFirstButton.Text = currentBlock1(83, 3) '62
+        LocationLabel.Text = currentBlock1(84, 3) '63
+        HostLocationLabel.Text = currentBlock1(85, 3) '64
+        PlayerLocationLabel.Text = currentBlock1(86, 3) '65
+        AudienceLocationLabel.Text = currentBlock1(87, 3) '66
+        FramesLabel.Text = currentBlock1(88, 3) '67
+        HostFrameCheckBox.Text = currentBlock1(89, 3) '68
+        PlayerFrameCheckBox.Text = currentBlock1(90, 3) '69
+        AudienceFrameCheckBox.Text = currentBlock1(91, 3) '70
+        AvailabilityLabel.Text = currentBlock1(92, 3) '71
+        HostVisibleCheckBox.Text = currentBlock1(93, 3) '72
+        PlayerVisibleCheckBox.Text = currentBlock1(94, 3) '73
+        AudienceVisibleCheckBox.Text = currentBlock1(95, 3) '74
+        ContestantLabel.Text = currentBlock1(96, 3) '75
+        ContestantNameTextBox.Text = currentBlock1(97, 3) '76
+        AboutButton.Text = currentBlock1(98, 3) '77
+        Host.LogoPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LOGO_FEEL.png")
+        Player.LogoPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LOGO_FEEL.png")
+        Audience.LogoPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LOGO_FEEL.png")
         Host.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
         Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
         Audience.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\BG4.jpg")
-        Audience.PictureBox1.BackgroundImage = System.Drawing.Bitmap.FromFile("source\QUESTION.png")
-        PictureBox1.BackgroundImage = System.Drawing.Bitmap.FromFile("source\QUESTION.png")
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_0.png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_0.png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_0.png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_0.png"
-        PictureBox7.ImageLocation = "source\LIFELINES\000.png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\000.png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\000.png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\000.png"
-        Host.PictureBox12.ImageLocation = "source\GRAPH COLUMN.png"
-        Host.PictureBox11.ImageLocation = "source\GRAPH COLUMN.png"
-        Host.PictureBox10.ImageLocation = "source\GRAPH COLUMN.png"
-        Host.PictureBox9.ImageLocation = "source\GRAPH COLUMN.png"
-        Player.PictureBox11.ImageLocation = "source\GRAPH COLUMN.png"
-        Player.PictureBox10.ImageLocation = "source\GRAPH COLUMN.png"
-        Player.PictureBox9.ImageLocation = "source\GRAPH COLUMN.png"
-        Player.PictureBox1.ImageLocation = "source\GRAPH COLUMN.png"
-        Audience.PictureBox12.ImageLocation = "source\GRAPH COLUMN.png"
-        Audience.PictureBox11.ImageLocation = "source\GRAPH COLUMN.png"
-        Audience.PictureBox10.ImageLocation = "source\GRAPH COLUMN.png"
-        Audience.PictureBox9.ImageLocation = "source\GRAPH COLUMN.png"
+        Audience.QuestionFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile("source\QUESTION.png")
+        QuestionFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile("source\QUESTION.png")
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_0.png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_0.png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_0.png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_0.png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\000.png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\000.png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\000.png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\000.png"
+        Host.AnswerAChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Host.AnswerBChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Host.AnswerCChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Host.AnswerDChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Player.AnswerAChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Player.AnswerBChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Player.AnswerCChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Player.AnswerDChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Audience.AnswerAChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Audience.AnswerBChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Audience.AnswerCChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
+        Audience.AnswerDChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
         'Смена шрифта
-        Label16.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
-        Label17.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Label18.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Label19.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Label20.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Host.Label16.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
-        Host.Label17.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Host.Label18.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Host.Label19.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Host.Label20.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Player.Label16.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
-        Player.Label17.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Player.Label18.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Player.Label19.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Player.Label20.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label8.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
-        Audience.Label9.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label10.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label11.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label12.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label16.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
-        Audience.Label17.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label18.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label19.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        Audience.Label20.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        QuestionTextLabel.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
+        AnswerATextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        AnswerBTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        AnswerCTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        AnswerDTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Host.QuestionTextLabel.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
+        Host.AnswerATextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Host.AnswerBTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Host.AnswerCTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Host.AnswerDTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Player.QuestionTextLabel.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
+        Player.AnswerATextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Player.AnswerBTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Player.AnswerCTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Player.AnswerDTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.FffQuestionTextLabel.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
+        Audience.FffAnswer1Label.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.FffAnswer2Label.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.FffAnswer3Label.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.FffAnswer4Label.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.QuestionTextLabel.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
+        Audience.AnswerATextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.AnswerBTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.AnswerCTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        Audience.AnswerDTextLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
         'ATA
-        Host.Label10.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
-        Host.Label9.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
-        Host.Label8.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
-        Host.Label7.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
-        Player.Label1.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Player.Label2.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Player.Label3.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Player.Label4.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Audience.Label1.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Audience.Label2.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Audience.Label3.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        Audience.Label4.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
-        NumericUpDown1.Value = 1
-        hostPort = Int(TextBox2.Text)
+        Host.AnswerAPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
+        Host.AnswerBPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
+        Host.AnswerCPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
+        Host.AnswerDPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)) - 6)
+        Player.AnswerAPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Player.AnswerBPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Player.AnswerCPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Player.AnswerDPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Audience.AnswerAPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Audience.AnswerBPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Audience.AnswerCPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        Audience.AnswerDPercentLabel.Font = New Font(currentBlock1(6, 3), Int(currentBlock1(6, 4)))
+        QuestionNumberNumericUpDown.Value = 1
+        hostPort = Int(ServerPortTextBox.Text)
         Server.Start(1, hostPort)
         Me.Cursor = Cursors.Default
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+    Private Sub ServerPortTextBox_TextChanged(sender As Object, e As EventArgs) Handles ServerPortTextBox.TextChanged
         'Изменение порта соединения
         Server.Stop()
-        hostPort = Int(TextBox2.Text)
+        hostPort = Int(ServerPortTextBox.Text)
         Server.Start(1, hostPort)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub AskQuestionButton_Click(sender As Object, e As EventArgs) Handles AskQuestionButton.Click
         'Ask choosed question ДЛЯ ВСЕХ
-        Button24.PerformClick()
-        Label5.Text = currentBlock2(ListBox1.SelectedIndex + 1, 3) & Chr(13) & "A: " & currentBlock2(ListBox1.SelectedIndex + 1, 4) & " B: " & currentBlock2(ListBox1.SelectedIndex + 1, 5) & " C: " & currentBlock2(ListBox1.SelectedIndex + 1, 6) & " D: " & currentBlock2(ListBox1.SelectedIndex + 1, 7) & ". " & currentBlock1(143, 3) & " " & rightAnswerText
-        questionText = currentBlock2(ListBox1.SelectedIndex + 1, 3)
-        Label16.Text = questionText
+        ClearFormsButton.PerformClick()
+        QuestionPreviewLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 3) & Chr(13) & "A: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 4) & " B: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 5) & " C: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 6) & " D: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 7) & ". " & currentBlock1(143, 3) & " " & rightAnswerText
+        questionText = currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
+        QuestionTextLabel.Text = questionText
         numberRightAnswer = rightAnswerNumber
-        Button14.BackColor = Color.FromArgb(255, 192, 128)
-        Button14.Text = currentBlock1(42, 3) 'Show Hint
-        Host.Label5.Text = ""
-        Host.Label11.Text = ""
+        ToggleHintButton.BackColor = Color.FromArgb(255, 192, 128)
+        ToggleHintButton.Text = currentBlock1(42, 3) 'Show Hint
+        Host.FinalAnswerLetterLabel.Text = ""
+        Host.QuestionCommentLabel.Text = ""
         commentShow = False
-        If TextBox10.Text.StartsWith("-A:") And TextBox10.Text.EndsWith("%") Then
-            Button45.PerformClick()
+        If HostMessageTextBox.Text.StartsWith("-A:") And HostMessageTextBox.Text.EndsWith("%") Then
+            ClearHostMessageButton.PerformClick()
         End If
         Select Case questionNumber
             Case 0 To 5
@@ -307,7 +307,7 @@
                 winampOn = 1
         End Select
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button1|" & questionText & "|" & Str(numberRightAnswer) & "|" & questionNumber & "|"
@@ -315,74 +315,74 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.Yellow
-        Button3.BackColor = Color.Yellow
-        Button4.BackColor = Color.Yellow
-        Button5.BackColor = Color.Yellow
-        Button6.BackColor = Color.Yellow
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.Yellow
+        EnableAnswerBButton.BackColor = Color.Yellow
+        EnableAnswerCButton.BackColor = Color.Yellow
+        EnableAnswerDButton.BackColor = Color.Yellow
+        EnableAllAnswersButton.BackColor = Color.Yellow
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
+    Private Sub StopSoundButton_Click(sender As Object, e As EventArgs) Handles StopSoundButton.Click
         'Stop Sound
         My.Computer.Audio.Stop()
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub LightsDownButton_Click(sender As Object, e As EventArgs) Handles LightsDownButton.Click
         'Lights down (LX), clear forms
-        Button20.BackColor = Color.White
-        Timer2.Stop()
-        Player.PictureBox12.Visible = False
-        Audience.PictureBox14.Visible = False
-        Label16.Text = ""
-        Label17.Text = ""
-        Label18.Text = ""
-        Label19.Text = ""
-        Label20.Text = ""
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-        Player.Label16.Visible = True
-        Player.Label17.Visible = True
-        Player.Label18.Visible = True
-        Player.Label19.Visible = True
-        Player.Label20.Visible = True
-        Player.PictureBox2.Visible = True
-        Player.PictureBox3.Visible = True
-        Player.PictureBox4.Visible = True
-        Player.PictureBox5.Visible = True
-        Player.PictureBox13.Visible = False
-        Player.Label5.Visible = False
+        TakeTheMoneyButton.BackColor = Color.White
+        MoneyWonRevealTimer.Stop()
+        Player.MoneyWonPictureBox.Visible = False
+        Audience.MoneyWonPictureBox.Visible = False
+        QuestionTextLabel.Text = ""
+        AnswerATextLabel.Text = ""
+        AnswerBTextLabel.Text = ""
+        AnswerCTextLabel.Text = ""
+        AnswerDTextLabel.Text = ""
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+        Player.QuestionTextLabel.Visible = True
+        Player.AnswerATextLabel.Visible = True
+        Player.AnswerBTextLabel.Visible = True
+        Player.AnswerCTextLabel.Visible = True
+        Player.AnswerDTextLabel.Visible = True
+        Player.AnswerAFramePictureBox.Visible = True
+        Player.AnswerBFramePictureBox.Visible = True
+        Player.AnswerCFramePictureBox.Visible = True
+        Player.AnswerDFramePictureBox.Visible = True
+        Player.PrizePictureBox.Visible = False
+        Player.WinnerNameLabel.Visible = False
         Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-        Audience.Label16.Visible = True
-        Audience.Label17.Visible = True
-        Audience.Label18.Visible = True
-        Audience.Label19.Visible = True
-        Audience.Label20.Visible = True
-        Audience.PictureBox1.Visible = True
-        Audience.PictureBox2.Visible = True
-        Audience.PictureBox3.Visible = True
-        Audience.PictureBox4.Visible = True
-        Audience.PictureBox5.Visible = True
-        Audience.PictureBox13.Visible = False
-        Audience.Label5.Visible = False
-        Label17.BackColor = Color.FromArgb(42, 42, 42)
-        Label17.ForeColor = Color.White
-        Label18.BackColor = Color.FromArgb(42, 42, 42)
-        Label18.ForeColor = Color.White
-        Label19.BackColor = Color.FromArgb(42, 42, 42)
-        Label19.ForeColor = Color.White
-        Label20.BackColor = Color.FromArgb(42, 42, 42)
-        Label20.ForeColor = Color.White
-        Label7.BackColor = Color.DarkGray
-        Label7.Text = currentBlock1(39, 3) 'Answer Indicator
+        Audience.QuestionTextLabel.Visible = True
+        Audience.AnswerATextLabel.Visible = True
+        Audience.AnswerBTextLabel.Visible = True
+        Audience.AnswerCTextLabel.Visible = True
+        Audience.AnswerDTextLabel.Visible = True
+        Audience.QuestionFramePictureBox.Visible = True
+        Audience.AnswerAFramePictureBox.Visible = True
+        Audience.AnswerBFramePictureBox.Visible = True
+        Audience.AnswerCFramePictureBox.Visible = True
+        Audience.AnswerDFramePictureBox.Visible = True
+        Audience.PrizePictureBox.Visible = False
+        Audience.WinnerNameLabel.Visible = False
+        AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerATextLabel.ForeColor = Color.White
+        AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerBTextLabel.ForeColor = Color.White
+        AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerCTextLabel.ForeColor = Color.White
+        AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerDTextLabel.ForeColor = Color.White
+        AnswerIndicatorLabel.BackColor = Color.DarkGray
+        AnswerIndicatorLabel.Text = currentBlock1(39, 3) 'Answer Indicator
         Select Case questionNumber
             Case 0
                 Shell("source\BAT\stop_back_music1.bat")
@@ -409,69 +409,69 @@
                 Shell("source\BAT\run2_back_music1.bat " & batFileName)
                 winampOn = 1
         End Select
-        If NumericUpDown1.Value < 15 And NumericUpDown1.Value > -1 Then
-            NumericUpDown1.Value = NumericUpDown1.Value + 1
+        If QuestionNumberNumericUpDown.Value < 15 And QuestionNumberNumericUpDown.Value > -1 Then
+            QuestionNumberNumericUpDown.Value = QuestionNumberNumericUpDown.Value + 1
         End If
-        CheckBox10.Checked = False
+        MoneyTakenCheckBox.Checked = False
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button13|" & NumericUpDown1.Value & "|"
+                .Command = "@button13|" & QuestionNumberNumericUpDown.Value & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
         'Подсвечивание кнопок-подсказок
-        Button1.BackColor = Color.Yellow
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
-        Button30.BackColor = Color.White
-        Button33.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.Yellow
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
+        StartTheGameButton.BackColor = Color.White
+        GoodbyePunterButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub ReceiveAnswerAButton_Click(sender As Object, e As EventArgs) Handles ReceiveAnswerAButton.Click
         'A is a final answer
         Select Case numberRightAnswer
             Case 1
-                Host.Label5.Text = "A"
+                Host.FinalAnswerLetterLabel.Text = "A"
             Case 2
-                Host.Label5.Text = "B"
+                Host.FinalAnswerLetterLabel.Text = "B"
             Case 3
-                Host.Label5.Text = "C"
+                Host.FinalAnswerLetterLabel.Text = "C"
             Case 4
-                Host.Label5.Text = "D"
+                Host.FinalAnswerLetterLabel.Text = "D"
         End Select
         playerAnswerNumber = 1
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_ORANGE.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-        Label17.BackColor = Color.FromArgb(244, 155, 15)
-        Label18.BackColor = Color.FromArgb(42, 42, 42)
-        Label19.BackColor = Color.FromArgb(42, 42, 42)
-        Label20.BackColor = Color.FromArgb(42, 42, 42)
-        Label17.ForeColor = Color.Black
-        Label18.ForeColor = Color.White
-        Label19.ForeColor = Color.White
-        Label20.ForeColor = Color.White
-        Button14.BackColor = Color.FromArgb(128, 255, 255)
-        Button14.Text = currentBlock1(42, 4) 'Hide Hint
-        Host.Label11.Text = currentBlock2(ListBox1.SelectedIndex + 1, 9)
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_ORANGE.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+        AnswerATextLabel.BackColor = Color.FromArgb(244, 155, 15)
+        AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerATextLabel.ForeColor = Color.Black
+        AnswerBTextLabel.ForeColor = Color.White
+        AnswerCTextLabel.ForeColor = Color.White
+        AnswerDTextLabel.ForeColor = Color.White
+        ToggleHintButton.BackColor = Color.FromArgb(128, 255, 255)
+        ToggleHintButton.Text = currentBlock1(42, 4) 'Hide Hint
+        Host.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
             Shell("source\BAT\stop_back_music1.bat")
             winampOn = 0
         End If
-        If CheckBox10.Checked = False Then
+        If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
                     My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
@@ -486,69 +486,69 @@
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
-            Label7.BackColor = Color.FromArgb(0, 255, 0)
-            Label7.Text = currentBlock1(39, 4) 'Right Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(0, 255, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 4) 'Right Answer
         Else
-            Label7.BackColor = Color.FromArgb(255, 0, 0)
-            Label7.Text = currentBlock1(39, 5) 'Wrong Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(255, 0, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 5) 'Wrong Answer
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button8|" & currentBlock2(ListBox1.SelectedIndex + 1, 9) & "|"
+                .Command = "@button8|" & currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.Yellow
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.Yellow
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub ReceiveAnswerBButton_Click(sender As Object, e As EventArgs) Handles ReceiveAnswerBButton.Click
         'B is a final answer
         Select Case numberRightAnswer
             Case 1
-                Host.Label5.Text = "A"
+                Host.FinalAnswerLetterLabel.Text = "A"
             Case 2
-                Host.Label5.Text = "B"
+                Host.FinalAnswerLetterLabel.Text = "B"
             Case 3
-                Host.Label5.Text = "C"
+                Host.FinalAnswerLetterLabel.Text = "C"
             Case 4
-                Host.Label5.Text = "D"
+                Host.FinalAnswerLetterLabel.Text = "D"
         End Select
         playerAnswerNumber = 2
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_ORANGE.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-        Label17.BackColor = Color.FromArgb(42, 42, 42)
-        Label18.BackColor = Color.FromArgb(244, 155, 15)
-        Label19.BackColor = Color.FromArgb(42, 42, 42)
-        Label20.BackColor = Color.FromArgb(42, 42, 42)
-        Label17.ForeColor = Color.White
-        Label18.ForeColor = Color.Black
-        Label19.ForeColor = Color.White
-        Label20.ForeColor = Color.White
-        Button14.BackColor = Color.FromArgb(128, 255, 255)
-        Button14.Text = currentBlock1(42, 4) 'Hide Hint
-        Host.Label11.Text = currentBlock2(ListBox1.SelectedIndex + 1, 9)
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_ORANGE.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+        AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerBTextLabel.BackColor = Color.FromArgb(244, 155, 15)
+        AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerATextLabel.ForeColor = Color.White
+        AnswerBTextLabel.ForeColor = Color.Black
+        AnswerCTextLabel.ForeColor = Color.White
+        AnswerDTextLabel.ForeColor = Color.White
+        ToggleHintButton.BackColor = Color.FromArgb(128, 255, 255)
+        ToggleHintButton.Text = currentBlock1(42, 4) 'Hide Hint
+        Host.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
             Shell("source\BAT\stop_back_music1.bat")
             winampOn = 0
         End If
-        If CheckBox10.Checked = False Then
+        If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
                     My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
@@ -563,69 +563,69 @@
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
-            Label7.BackColor = Color.FromArgb(0, 255, 0)
-            Label7.Text = currentBlock1(39, 4) 'Right Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(0, 255, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 4) 'Right Answer
         Else
-            Label7.BackColor = Color.FromArgb(255, 0, 0)
-            Label7.Text = currentBlock1(39, 5) 'Wrong Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(255, 0, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 5) 'Wrong Answer
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button9|" & currentBlock2(ListBox1.SelectedIndex + 1, 9) & "|"
+                .Command = "@button9|" & currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.Yellow
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.Yellow
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub ReceiveAnswerCButton_Click(sender As Object, e As EventArgs) Handles ReceiveAnswerCButton.Click
         'C is a final answer
         Select Case numberRightAnswer
             Case 1
-                Host.Label5.Text = "A"
+                Host.FinalAnswerLetterLabel.Text = "A"
             Case 2
-                Host.Label5.Text = "B"
+                Host.FinalAnswerLetterLabel.Text = "B"
             Case 3
-                Host.Label5.Text = "C"
+                Host.FinalAnswerLetterLabel.Text = "C"
             Case 4
-                Host.Label5.Text = "D"
+                Host.FinalAnswerLetterLabel.Text = "D"
         End Select
         playerAnswerNumber = 3
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_ORANGE.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-        Label17.BackColor = Color.FromArgb(42, 42, 42)
-        Label18.BackColor = Color.FromArgb(42, 42, 42)
-        Label19.BackColor = Color.FromArgb(244, 155, 15)
-        Label20.BackColor = Color.FromArgb(42, 42, 42)
-        Label17.ForeColor = Color.White
-        Label18.ForeColor = Color.White
-        Label19.ForeColor = Color.Black
-        Label20.ForeColor = Color.White
-        Button14.BackColor = Color.FromArgb(128, 255, 255)
-        Button14.Text = currentBlock1(42, 4) 'Hide Hint
-        Host.Label11.Text = currentBlock2(ListBox1.SelectedIndex + 1, 9)
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_ORANGE.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+        AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerCTextLabel.BackColor = Color.FromArgb(244, 155, 15)
+        AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerATextLabel.ForeColor = Color.White
+        AnswerBTextLabel.ForeColor = Color.White
+        AnswerCTextLabel.ForeColor = Color.Black
+        AnswerDTextLabel.ForeColor = Color.White
+        ToggleHintButton.BackColor = Color.FromArgb(128, 255, 255)
+        ToggleHintButton.Text = currentBlock1(42, 4) 'Hide Hint
+        Host.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
             Shell("source\BAT\stop_back_music1.bat")
             winampOn = 0
         End If
-        If CheckBox10.Checked = False Then
+        If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
                     My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
@@ -640,69 +640,69 @@
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
-            Label7.BackColor = Color.FromArgb(0, 255, 0)
-            Label7.Text = currentBlock1(39, 4) 'Right Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(0, 255, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 4) 'Right Answer
         Else
-            Label7.BackColor = Color.FromArgb(255, 0, 0)
-            Label7.Text = currentBlock1(39, 5) 'Wrong Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(255, 0, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 5) 'Wrong Answer
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button10|" & currentBlock2(ListBox1.SelectedIndex + 1, 9) & "|"
+                .Command = "@button10|" & currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.Yellow
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.Yellow
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub ReceiveAnswerDButton_Click(sender As Object, e As EventArgs) Handles ReceiveAnswerDButton.Click
         'D is a final answer
         Select Case numberRightAnswer
             Case 1
-                Host.Label5.Text = "A"
+                Host.FinalAnswerLetterLabel.Text = "A"
             Case 2
-                Host.Label5.Text = "B"
+                Host.FinalAnswerLetterLabel.Text = "B"
             Case 3
-                Host.Label5.Text = "C"
+                Host.FinalAnswerLetterLabel.Text = "C"
             Case 4
-                Host.Label5.Text = "D"
+                Host.FinalAnswerLetterLabel.Text = "D"
         End Select
         playerAnswerNumber = 4
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_ORANGE.png")
-        Label17.BackColor = Color.FromArgb(42, 42, 42)
-        Label18.BackColor = Color.FromArgb(42, 42, 42)
-        Label19.BackColor = Color.FromArgb(42, 42, 42)
-        Label20.BackColor = Color.FromArgb(244, 155, 15)
-        Label17.ForeColor = Color.White
-        Label18.ForeColor = Color.White
-        Label19.ForeColor = Color.White
-        Label20.ForeColor = Color.Black
-        Button14.BackColor = Color.FromArgb(128, 255, 255)
-        Button14.Text = currentBlock1(42, 4) 'Hide Hint
-        Host.Label11.Text = currentBlock2(ListBox1.SelectedIndex + 1, 9)
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_ORANGE.png")
+        AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerDTextLabel.BackColor = Color.FromArgb(244, 155, 15)
+        AnswerATextLabel.ForeColor = Color.White
+        AnswerBTextLabel.ForeColor = Color.White
+        AnswerCTextLabel.ForeColor = Color.White
+        AnswerDTextLabel.ForeColor = Color.Black
+        ToggleHintButton.BackColor = Color.FromArgb(128, 255, 255)
+        ToggleHintButton.Text = currentBlock1(42, 4) 'Hide Hint
+        Host.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
             Shell("source\BAT\stop_back_music1.bat")
             winampOn = 0
         End If
-        If CheckBox10.Checked = False Then
+        If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
                     My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
@@ -717,241 +717,241 @@
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
-            Label7.BackColor = Color.FromArgb(0, 255, 0)
-            Label7.Text = currentBlock1(39, 4) 'Right Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(0, 255, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 4) 'Right Answer
         Else
-            Label7.BackColor = Color.FromArgb(255, 0, 0)
-            Label7.Text = currentBlock1(39, 5) 'Wrong Answer
+            AnswerIndicatorLabel.BackColor = Color.FromArgb(255, 0, 0)
+            AnswerIndicatorLabel.Text = currentBlock1(39, 5) 'Wrong Answer
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button11|" & currentBlock2(ListBox1.SelectedIndex + 1, 9) & "|"
+                .Command = "@button11|" & currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.Yellow
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.Yellow
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub RevealCorrectAnswerButton_Click(sender As Object, e As EventArgs) Handles RevealCorrectAnswerButton.Click
         'Check the correct answer
-        Host.Label1.Text = "Qaway:" & Str(15 - questionNumber)
-        Button12.BackColor = Color.Orange
+        Host.QuestionsLeftLabel.Text = "Qaway:" & Str(15 - questionNumber)
+        RevealCorrectAnswerButton.BackColor = Color.Orange
         Select Case numberRightAnswer
             Case 1
-                PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_GREEN.png")
-                Label17.BackColor = Color.FromArgb(93, 179, 87)
-                Label17.ForeColor = Color.Black
+                AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_GREEN.png")
+                AnswerATextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                AnswerATextLabel.ForeColor = Color.Black
             Case 2
-                PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_GREEN.png")
-                Label18.BackColor = Color.FromArgb(93, 179, 87)
-                Label18.ForeColor = Color.Black
+                AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_GREEN.png")
+                AnswerBTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                AnswerBTextLabel.ForeColor = Color.Black
             Case 3
-                PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_GREEN.png")
-                Label19.BackColor = Color.FromArgb(93, 179, 87)
-                Label19.ForeColor = Color.Black
+                AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_GREEN.png")
+                AnswerCTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                AnswerCTextLabel.ForeColor = Color.Black
             Case 4
-                PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_GREEN.png")
-                Label20.BackColor = Color.FromArgb(93, 179, 87)
-                Label20.ForeColor = Color.Black
+                AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_GREEN.png")
+                AnswerDTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                AnswerDTextLabel.ForeColor = Color.Black
         End Select
-        If CheckBox10.Checked = False Then
+        If MoneyTakenCheckBox.Checked = False Then
             If playerAnswerNumber = numberRightAnswer Then
-                Timer2.Start()
+                MoneyWonRevealTimer.Start()
                 Select Case questionNumber
                     Case 0
                         My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 0
-                        Host.Label2.Text = "100" 'Возможный выигрыш
-                        Host.Label3.Text = "0" 'Текущий выигрыш
-                        Host.Label4.Text = "0" 'Возможная потеря
-                        Host.Label6.Text = "0" 'Несгораемая сумма
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                        Host.PossibleWinLabel.Text = "100" 'Возможный выигрыш
+                        Host.CurrentWinLabel.Text = "0" 'Текущий выигрыш
+                        Host.PossibleLossLabel.Text = "0" 'Возможная потеря
+                        Host.GuaranteedSumLabel.Text = "0" 'Несгораемая сумма
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                     Case 1
                         My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 1
-                        Host.Label2.Text = "200"
-                        Host.Label3.Text = "100"
-                        Host.Label4.Text = "100"
-                        Host.Label6.Text = "0"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                        Host.PossibleWinLabel.Text = "200"
+                        Host.CurrentWinLabel.Text = "100"
+                        Host.PossibleLossLabel.Text = "100"
+                        Host.GuaranteedSumLabel.Text = "0"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                     Case 2
                         My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 2
-                        Host.Label2.Text = "300"
-                        Host.Label3.Text = "200"
-                        Host.Label4.Text = "200"
-                        Host.Label6.Text = "0"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                        Host.PossibleWinLabel.Text = "300"
+                        Host.CurrentWinLabel.Text = "200"
+                        Host.PossibleLossLabel.Text = "200"
+                        Host.GuaranteedSumLabel.Text = "0"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                     Case 3
                         My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 3
-                        Host.Label2.Text = "500"
-                        Host.Label3.Text = "200"
-                        Host.Label4.Text = "200"
-                        Host.Label6.Text = "0"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                        Host.PossibleWinLabel.Text = "500"
+                        Host.CurrentWinLabel.Text = "200"
+                        Host.PossibleLossLabel.Text = "200"
+                        Host.GuaranteedSumLabel.Text = "0"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                     Case 4
                         My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 4
-                        Host.Label2.Text = "1,000"
-                        Host.Label3.Text = "500"
-                        Host.Label4.Text = "500"
-                        Host.Label6.Text = "0"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                        Host.PossibleWinLabel.Text = "1,000"
+                        Host.CurrentWinLabel.Text = "500"
+                        Host.PossibleLossLabel.Text = "500"
+                        Host.GuaranteedSumLabel.Text = "0"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                     Case 5
                         My.Computer.Audio.Play("source\MUSIC\R1000 Winner.wav", AudioPlayMode.Background)
                         Shell("source\BAT\stop_back_music1.bat")
                         winampOn = 0
                         winNumber = 5
-                        Host.Label2.Text = "2,000"
-                        Host.Label3.Text = "1,000"
-                        Host.Label4.Text = "0"
-                        Host.Label6.Text = "1,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                        Host.PossibleWinLabel.Text = "2,000"
+                        Host.CurrentWinLabel.Text = "1,000"
+                        Host.PossibleLossLabel.Text = "0"
+                        Host.GuaranteedSumLabel.Text = "1,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                     Case 6
                         My.Computer.Audio.Play("source\MUSIC\Q6 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 6
-                        Host.Label2.Text = "4,000"
-                        Host.Label3.Text = "2,000"
-                        Host.Label4.Text = "1,000"
-                        Host.Label6.Text = "1,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                        Host.PossibleWinLabel.Text = "4,000"
+                        Host.CurrentWinLabel.Text = "2,000"
+                        Host.PossibleLossLabel.Text = "1,000"
+                        Host.GuaranteedSumLabel.Text = "1,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                     Case 7
                         My.Computer.Audio.Play("source\MUSIC\Q7 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 7
-                        Host.Label2.Text = "8,000"
-                        Host.Label3.Text = "4,000"
-                        Host.Label4.Text = "3,000"
-                        Host.Label6.Text = "1,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                        Host.PossibleWinLabel.Text = "8,000"
+                        Host.CurrentWinLabel.Text = "4,000"
+                        Host.PossibleLossLabel.Text = "3,000"
+                        Host.GuaranteedSumLabel.Text = "1,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                     Case 8
                         My.Computer.Audio.Play("source\MUSIC\Q8 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 8
-                        Host.Label2.Text = "16,000"
-                        Host.Label3.Text = "8,000"
-                        Host.Label4.Text = "7,000"
-                        Host.Label6.Text = "1,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                        Host.PossibleWinLabel.Text = "16,000"
+                        Host.CurrentWinLabel.Text = "8,000"
+                        Host.PossibleLossLabel.Text = "7,000"
+                        Host.GuaranteedSumLabel.Text = "1,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                     Case 9
                         My.Computer.Audio.Play("source\MUSIC\Q9 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 9
-                        Host.Label2.Text = "32,000"
-                        Host.Label3.Text = "16,000"
-                        Host.Label4.Text = "15,000"
-                        Host.Label6.Text = "1,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                        Host.PossibleWinLabel.Text = "32,000"
+                        Host.CurrentWinLabel.Text = "16,000"
+                        Host.PossibleLossLabel.Text = "15,000"
+                        Host.GuaranteedSumLabel.Text = "1,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                     Case 10
                         My.Computer.Audio.Play("source\MUSIC\R32000 - Winner.wav", AudioPlayMode.Background)
                         winNumber = 10
-                        Host.Label2.Text = "64,000"
-                        Host.Label3.Text = "32,000"
-                        Host.Label4.Text = "0"
-                        Host.Label6.Text = "32,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                        Host.PossibleWinLabel.Text = "64,000"
+                        Host.CurrentWinLabel.Text = "32,000"
+                        Host.PossibleLossLabel.Text = "0"
+                        Host.GuaranteedSumLabel.Text = "32,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                     Case 11
                         My.Computer.Audio.Play("source\MUSIC\Q11 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 11
-                        Host.Label2.Text = "125,000"
-                        Host.Label3.Text = "64,000"
-                        Host.Label4.Text = "32,000"
-                        Host.Label6.Text = "32,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                        Host.PossibleWinLabel.Text = "125,000"
+                        Host.CurrentWinLabel.Text = "64,000"
+                        Host.PossibleLossLabel.Text = "32,000"
+                        Host.GuaranteedSumLabel.Text = "32,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                     Case 12
                         My.Computer.Audio.Play("source\MUSIC\Q12 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 12
-                        Host.Label2.Text = "250,000"
-                        Host.Label3.Text = "125,000"
-                        Host.Label4.Text = "93,000"
-                        Host.Label6.Text = "32,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                        Host.PossibleWinLabel.Text = "250,000"
+                        Host.CurrentWinLabel.Text = "125,000"
+                        Host.PossibleLossLabel.Text = "93,000"
+                        Host.GuaranteedSumLabel.Text = "32,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                     Case 13
                         My.Computer.Audio.Play("source\MUSIC\Q13 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 13
-                        Host.Label2.Text = "500,000"
-                        Host.Label3.Text = "250,000"
-                        Host.Label4.Text = "218,000"
-                        Host.Label6.Text = "32,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                        Host.PossibleWinLabel.Text = "500,000"
+                        Host.CurrentWinLabel.Text = "250,000"
+                        Host.PossibleLossLabel.Text = "218,000"
+                        Host.GuaranteedSumLabel.Text = "32,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                     Case 14
                         My.Computer.Audio.Play("source\MUSIC\Q14 - Yes.wav", AudioPlayMode.Background)
                         winNumber = 14
-                        Host.Label2.Text = "1,000,000"
-                        Host.Label3.Text = "500,000"
-                        Host.Label4.Text = "468,000"
-                        Host.Label6.Text = "32,000"
-                        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
-                        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                        Host.PossibleWinLabel.Text = "1,000,000"
+                        Host.CurrentWinLabel.Text = "500,000"
+                        Host.PossibleLossLabel.Text = "468,000"
+                        Host.GuaranteedSumLabel.Text = "32,000"
+                        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
                     Case 15
-                        Host.Label1.Text = "Qaway: 0"
+                        Host.QuestionsLeftLabel.Text = "Qaway: 0"
                         My.Computer.Audio.Play("source\MUSIC\R1 000 000 - Winner.wav", AudioPlayMode.Background)
                         winNumber = 15
-                        Host.Label2.Text = "1,000,000"
-                        Host.Label3.Text = "1,000,000"
-                        Host.Label4.Text = "0"
-                        Host.Label6.Text = "1,000,000"
-                        Timer2.Stop()
-                        Timer3.Start()
-                        Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\MILLIONAIRE.png")
-                        Player.Label5.Text = TextBox11.Text
-                        Audience.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\MILLIONAIRE.png")
-                        Audience.Label5.Text = TextBox11.Text
-                        CheckBox10.Checked = True
-                        Button20.BackColor = Color.Blue
+                        Host.PossibleWinLabel.Text = "1,000,000"
+                        Host.CurrentWinLabel.Text = "1,000,000"
+                        Host.PossibleLossLabel.Text = "0"
+                        Host.GuaranteedSumLabel.Text = "1,000,000"
+                        MoneyWonRevealTimer.Stop()
+                        PrizeRevealTimer.Start()
+                        Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\MILLIONAIRE.png")
+                        Player.WinnerNameLabel.Text = ContestantNameTextBox.Text
+                        Audience.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\MILLIONAIRE.png")
+                        Audience.WinnerNameLabel.Text = ContestantNameTextBox.Text
+                        MoneyTakenCheckBox.Checked = True
+                        TakeTheMoneyButton.BackColor = Color.Blue
                         'Подсвечивание кнопок-подсказок
-                        Button1.BackColor = Color.White
-                        Button2.BackColor = Color.White
-                        Button3.BackColor = Color.White
-                        Button4.BackColor = Color.White
-                        Button5.BackColor = Color.White
-                        Button6.BackColor = Color.White
-                        Button8.BackColor = Color.White
-                        Button9.BackColor = Color.White
-                        Button10.BackColor = Color.White
-                        Button11.BackColor = Color.White
-                        Button12.BackColor = Color.White
-                        Button13.BackColor = Color.White
-                        Button33.BackColor = Color.Yellow
+                        AskQuestionButton.BackColor = Color.White
+                        EnableAnswerAButton.BackColor = Color.White
+                        EnableAnswerBButton.BackColor = Color.White
+                        EnableAnswerCButton.BackColor = Color.White
+                        EnableAnswerDButton.BackColor = Color.White
+                        EnableAllAnswersButton.BackColor = Color.White
+                        ReceiveAnswerAButton.BackColor = Color.White
+                        ReceiveAnswerBButton.BackColor = Color.White
+                        ReceiveAnswerCButton.BackColor = Color.White
+                        ReceiveAnswerDButton.BackColor = Color.White
+                        RevealCorrectAnswerButton.BackColor = Color.White
+                        LightsDownButton.BackColor = Color.White
+                        GoodbyePunterButton.BackColor = Color.Yellow
                 End Select
                 If winNumber < 15 Then
-                    Button1.BackColor = Color.White
-                    Button2.BackColor = Color.White
-                    Button3.BackColor = Color.White
-                    Button4.BackColor = Color.White
-                    Button5.BackColor = Color.White
-                    Button6.BackColor = Color.White
-                    Button8.BackColor = Color.White
-                    Button9.BackColor = Color.White
-                    Button10.BackColor = Color.White
-                    Button11.BackColor = Color.White
-                    Button13.BackColor = Color.Yellow
+                    AskQuestionButton.BackColor = Color.White
+                    EnableAnswerAButton.BackColor = Color.White
+                    EnableAnswerBButton.BackColor = Color.White
+                    EnableAnswerCButton.BackColor = Color.White
+                    EnableAnswerDButton.BackColor = Color.White
+                    EnableAllAnswersButton.BackColor = Color.White
+                    ReceiveAnswerAButton.BackColor = Color.White
+                    ReceiveAnswerBButton.BackColor = Color.White
+                    ReceiveAnswerCButton.BackColor = Color.White
+                    ReceiveAnswerDButton.BackColor = Color.White
+                    LightsDownButton.BackColor = Color.Yellow
                 End If
             Else
                 Select Case questionNumber
@@ -991,197 +991,197 @@
                         My.Computer.Audio.Play("source\MUSIC\R1 000 000 - Loser.wav", AudioPlayMode.Background)
                         winNumber = 10
                 End Select
-                Timer3.Start()
-                Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
-                Audience.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
-                CheckBox10.Checked = True
+                PrizeRevealTimer.Start()
+                Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                Audience.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                MoneyTakenCheckBox.Checked = True
                 'Подсвечивание кнопок-подсказок
-                Button1.BackColor = Color.White
-                Button2.BackColor = Color.White
-                Button3.BackColor = Color.White
-                Button4.BackColor = Color.White
-                Button5.BackColor = Color.White
-                Button6.BackColor = Color.White
-                Button8.BackColor = Color.White
-                Button9.BackColor = Color.White
-                Button10.BackColor = Color.White
-                Button11.BackColor = Color.White
-                Button12.BackColor = Color.White
-                Button13.BackColor = Color.White
-                Button33.BackColor = Color.Yellow
+                AskQuestionButton.BackColor = Color.White
+                EnableAnswerAButton.BackColor = Color.White
+                EnableAnswerBButton.BackColor = Color.White
+                EnableAnswerCButton.BackColor = Color.White
+                EnableAnswerDButton.BackColor = Color.White
+                EnableAllAnswersButton.BackColor = Color.White
+                ReceiveAnswerAButton.BackColor = Color.White
+                ReceiveAnswerBButton.BackColor = Color.White
+                ReceiveAnswerCButton.BackColor = Color.White
+                ReceiveAnswerDButton.BackColor = Color.White
+                RevealCorrectAnswerButton.BackColor = Color.White
+                LightsDownButton.BackColor = Color.White
+                GoodbyePunterButton.BackColor = Color.Yellow
             End If
         Else
-            Timer3.Start()
+            PrizeRevealTimer.Start()
             If winNumber < 15 Then
-                Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
-                Audience.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                Audience.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
             End If
             'Подсвечивание кнопок-подсказок
-            Button1.BackColor = Color.White
-            Button2.BackColor = Color.White
-            Button3.BackColor = Color.White
-            Button4.BackColor = Color.White
-            Button5.BackColor = Color.White
-            Button6.BackColor = Color.White
-            Button8.BackColor = Color.White
-            Button9.BackColor = Color.White
-            Button10.BackColor = Color.White
-            Button11.BackColor = Color.White
-            Button12.BackColor = Color.White
-            Button13.BackColor = Color.White
-            Button33.BackColor = Color.Yellow
+            AskQuestionButton.BackColor = Color.White
+            EnableAnswerAButton.BackColor = Color.White
+            EnableAnswerBButton.BackColor = Color.White
+            EnableAnswerCButton.BackColor = Color.White
+            EnableAnswerDButton.BackColor = Color.White
+            EnableAllAnswersButton.BackColor = Color.White
+            ReceiveAnswerAButton.BackColor = Color.White
+            ReceiveAnswerBButton.BackColor = Color.White
+            ReceiveAnswerCButton.BackColor = Color.White
+            ReceiveAnswerDButton.BackColor = Color.White
+            RevealCorrectAnswerButton.BackColor = Color.White
+            LightsDownButton.BackColor = Color.White
+            GoodbyePunterButton.BackColor = Color.Yellow
         End If
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 If winNumber = 15 Then
-                    .Command = "@millionaire|" & TextBox11.Text & "|"
+                    .Command = "@millionaire|" & ContestantNameTextBox.Text & "|"
                 Else
-                    .Command = "@button12|" & CheckBox10.Checked & "|" & winNumber & "|"
+                    .Command = "@button12|" & MoneyTakenCheckBox.Checked & "|" & winNumber & "|"
                 End If
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Sub MoneyWonRevealTimer_Tick(sender As Object, e As EventArgs) Handles MoneyWonRevealTimer.Tick
         'Таймер показа выигрыша
-        Player.Label16.Visible = False
-        Player.Label17.Visible = False
-        Player.Label18.Visible = False
-        Player.Label19.Visible = False
-        Player.Label20.Visible = False
-        Player.PictureBox2.Visible = False
-        Player.PictureBox3.Visible = False
-        Player.PictureBox4.Visible = False
-        Player.PictureBox5.Visible = False
-        Player.PictureBox12.Visible = True
-        Audience.Label16.Visible = False
-        Audience.Label17.Visible = False
-        Audience.Label18.Visible = False
-        Audience.Label19.Visible = False
-        Audience.Label20.Visible = False
-        Audience.PictureBox1.Visible = False
-        Audience.PictureBox2.Visible = False
-        Audience.PictureBox3.Visible = False
-        Audience.PictureBox4.Visible = False
-        Audience.PictureBox5.Visible = False
-        Audience.PictureBox14.Visible = True
+        Player.QuestionTextLabel.Visible = False
+        Player.AnswerATextLabel.Visible = False
+        Player.AnswerBTextLabel.Visible = False
+        Player.AnswerCTextLabel.Visible = False
+        Player.AnswerDTextLabel.Visible = False
+        Player.AnswerAFramePictureBox.Visible = False
+        Player.AnswerBFramePictureBox.Visible = False
+        Player.AnswerCFramePictureBox.Visible = False
+        Player.AnswerDFramePictureBox.Visible = False
+        Player.MoneyWonPictureBox.Visible = True
+        Audience.QuestionTextLabel.Visible = False
+        Audience.AnswerATextLabel.Visible = False
+        Audience.AnswerBTextLabel.Visible = False
+        Audience.AnswerCTextLabel.Visible = False
+        Audience.AnswerDTextLabel.Visible = False
+        Audience.QuestionFramePictureBox.Visible = False
+        Audience.AnswerAFramePictureBox.Visible = False
+        Audience.AnswerBFramePictureBox.Visible = False
+        Audience.AnswerCFramePictureBox.Visible = False
+        Audience.AnswerDFramePictureBox.Visible = False
+        Audience.MoneyWonPictureBox.Visible = True
         Player.BackgroundImage = Nothing
-        Button12.BackColor = Color.White
-        Timer2.Stop()
+        RevealCorrectAnswerButton.BackColor = Color.White
+        MoneyWonRevealTimer.Stop()
     End Sub
 
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+    Private Sub PrizeRevealTimer_Tick(sender As Object, e As EventArgs) Handles PrizeRevealTimer.Tick
         'Таймер панели TPM
         If winNumber = 15 Then
-            Player.Label5.Visible = True
-            Audience.Label5.Visible = True
+            Player.WinnerNameLabel.Visible = True
+            Audience.WinnerNameLabel.Visible = True
         End If
-        Player.Label16.Visible = False
-        Player.Label17.Visible = False
-        Player.Label18.Visible = False
-        Player.Label19.Visible = False
-        Player.Label20.Visible = False
-        Player.PictureBox2.Visible = False
-        Player.PictureBox3.Visible = False
-        Player.PictureBox4.Visible = False
-        Player.PictureBox5.Visible = False
-        Player.PictureBox13.Visible = True
-        Audience.Label16.Visible = False
-        Audience.Label17.Visible = False
-        Audience.Label18.Visible = False
-        Audience.Label19.Visible = False
-        Audience.Label20.Visible = False
-        Audience.PictureBox1.Visible = False
-        Audience.PictureBox2.Visible = False
-        Audience.PictureBox3.Visible = False
-        Audience.PictureBox4.Visible = False
-        Audience.PictureBox5.Visible = False
-        Audience.PictureBox13.Visible = True
+        Player.QuestionTextLabel.Visible = False
+        Player.AnswerATextLabel.Visible = False
+        Player.AnswerBTextLabel.Visible = False
+        Player.AnswerCTextLabel.Visible = False
+        Player.AnswerDTextLabel.Visible = False
+        Player.AnswerAFramePictureBox.Visible = False
+        Player.AnswerBFramePictureBox.Visible = False
+        Player.AnswerCFramePictureBox.Visible = False
+        Player.AnswerDFramePictureBox.Visible = False
+        Player.PrizePictureBox.Visible = True
+        Audience.QuestionTextLabel.Visible = False
+        Audience.AnswerATextLabel.Visible = False
+        Audience.AnswerBTextLabel.Visible = False
+        Audience.AnswerCTextLabel.Visible = False
+        Audience.AnswerDTextLabel.Visible = False
+        Audience.QuestionFramePictureBox.Visible = False
+        Audience.AnswerAFramePictureBox.Visible = False
+        Audience.AnswerBFramePictureBox.Visible = False
+        Audience.AnswerCFramePictureBox.Visible = False
+        Audience.AnswerDFramePictureBox.Visible = False
+        Audience.PrizePictureBox.Visible = True
         Player.BackgroundImage = Nothing
-        Button12.BackColor = Color.White
-        Button20.BackColor = Color.Aqua
-        Timer3.Stop()
+        RevealCorrectAnswerButton.BackColor = Color.White
+        TakeTheMoneyButton.BackColor = Color.Aqua
+        PrizeRevealTimer.Stop()
     End Sub
 
-    Private Sub Button53_Click(sender As Object, e As EventArgs) Handles Button53.Click
+    Private Sub OpeningTitlesButton_Click(sender As Object, e As EventArgs) Handles OpeningTitlesButton.Click
         'Opening Titles
         batFileName = Chr(34) & sourcePath & "\MUSIC\Millionaire Opening.wav" & Chr(34)
         Shell("source\BAT\run2_back_music1.bat " & batFileName)
         winampOn = 1
         If splashOn = False Then
-            Button16.PerformClick()
+            ToggleLogoButton.PerformClick()
         End If
-        Button24.PerformClick()
+        ClearFormsButton.PerformClick()
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button16|" & splashOn & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
-        Button22.BackColor = Color.FromArgb(255, 128, 128)
-        Button53.BackColor = Color.White
+        HostEntranceButton.BackColor = Color.FromArgb(255, 128, 128)
+        OpeningTitlesButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+    Private Sub HostEntranceButton_Click(sender As Object, e As EventArgs) Handles HostEntranceButton.Click
         'Host Entrance
         My.Computer.Audio.Play(sourcePath & "\MUSIC\Host Entrance #2.wav")
         Shell("source\BAT\stopfade_back_music1.bat")
         winampOn = 0
-        Button22.BackColor = Color.White
-        Button23.BackColor = Color.FromArgb(255, 128, 128)
-        Button41.BackColor = Color.FromArgb(255, 128, 128)
+        HostEntranceButton.BackColor = Color.White
+        LetsPlayButton.BackColor = Color.FromArgb(255, 128, 128)
+        FastestFingerFirstButton.BackColor = Color.FromArgb(255, 128, 128)
     End Sub
 
-    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+    Private Sub LetsPlayButton_Click(sender As Object, e As EventArgs) Handles LetsPlayButton.Click
         'Let's Play
         batFileName = Chr(34) & sourcePath & "\MUSIC\Lets Play.wav" & Chr(34)
         Shell("source\BAT\run2_back_music1.bat " & batFileName)
         winampOn = 1
         My.Computer.Audio.Stop()
-        NumericUpDown1.Value = 1
-        Button23.BackColor = Color.White
-        Button29.BackColor = Color.FromArgb(255, 128, 128)
-        Button35.BackColor = Color.White
-        Button41.BackColor = Color.White
+        QuestionNumberNumericUpDown.Value = 1
+        LetsPlayButton.BackColor = Color.White
+        LightsToCentreButton.BackColor = Color.FromArgb(255, 128, 128)
+        TomorrowsNamesButton.BackColor = Color.White
+        FastestFingerFirstButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+    Private Sub LightsToCentreButton_Click(sender As Object, e As EventArgs) Handles LightsToCentreButton.Click
         'LX To Centre
         My.Computer.Audio.Play("source\MUSIC\LX To Centre.wav", AudioPlayMode.Background)
         Shell("source\BAT\stopfade_back_music1.bat " & batFileName)
         winampOn = 0
-        Button29.BackColor = Color.White
-        Button25.BackColor = Color.FromArgb(255, 128, 128)
+        LightsToCentreButton.BackColor = Color.White
+        LifelineExplanationsButton.BackColor = Color.FromArgb(255, 128, 128)
     End Sub
 
-    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+    Private Sub LifelineExplanationsButton_Click(sender As Object, e As EventArgs) Handles LifelineExplanationsButton.Click
         'Lifeline Explanations
         If winampOn <> 1 Then
             batFileName = Chr(34) & sourcePath & "\MUSIC\Lifeline Explanations.wav" & Chr(34)
             Shell("source\BAT\run_back_music1.bat " & batFileName)
             winampOn = 1
         End If
-        Button25.BackColor = Color.White
+        LifelineExplanationsButton.BackColor = Color.White
         'Скрытие Splash Screen
-        Host.PictureBox0.Visible = False
-        Player.PictureBox0.Visible = False
-        Audience.PictureBox0.Visible = False
+        Host.LogoPictureBox.Visible = False
+        Player.LogoPictureBox.Visible = False
+        Audience.LogoPictureBox.Visible = False
         splashOn = False
-        Button16.Text = currentBlock1(45, 3) 'Show logo
-        Button16.BackColor = Color.White
-        Button24.PerformClick()
-        Button30.BackColor = Color.Green
+        ToggleLogoButton.Text = currentBlock1(45, 3) 'Show logo
+        ToggleLogoButton.BackColor = Color.White
+        ClearFormsButton.PerformClick()
+        StartTheGameButton.BackColor = Color.Green
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button25|" & activ50 & "|" & activPAF & "|" & activATA & "|" & winNumber & "|"
@@ -1190,16 +1190,16 @@
         End If
     End Sub
 
-    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+    Private Sub FiftyFiftyMusicButton_Click(sender As Object, e As EventArgs) Handles FiftyFiftyMusicButton.Click
         '50:50 Ping
         My.Computer.Audio.Play("source\MUSIC\50-50 Ping.wav", AudioPlayMode.Background)
-        PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Timer1.Start()
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        LifelinesRefreshTimer.Start()
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button26|1|" & activPAF & "|" & activATA & "|"
@@ -1208,16 +1208,16 @@
         End If
     End Sub
 
-    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+    Private Sub PhoneAFriendMusicButton_Click(sender As Object, e As EventArgs) Handles PhoneAFriendMusicButton.Click
         'PAF Ping
         My.Computer.Audio.Play("source\MUSIC\Phone a Friend Ping.wav", AudioPlayMode.Background)
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Timer1.Start()
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        LifelinesRefreshTimer.Start()
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button27|" & activ50 & "|1|" & activATA & "|"
@@ -1226,16 +1226,16 @@
         End If
     End Sub
 
-    Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
+    Private Sub AskTheAudienceMusicButton_Click(sender As Object, e As EventArgs) Handles AskTheAudienceMusicButton.Click
         'ATA Ping
         My.Computer.Audio.Play("source\MUSIC\Audience Ping.wav", AudioPlayMode.Background)
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Timer1.Start()
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        LifelinesRefreshTimer.Start()
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button28|" & activ50 & "|" & activPAF & "|1|"
@@ -1244,189 +1244,189 @@
         End If
     End Sub
 
-    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+    Private Sub StartTheGameButton_Click(sender As Object, e As EventArgs) Handles StartTheGameButton.Click
         'Start the game
-        Player.PictureBox12.Visible = False
-        Audience.PictureBox14.Visible = False
-        If winNumber < 15 Then NumericUpDown1.Value = winNumber + 1 Else NumericUpDown1.Value = 15
-        Host.Label1.Text = "Qaway:" & Str(15 - winNumber)
+        Player.MoneyWonPictureBox.Visible = False
+        Audience.MoneyWonPictureBox.Visible = False
+        If winNumber < 15 Then QuestionNumberNumericUpDown.Value = winNumber + 1 Else QuestionNumberNumericUpDown.Value = 15
+        Host.QuestionsLeftLabel.Text = "Qaway:" & Str(15 - winNumber)
         If winNumber < 15 Then
             Select Case questionNumber
                 Case 0, 1
-                    Host.Label2.Text = "100" 'Возможный выигрыш
-                    Host.Label3.Text = "0" 'Текущий выигрыш
-                    Host.Label4.Text = "0" 'Возможная потеря
-                    Host.Label6.Text = "0" 'Несгораемая сумма
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                    Host.PossibleWinLabel.Text = "100" 'Возможный выигрыш
+                    Host.CurrentWinLabel.Text = "0" 'Текущий выигрыш
+                    Host.PossibleLossLabel.Text = "0" 'Возможная потеря
+                    Host.GuaranteedSumLabel.Text = "0" 'Несгораемая сумма
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                 Case 2
-                    Host.Label2.Text = "200"
-                    Host.Label3.Text = "100"
-                    Host.Label4.Text = "100"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                    Host.PossibleWinLabel.Text = "200"
+                    Host.CurrentWinLabel.Text = "100"
+                    Host.PossibleLossLabel.Text = "100"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                 Case 3
-                    Host.Label2.Text = "300"
-                    Host.Label3.Text = "200"
-                    Host.Label4.Text = "200"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                    Host.PossibleWinLabel.Text = "300"
+                    Host.CurrentWinLabel.Text = "200"
+                    Host.PossibleLossLabel.Text = "200"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                 Case 4
-                    Host.Label2.Text = "500"
-                    Host.Label3.Text = "200"
-                    Host.Label4.Text = "200"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                    Host.PossibleWinLabel.Text = "500"
+                    Host.CurrentWinLabel.Text = "200"
+                    Host.PossibleLossLabel.Text = "200"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                 Case 5
-                    Host.Label2.Text = "1,000"
-                    Host.Label3.Text = "500"
-                    Host.Label4.Text = "500"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                    Host.PossibleWinLabel.Text = "1,000"
+                    Host.CurrentWinLabel.Text = "500"
+                    Host.PossibleLossLabel.Text = "500"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                 Case 6
-                    Host.Label2.Text = "2,000"
-                    Host.Label3.Text = "1,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                    Host.PossibleWinLabel.Text = "2,000"
+                    Host.CurrentWinLabel.Text = "1,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                 Case 7
-                    Host.Label2.Text = "4,000"
-                    Host.Label3.Text = "2,000"
-                    Host.Label4.Text = "1,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                    Host.PossibleWinLabel.Text = "4,000"
+                    Host.CurrentWinLabel.Text = "2,000"
+                    Host.PossibleLossLabel.Text = "1,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                 Case 8
-                    Host.Label2.Text = "8,000"
-                    Host.Label3.Text = "4,000"
-                    Host.Label4.Text = "3,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                    Host.PossibleWinLabel.Text = "8,000"
+                    Host.CurrentWinLabel.Text = "4,000"
+                    Host.PossibleLossLabel.Text = "3,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                 Case 9
-                    Host.Label2.Text = "16,000"
-                    Host.Label3.Text = "8,000"
-                    Host.Label4.Text = "7,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                    Host.PossibleWinLabel.Text = "16,000"
+                    Host.CurrentWinLabel.Text = "8,000"
+                    Host.PossibleLossLabel.Text = "7,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                 Case 10
-                    Host.Label2.Text = "32,000"
-                    Host.Label3.Text = "16,000"
-                    Host.Label4.Text = "15,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                    Host.PossibleWinLabel.Text = "32,000"
+                    Host.CurrentWinLabel.Text = "16,000"
+                    Host.PossibleLossLabel.Text = "15,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                 Case 11
-                    Host.Label2.Text = "64,000"
-                    Host.Label3.Text = "32,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                    Host.PossibleWinLabel.Text = "64,000"
+                    Host.CurrentWinLabel.Text = "32,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                 Case 12
-                    Host.Label2.Text = "125,000"
-                    Host.Label3.Text = "64,000"
-                    Host.Label4.Text = "32,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                    Host.PossibleWinLabel.Text = "125,000"
+                    Host.CurrentWinLabel.Text = "64,000"
+                    Host.PossibleLossLabel.Text = "32,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                 Case 13
-                    Host.Label2.Text = "250,000"
-                    Host.Label3.Text = "125,000"
-                    Host.Label4.Text = "93,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                    Host.PossibleWinLabel.Text = "250,000"
+                    Host.CurrentWinLabel.Text = "125,000"
+                    Host.PossibleLossLabel.Text = "93,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                 Case 14
-                    Host.Label2.Text = "500,000"
-                    Host.Label3.Text = "250,000"
-                    Host.Label4.Text = "218,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                    Host.PossibleWinLabel.Text = "500,000"
+                    Host.CurrentWinLabel.Text = "250,000"
+                    Host.PossibleLossLabel.Text = "218,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                 Case 15
-                    Host.Label2.Text = "1,000,000"
-                    Host.Label3.Text = "500,000"
-                    Host.Label4.Text = "468,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                    Host.PossibleWinLabel.Text = "1,000,000"
+                    Host.CurrentWinLabel.Text = "500,000"
+                    Host.PossibleLossLabel.Text = "468,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
             End Select
         End If
-        Host.Label5.Text = ""
-        Label16.Text = ""
-        Label17.Text = ""
-        Label18.Text = ""
-        Label19.Text = ""
-        Label20.Text = ""
-        Player.Label16.Visible = True
-        Player.Label17.Visible = True
-        Player.Label18.Visible = True
-        Player.Label19.Visible = True
-        Player.Label20.Visible = True
-        Player.PictureBox2.Visible = True
-        Player.PictureBox3.Visible = True
-        Player.PictureBox4.Visible = True
-        Player.PictureBox5.Visible = True
-        Player.PictureBox13.Visible = False
-        Player.Label5.Visible = False
+        Host.FinalAnswerLetterLabel.Text = ""
+        QuestionTextLabel.Text = ""
+        AnswerATextLabel.Text = ""
+        AnswerBTextLabel.Text = ""
+        AnswerCTextLabel.Text = ""
+        AnswerDTextLabel.Text = ""
+        Player.QuestionTextLabel.Visible = True
+        Player.AnswerATextLabel.Visible = True
+        Player.AnswerBTextLabel.Visible = True
+        Player.AnswerCTextLabel.Visible = True
+        Player.AnswerDTextLabel.Visible = True
+        Player.AnswerAFramePictureBox.Visible = True
+        Player.AnswerBFramePictureBox.Visible = True
+        Player.AnswerCFramePictureBox.Visible = True
+        Player.AnswerDFramePictureBox.Visible = True
+        Player.PrizePictureBox.Visible = False
+        Player.WinnerNameLabel.Visible = False
         Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-        Audience.Label16.Visible = True
-        Audience.Label17.Visible = True
-        Audience.Label18.Visible = True
-        Audience.Label19.Visible = True
-        Audience.Label20.Visible = True
-        Audience.PictureBox1.Visible = True
-        Audience.PictureBox2.Visible = True
-        Audience.PictureBox3.Visible = True
-        Audience.PictureBox4.Visible = True
-        Audience.PictureBox5.Visible = True
-        Audience.PictureBox13.Visible = False
-        Audience.Label5.Visible = False
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-        Label17.BackColor = Color.FromArgb(42, 42, 42)
-        Label17.ForeColor = Color.White
-        Label18.BackColor = Color.FromArgb(42, 42, 42)
-        Label18.ForeColor = Color.White
-        Label19.BackColor = Color.FromArgb(42, 42, 42)
-        Label19.ForeColor = Color.White
-        Label20.BackColor = Color.FromArgb(42, 42, 42)
-        Label20.ForeColor = Color.White
-        Label7.BackColor = Color.DarkGray
-        Label7.Text = currentBlock1(39, 3) 'Answer Indicator
+        Audience.QuestionTextLabel.Visible = True
+        Audience.AnswerATextLabel.Visible = True
+        Audience.AnswerBTextLabel.Visible = True
+        Audience.AnswerCTextLabel.Visible = True
+        Audience.AnswerDTextLabel.Visible = True
+        Audience.QuestionFramePictureBox.Visible = True
+        Audience.AnswerAFramePictureBox.Visible = True
+        Audience.AnswerBFramePictureBox.Visible = True
+        Audience.AnswerCFramePictureBox.Visible = True
+        Audience.AnswerDFramePictureBox.Visible = True
+        Audience.PrizePictureBox.Visible = False
+        Audience.WinnerNameLabel.Visible = False
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+        AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerATextLabel.ForeColor = Color.White
+        AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerBTextLabel.ForeColor = Color.White
+        AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerCTextLabel.ForeColor = Color.White
+        AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerDTextLabel.ForeColor = Color.White
+        AnswerIndicatorLabel.BackColor = Color.DarkGray
+        AnswerIndicatorLabel.Text = currentBlock1(39, 3) 'Answer Indicator
         Shell("source\BAT\stop_back_music1.bat")
         winampOn = 0
         My.Computer.Audio.Play("source\MUSIC\Let's See Q1.wav", AudioPlayMode.Background)
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Button14.Text = currentBlock1(42, 3) 'Show Hint
-        Host.Label11.Text = ""
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        ToggleHintButton.Text = currentBlock1(42, 3) 'Show Hint
+        Host.QuestionCommentLabel.Text = ""
         commentShow = False
-        If TextBox10.Text.StartsWith("-A:") And TextBox10.Text.EndsWith("%") Then
-            Button45.PerformClick()
+        If HostMessageTextBox.Text.StartsWith("-A:") And HostMessageTextBox.Text.EndsWith("%") Then
+            ClearHostMessageButton.PerformClick()
         End If
-        CheckBox10.Checked = False
-        If Host.Label12.Text = "Message to host" Then Button45.PerformClick()
+        MoneyTakenCheckBox.Checked = False
+        If Host.HostMessageLabel.Text = "Message to host" Then ClearHostMessageButton.PerformClick()
         'Скрытие Splash Screen
-        Host.PictureBox0.Visible = False
-        Player.PictureBox0.Visible = False
-        Audience.PictureBox0.Visible = False
+        Host.LogoPictureBox.Visible = False
+        Player.LogoPictureBox.Visible = False
+        Audience.LogoPictureBox.Visible = False
         splashOn = False
-        Button16.Text = currentBlock1(45, 3) 'Show logo
-        Button16.BackColor = Color.White
+        ToggleLogoButton.Text = currentBlock1(45, 3) 'Show logo
+        ToggleLogoButton.BackColor = Color.White
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button30|" & questionNumber & "|" & winNumber & "|"
@@ -1434,60 +1434,60 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.Yellow
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
-        Button14.BackColor = Color.FromArgb(255, 192, 128)
-        Button20.BackColor = Color.White
-        Button22.BackColor = Color.White
-        Button23.BackColor = Color.White
-        Button24.BackColor = Color.White
-        Button25.BackColor = Color.White
-        Button29.BackColor = Color.White
-        Button30.BackColor = Color.White
-        Button33.BackColor = Color.White
-        Button35.BackColor = Color.White
-        Button36.BackColor = Color.White
-        Button41.BackColor = Color.White
-        Button53.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.Yellow
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
+        ToggleHintButton.BackColor = Color.FromArgb(255, 192, 128)
+        TakeTheMoneyButton.BackColor = Color.White
+        HostEntranceButton.BackColor = Color.White
+        LetsPlayButton.BackColor = Color.White
+        ClearFormsButton.BackColor = Color.White
+        LifelineExplanationsButton.BackColor = Color.White
+        LightsToCentreButton.BackColor = Color.White
+        StartTheGameButton.BackColor = Color.White
+        GoodbyePunterButton.BackColor = Color.White
+        TomorrowsNamesButton.BackColor = Color.White
+        ClosingTitlesButton.BackColor = Color.White
+        FastestFingerFirstButton.BackColor = Color.White
+        OpeningTitlesButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+    Private Sub SeeYouLaterButton_Click(sender As Object, e As EventArgs) Handles SeeYouLaterButton.Click
         'See Yoy Later (P1)
         Shell("source\BAT\stop_back_music1.bat")
         winampOn = 0
         My.Computer.Audio.Play("source\MUSIC\See you later (End of Part 1).wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+    Private Sub HelloAgainButton_Click(sender As Object, e As EventArgs) Handles HelloAgainButton.Click
         'Hello Again (P2)
         My.Computer.Audio.Play("source\MUSIC\Hello Again (Begin of part 2).wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+    Private Sub GoodbyePunterButton_Click(sender As Object, e As EventArgs) Handles GoodbyePunterButton.Click
         'Goodbye Punter
         My.Computer.Audio.Play("source\MUSIC\Goodbye Punter.wav", AudioPlayMode.Background)
-        Button24.PerformClick()
-        Button52.PerformClick()
-        NumericUpDown1.Value = 1
-        CheckBox1.Checked = True
-        CheckBox2.Checked = True
-        CheckBox3.Checked = True
-        CheckBox10.Checked = False
+        ClearFormsButton.PerformClick()
+        MoneyTreeLevel0Button.PerformClick()
+        QuestionNumberNumericUpDown.Value = 1
+        FiftyFiftyAvailableCheckBox.Checked = True
+        PhoneAFriendAvailableCheckBox.Checked = True
+        AskTheAudienceAvailableCheckBox.Checked = True
+        MoneyTakenCheckBox.Checked = False
         If splashOn = False Then
-            Button16.PerformClick()
+            ToggleLogoButton.PerformClick()
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button33|"
@@ -1495,83 +1495,83 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
-        Button23.BackColor = Color.FromArgb(255, 128, 128)
-        Button30.BackColor = Color.Green
-        Button33.BackColor = Color.White
-        Button35.BackColor = Color.FromArgb(255, 128, 128)
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
+        LetsPlayButton.BackColor = Color.FromArgb(255, 128, 128)
+        StartTheGameButton.BackColor = Color.Green
+        GoodbyePunterButton.BackColor = Color.White
+        TomorrowsNamesButton.BackColor = Color.FromArgb(255, 128, 128)
     End Sub
 
-    Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
+    Private Sub TimesUpButton_Click(sender As Object, e As EventArgs) Handles TimesUpButton.Click
         'Time's Up
         My.Computer.Audio.Play("source\MUSIC\Time's Up.wav", AudioPlayMode.Background)
         Shell("source\BAT\stop_back_music1.bat")
         winampOn = 0
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.White
-        Button9.BackColor = Color.White
-        Button10.BackColor = Color.White
-        Button11.BackColor = Color.White
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
-        Button30.BackColor = Color.White
-        Button33.BackColor = Color.White
-        Button35.BackColor = Color.FromArgb(255, 128, 128)
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.White
+        ReceiveAnswerBButton.BackColor = Color.White
+        ReceiveAnswerCButton.BackColor = Color.White
+        ReceiveAnswerDButton.BackColor = Color.White
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
+        StartTheGameButton.BackColor = Color.White
+        GoodbyePunterButton.BackColor = Color.White
+        TomorrowsNamesButton.BackColor = Color.FromArgb(255, 128, 128)
     End Sub
 
-    Private Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
+    Private Sub TomorrowsNamesButton_Click(sender As Object, e As EventArgs) Handles TomorrowsNamesButton.Click
         'Tomorrows Names
         My.Computer.Audio.Play("source\MUSIC\Tomorrows Names.wav", AudioPlayMode.Background)
-        If splashOn = False Then Button16.PerformClick()
+        If splashOn = False Then ToggleLogoButton.PerformClick()
         'Перекрашивание кнопок-подсказок
-        Button23.BackColor = Color.White
-        Button35.BackColor = Color.White
-        Button36.BackColor = Color.FromArgb(255, 128, 128)
+        LetsPlayButton.BackColor = Color.White
+        TomorrowsNamesButton.BackColor = Color.White
+        ClosingTitlesButton.BackColor = Color.FromArgb(255, 128, 128)
     End Sub
 
-    Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
+    Private Sub ClosingTitlesButton_Click(sender As Object, e As EventArgs) Handles ClosingTitlesButton.Click
         'Closing Titles
         My.Computer.Audio.Play("source\MUSIC\Millionaire Closing.wav", AudioPlayMode.Background)
         'Перекрашивание кнопок-подсказок
-        Button36.BackColor = Color.White
+        ClosingTitlesButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
+    Private Sub StereoTestButton_Click(sender As Object, e As EventArgs) Handles StereoTestButton.Click
         'Stereo Test
         My.Computer.Audio.Play("source\MUSIC\Stereo Test.wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button38_Click(sender As Object, e As EventArgs) Handles Button38.Click
+    Private Sub SmsClockButton_Click(sender As Object, e As EventArgs) Handles SmsClockButton.Click
         'SMS Clock
         My.Computer.Audio.Play("source\MUSIC\sms_clock.wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button46_Click_1(sender As Object, e As EventArgs) Handles Button46.Click
+    Private Sub OpenQuestionBaseButton_Click_1(sender As Object, e As EventArgs) Handles OpenQuestionBaseButton.Click
         'Open file button
-        OpenFileDialog1.FileName = "*.questions"
-        OpenFileDialog1.InitialDirectory = CurDir() & "\Bases"
-        OpenFileDialog1.CheckFileExists = True
-        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            FileNameQ = OpenFileDialog1.FileName
+        OpenQuestionBaseDialog.FileName = "*.questions"
+        OpenQuestionBaseDialog.InitialDirectory = CurDir() & "\Bases"
+        OpenQuestionBaseDialog.CheckFileExists = True
+        If OpenQuestionBaseDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            FileNameQ = OpenQuestionBaseDialog.FileName
             Call openfilesdata(FileNameQ)
-            ListBox1.SelectedIndex = NumericUpDown1.Value - 1
+            QuestionListBox.SelectedIndex = QuestionNumberNumericUpDown.Value - 1
         End If
     End Sub
 
@@ -1580,9 +1580,9 @@
         Dim currentRow As String()
         Dim i0 As Integer
         Dim i1 As Integer
-        Label22.Text = FileNameQ
+        QuestionFilePathLabel.Text = FileNameQ
         If FileNameQ <> "*.questions" Then
-            ListBox1.Enabled = True
+            QuestionListBox.Enabled = True
             REM ****************************
             REM Считывание базы данных вопросов из выбранного файла
             i1 = 0
@@ -1630,59 +1630,59 @@
             REM /**********************
 
             REM ***********************
-            REM Заполнение ListBox1
-            ListBox1.Items.Clear()
+            REM Заполнение QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock0(i1, 2) & ": " & currentBlock0(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock0(i1, 2) & ": " & currentBlock0(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            REM /Заполнение ListBox1
+            REM /Заполнение QuestionListBox
             REM /***********************
-            Button46.BackColor = Color.White
+            OpenQuestionBaseButton.BackColor = Color.White
         Else
-            ListBox1.Enabled = False
-            ListBox1.Items.Clear()
+            QuestionListBox.Enabled = False
+            QuestionListBox.Items.Clear()
             MsgBox("You don't choosed question base file! Please, press ""Open"" button.")
-            Button46.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
-            Label22.Text = "Question File Adress (Choose question base file with format ""*.question"")"
+            OpenQuestionBaseButton.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
+            QuestionFilePathLabel.Text = "Question File Adress (Choose question base file with format ""*.question"")"
         End If
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        rightAnswerNumber = Int(currentBlock2(ListBox1.SelectedIndex + 1, 8)) 'Выбор номера правильного ответа из массива
-        rightAnswerText = currentBlock2(ListBox1.SelectedIndex + 1, rightAnswerNumber + 3) 'Текст ответа из массива (номер ответа + 3)
-        Label5.Text = currentBlock2(ListBox1.SelectedIndex + 1, 3) & Chr(13) & "A: " & currentBlock2(ListBox1.SelectedIndex + 1, 4) & " B: " & currentBlock2(ListBox1.SelectedIndex + 1, 5) & " C: " & currentBlock2(ListBox1.SelectedIndex + 1, 6) & " D: " & currentBlock2(ListBox1.SelectedIndex + 1, 7) & ". " & currentBlock1(143, 3) & " " & rightAnswerText
+    Private Sub QuestionListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles QuestionListBox.SelectedIndexChanged
+        rightAnswerNumber = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 8)) 'Выбор номера правильного ответа из массива
+        rightAnswerText = currentBlock2(QuestionListBox.SelectedIndex + 1, rightAnswerNumber + 3) 'Текст ответа из массива (номер ответа + 3)
+        QuestionPreviewLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 3) & Chr(13) & "A: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 4) & " B: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 5) & " C: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 6) & " D: " & currentBlock2(QuestionListBox.SelectedIndex + 1, 7) & ". " & currentBlock1(143, 3) & " " & rightAnswerText
     End Sub
 
-    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+    Private Sub QuestionListBox_DoubleClick(sender As Object, e As EventArgs) Handles QuestionListBox.DoubleClick
         Editor.Show()
     End Sub
 
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+    Private Sub QuestionNumberNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles QuestionNumberNumericUpDown.ValueChanged
         'Смена значения номера вопроса
-        questionNumber = NumericUpDown1.Value
-        ListBox1.SelectedIndex = questionNumber - 1
-        If NumericUpDown1.Value <> 0 Then
-            NumericUpDown1.Minimum = 1
+        questionNumber = QuestionNumberNumericUpDown.Value
+        QuestionListBox.SelectedIndex = questionNumber - 1
+        If QuestionNumberNumericUpDown.Value <> 0 Then
+            QuestionNumberNumericUpDown.Minimum = 1
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@numericupdown1|" & NumericUpDown1.Value & "|"
+                .Command = "@numericupdown1|" & QuestionNumberNumericUpDown.Value & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub EnableAnswerAButton_Click(sender As Object, e As EventArgs) Handles EnableAnswerAButton.Click
         'Show answer A on graphics
-        textAnswerA = currentBlock2(ListBox1.SelectedIndex + 1, 4)
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-        Label17.Text = textAnswerA
+        textAnswerA = currentBlock2(QuestionListBox.SelectedIndex + 1, 4)
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+        AnswerATextLabel.Text = textAnswerA
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button2|" & textAnswerA & "|"
@@ -1690,27 +1690,27 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        If Label17.Text <> Nothing Then Button2.BackColor = Color.White Else Button2.BackColor = Color.Yellow
-        If Label18.Text <> Nothing Then Button3.BackColor = Color.White Else Button3.BackColor = Color.Yellow
-        If Label19.Text <> Nothing Then Button4.BackColor = Color.White Else Button4.BackColor = Color.Yellow
-        If Label20.Text <> Nothing Then Button5.BackColor = Color.White Else Button5.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button6.BackColor = Color.White Else Button6.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button8.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button9.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button10.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button11.BackColor = Color.Yellow
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        If AnswerATextLabel.Text <> Nothing Then EnableAnswerAButton.BackColor = Color.White Else EnableAnswerAButton.BackColor = Color.Yellow
+        If AnswerBTextLabel.Text <> Nothing Then EnableAnswerBButton.BackColor = Color.White Else EnableAnswerBButton.BackColor = Color.Yellow
+        If AnswerCTextLabel.Text <> Nothing Then EnableAnswerCButton.BackColor = Color.White Else EnableAnswerCButton.BackColor = Color.Yellow
+        If AnswerDTextLabel.Text <> Nothing Then EnableAnswerDButton.BackColor = Color.White Else EnableAnswerDButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then EnableAllAnswersButton.BackColor = Color.White Else EnableAllAnswersButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerAButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerBButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerCButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerDButton.BackColor = Color.Yellow
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub EnableAnswerBButton_Click(sender As Object, e As EventArgs) Handles EnableAnswerBButton.Click
         'Show answer B on graphics
-        textAnswerB = currentBlock2(ListBox1.SelectedIndex + 1, 5)
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-        Label18.Text = textAnswerB
+        textAnswerB = currentBlock2(QuestionListBox.SelectedIndex + 1, 5)
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+        AnswerBTextLabel.Text = textAnswerB
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button3|" & textAnswerB & "|"
@@ -1718,27 +1718,27 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        If Label17.Text <> Nothing Then Button2.BackColor = Color.White Else Button2.BackColor = Color.Yellow
-        If Label18.Text <> Nothing Then Button3.BackColor = Color.White Else Button3.BackColor = Color.Yellow
-        If Label19.Text <> Nothing Then Button4.BackColor = Color.White Else Button4.BackColor = Color.Yellow
-        If Label20.Text <> Nothing Then Button5.BackColor = Color.White Else Button5.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button6.BackColor = Color.White Else Button6.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button8.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button9.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button10.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button11.BackColor = Color.Yellow
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        If AnswerATextLabel.Text <> Nothing Then EnableAnswerAButton.BackColor = Color.White Else EnableAnswerAButton.BackColor = Color.Yellow
+        If AnswerBTextLabel.Text <> Nothing Then EnableAnswerBButton.BackColor = Color.White Else EnableAnswerBButton.BackColor = Color.Yellow
+        If AnswerCTextLabel.Text <> Nothing Then EnableAnswerCButton.BackColor = Color.White Else EnableAnswerCButton.BackColor = Color.Yellow
+        If AnswerDTextLabel.Text <> Nothing Then EnableAnswerDButton.BackColor = Color.White Else EnableAnswerDButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then EnableAllAnswersButton.BackColor = Color.White Else EnableAllAnswersButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerAButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerBButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerCButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerDButton.BackColor = Color.Yellow
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub EnableAnswerCButton_Click(sender As Object, e As EventArgs) Handles EnableAnswerCButton.Click
         'Show answer C on graphics
-        textAnswerC = currentBlock2(ListBox1.SelectedIndex + 1, 6)
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-        Label19.Text = textAnswerC
+        textAnswerC = currentBlock2(QuestionListBox.SelectedIndex + 1, 6)
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+        AnswerCTextLabel.Text = textAnswerC
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button4|" & textAnswerC & "|"
@@ -1746,27 +1746,27 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        If Label17.Text <> Nothing Then Button2.BackColor = Color.White Else Button2.BackColor = Color.Yellow
-        If Label18.Text <> Nothing Then Button3.BackColor = Color.White Else Button3.BackColor = Color.Yellow
-        If Label19.Text <> Nothing Then Button4.BackColor = Color.White Else Button4.BackColor = Color.Yellow
-        If Label20.Text <> Nothing Then Button5.BackColor = Color.White Else Button5.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button6.BackColor = Color.White Else Button6.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button8.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button9.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button10.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button11.BackColor = Color.Yellow
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        If AnswerATextLabel.Text <> Nothing Then EnableAnswerAButton.BackColor = Color.White Else EnableAnswerAButton.BackColor = Color.Yellow
+        If AnswerBTextLabel.Text <> Nothing Then EnableAnswerBButton.BackColor = Color.White Else EnableAnswerBButton.BackColor = Color.Yellow
+        If AnswerCTextLabel.Text <> Nothing Then EnableAnswerCButton.BackColor = Color.White Else EnableAnswerCButton.BackColor = Color.Yellow
+        If AnswerDTextLabel.Text <> Nothing Then EnableAnswerDButton.BackColor = Color.White Else EnableAnswerDButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then EnableAllAnswersButton.BackColor = Color.White Else EnableAllAnswersButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerAButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerBButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerCButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerDButton.BackColor = Color.Yellow
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub EnableAnswerDButton_Click(sender As Object, e As EventArgs) Handles EnableAnswerDButton.Click
         'Show answer D on graphics
-        textAnswerD = currentBlock2(ListBox1.SelectedIndex + 1, 7)
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-        Label20.Text = textAnswerD
+        textAnswerD = currentBlock2(QuestionListBox.SelectedIndex + 1, 7)
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+        AnswerDTextLabel.Text = textAnswerD
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button5|" & textAnswerD & "|"
@@ -1774,39 +1774,39 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        If Label17.Text <> Nothing Then Button2.BackColor = Color.White Else Button2.BackColor = Color.Yellow
-        If Label18.Text <> Nothing Then Button3.BackColor = Color.White Else Button3.BackColor = Color.Yellow
-        If Label19.Text <> Nothing Then Button4.BackColor = Color.White Else Button4.BackColor = Color.Yellow
-        If Label20.Text <> Nothing Then Button5.BackColor = Color.White Else Button5.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button6.BackColor = Color.White Else Button6.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button8.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button9.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button10.BackColor = Color.Yellow
-        If Label17.Text <> Nothing And Label18.Text <> Nothing And Label19.Text <> Nothing And Label20.Text <> Nothing Then Button11.BackColor = Color.Yellow
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        If AnswerATextLabel.Text <> Nothing Then EnableAnswerAButton.BackColor = Color.White Else EnableAnswerAButton.BackColor = Color.Yellow
+        If AnswerBTextLabel.Text <> Nothing Then EnableAnswerBButton.BackColor = Color.White Else EnableAnswerBButton.BackColor = Color.Yellow
+        If AnswerCTextLabel.Text <> Nothing Then EnableAnswerCButton.BackColor = Color.White Else EnableAnswerCButton.BackColor = Color.Yellow
+        If AnswerDTextLabel.Text <> Nothing Then EnableAnswerDButton.BackColor = Color.White Else EnableAnswerDButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then EnableAllAnswersButton.BackColor = Color.White Else EnableAllAnswersButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerAButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerBButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerCButton.BackColor = Color.Yellow
+        If AnswerATextLabel.Text <> Nothing And AnswerBTextLabel.Text <> Nothing And AnswerCTextLabel.Text <> Nothing And AnswerDTextLabel.Text <> Nothing Then ReceiveAnswerDButton.BackColor = Color.Yellow
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub EnableAllAnswersButton_Click(sender As Object, e As EventArgs) Handles EnableAllAnswersButton.Click
         'Show ALL answers on graphics
-        questionText = currentBlock2(ListBox1.SelectedIndex + 1, 3)
-        textAnswerA = currentBlock2(ListBox1.SelectedIndex + 1, 4)
-        textAnswerB = currentBlock2(ListBox1.SelectedIndex + 1, 5)
-        textAnswerC = currentBlock2(ListBox1.SelectedIndex + 1, 6)
-        textAnswerD = currentBlock2(ListBox1.SelectedIndex + 1, 7)
-        rightAnswerNumber = Int(currentBlock2(ListBox1.SelectedIndex + 1, 8))
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-        Label16.Text = questionText
-        Label17.Text = textAnswerA
-        Label18.Text = textAnswerB
-        Label19.Text = textAnswerC
-        Label20.Text = textAnswerD
+        questionText = currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
+        textAnswerA = currentBlock2(QuestionListBox.SelectedIndex + 1, 4)
+        textAnswerB = currentBlock2(QuestionListBox.SelectedIndex + 1, 5)
+        textAnswerC = currentBlock2(QuestionListBox.SelectedIndex + 1, 6)
+        textAnswerD = currentBlock2(QuestionListBox.SelectedIndex + 1, 7)
+        rightAnswerNumber = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 8))
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+        QuestionTextLabel.Text = questionText
+        AnswerATextLabel.Text = textAnswerA
+        AnswerBTextLabel.Text = textAnswerB
+        AnswerCTextLabel.Text = textAnswerC
+        AnswerDTextLabel.Text = textAnswerD
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button6|" & questionText & "|" & textAnswerA & "|" & textAnswerB & "|" & textAnswerC & "|" & textAnswerD & "|" & numberRightAnswer & "|"
@@ -1814,87 +1814,87 @@
             Client_SendIONetwork(NetworkInfo)
         End If
         'Перекрашивание кнопок-подсказок
-        Button1.BackColor = Color.White
-        Button2.BackColor = Color.White
-        Button3.BackColor = Color.White
-        Button4.BackColor = Color.White
-        Button5.BackColor = Color.White
-        Button6.BackColor = Color.White
-        Button8.BackColor = Color.Yellow
-        Button9.BackColor = Color.Yellow
-        Button10.BackColor = Color.Yellow
-        Button11.BackColor = Color.Yellow
-        Button12.BackColor = Color.White
-        Button13.BackColor = Color.White
+        AskQuestionButton.BackColor = Color.White
+        EnableAnswerAButton.BackColor = Color.White
+        EnableAnswerBButton.BackColor = Color.White
+        EnableAnswerCButton.BackColor = Color.White
+        EnableAnswerDButton.BackColor = Color.White
+        EnableAllAnswersButton.BackColor = Color.White
+        ReceiveAnswerAButton.BackColor = Color.Yellow
+        ReceiveAnswerBButton.BackColor = Color.Yellow
+        ReceiveAnswerCButton.BackColor = Color.Yellow
+        ReceiveAnswerDButton.BackColor = Color.Yellow
+        RevealCorrectAnswerButton.BackColor = Color.White
+        LightsDownButton.BackColor = Color.White
     End Sub
 
-    Private Sub Button40_Click(sender As Object, e As EventArgs) Handles Button40.Click
+    Private Sub StopMusicButton_Click(sender As Object, e As EventArgs) Handles StopMusicButton.Click
         'Stop музыки в проигрывателе
         Shell("source\BAT\stop_back_music1.bat")
         winampOn = 0
     End Sub
 
-    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+    Private Sub ClearFormsButton_Click(sender As Object, e As EventArgs) Handles ClearFormsButton.Click
         'Clear forms
-        Button20.BackColor = Color.White
-        Button24.BackColor = Color.White
-        Player.PictureBox12.Visible = False
-        Audience.PictureBox14.Visible = False
-        Host.Label5.Text = ""
-        Label16.Text = ""
-        Label17.Text = ""
-        Label18.Text = ""
-        Label19.Text = ""
-        Label20.Text = ""
-        Player.Label16.Visible = True
-        Player.Label17.Visible = True
-        Player.Label18.Visible = True
-        Player.Label19.Visible = True
-        Player.Label20.Visible = True
-        Player.PictureBox2.Visible = True
-        Player.PictureBox3.Visible = True
-        Player.PictureBox4.Visible = True
-        Player.PictureBox5.Visible = True
-        Player.PictureBox13.Visible = False
-        Player.Label5.Visible = False
+        TakeTheMoneyButton.BackColor = Color.White
+        ClearFormsButton.BackColor = Color.White
+        Player.MoneyWonPictureBox.Visible = False
+        Audience.MoneyWonPictureBox.Visible = False
+        Host.FinalAnswerLetterLabel.Text = ""
+        QuestionTextLabel.Text = ""
+        AnswerATextLabel.Text = ""
+        AnswerBTextLabel.Text = ""
+        AnswerCTextLabel.Text = ""
+        AnswerDTextLabel.Text = ""
+        Player.QuestionTextLabel.Visible = True
+        Player.AnswerATextLabel.Visible = True
+        Player.AnswerBTextLabel.Visible = True
+        Player.AnswerCTextLabel.Visible = True
+        Player.AnswerDTextLabel.Visible = True
+        Player.AnswerAFramePictureBox.Visible = True
+        Player.AnswerBFramePictureBox.Visible = True
+        Player.AnswerCFramePictureBox.Visible = True
+        Player.AnswerDFramePictureBox.Visible = True
+        Player.PrizePictureBox.Visible = False
+        Player.WinnerNameLabel.Visible = False
         Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-        If Button41.BackColor <> Color.Orange Then
-            Audience.Label16.Visible = True
-            Audience.Label17.Visible = True
-            Audience.Label18.Visible = True
-            Audience.Label19.Visible = True
-            Audience.Label20.Visible = True
-            Audience.PictureBox1.Visible = True
-            Audience.PictureBox2.Visible = True
-            Audience.PictureBox3.Visible = True
-            Audience.PictureBox4.Visible = True
-            Audience.PictureBox5.Visible = True
+        If FastestFingerFirstButton.BackColor <> Color.Orange Then
+            Audience.QuestionTextLabel.Visible = True
+            Audience.AnswerATextLabel.Visible = True
+            Audience.AnswerBTextLabel.Visible = True
+            Audience.AnswerCTextLabel.Visible = True
+            Audience.AnswerDTextLabel.Visible = True
+            Audience.QuestionFramePictureBox.Visible = True
+            Audience.AnswerAFramePictureBox.Visible = True
+            Audience.AnswerBFramePictureBox.Visible = True
+            Audience.AnswerCFramePictureBox.Visible = True
+            Audience.AnswerDFramePictureBox.Visible = True
         End If
-        Audience.PictureBox13.Visible = False
-        Audience.Label5.Visible = False
-        PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-        PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-        PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-        PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-        Label17.BackColor = Color.FromArgb(42, 42, 42)
-        Label17.ForeColor = Color.White
-        Label18.BackColor = Color.FromArgb(42, 42, 42)
-        Label18.ForeColor = Color.White
-        Label19.BackColor = Color.FromArgb(42, 42, 42)
-        Label19.ForeColor = Color.White
-        Label20.BackColor = Color.FromArgb(42, 42, 42)
-        Label20.ForeColor = Color.White
-        Label7.BackColor = Color.DarkGray
-        Label7.Text = currentBlock1(39, 3) 'Answer Indicator
-        Button14.BackColor = Color.FromArgb(255, 192, 128)
-        Button14.Text = currentBlock1(42, 3) 'Show Hint
-        Host.Label11.Text = ""
+        Audience.PrizePictureBox.Visible = False
+        Audience.WinnerNameLabel.Visible = False
+        AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+        AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+        AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+        AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+        AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerATextLabel.ForeColor = Color.White
+        AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerBTextLabel.ForeColor = Color.White
+        AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerCTextLabel.ForeColor = Color.White
+        AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+        AnswerDTextLabel.ForeColor = Color.White
+        AnswerIndicatorLabel.BackColor = Color.DarkGray
+        AnswerIndicatorLabel.Text = currentBlock1(39, 3) 'Answer Indicator
+        ToggleHintButton.BackColor = Color.FromArgb(255, 192, 128)
+        ToggleHintButton.Text = currentBlock1(42, 3) 'Show Hint
+        Host.QuestionCommentLabel.Text = ""
         commentShow = False
-        If TextBox10.Text.StartsWith("-A:") And TextBox10.Text.EndsWith("%") Then
-            Button45.PerformClick()
+        If HostMessageTextBox.Text.StartsWith("-A:") And HostMessageTextBox.Text.EndsWith("%") Then
+            ClearHostMessageButton.PerformClick()
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button24|"
@@ -1903,114 +1903,114 @@
         End If
     End Sub
 
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+    Private Sub TakeTheMoneyButton_Click(sender As Object, e As EventArgs) Handles TakeTheMoneyButton.Click
         'Take a money
-        If CheckBox10.Checked = False Then
+        If MoneyTakenCheckBox.Checked = False Then
             Shell("source\BAT\stopfade_back_music1.bat")
             winampOn = 0
-            Timer3.Start()
+            PrizeRevealTimer.Start()
             If winNumber < 15 Then
-                Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
-                Audience.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                Audience.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
             End If
-            Button20.BackColor = Color.Blue
-            CheckBox10.Checked = True
+            TakeTheMoneyButton.BackColor = Color.Blue
+            MoneyTakenCheckBox.Checked = True
             'Перекрашивание кнопок-подсказок
-            Button1.BackColor = Color.White
-            Button2.BackColor = Color.White
-            Button3.BackColor = Color.White
-            Button4.BackColor = Color.White
-            Button5.BackColor = Color.White
-            Button6.BackColor = Color.White
-            Button8.BackColor = Color.White
-            Button9.BackColor = Color.White
-            Button10.BackColor = Color.White
-            Button11.BackColor = Color.White
-            Button12.BackColor = Color.White
-            Button13.BackColor = Color.White
+            AskQuestionButton.BackColor = Color.White
+            EnableAnswerAButton.BackColor = Color.White
+            EnableAnswerBButton.BackColor = Color.White
+            EnableAnswerCButton.BackColor = Color.White
+            EnableAnswerDButton.BackColor = Color.White
+            EnableAllAnswersButton.BackColor = Color.White
+            ReceiveAnswerAButton.BackColor = Color.White
+            ReceiveAnswerBButton.BackColor = Color.White
+            ReceiveAnswerCButton.BackColor = Color.White
+            ReceiveAnswerDButton.BackColor = Color.White
+            RevealCorrectAnswerButton.BackColor = Color.White
+            LightsDownButton.BackColor = Color.White
             'Сеть
-            If Button7.BackColor = Color.Green Then
+            If ConnectButton.BackColor = Color.Green Then
                 Dim NetworkInfo As New IONetwork
                 With NetworkInfo
-                    .Command = "@button20_1|" & CheckBox10.Checked & "|"
+                    .Command = "@button20_1|" & MoneyTakenCheckBox.Checked & "|"
                 End With
                 Client_SendIONetwork(NetworkInfo)
             End If
         Else
-            Player.Label5.Visible = False
-            Player.Label16.Visible = True
-            Player.Label17.Visible = True
-            Player.Label18.Visible = True
-            Player.Label19.Visible = True
-            Player.Label20.Visible = True
-            Player.PictureBox2.Visible = True
-            Player.PictureBox3.Visible = True
-            Player.PictureBox4.Visible = True
-            Player.PictureBox5.Visible = True
-            Player.PictureBox13.Visible = False
-            Audience.Label5.Visible = False
-            Audience.Label16.Visible = True
-            Audience.Label17.Visible = True
-            Audience.Label18.Visible = True
-            Audience.Label19.Visible = True
-            Audience.Label20.Visible = True
-            Audience.PictureBox1.Visible = True
-            Audience.PictureBox2.Visible = True
-            Audience.PictureBox3.Visible = True
-            Audience.PictureBox4.Visible = True
-            Audience.PictureBox5.Visible = True
-            Audience.PictureBox13.Visible = False
+            Player.WinnerNameLabel.Visible = False
+            Player.QuestionTextLabel.Visible = True
+            Player.AnswerATextLabel.Visible = True
+            Player.AnswerBTextLabel.Visible = True
+            Player.AnswerCTextLabel.Visible = True
+            Player.AnswerDTextLabel.Visible = True
+            Player.AnswerAFramePictureBox.Visible = True
+            Player.AnswerBFramePictureBox.Visible = True
+            Player.AnswerCFramePictureBox.Visible = True
+            Player.AnswerDFramePictureBox.Visible = True
+            Player.PrizePictureBox.Visible = False
+            Audience.WinnerNameLabel.Visible = False
+            Audience.QuestionTextLabel.Visible = True
+            Audience.AnswerATextLabel.Visible = True
+            Audience.AnswerBTextLabel.Visible = True
+            Audience.AnswerCTextLabel.Visible = True
+            Audience.AnswerDTextLabel.Visible = True
+            Audience.QuestionFramePictureBox.Visible = True
+            Audience.AnswerAFramePictureBox.Visible = True
+            Audience.AnswerBFramePictureBox.Visible = True
+            Audience.AnswerCFramePictureBox.Visible = True
+            Audience.AnswerDFramePictureBox.Visible = True
+            Audience.PrizePictureBox.Visible = False
             Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-            Button12.BackColor = Color.White
-            Timer3.Stop()
-            Button20.BackColor = Color.White
+            RevealCorrectAnswerButton.BackColor = Color.White
+            PrizeRevealTimer.Stop()
+            TakeTheMoneyButton.BackColor = Color.White
             'Перекрашивание кнопок-подсказок
-            Button1.BackColor = Color.White
-            Button2.BackColor = Color.White
-            Button3.BackColor = Color.White
-            Button4.BackColor = Color.White
-            Button5.BackColor = Color.White
-            Button6.BackColor = Color.White
-            Button8.BackColor = Color.Yellow
-            Button9.BackColor = Color.Yellow
-            Button10.BackColor = Color.Yellow
-            Button11.BackColor = Color.Yellow
-            Button12.BackColor = Color.White
-            Button13.BackColor = Color.White
+            AskQuestionButton.BackColor = Color.White
+            EnableAnswerAButton.BackColor = Color.White
+            EnableAnswerBButton.BackColor = Color.White
+            EnableAnswerCButton.BackColor = Color.White
+            EnableAnswerDButton.BackColor = Color.White
+            EnableAllAnswersButton.BackColor = Color.White
+            ReceiveAnswerAButton.BackColor = Color.Yellow
+            ReceiveAnswerBButton.BackColor = Color.Yellow
+            ReceiveAnswerCButton.BackColor = Color.Yellow
+            ReceiveAnswerDButton.BackColor = Color.Yellow
+            RevealCorrectAnswerButton.BackColor = Color.White
+            LightsDownButton.BackColor = Color.White
             'Сеть
-            If Button7.BackColor = Color.Green Then
+            If ConnectButton.BackColor = Color.Green Then
                 Dim NetworkInfo As New IONetwork
                 With NetworkInfo
-                    .Command = "@button20_2|" & CheckBox10.Checked & "|"
+                    .Command = "@button20_2|" & MoneyTakenCheckBox.Checked & "|"
                 End With
                 Client_SendIONetwork(NetworkInfo)
             End If
         End If
     End Sub
 
-    Private Sub Button47_Click(sender As Object, e As EventArgs) Handles Button47.Click
+    Private Sub LittleQuitButton_Click(sender As Object, e As EventArgs) Handles LittleQuitButton.Click
         'Little Quitter
         My.Computer.Audio.Play("source\MUSIC\Little Quitter.wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button48_Click(sender As Object, e As EventArgs) Handles Button48.Click
+    Private Sub BigQuitButton_Click(sender As Object, e As EventArgs) Handles BigQuitButton.Click
         'Big Quitter
         My.Computer.Audio.Play("source\MUSIC\Big Quitter.wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+    Private Sub FiftyFiftyAvailableCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles FiftyFiftyAvailableCheckBox.CheckedChanged
         '50-50 state change
-        If CheckBox1.Checked = True Then
+        If FiftyFiftyAvailableCheckBox.Checked = True Then
             activ50 = "0"
         Else
             activ50 = "x"
         End If
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@lifelines_state|" & activ50 & "|" & activPAF & "|" & activATA & "|"
@@ -2019,19 +2019,19 @@
         End If
     End Sub
 
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+    Private Sub PhoneAFriendAvailableCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles PhoneAFriendAvailableCheckBox.CheckedChanged
         'PAF state change
-        If CheckBox2.Checked = True Then
+        If PhoneAFriendAvailableCheckBox.Checked = True Then
             activPAF = "0"
         Else
             activPAF = "x"
         End If
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@lifelines_state|" & activ50 & "|" & activPAF & "|" & activATA & "|"
@@ -2040,19 +2040,19 @@
         End If
     End Sub
 
-    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+    Private Sub AskTheAudienceAvailableCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles AskTheAudienceAvailableCheckBox.CheckedChanged
         'ATA state change
-        If CheckBox3.Checked = True Then
+        If AskTheAudienceAvailableCheckBox.Checked = True Then
             activATA = "0"
         Else
             activATA = "x"
         End If
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@lifelines_state|" & activ50 & "|" & activPAF & "|" & activATA & "|"
@@ -2061,24 +2061,24 @@
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub LifelinesRefreshTimer_Tick(sender As Object, e As EventArgs) Handles LifelinesRefreshTimer.Tick
         'Таймер представления подсказок
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-        Timer1.Stop()
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+        LifelinesRefreshTimer.Stop()
     End Sub
 
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+    Private Sub FiftyFiftyButton_Click(sender As Object, e As EventArgs) Handles FiftyFiftyButton.Click
         '50-50 Lifeline
         Form50_50.Show()
-        PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button17|1|" & activPAF & "|" & activATA & "|"
@@ -2087,15 +2087,15 @@
         End If
     End Sub
 
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+    Private Sub PhoneAFriendButton_Click(sender As Object, e As EventArgs) Handles PhoneAFriendButton.Click
         'PAF Lifeline
         FormPAF.Show()
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button15|" & activ50 & "|1|" & activATA & "|"
@@ -2104,15 +2104,15 @@
         End If
     End Sub
 
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+    Private Sub AskTheAudienceButton_Click(sender As Object, e As EventArgs) Handles AskTheAudienceButton.Click
         'ATA Lifeline
         FormATA.Show()
-        PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
-        Audience.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
+        Audience.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button18|" & activ50 & "|" & activPAF & "|1|"
@@ -2121,101 +2121,101 @@
         End If
     End Sub
 
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+    Private Sub ToggleLifelinesPanelButton_Click(sender As Object, e As EventArgs) Handles ToggleLifelinesPanelButton.Click
         'Show panel
-        Select Case Button19.BackColor
+        Select Case ToggleLifelinesPanelButton.BackColor
             Case Color.White
-                'Button19.BackColor = Color.Green
+                'ToggleLifelinesPanelButton.BackColor = Color.Green
                 timer4_coef = 41
-                Timer4.Start()
-                Audience.PictureBox15.Left = 1024
-                Audience.PictureBox15.Visible = True
+                LifelinesPanelSlideTimer.Start()
+                Audience.LifelinesPanelPictureBox.Left = 1024
+                Audience.LifelinesPanelPictureBox.Visible = True
             Case Color.Green
-                Button19.BackColor = Color.White
-                Audience.PictureBox15.Left = 0
-                Timer5.Stop()
-                Timer4.Start()
+                ToggleLifelinesPanelButton.BackColor = Color.White
+                Audience.LifelinesPanelPictureBox.Left = 0
+                LifelinesPanelHoldTimer.Stop()
+                LifelinesPanelSlideTimer.Start()
         End Select
     End Sub
 
-    'Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+    'Private Sub LifelinesPanelSlideTimer_Tick(sender As Object, e As EventArgs) Handles LifelinesPanelSlideTimer.Tick
     '    'Анимация панели подсказок
     '    'llPanelTimer = llPanelTimer + 1
-    '    If Audience.PictureBox15.Left < 1025 Then
-    '        If Audience.PictureBox15.Left > 0 Then
-    '            Audience.PictureBox15.Left = Audience.PictureBox15.Left - timer4_coef
-    '            If Audience.PictureBox15.Left = 0 Then
-    '                Timer4.Stop()
-    '                Timer5.Start()
+    '    If Audience.LifelinesPanelPictureBox.Left < 1025 Then
+    '        If Audience.LifelinesPanelPictureBox.Left > 0 Then
+    '            Audience.LifelinesPanelPictureBox.Left = Audience.LifelinesPanelPictureBox.Left - timer4_coef
+    '            If Audience.LifelinesPanelPictureBox.Left = 0 Then
+    '                LifelinesPanelSlideTimer.Stop()
+    '                LifelinesPanelHoldTimer.Start()
     '                timer4_coef = timer4_coef * -1
     '            End If
     '            timer4_coef = Math.Ceiling(1 / Math.Sqrt(timer4_coef))
     '        Else
-    '            Timer4.Stop()
-    '            Audience.PictureBox15.Location = New Point(0, 637)
+    '            LifelinesPanelSlideTimer.Stop()
+    '            Audience.LifelinesPanelPictureBox.Location = New Point(0, 637)
     '        End If
     '    End If
     'End Sub
 
-    'Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
+    'Private Sub LifelinesPanelHoldTimer_Tick(sender As Object, e As EventArgs) Handles LifelinesPanelHoldTimer.Tick
     '    'Время показа панели подсказок
-    '    If Button19.BackColor = Color.Green Then Button19.PerformClick()
+    '    If ToggleLifelinesPanelButton.BackColor = Color.Green Then ToggleLifelinesPanelButton.PerformClick()
     'End Sub
 
-    Public Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
+    Public Sub HostFrameCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles HostFrameCheckBox.CheckedChanged
         'Рамка окна ведущего
-        If CheckBox4.Checked = True Then
+        If HostFrameCheckBox.Checked = True Then
             Host.FormBorderStyle = FormBorderStyle.Sizable
         Else
             Host.FormBorderStyle = FormBorderStyle.None
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@checkbox4|" & CheckBox4.Checked & "|"
+                .Command = "@checkbox4|" & HostFrameCheckBox.Checked & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Public Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
+    Public Sub PlayerFrameCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles PlayerFrameCheckBox.CheckedChanged
         'Рамка окна игрока
-        If CheckBox5.Checked = True Then
+        If PlayerFrameCheckBox.Checked = True Then
             Player.FormBorderStyle = FormBorderStyle.Sizable
         Else
             Player.FormBorderStyle = FormBorderStyle.None
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@checkbox5|" & CheckBox5.Checked & "|"
+                .Command = "@checkbox5|" & PlayerFrameCheckBox.Checked & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Public Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
+    Public Sub AudienceFrameCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles AudienceFrameCheckBox.CheckedChanged
         'Рамка окна зрителей
-        If CheckBox6.Checked = True Then
+        If AudienceFrameCheckBox.Checked = True Then
             Audience.FormBorderStyle = FormBorderStyle.Sizable
         Else
             Audience.FormBorderStyle = FormBorderStyle.None
         End If
     End Sub
 
-    Public Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
+    Public Sub HostVisibleCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles HostVisibleCheckBox.CheckedChanged
         'Видимость окна ведущего
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@checkbox7|" & CheckBox7.Checked & "|"
+                .Command = "@checkbox7|" & HostVisibleCheckBox.Checked & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         Else
-            If CheckBox7.Checked = True Then
+            If HostVisibleCheckBox.Checked = True Then
                 Host.Show()
                 Me.Focus()
             Else
@@ -2224,17 +2224,17 @@
         End If
     End Sub
 
-    Public Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
+    Public Sub PlayerVisibleCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles PlayerVisibleCheckBox.CheckedChanged
         'Видимость окна игрока
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@checkbox8|" & CheckBox8.Checked & "|"
+                .Command = "@checkbox8|" & PlayerVisibleCheckBox.Checked & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         Else
-            If CheckBox8.Checked = True Then
+            If PlayerVisibleCheckBox.Checked = True Then
                 Player.Show()
                 Me.Focus()
             Else
@@ -2243,9 +2243,9 @@
         End If
     End Sub
 
-    Public Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
+    Public Sub AudienceVisibleCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles AudienceVisibleCheckBox.CheckedChanged
         'Видимость окна зрителей
-        If CheckBox9.Checked = True Then
+        If AudienceVisibleCheckBox.Checked = True Then
             Audience.Show()
             Me.Focus()
         Else
@@ -2253,103 +2253,103 @@
         End If
     End Sub
 
-    Public Sub PictureBox2_BackgroundImageChanged(sender As Object, e As EventArgs) Handles PictureBox2.BackgroundImageChanged
+    Public Sub AnswerAFramePictureBox_BackgroundImageChanged(sender As Object, e As EventArgs) Handles AnswerAFramePictureBox.BackgroundImageChanged
         'Смена картинки режиссёра и всех остальных
-        Host.PictureBox2.BackgroundImage = PictureBox2.BackgroundImage
-        Player.PictureBox2.BackgroundImage = PictureBox2.BackgroundImage
-        Audience.PictureBox2.BackgroundImage = PictureBox2.BackgroundImage
+        Host.AnswerAFramePictureBox.BackgroundImage = AnswerAFramePictureBox.BackgroundImage
+        Player.AnswerAFramePictureBox.BackgroundImage = AnswerAFramePictureBox.BackgroundImage
+        Audience.AnswerAFramePictureBox.BackgroundImage = AnswerAFramePictureBox.BackgroundImage
     End Sub
 
-    Public Sub PictureBox3_BackgroundImageChanged(sender As Object, e As EventArgs) Handles PictureBox3.BackgroundImageChanged
-        Host.PictureBox3.BackgroundImage = PictureBox3.BackgroundImage
-        Player.PictureBox3.BackgroundImage = PictureBox3.BackgroundImage
-        Audience.PictureBox3.BackgroundImage = PictureBox3.BackgroundImage
+    Public Sub AnswerBFramePictureBox_BackgroundImageChanged(sender As Object, e As EventArgs) Handles AnswerBFramePictureBox.BackgroundImageChanged
+        Host.AnswerBFramePictureBox.BackgroundImage = AnswerBFramePictureBox.BackgroundImage
+        Player.AnswerBFramePictureBox.BackgroundImage = AnswerBFramePictureBox.BackgroundImage
+        Audience.AnswerBFramePictureBox.BackgroundImage = AnswerBFramePictureBox.BackgroundImage
     End Sub
 
-    Public Sub PictureBox4_BackgroundImageChanged(sender As Object, e As EventArgs) Handles PictureBox4.BackgroundImageChanged
-        Host.PictureBox4.BackgroundImage = PictureBox4.BackgroundImage
-        Player.PictureBox4.BackgroundImage = PictureBox4.BackgroundImage
-        Audience.PictureBox4.BackgroundImage = PictureBox4.BackgroundImage
+    Public Sub AnswerCFramePictureBox_BackgroundImageChanged(sender As Object, e As EventArgs) Handles AnswerCFramePictureBox.BackgroundImageChanged
+        Host.AnswerCFramePictureBox.BackgroundImage = AnswerCFramePictureBox.BackgroundImage
+        Player.AnswerCFramePictureBox.BackgroundImage = AnswerCFramePictureBox.BackgroundImage
+        Audience.AnswerCFramePictureBox.BackgroundImage = AnswerCFramePictureBox.BackgroundImage
     End Sub
 
-    Public Sub PictureBox5_BackgroundImageChanged(sender As Object, e As EventArgs) Handles PictureBox5.BackgroundImageChanged
-        Host.PictureBox5.BackgroundImage = PictureBox5.BackgroundImage
-        Player.PictureBox5.BackgroundImage = PictureBox5.BackgroundImage
-        Audience.PictureBox5.BackgroundImage = PictureBox5.BackgroundImage
+    Public Sub AnswerDFramePictureBox_BackgroundImageChanged(sender As Object, e As EventArgs) Handles AnswerDFramePictureBox.BackgroundImageChanged
+        Host.AnswerDFramePictureBox.BackgroundImage = AnswerDFramePictureBox.BackgroundImage
+        Player.AnswerDFramePictureBox.BackgroundImage = AnswerDFramePictureBox.BackgroundImage
+        Audience.AnswerDFramePictureBox.BackgroundImage = AnswerDFramePictureBox.BackgroundImage
     End Sub
 
-    Private Sub Label16_TextChanged(sender As Object, e As EventArgs) Handles Label16.TextChanged, Label17.TextChanged, Label18.TextChanged, Label19.TextChanged, Label20.TextChanged
+    Private Sub QuestionTextLabel_TextChanged(sender As Object, e As EventArgs) Handles QuestionTextLabel.TextChanged, AnswerATextLabel.TextChanged, AnswerBTextLabel.TextChanged, AnswerCTextLabel.TextChanged, AnswerDTextLabel.TextChanged
         'Смена текста вопроса и вариантов у режиссёра и всех остальных
-        Host.Label16.Text = Label16.Text
-        Player.Label16.Text = Label16.Text
-        Audience.Label16.Text = Label16.Text
-        Host.Label17.Text = Label17.Text
-        Player.Label17.Text = Label17.Text
-        Audience.Label17.Text = Label17.Text
-        Host.Label18.Text = Label18.Text
-        Player.Label18.Text = Label18.Text
-        Audience.Label18.Text = Label18.Text
-        Host.Label19.Text = Label19.Text
-        Player.Label19.Text = Label19.Text
-        Audience.Label19.Text = Label19.Text
-        Host.Label20.Text = Label20.Text
-        Player.Label20.Text = Label20.Text
-        Audience.Label20.Text = Label20.Text
+        Host.QuestionTextLabel.Text = QuestionTextLabel.Text
+        Player.QuestionTextLabel.Text = QuestionTextLabel.Text
+        Audience.QuestionTextLabel.Text = QuestionTextLabel.Text
+        Host.AnswerATextLabel.Text = AnswerATextLabel.Text
+        Player.AnswerATextLabel.Text = AnswerATextLabel.Text
+        Audience.AnswerATextLabel.Text = AnswerATextLabel.Text
+        Host.AnswerBTextLabel.Text = AnswerBTextLabel.Text
+        Player.AnswerBTextLabel.Text = AnswerBTextLabel.Text
+        Audience.AnswerBTextLabel.Text = AnswerBTextLabel.Text
+        Host.AnswerCTextLabel.Text = AnswerCTextLabel.Text
+        Player.AnswerCTextLabel.Text = AnswerCTextLabel.Text
+        Audience.AnswerCTextLabel.Text = AnswerCTextLabel.Text
+        Host.AnswerDTextLabel.Text = AnswerDTextLabel.Text
+        Player.AnswerDTextLabel.Text = AnswerDTextLabel.Text
+        Audience.AnswerDTextLabel.Text = AnswerDTextLabel.Text
     End Sub
 
-    Private Sub Label17_BackColorChanged(sender As Object, e As EventArgs) Handles Label17.BackColorChanged, Label18.BackColorChanged, Label19.BackColorChanged, Label20.BackColorChanged
+    Private Sub AnswerATextLabel_BackColorChanged(sender As Object, e As EventArgs) Handles AnswerATextLabel.BackColorChanged, AnswerBTextLabel.BackColorChanged, AnswerCTextLabel.BackColorChanged, AnswerDTextLabel.BackColorChanged
         'Смена фона текста вариантов ответа у всех
-        Host.Label17.BackColor = Label17.BackColor
-        Player.Label17.BackColor = Label17.BackColor
-        Audience.Label17.BackColor = Label17.BackColor
-        Host.Label18.BackColor = Label18.BackColor
-        Player.Label18.BackColor = Label18.BackColor
-        Audience.Label18.BackColor = Label18.BackColor
-        Host.Label19.BackColor = Label19.BackColor
-        Player.Label19.BackColor = Label19.BackColor
-        Audience.Label19.BackColor = Label19.BackColor
-        Host.Label20.BackColor = Label20.BackColor
-        Player.Label20.BackColor = Label20.BackColor
-        Audience.Label20.BackColor = Label20.BackColor
+        Host.AnswerATextLabel.BackColor = AnswerATextLabel.BackColor
+        Player.AnswerATextLabel.BackColor = AnswerATextLabel.BackColor
+        Audience.AnswerATextLabel.BackColor = AnswerATextLabel.BackColor
+        Host.AnswerBTextLabel.BackColor = AnswerBTextLabel.BackColor
+        Player.AnswerBTextLabel.BackColor = AnswerBTextLabel.BackColor
+        Audience.AnswerBTextLabel.BackColor = AnswerBTextLabel.BackColor
+        Host.AnswerCTextLabel.BackColor = AnswerCTextLabel.BackColor
+        Player.AnswerCTextLabel.BackColor = AnswerCTextLabel.BackColor
+        Audience.AnswerCTextLabel.BackColor = AnswerCTextLabel.BackColor
+        Host.AnswerDTextLabel.BackColor = AnswerDTextLabel.BackColor
+        Player.AnswerDTextLabel.BackColor = AnswerDTextLabel.BackColor
+        Audience.AnswerDTextLabel.BackColor = AnswerDTextLabel.BackColor
     End Sub
 
-    Private Sub Label17_ForeColorChanged(sender As Object, e As EventArgs) Handles Label16.ForeColorChanged, Label17.ForeColorChanged, Label18.ForeColorChanged, Label19.ForeColorChanged, Label20.ForeColorChanged
+    Private Sub AnswerATextLabel_ForeColorChanged(sender As Object, e As EventArgs) Handles QuestionTextLabel.ForeColorChanged, AnswerATextLabel.ForeColorChanged, AnswerBTextLabel.ForeColorChanged, AnswerCTextLabel.ForeColorChanged, AnswerDTextLabel.ForeColorChanged
         'Смена цвета текста вариантов ответа у всех
-        Host.Label16.ForeColor = Label16.ForeColor
-        Player.Label16.ForeColor = Label16.ForeColor
-        Audience.Label16.ForeColor = Label16.ForeColor
-        Host.Label17.ForeColor = Label17.ForeColor
-        Player.Label17.ForeColor = Label17.ForeColor
-        Audience.Label17.ForeColor = Label17.ForeColor
-        Host.Label18.ForeColor = Label18.ForeColor
-        Player.Label18.ForeColor = Label18.ForeColor
-        Audience.Label18.ForeColor = Label18.ForeColor
-        Host.Label19.ForeColor = Label19.ForeColor
-        Player.Label19.ForeColor = Label19.ForeColor
-        Audience.Label19.ForeColor = Label19.ForeColor
-        Host.Label20.ForeColor = Label20.ForeColor
-        Player.Label20.ForeColor = Label20.ForeColor
-        Audience.Label20.ForeColor = Label20.ForeColor
+        Host.QuestionTextLabel.ForeColor = QuestionTextLabel.ForeColor
+        Player.QuestionTextLabel.ForeColor = QuestionTextLabel.ForeColor
+        Audience.QuestionTextLabel.ForeColor = QuestionTextLabel.ForeColor
+        Host.AnswerATextLabel.ForeColor = AnswerATextLabel.ForeColor
+        Player.AnswerATextLabel.ForeColor = AnswerATextLabel.ForeColor
+        Audience.AnswerATextLabel.ForeColor = AnswerATextLabel.ForeColor
+        Host.AnswerBTextLabel.ForeColor = AnswerBTextLabel.ForeColor
+        Player.AnswerBTextLabel.ForeColor = AnswerBTextLabel.ForeColor
+        Audience.AnswerBTextLabel.ForeColor = AnswerBTextLabel.ForeColor
+        Host.AnswerCTextLabel.ForeColor = AnswerCTextLabel.ForeColor
+        Player.AnswerCTextLabel.ForeColor = AnswerCTextLabel.ForeColor
+        Audience.AnswerCTextLabel.ForeColor = AnswerCTextLabel.ForeColor
+        Host.AnswerDTextLabel.ForeColor = AnswerDTextLabel.ForeColor
+        Player.AnswerDTextLabel.ForeColor = AnswerDTextLabel.ForeColor
+        Audience.AnswerDTextLabel.ForeColor = AnswerDTextLabel.ForeColor
     End Sub
 
-    Private Sub Button44_Click(sender As Object, e As EventArgs) Handles Button44.Click
+    Private Sub SendHostMessageButton_Click(sender As Object, e As EventArgs) Handles SendHostMessageButton.Click
         'Отправить сообщение ведущему
-        Host.Label12.Text = TextBox10.Text
+        Host.HostMessageLabel.Text = HostMessageTextBox.Text
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button44|" & TextBox10.Text & "|"
+                .Command = "@button44|" & HostMessageTextBox.Text & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub Button45_Click(sender As Object, e As EventArgs) Handles Button45.Click
+    Private Sub ClearHostMessageButton_Click(sender As Object, e As EventArgs) Handles ClearHostMessageButton.Click
         'Очистить поле сообщения
-        TextBox10.Text = ""
-        Host.Label12.Text = ""
-        If Button7.BackColor = Color.Green Then
+        HostMessageTextBox.Text = ""
+        Host.HostMessageLabel.Text = ""
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button45|"
@@ -2358,51 +2358,51 @@
         End If
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub ToggleHintButton_Click(sender As Object, e As EventArgs) Handles ToggleHintButton.Click
         'Показ комментария к вопросу
         If commentShow = False Then
-            Button14.BackColor = Color.FromArgb(128, 255, 255)
-            Button14.Text = currentBlock1(42, 4) 'Hide Hint
-            Host.Label11.Text = currentBlock2(ListBox1.SelectedIndex + 1, 9)
+            ToggleHintButton.BackColor = Color.FromArgb(128, 255, 255)
+            ToggleHintButton.Text = currentBlock1(42, 4) 'Hide Hint
+            Host.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
             commentShow = True
         Else
-            Button14.BackColor = Color.FromArgb(255, 192, 128)
-            Button14.Text = currentBlock1(42, 3) 'Show Hint
-            Host.Label11.Text = ""
+            ToggleHintButton.BackColor = Color.FromArgb(255, 192, 128)
+            ToggleHintButton.Text = currentBlock1(42, 3) 'Show Hint
+            Host.QuestionCommentLabel.Text = ""
             commentShow = False
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@button14|" & commentShow & "|" & currentBlock2(ListBox1.SelectedIndex + 1, 9) & "|"
+                .Command = "@button14|" & commentShow & "|" & currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub ToggleLogoButton_Click(sender As Object, e As EventArgs) Handles ToggleLogoButton.Click
         'Показать полноэкранную картинку
         If splashOn = False Then
-            Host.PictureBox0.Location = New System.Drawing.Point(0, 0)
-            Host.PictureBox0.Visible = True
-            Player.PictureBox0.Location = New System.Drawing.Point(0, 0)
-            Player.PictureBox0.Visible = True
-            Audience.PictureBox0.Location = New System.Drawing.Point(0, 0)
-            Audience.PictureBox0.Visible = True
+            Host.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+            Host.LogoPictureBox.Visible = True
+            Player.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+            Player.LogoPictureBox.Visible = True
+            Audience.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+            Audience.LogoPictureBox.Visible = True
             splashOn = True
-            Button16.Text = currentBlock1(45, 4) 'Hide logo
-            Button16.BackColor = Color.Violet
+            ToggleLogoButton.Text = currentBlock1(45, 4) 'Hide logo
+            ToggleLogoButton.BackColor = Color.Violet
         Else
-            Host.PictureBox0.Visible = False
-            Player.PictureBox0.Visible = False
-            Audience.PictureBox0.Visible = False
+            Host.LogoPictureBox.Visible = False
+            Player.LogoPictureBox.Visible = False
+            Audience.LogoPictureBox.Visible = False
             splashOn = False
-            Button16.Text = currentBlock1(45, 3) 'Show logo
-            Button16.BackColor = Color.White
+            ToggleLogoButton.Text = currentBlock1(45, 3) 'Show logo
+            ToggleLogoButton.BackColor = Color.White
         End If
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button16|" & splashOn & "|"
@@ -2411,154 +2411,154 @@
         End If
     End Sub
 
-    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
         'Кнопка About
         AboutUs.Show()
     End Sub
 
-    Private Sub NumericUpDown2_LostFocus(sender As Object, e As EventArgs) Handles NumericUpDown2.LostFocus, NumericUpDown3.LostFocus
-        Host.Location = New Point(NumericUpDown2.Value, NumericUpDown3.Value)
+    Private Sub HostScreenXNumericUpDown_LostFocus(sender As Object, e As EventArgs) Handles HostScreenXNumericUpDown.LostFocus, HostScreenYNumericUpDown.LostFocus
+        Host.Location = New Point(HostScreenXNumericUpDown.Value, HostScreenYNumericUpDown.Value)
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@numericupdown2|" & NumericUpDown2.Value & "|" & NumericUpDown3.Value & "|"
+                .Command = "@numericupdown2|" & HostScreenXNumericUpDown.Value & "|" & HostScreenYNumericUpDown.Value & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub NumericUpDown4_LostFocus(sender As Object, e As EventArgs) Handles NumericUpDown4.LostFocus, NumericUpDown5.LostFocus
-        Player.Location = New Point(NumericUpDown4.Value, NumericUpDown5.Value)
+    Private Sub PlayerScreenXNumericUpDown_LostFocus(sender As Object, e As EventArgs) Handles PlayerScreenXNumericUpDown.LostFocus, PlayerScreenYNumericUpDown.LostFocus
+        Player.Location = New Point(PlayerScreenXNumericUpDown.Value, PlayerScreenYNumericUpDown.Value)
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
-                .Command = "@numericupdown4|" & NumericUpDown4.Value & "|" & NumericUpDown5.Value & "|"
+                .Command = "@numericupdown4|" & PlayerScreenXNumericUpDown.Value & "|" & PlayerScreenYNumericUpDown.Value & "|"
             End With
             Client_SendIONetwork(NetworkInfo)
         End If
     End Sub
 
-    Private Sub NumericUpDown6_LostFocus(sender As Object, e As EventArgs) Handles NumericUpDown6.LostFocus, NumericUpDown7.LostFocus
-        Audience.Location = New Point(NumericUpDown6.Value, NumericUpDown7.Value)
+    Private Sub AudienceScreenXNumericUpDown_LostFocus(sender As Object, e As EventArgs) Handles AudienceScreenXNumericUpDown.LostFocus, AudienceScreenYNumericUpDown.LostFocus
+        Audience.Location = New Point(AudienceScreenXNumericUpDown.Value, AudienceScreenYNumericUpDown.Value)
     End Sub
 
-    Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
+    Private Sub MoneyTreeUpButton_Click(sender As Object, e As EventArgs) Handles MoneyTreeUpButton.Click
         'Tree Up
         If winNumber < 15 Then
             winNumber = winNumber + 1
             Select Case questionNumber
                 Case 1
-                    Host.Label2.Text = "200"
-                    Host.Label3.Text = "100"
-                    Host.Label4.Text = "100"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                    Host.PossibleWinLabel.Text = "200"
+                    Host.CurrentWinLabel.Text = "100"
+                    Host.PossibleLossLabel.Text = "100"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                 Case 2
-                    Host.Label2.Text = "300"
-                    Host.Label3.Text = "200"
-                    Host.Label4.Text = "200"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                    Host.PossibleWinLabel.Text = "300"
+                    Host.CurrentWinLabel.Text = "200"
+                    Host.PossibleLossLabel.Text = "200"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                 Case 3
-                    Host.Label2.Text = "500"
-                    Host.Label3.Text = "200"
-                    Host.Label4.Text = "200"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                    Host.PossibleWinLabel.Text = "500"
+                    Host.CurrentWinLabel.Text = "200"
+                    Host.PossibleLossLabel.Text = "200"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                 Case 4
-                    Host.Label2.Text = "1,000"
-                    Host.Label3.Text = "500"
-                    Host.Label4.Text = "500"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                    Host.PossibleWinLabel.Text = "1,000"
+                    Host.CurrentWinLabel.Text = "500"
+                    Host.PossibleLossLabel.Text = "500"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                 Case 5
-                    Host.Label2.Text = "2,000"
-                    Host.Label3.Text = "1,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                    Host.PossibleWinLabel.Text = "2,000"
+                    Host.CurrentWinLabel.Text = "1,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                 Case 6
-                    Host.Label2.Text = "4,000"
-                    Host.Label3.Text = "2,000"
-                    Host.Label4.Text = "1,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                    Host.PossibleWinLabel.Text = "4,000"
+                    Host.CurrentWinLabel.Text = "2,000"
+                    Host.PossibleLossLabel.Text = "1,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                 Case 7
-                    Host.Label2.Text = "8,000"
-                    Host.Label3.Text = "4,000"
-                    Host.Label4.Text = "3,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                    Host.PossibleWinLabel.Text = "8,000"
+                    Host.CurrentWinLabel.Text = "4,000"
+                    Host.PossibleLossLabel.Text = "3,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                 Case 8
-                    Host.Label2.Text = "16,000"
-                    Host.Label3.Text = "8,000"
-                    Host.Label4.Text = "7,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                    Host.PossibleWinLabel.Text = "16,000"
+                    Host.CurrentWinLabel.Text = "8,000"
+                    Host.PossibleLossLabel.Text = "7,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                 Case 9
-                    Host.Label2.Text = "32,000"
-                    Host.Label3.Text = "16,000"
-                    Host.Label4.Text = "15,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                    Host.PossibleWinLabel.Text = "32,000"
+                    Host.CurrentWinLabel.Text = "16,000"
+                    Host.PossibleLossLabel.Text = "15,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                 Case 10
-                    Host.Label2.Text = "64,000"
-                    Host.Label3.Text = "32,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                    Host.PossibleWinLabel.Text = "64,000"
+                    Host.CurrentWinLabel.Text = "32,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                 Case 11
-                    Host.Label2.Text = "125,000"
-                    Host.Label3.Text = "64,000"
-                    Host.Label4.Text = "32,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                    Host.PossibleWinLabel.Text = "125,000"
+                    Host.CurrentWinLabel.Text = "64,000"
+                    Host.PossibleLossLabel.Text = "32,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                 Case 12
-                    Host.Label2.Text = "250,000"
-                    Host.Label3.Text = "125,000"
-                    Host.Label4.Text = "93,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                    Host.PossibleWinLabel.Text = "250,000"
+                    Host.CurrentWinLabel.Text = "125,000"
+                    Host.PossibleLossLabel.Text = "93,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                 Case 13
-                    Host.Label2.Text = "500,000"
-                    Host.Label3.Text = "250,000"
-                    Host.Label4.Text = "218,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                    Host.PossibleWinLabel.Text = "500,000"
+                    Host.CurrentWinLabel.Text = "250,000"
+                    Host.PossibleLossLabel.Text = "218,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                 Case 14
-                    Host.Label2.Text = "1,000,000"
-                    Host.Label3.Text = "500,000"
-                    Host.Label4.Text = "468,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                    Host.PossibleWinLabel.Text = "1,000,000"
+                    Host.CurrentWinLabel.Text = "500,000"
+                    Host.PossibleLossLabel.Text = "468,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
                 Case 15
-                    Host.Label2.Text = "1,000,000"
-                    Host.Label3.Text = "1,000,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "1,000,000"
+                    Host.PossibleWinLabel.Text = "1,000,000"
+                    Host.CurrentWinLabel.Text = "1,000,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "1,000,000"
             End Select
-            PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-            Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-            Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-            Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
             'Сеть
-            If Button7.BackColor = Color.Green Then
+            If ConnectButton.BackColor = Color.Green Then
                 Dim NetworkInfo As New IONetwork
                 With NetworkInfo
                     .Command = "@button42|" & winNumber & "|"
@@ -2568,123 +2568,123 @@
         End If
     End Sub
 
-    Private Sub Button43_Click(sender As Object, e As EventArgs) Handles Button43.Click
+    Private Sub MoneyTreeDownButton_Click(sender As Object, e As EventArgs) Handles MoneyTreeDownButton.Click
         'Tree Down
         If winNumber > 0 Then
             winNumber = winNumber - 1
             Select Case questionNumber
                 Case 0
-                    Host.Label2.Text = "100" 'Возможный выигрыш
-                    Host.Label3.Text = "0" 'Текущий выигрыш
-                    Host.Label4.Text = "0" 'Возможная потеря
-                    Host.Label6.Text = "0" 'Несгораемая сумма
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                    Host.PossibleWinLabel.Text = "100" 'Возможный выигрыш
+                    Host.CurrentWinLabel.Text = "0" 'Текущий выигрыш
+                    Host.PossibleLossLabel.Text = "0" 'Возможная потеря
+                    Host.GuaranteedSumLabel.Text = "0" 'Несгораемая сумма
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                 Case 1
-                    Host.Label2.Text = "200"
-                    Host.Label3.Text = "100"
-                    Host.Label4.Text = "100"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                    Host.PossibleWinLabel.Text = "200"
+                    Host.CurrentWinLabel.Text = "100"
+                    Host.PossibleLossLabel.Text = "100"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                 Case 2
-                    Host.Label2.Text = "300"
-                    Host.Label3.Text = "200"
-                    Host.Label4.Text = "200"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                    Host.PossibleWinLabel.Text = "300"
+                    Host.CurrentWinLabel.Text = "200"
+                    Host.PossibleLossLabel.Text = "200"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                 Case 3
-                    Host.Label2.Text = "500"
-                    Host.Label3.Text = "200"
-                    Host.Label4.Text = "200"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                    Host.PossibleWinLabel.Text = "500"
+                    Host.CurrentWinLabel.Text = "200"
+                    Host.PossibleLossLabel.Text = "200"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                 Case 4
-                    Host.Label2.Text = "1,000"
-                    Host.Label3.Text = "500"
-                    Host.Label4.Text = "500"
-                    Host.Label6.Text = "0"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                    Host.PossibleWinLabel.Text = "1,000"
+                    Host.CurrentWinLabel.Text = "500"
+                    Host.PossibleLossLabel.Text = "500"
+                    Host.GuaranteedSumLabel.Text = "0"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                 Case 5
-                    Host.Label2.Text = "2,000"
-                    Host.Label3.Text = "1,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                    Host.PossibleWinLabel.Text = "2,000"
+                    Host.CurrentWinLabel.Text = "1,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                 Case 6
-                    Host.Label2.Text = "4,000"
-                    Host.Label3.Text = "2,000"
-                    Host.Label4.Text = "1,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                    Host.PossibleWinLabel.Text = "4,000"
+                    Host.CurrentWinLabel.Text = "2,000"
+                    Host.PossibleLossLabel.Text = "1,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                 Case 7
-                    Host.Label2.Text = "8,000"
-                    Host.Label3.Text = "4,000"
-                    Host.Label4.Text = "3,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                    Host.PossibleWinLabel.Text = "8,000"
+                    Host.CurrentWinLabel.Text = "4,000"
+                    Host.PossibleLossLabel.Text = "3,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                 Case 8
-                    Host.Label2.Text = "16,000"
-                    Host.Label3.Text = "8,000"
-                    Host.Label4.Text = "7,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                    Host.PossibleWinLabel.Text = "16,000"
+                    Host.CurrentWinLabel.Text = "8,000"
+                    Host.PossibleLossLabel.Text = "7,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                 Case 9
-                    Host.Label2.Text = "32,000"
-                    Host.Label3.Text = "16,000"
-                    Host.Label4.Text = "15,000"
-                    Host.Label6.Text = "1,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                    Host.PossibleWinLabel.Text = "32,000"
+                    Host.CurrentWinLabel.Text = "16,000"
+                    Host.PossibleLossLabel.Text = "15,000"
+                    Host.GuaranteedSumLabel.Text = "1,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                 Case 10
-                    Host.Label2.Text = "64,000"
-                    Host.Label3.Text = "32,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                    Host.PossibleWinLabel.Text = "64,000"
+                    Host.CurrentWinLabel.Text = "32,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                 Case 11
-                    Host.Label2.Text = "125,000"
-                    Host.Label3.Text = "64,000"
-                    Host.Label4.Text = "32,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                    Host.PossibleWinLabel.Text = "125,000"
+                    Host.CurrentWinLabel.Text = "64,000"
+                    Host.PossibleLossLabel.Text = "32,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                 Case 12
-                    Host.Label2.Text = "250,000"
-                    Host.Label3.Text = "125,000"
-                    Host.Label4.Text = "93,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                    Host.PossibleWinLabel.Text = "250,000"
+                    Host.CurrentWinLabel.Text = "125,000"
+                    Host.PossibleLossLabel.Text = "93,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                 Case 13
-                    Host.Label2.Text = "500,000"
-                    Host.Label3.Text = "250,000"
-                    Host.Label4.Text = "218,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                    Host.PossibleWinLabel.Text = "500,000"
+                    Host.CurrentWinLabel.Text = "250,000"
+                    Host.PossibleLossLabel.Text = "218,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                 Case 14
-                    Host.Label2.Text = "1,000,000"
-                    Host.Label3.Text = "500,000"
-                    Host.Label4.Text = "468,000"
-                    Host.Label6.Text = "32,000"
-                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
-                    Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                    Host.PossibleWinLabel.Text = "1,000,000"
+                    Host.CurrentWinLabel.Text = "500,000"
+                    Host.PossibleLossLabel.Text = "468,000"
+                    Host.GuaranteedSumLabel.Text = "32,000"
+                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                    Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
             End Select
-            PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-            Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-            Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-            Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+            Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
             'Сеть
-            If Button7.BackColor = Color.Green Then
+            If ConnectButton.BackColor = Color.Green Then
                 Dim NetworkInfo As New IONetwork
                 With NetworkInfo
                     .Command = "@button43|" & winNumber & "|"
@@ -2694,21 +2694,21 @@
         End If
     End Sub
 
-    Private Sub Button52_Click(sender As Object, e As EventArgs) Handles Button52.Click
+    Private Sub MoneyTreeLevel0Button_Click(sender As Object, e As EventArgs) Handles MoneyTreeLevel0Button.Click
         'Tree 0
         winNumber = 0
-        Host.Label2.Text = "100"
-        Host.Label3.Text = "0"
-        Host.Label4.Text = "0"
-        Host.Label6.Text = "0"
-        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
-        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.PossibleWinLabel.Text = "100"
+        Host.CurrentWinLabel.Text = "0"
+        Host.PossibleLossLabel.Text = "0"
+        Host.GuaranteedSumLabel.Text = "0"
+        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button52|" & winNumber & "|"
@@ -2717,21 +2717,21 @@
         End If
     End Sub
 
-    Private Sub Button51_Click(sender As Object, e As EventArgs) Handles Button51.Click
+    Private Sub MoneyTreeLevel5Button_Click(sender As Object, e As EventArgs) Handles MoneyTreeLevel5Button.Click
         'Tree 5
         winNumber = 5
-        Host.Label2.Text = "2,000"
-        Host.Label3.Text = "1,000"
-        Host.Label4.Text = "0"
-        Host.Label6.Text = "1,000"
-        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
-        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.PossibleWinLabel.Text = "2,000"
+        Host.CurrentWinLabel.Text = "1,000"
+        Host.PossibleLossLabel.Text = "0"
+        Host.GuaranteedSumLabel.Text = "1,000"
+        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button51|" & winNumber & "|"
@@ -2740,21 +2740,21 @@
         End If
     End Sub
 
-    Private Sub Button50_Click(sender As Object, e As EventArgs) Handles Button50.Click
+    Private Sub MoneyTreeLevel10Button_Click(sender As Object, e As EventArgs) Handles MoneyTreeLevel10Button.Click
         'Tree 10
         winNumber = 10
-        Host.Label2.Text = "64,000"
-        Host.Label3.Text = "32,000"
-        Host.Label4.Text = "0"
-        Host.Label6.Text = "32,000"
-        Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
-        Audience.PictureBox14.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.PossibleWinLabel.Text = "64,000"
+        Host.CurrentWinLabel.Text = "32,000"
+        Host.PossibleLossLabel.Text = "0"
+        Host.GuaranteedSumLabel.Text = "32,000"
+        Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+        Audience.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button50|" & winNumber & "|"
@@ -2763,19 +2763,19 @@
         End If
     End Sub
 
-    Private Sub Button49_Click(sender As Object, e As EventArgs) Handles Button49.Click
+    Private Sub MoneyTreeLevel15Button_Click(sender As Object, e As EventArgs) Handles MoneyTreeLevel15Button.Click
         'Tree 15
         winNumber = 15
-        Host.Label2.Text = "1,000,000"
-        Host.Label3.Text = "1,000,000"
-        Host.Label4.Text = "0"
-        Host.Label6.Text = "1,000,000"
-        PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-        Audience.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.PossibleWinLabel.Text = "1,000,000"
+        Host.CurrentWinLabel.Text = "1,000,000"
+        Host.PossibleLossLabel.Text = "0"
+        Host.GuaranteedSumLabel.Text = "1,000,000"
+        MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+        Audience.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         'Сеть
-        If Button7.BackColor = Color.Green Then
+        If ConnectButton.BackColor = Color.Green Then
             Dim NetworkInfo As New IONetwork
             With NetworkInfo
                 .Command = "@button49|" & winNumber & "|"
@@ -2784,34 +2784,34 @@
         End If
     End Sub
 
-    Private Sub TextBox11_Click(sender As Object, e As EventArgs) Handles TextBox11.Click
+    Private Sub ContestantNameTextBox_Click(sender As Object, e As EventArgs) Handles ContestantNameTextBox.Click
         'Нажатие на поле ввода имени игрока
-        TextBox11.SelectAll()
+        ContestantNameTextBox.SelectAll()
     End Sub
 
-    Private Sub Button41_Click(sender As Object, e As EventArgs) Handles Button41.Click
+    Private Sub FastestFingerFirstButton_Click(sender As Object, e As EventArgs) Handles FastestFingerFirstButton.Click
         'Fastest Finger First
         FormFFF.Show()
-        Button23.BackColor = Color.White
-        Button35.BackColor = Color.White
-        Button41.BackColor = Color.Orange
+        LetsPlayButton.BackColor = Color.White
+        TomorrowsNamesButton.BackColor = Color.White
+        FastestFingerFirstButton.BackColor = Color.Orange
     End Sub
 
     Private Sub Project_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         'Закрытие программы
         If Client.IsConnection Then Client.Disconnect()
-        If CheckBox7.Checked = True Then ini(1) = "1" Else ini(1) = "0"
-        If CheckBox8.Checked = True Then ini(2) = "1" Else ini(2) = "0"
-        If CheckBox9.Checked = True Then ini(3) = "1" Else ini(3) = "0"
-        ini(4) = NumericUpDown2.Value
-        ini(5) = NumericUpDown3.Value
-        ini(6) = NumericUpDown4.Value
-        ini(7) = NumericUpDown5.Value
-        ini(8) = NumericUpDown6.Value
-        ini(9) = NumericUpDown7.Value
+        If HostVisibleCheckBox.Checked = True Then ini(1) = "1" Else ini(1) = "0"
+        If PlayerVisibleCheckBox.Checked = True Then ini(2) = "1" Else ini(2) = "0"
+        If AudienceVisibleCheckBox.Checked = True Then ini(3) = "1" Else ini(3) = "0"
+        ini(4) = HostScreenXNumericUpDown.Value
+        ini(5) = HostScreenYNumericUpDown.Value
+        ini(6) = PlayerScreenXNumericUpDown.Value
+        ini(7) = PlayerScreenYNumericUpDown.Value
+        ini(8) = AudienceScreenXNumericUpDown.Value
+        ini(9) = AudienceScreenYNumericUpDown.Value
         ini(10) = FileNameQ
-        ini(12) = TextBox1.Text
-        ini(13) = TextBox2.Text
+        ini(12) = ServerIpTextBox.Text
+        ini(13) = ServerPortTextBox.Text
         FileClose(1)
         FileOpen(1, CurDir() & "\wwtbam_set.ini", OpenMode.Output)
         Print(1, "|" & ini(1) & "|" & ini(2) & "|" & ini(3) & "|" & ini(4) & "|" & ini(5) & "|" & ini(6) & "|" & ini(7) & "|" & ini(8) & "|" & ini(9) & "|" & ini(10) & "|" & ini(11) & "|" & ini(12) & "|" & ini(13) & "|" & ini(14) & "|" & ini(15) & "|")
@@ -2830,10 +2830,10 @@
     End Sub
 
     REM СЕТЕВОЕ ОБЕСПЕЧЕНИЕ!!!
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub ConnectButton_Click(sender As Object, e As EventArgs) Handles ConnectButton.Click
         'Установка соединения с сервером (Connect Button)
-        hostIP = TextBox1.Text
-        port = TextBox2.Text
+        hostIP = ServerIpTextBox.Text
+        port = ServerPortTextBox.Text
         If Client.IsConnection Then
             Client.Disconnect()
         Else
@@ -2841,16 +2841,16 @@
             If Not Client.Connect(hostIP, port) Then 'Успешна ли попытка подключения
                 MsgBox(currentBlock1(145, 3) & ": " & hostIP, MsgBoxStyle.Critical, currentBlock1(145, 4))
             Else
-                Button7.Text = currentBlock1(33, 4) 'Disconnect
-                Button7.BackColor = Color.Green
+                ConnectButton.Text = currentBlock1(33, 4) 'Disconnect
+                ConnectButton.BackColor = Color.Green
                 ConnectionPost()
                 Host.Hide()
                 Player.Hide()
                 'Синхронизация по сети
-                'If Button7.BackColor = Color.Green Then
+                'If ConnectButton.BackColor = Color.Green Then
                 '    Dim NetworkInfo As New IONetwork
                 '    With NetworkInfo
-                '        .Command = "@sync|questionText|textAnswerA|textAnswerB|textAnswerC|textAnswerD|numberRightAnswer|currentBlock2(ListBox1.SelectedIndex + 1, 9)|winNumber|CheckBox10.Checked|NumericUpDown1.Value|activ50|activPAF|activATA|CheckBox4.Checked|CheckBox5.Checked|CheckBox7.Checked|CheckBox8.Checked|commentShow|splashOn|NumericUpDown2.Value|NumericUpDown3.Value|NumericUpDown4.Value|NumericUpDown5.Value|FormPAF.clockFrame|Host.PictureBox8.ImageLocation|Player.PictureBox8.ImageLocation|Host.PictureBox8.Visible|Player.PictureBox8.Visible|Host.Label10.Text|Host.Label9.Text|Host.Label8.Text|Host.Label7.Text|Host.Label10.Visible|Host.Label9.Visible|Host.Label8.Visible|Host.Label7.Visible|Host.PictureBox12.Visible|Host.PictureBox11.Visible|Host.PictureBox10.Visible|Host.PictureBox9.Visible|Host.PictureBox12.Height|Host.PictureBox11.Height|Host.PictureBox10.Height|Host.PictureBox9.Height|Host.PictureBox12.Top|Host.PictureBox11.Top|Host.PictureBox10.Top|Host.PictureBox9.Top|Player.Label1.Text|Player.Label2.Text|Player.Label3.Text|Player.Label4.Text|Player.Label1.Visible|Player.Label2.Visible|Player.Label3.Visible|Player.Label4.Visible|Player.PictureBox11.Visible|Player.PictureBox10.Visible|Player.PictureBox9.Visible|Player.PictureBox1.Visible|Player.PictureBox11.Height|Player.PictureBox10.Height|Player.PictureBox9.Height|Player.PictureBox1.Height|Player.PictureBox11.Top|Player.PictureBox10.Top|Player.PictureBox9.Top|Player.PictureBox1.Top|Host.BackgroundImage|Host.PictureBox2.BackgroundImage|Host.PictureBox3.BackgroundImage|Host.PictureBox4.BackgroundImage|Host.PictureBox5.BackgroundImage|Host.PictureBox6.BackgroundImage|Host.PictureBox7.BackgroundImage|Host.Label16.Text|Host.Label17.Text|Host.Label18.Text|Host.Label19.Text|Host.Label20.Text|Host.Label1.Text|Host.Label2.Text|Host.Label3.Text|Host.Label4.Text|Host.Label5.Text|Host.Label6.Text|Host.Label11.Text|Host.Label12.Text|Host.PictureBox0.Visible|Player.BackgroundImage|Player.PictureBox2.BackgroundImage|Player.PictureBox3.BackgroundImage|Player.PictureBox4.BackgroundImage|Player.PictureBox5.BackgroundImage|Player.PictureBox6.BackgroundImage|Player.PictureBox7.BackgroundImage|Player.Label16.Text|Player.Label17.Text|Player.Label18.Text|Player.Label19.Text|Player.Label20.Text|Player.Label5.Text|Player.PictureBox12.BackgroundImage|Player.PictureBox13.BackgroundImage|Player.PictureBox0.Visible|"
+                '        .Command = "@sync|questionText|textAnswerA|textAnswerB|textAnswerC|textAnswerD|numberRightAnswer|currentBlock2(QuestionListBox.SelectedIndex + 1, 9)|winNumber|MoneyTakenCheckBox.Checked|QuestionNumberNumericUpDown.Value|activ50|activPAF|activATA|HostFrameCheckBox.Checked|PlayerFrameCheckBox.Checked|HostVisibleCheckBox.Checked|PlayerVisibleCheckBox.Checked|commentShow|splashOn|HostScreenXNumericUpDown.Value|HostScreenYNumericUpDown.Value|PlayerScreenXNumericUpDown.Value|PlayerScreenYNumericUpDown.Value|FormPAF.clockFrame|Host.ClockPictureBox.ImageLocation|Player.ClockPictureBox.ImageLocation|Host.ClockPictureBox.Visible|Player.ClockPictureBox.Visible|Host.AnswerAPercentLabel.Text|Host.AnswerBPercentLabel.Text|Host.AnswerCPercentLabel.Text|Host.AnswerDPercentLabel.Text|Host.AnswerAPercentLabel.Visible|Host.AnswerBPercentLabel.Visible|Host.AnswerCPercentLabel.Visible|Host.AnswerDPercentLabel.Visible|Host.AnswerAChartPictureBox.Visible|Host.AnswerBChartPictureBox.Visible|Host.AnswerCChartPictureBox.Visible|Host.AnswerDChartPictureBox.Visible|Host.AnswerAChartPictureBox.Height|Host.AnswerBChartPictureBox.Height|Host.AnswerCChartPictureBox.Height|Host.AnswerDChartPictureBox.Height|Host.AnswerAChartPictureBox.Top|Host.AnswerBChartPictureBox.Top|Host.AnswerCChartPictureBox.Top|Host.AnswerDChartPictureBox.Top|Player.AnswerAPercentLabel.Text|Player.AnswerBPercentLabel.Text|Player.AnswerCPercentLabel.Text|Player.AnswerDPercentLabel.Text|Player.AnswerAPercentLabel.Visible|Player.AnswerBPercentLabel.Visible|Player.AnswerCPercentLabel.Visible|Player.AnswerDPercentLabel.Visible|Player.AnswerAChartPictureBox.Visible|Player.AnswerBChartPictureBox.Visible|Player.AnswerCChartPictureBox.Visible|Player.AnswerDChartPictureBox.Visible|Player.AnswerAChartPictureBox.Height|Player.AnswerBChartPictureBox.Height|Player.AnswerCChartPictureBox.Height|Player.AnswerDChartPictureBox.Height|Player.AnswerAChartPictureBox.Top|Player.AnswerBChartPictureBox.Top|Player.AnswerCChartPictureBox.Top|Player.AnswerDChartPictureBox.Top|Host.BackgroundImage|Host.AnswerAFramePictureBox.BackgroundImage|Host.AnswerBFramePictureBox.BackgroundImage|Host.AnswerCFramePictureBox.BackgroundImage|Host.AnswerDFramePictureBox.BackgroundImage|Host.MoneyTreePictureBox.BackgroundImage|Host.LifelinesPictureBox.BackgroundImage|Host.QuestionTextLabel.Text|Host.AnswerATextLabel.Text|Host.AnswerBTextLabel.Text|Host.AnswerCTextLabel.Text|Host.AnswerDTextLabel.Text|Host.QuestionsLeftLabel.Text|Host.PossibleWinLabel.Text|Host.CurrentWinLabel.Text|Host.PossibleLossLabel.Text|Host.FinalAnswerLetterLabel.Text|Host.GuaranteedSumLabel.Text|Host.QuestionCommentLabel.Text|Host.HostMessageLabel.Text|Host.LogoPictureBox.Visible|Player.BackgroundImage|Player.AnswerAFramePictureBox.BackgroundImage|Player.AnswerBFramePictureBox.BackgroundImage|Player.AnswerCFramePictureBox.BackgroundImage|Player.AnswerDFramePictureBox.BackgroundImage|Player.MoneyTreePictureBox.BackgroundImage|Player.LifelinesPictureBox.BackgroundImage|Player.QuestionTextLabel.Text|Player.AnswerATextLabel.Text|Player.AnswerBTextLabel.Text|Player.AnswerCTextLabel.Text|Player.AnswerDTextLabel.Text|Player.WinnerNameLabel.Text|Player.MoneyWonPictureBox.BackgroundImage|Player.PrizePictureBox.BackgroundImage|Player.LogoPictureBox.Visible|"
                 '    End With
                 '    Client_SendIONetwork(NetworkInfo)
                 'End If
@@ -2906,526 +2906,526 @@
             Select Case doingEvent(0)
                 Case "@connect_success" 'При успешном соединении
                     If Me.WindowState <> FormWindowState.Minimized Then Me.WindowState = FormWindowState.Minimized
-                    If CheckBox7.Checked Then Host.Focus()
-                    If CheckBox8.Checked Then Player.Focus()
-                    CheckBox9.Checked = False
-                    Host.Label12.Text = currentBlock1(146, 3)
+                    If HostVisibleCheckBox.Checked Then Host.Focus()
+                    If PlayerVisibleCheckBox.Checked Then Player.Focus()
+                    AudienceVisibleCheckBox.Checked = False
+                    Host.HostMessageLabel.Text = currentBlock1(146, 3)
                 Case "@button1" 'Ask It
-                    Host.Label5.Text = ""
-                    Host.Label11.Text = ""
+                    Host.FinalAnswerLetterLabel.Text = ""
+                    Host.QuestionCommentLabel.Text = ""
                     questionText = doingEvent(1)
-                    Label16.Text = questionText
+                    QuestionTextLabel.Text = questionText
                     numberRightAnswer = doingEvent(2)
                     questionNumber = doingEvent(3)
                     winNumber = questionNumber - 1
-                    Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                    Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
                 Case "@button2" 'Enable A
-                    PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-                    Label17.Text = doingEvent(1)
+                    AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+                    AnswerATextLabel.Text = doingEvent(1)
                 Case "@button3" 'Enable B
-                    PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-                    Label18.Text = doingEvent(1)
+                    AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+                    AnswerBTextLabel.Text = doingEvent(1)
                 Case "@button4" 'Enable C
-                    PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-                    Label19.Text = doingEvent(1)
+                    AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+                    AnswerCTextLabel.Text = doingEvent(1)
                 Case "@button5" 'Enable D
-                    PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-                    Label20.Text = doingEvent(1)
+                    AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+                    AnswerDTextLabel.Text = doingEvent(1)
                 Case "@button6" 'Enable All
-                    PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-                    PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-                    PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-                    PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+                    AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+                    AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+                    AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+                    AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
                     numberRightAnswer = doingEvent(6)
-                    Label16.Text = doingEvent(1)
-                    Label17.Text = doingEvent(2)
-                    Label18.Text = doingEvent(3)
-                    Label19.Text = doingEvent(4)
-                    Label20.Text = doingEvent(5)
-                    Host.Label11.Text = doingEvent(6)
+                    QuestionTextLabel.Text = doingEvent(1)
+                    AnswerATextLabel.Text = doingEvent(2)
+                    AnswerBTextLabel.Text = doingEvent(3)
+                    AnswerCTextLabel.Text = doingEvent(4)
+                    AnswerDTextLabel.Text = doingEvent(5)
+                    Host.QuestionCommentLabel.Text = doingEvent(6)
                 Case "@button8", "@button9", "@button10", "@button11" 'Receive A, B, C, D
                     Select Case numberRightAnswer
                         Case 1
-                            Host.Label5.Text = "A"
+                            Host.FinalAnswerLetterLabel.Text = "A"
                         Case 2
-                            Host.Label5.Text = "B"
+                            Host.FinalAnswerLetterLabel.Text = "B"
                         Case 3
-                            Host.Label5.Text = "C"
+                            Host.FinalAnswerLetterLabel.Text = "C"
                         Case 4
-                            Host.Label5.Text = "D"
+                            Host.FinalAnswerLetterLabel.Text = "D"
                     End Select
-                    PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
-                    PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
-                    PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
-                    PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
-                    Label17.BackColor = Color.FromArgb(42, 42, 42)
-                    Label18.BackColor = Color.FromArgb(42, 42, 42)
-                    Label19.BackColor = Color.FromArgb(42, 42, 42)
-                    Label20.BackColor = Color.FromArgb(42, 42, 42)
-                    Label17.ForeColor = Color.White
-                    Label18.ForeColor = Color.White
-                    Label19.ForeColor = Color.White
-                    Label20.ForeColor = Color.White
-                    Host.Label11.Text = doingEvent(1)
+                    AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_BLACK.png")
+                    AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_BLACK.png")
+                    AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_BLACK.png")
+                    AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_BLACK.png")
+                    AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerATextLabel.ForeColor = Color.White
+                    AnswerBTextLabel.ForeColor = Color.White
+                    AnswerCTextLabel.ForeColor = Color.White
+                    AnswerDTextLabel.ForeColor = Color.White
+                    Host.QuestionCommentLabel.Text = doingEvent(1)
                     Select Case doingEvent(0)
                         Case "@button8"
                             playerAnswerNumber = 1
-                            PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_ORANGE.png")
-                            Label17.BackColor = Color.FromArgb(244, 155, 15)
-                            Label17.ForeColor = Color.Black
+                            AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_ORANGE.png")
+                            AnswerATextLabel.BackColor = Color.FromArgb(244, 155, 15)
+                            AnswerATextLabel.ForeColor = Color.Black
                         Case "@button9"
                             playerAnswerNumber = 2
-                            PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_ORANGE.png")
-                            Label18.BackColor = Color.FromArgb(244, 155, 15)
-                            Label18.ForeColor = Color.Black
+                            AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_ORANGE.png")
+                            AnswerBTextLabel.BackColor = Color.FromArgb(244, 155, 15)
+                            AnswerBTextLabel.ForeColor = Color.Black
                         Case "@button10"
                             playerAnswerNumber = 3
-                            PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_ORANGE.png")
-                            Label19.BackColor = Color.FromArgb(244, 155, 15)
-                            Label19.ForeColor = Color.Black
+                            AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_ORANGE.png")
+                            AnswerCTextLabel.BackColor = Color.FromArgb(244, 155, 15)
+                            AnswerCTextLabel.ForeColor = Color.Black
                         Case "@button11"
                             playerAnswerNumber = 4
-                            PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_ORANGE.png")
-                            Label20.BackColor = Color.FromArgb(244, 155, 15)
-                            Label20.ForeColor = Color.Black
+                            AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_ORANGE.png")
+                            AnswerDTextLabel.BackColor = Color.FromArgb(244, 155, 15)
+                            AnswerDTextLabel.ForeColor = Color.Black
                     End Select
                 Case "@button12" 'What's correct
-                    Host.Label1.Text = "Qaway:" & Str(15 - questionNumber)
+                    Host.QuestionsLeftLabel.Text = "Qaway:" & Str(15 - questionNumber)
                     Select Case numberRightAnswer
                         Case 1
-                            PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_GREEN.png")
-                            Label17.BackColor = Color.FromArgb(93, 179, 87)
-                            Label17.ForeColor = Color.Black
+                            AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_GREEN.png")
+                            AnswerATextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerATextLabel.ForeColor = Color.Black
                         Case 2
-                            PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_GREEN.png")
-                            Label18.BackColor = Color.FromArgb(93, 179, 87)
-                            Label18.ForeColor = Color.Black
+                            AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_GREEN.png")
+                            AnswerBTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerBTextLabel.ForeColor = Color.Black
                         Case 3
-                            PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_GREEN.png")
-                            Label19.BackColor = Color.FromArgb(93, 179, 87)
-                            Label19.ForeColor = Color.Black
+                            AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_GREEN.png")
+                            AnswerCTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerCTextLabel.ForeColor = Color.Black
                         Case 4
-                            PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_GREEN.png")
-                            Label20.BackColor = Color.FromArgb(93, 179, 87)
-                            Label20.ForeColor = Color.Black
+                            AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_GREEN.png")
+                            AnswerDTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerDTextLabel.ForeColor = Color.Black
                     End Select
                     winNumber = doingEvent(2)
                     If doingEvent(1) = False Then
                         If playerAnswerNumber = numberRightAnswer Then
-                            Timer2.Start()
+                            MoneyWonRevealTimer.Start()
                             Select Case questionNumber
                                 Case 0
-                                    Host.Label2.Text = "100" 'Возможный выигрыш
-                                    Host.Label3.Text = "0" 'Текущий выигрыш
-                                    Host.Label4.Text = "0" 'Возможная потеря
-                                    Host.Label6.Text = "0" 'Несгораемая сумма
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                                    Host.PossibleWinLabel.Text = "100" 'Возможный выигрыш
+                                    Host.CurrentWinLabel.Text = "0" 'Текущий выигрыш
+                                    Host.PossibleLossLabel.Text = "0" 'Возможная потеря
+                                    Host.GuaranteedSumLabel.Text = "0" 'Несгораемая сумма
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                                 Case 1
-                                    Host.Label2.Text = "200"
-                                    Host.Label3.Text = "100"
-                                    Host.Label4.Text = "100"
-                                    Host.Label6.Text = "0"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                                    Host.PossibleWinLabel.Text = "200"
+                                    Host.CurrentWinLabel.Text = "100"
+                                    Host.PossibleLossLabel.Text = "100"
+                                    Host.GuaranteedSumLabel.Text = "0"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                                 Case 2
-                                    Host.Label2.Text = "300"
-                                    Host.Label3.Text = "200"
-                                    Host.Label4.Text = "200"
-                                    Host.Label6.Text = "0"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                                    Host.PossibleWinLabel.Text = "300"
+                                    Host.CurrentWinLabel.Text = "200"
+                                    Host.PossibleLossLabel.Text = "200"
+                                    Host.GuaranteedSumLabel.Text = "0"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                                 Case 3
-                                    Host.Label2.Text = "500"
-                                    Host.Label3.Text = "200"
-                                    Host.Label4.Text = "200"
-                                    Host.Label6.Text = "0"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                                    Host.PossibleWinLabel.Text = "500"
+                                    Host.CurrentWinLabel.Text = "200"
+                                    Host.PossibleLossLabel.Text = "200"
+                                    Host.GuaranteedSumLabel.Text = "0"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                                 Case 4
-                                    Host.Label2.Text = "1,000"
-                                    Host.Label3.Text = "500"
-                                    Host.Label4.Text = "500"
-                                    Host.Label6.Text = "0"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                                    Host.PossibleWinLabel.Text = "1,000"
+                                    Host.CurrentWinLabel.Text = "500"
+                                    Host.PossibleLossLabel.Text = "500"
+                                    Host.GuaranteedSumLabel.Text = "0"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                                 Case 5
-                                    Host.Label2.Text = "2,000"
-                                    Host.Label3.Text = "1,000"
-                                    Host.Label4.Text = "0"
-                                    Host.Label6.Text = "1,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                                    Host.PossibleWinLabel.Text = "2,000"
+                                    Host.CurrentWinLabel.Text = "1,000"
+                                    Host.PossibleLossLabel.Text = "0"
+                                    Host.GuaranteedSumLabel.Text = "1,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                                 Case 6
-                                    Host.Label2.Text = "4,000"
-                                    Host.Label3.Text = "2,000"
-                                    Host.Label4.Text = "1,000"
-                                    Host.Label6.Text = "1,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                                    Host.PossibleWinLabel.Text = "4,000"
+                                    Host.CurrentWinLabel.Text = "2,000"
+                                    Host.PossibleLossLabel.Text = "1,000"
+                                    Host.GuaranteedSumLabel.Text = "1,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                                 Case 7
-                                    Host.Label2.Text = "8,000"
-                                    Host.Label3.Text = "4,000"
-                                    Host.Label4.Text = "3,000"
-                                    Host.Label6.Text = "1,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                                    Host.PossibleWinLabel.Text = "8,000"
+                                    Host.CurrentWinLabel.Text = "4,000"
+                                    Host.PossibleLossLabel.Text = "3,000"
+                                    Host.GuaranteedSumLabel.Text = "1,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                                 Case 8
-                                    Host.Label2.Text = "16,000"
-                                    Host.Label3.Text = "8,000"
-                                    Host.Label4.Text = "7,000"
-                                    Host.Label6.Text = "1,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                                    Host.PossibleWinLabel.Text = "16,000"
+                                    Host.CurrentWinLabel.Text = "8,000"
+                                    Host.PossibleLossLabel.Text = "7,000"
+                                    Host.GuaranteedSumLabel.Text = "1,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                                 Case 9
-                                    Host.Label2.Text = "32,000"
-                                    Host.Label3.Text = "16,000"
-                                    Host.Label4.Text = "15,000"
-                                    Host.Label6.Text = "1,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                                    Host.PossibleWinLabel.Text = "32,000"
+                                    Host.CurrentWinLabel.Text = "16,000"
+                                    Host.PossibleLossLabel.Text = "15,000"
+                                    Host.GuaranteedSumLabel.Text = "1,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                                 Case 10
-                                    Host.Label2.Text = "64,000"
-                                    Host.Label3.Text = "32,000"
-                                    Host.Label4.Text = "0"
-                                    Host.Label6.Text = "32,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                                    Host.PossibleWinLabel.Text = "64,000"
+                                    Host.CurrentWinLabel.Text = "32,000"
+                                    Host.PossibleLossLabel.Text = "0"
+                                    Host.GuaranteedSumLabel.Text = "32,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                                 Case 11
-                                    Host.Label2.Text = "125,000"
-                                    Host.Label3.Text = "64,000"
-                                    Host.Label4.Text = "32,000"
-                                    Host.Label6.Text = "32,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                                    Host.PossibleWinLabel.Text = "125,000"
+                                    Host.CurrentWinLabel.Text = "64,000"
+                                    Host.PossibleLossLabel.Text = "32,000"
+                                    Host.GuaranteedSumLabel.Text = "32,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                                 Case 12
-                                    Host.Label2.Text = "250,000"
-                                    Host.Label3.Text = "125,000"
-                                    Host.Label4.Text = "93,000"
-                                    Host.Label6.Text = "32,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                                    Host.PossibleWinLabel.Text = "250,000"
+                                    Host.CurrentWinLabel.Text = "125,000"
+                                    Host.PossibleLossLabel.Text = "93,000"
+                                    Host.GuaranteedSumLabel.Text = "32,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                                 Case 13
-                                    Host.Label2.Text = "500,000"
-                                    Host.Label3.Text = "250,000"
-                                    Host.Label4.Text = "218,000"
-                                    Host.Label6.Text = "32,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                                    Host.PossibleWinLabel.Text = "500,000"
+                                    Host.CurrentWinLabel.Text = "250,000"
+                                    Host.PossibleLossLabel.Text = "218,000"
+                                    Host.GuaranteedSumLabel.Text = "32,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                                 Case 14
-                                    Host.Label2.Text = "1,000,000"
-                                    Host.Label3.Text = "500,000"
-                                    Host.Label4.Text = "468,000"
-                                    Host.Label6.Text = "32,000"
-                                    Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                                    Host.PossibleWinLabel.Text = "1,000,000"
+                                    Host.CurrentWinLabel.Text = "500,000"
+                                    Host.PossibleLossLabel.Text = "468,000"
+                                    Host.GuaranteedSumLabel.Text = "32,000"
+                                    Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
                             End Select
                         Else
-                            Timer3.Start()
-                            Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                            PrizeRevealTimer.Start()
+                            Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
                         End If
                     Else
-                        Timer3.Start()
+                        PrizeRevealTimer.Start()
                         If winNumber < 15 Then
-                            Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                            Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
                         End If
                     End If
-                    Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                    Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
                 Case "@millionaire" '@button12 + winNumber=15
                     winNumber = 15
                     Select Case numberRightAnswer
                         Case 1
-                            PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_GREEN.png")
-                            Label17.BackColor = Color.FromArgb(93, 179, 87)
-                            Label17.ForeColor = Color.Black
+                            AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\A_GREEN.png")
+                            AnswerATextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerATextLabel.ForeColor = Color.Black
                         Case 2
-                            PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_GREEN.png")
-                            Label18.BackColor = Color.FromArgb(93, 179, 87)
-                            Label18.ForeColor = Color.Black
+                            AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\B_GREEN.png")
+                            AnswerBTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerBTextLabel.ForeColor = Color.Black
                         Case 3
-                            PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_GREEN.png")
-                            Label19.BackColor = Color.FromArgb(93, 179, 87)
-                            Label19.ForeColor = Color.Black
+                            AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\C_GREEN.png")
+                            AnswerCTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerCTextLabel.ForeColor = Color.Black
                         Case 4
-                            PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_GREEN.png")
-                            Label20.BackColor = Color.FromArgb(93, 179, 87)
-                            Label20.ForeColor = Color.Black
+                            AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\D_GREEN.png")
+                            AnswerDTextLabel.BackColor = Color.FromArgb(93, 179, 87)
+                            AnswerDTextLabel.ForeColor = Color.Black
                     End Select
-                    Host.Label1.Text = "Qaway: 0"
-                    Host.Label2.Text = "1,000,000"
-                    Host.Label3.Text = "1,000,000"
-                    Host.Label4.Text = "0"
-                    Host.Label6.Text = "1,000,000"
-                    Timer3.Start()
-                    Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\MILLIONAIRE.png")
-                    Player.Label5.Text = doingEvent(1)
-                    Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                    Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Host.QuestionsLeftLabel.Text = "Qaway: 0"
+                    Host.PossibleWinLabel.Text = "1,000,000"
+                    Host.CurrentWinLabel.Text = "1,000,000"
+                    Host.PossibleLossLabel.Text = "0"
+                    Host.GuaranteedSumLabel.Text = "1,000,000"
+                    PrizeRevealTimer.Start()
+                    Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\MILLIONAIRE.png")
+                    Player.WinnerNameLabel.Text = doingEvent(1)
+                    Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
                 Case "@button13" 'Lx
-                    Timer2.Stop()
-                    Player.PictureBox12.Visible = False
-                    Label16.Text = ""
-                    Label17.Text = ""
-                    Label18.Text = ""
-                    Label19.Text = ""
-                    Label20.Text = ""
-                    PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-                    PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-                    PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-                    PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-                    Player.Label16.Visible = True
-                    Player.Label17.Visible = True
-                    Player.Label18.Visible = True
-                    Player.Label19.Visible = True
-                    Player.Label20.Visible = True
-                    Player.PictureBox2.Visible = True
-                    Player.PictureBox3.Visible = True
-                    Player.PictureBox4.Visible = True
-                    Player.PictureBox5.Visible = True
-                    Player.PictureBox13.Visible = False
-                    Player.Label5.Visible = False
+                    MoneyWonRevealTimer.Stop()
+                    Player.MoneyWonPictureBox.Visible = False
+                    QuestionTextLabel.Text = ""
+                    AnswerATextLabel.Text = ""
+                    AnswerBTextLabel.Text = ""
+                    AnswerCTextLabel.Text = ""
+                    AnswerDTextLabel.Text = ""
+                    AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+                    AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+                    AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+                    AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+                    Player.QuestionTextLabel.Visible = True
+                    Player.AnswerATextLabel.Visible = True
+                    Player.AnswerBTextLabel.Visible = True
+                    Player.AnswerCTextLabel.Visible = True
+                    Player.AnswerDTextLabel.Visible = True
+                    Player.AnswerAFramePictureBox.Visible = True
+                    Player.AnswerBFramePictureBox.Visible = True
+                    Player.AnswerCFramePictureBox.Visible = True
+                    Player.AnswerDFramePictureBox.Visible = True
+                    Player.PrizePictureBox.Visible = False
+                    Player.WinnerNameLabel.Visible = False
                     Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-                    Label17.BackColor = Color.FromArgb(42, 42, 42)
-                    Label17.ForeColor = Color.White
-                    Label18.BackColor = Color.FromArgb(42, 42, 42)
-                    Label18.ForeColor = Color.White
-                    Label19.BackColor = Color.FromArgb(42, 42, 42)
-                    Label19.ForeColor = Color.White
-                    Label20.BackColor = Color.FromArgb(42, 42, 42)
-                    Label20.ForeColor = Color.White
+                    AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerATextLabel.ForeColor = Color.White
+                    AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerBTextLabel.ForeColor = Color.White
+                    AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerCTextLabel.ForeColor = Color.White
+                    AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerDTextLabel.ForeColor = Color.White
                     questionNumber = doingEvent(1)
                 Case "@button25" 'Explane Lifelines
                     winNumber = doingEvent(4)
-                    Host.PictureBox7.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
-                    Player.PictureBox7.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
-                    Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                    Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                    Host.PictureBox0.Visible = False
-                    Player.PictureBox0.Visible = False
+                    Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
+                    Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
+                    Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Host.LogoPictureBox.Visible = False
+                    Player.LogoPictureBox.Visible = False
                     splashOn = False
-                    Button16.Text = currentBlock1(45, 3) 'Show logo
-                    Button16.BackColor = Color.White
-                    Button24.PerformClick()
-                    If doingEvent(1) = "0" Then CheckBox1.Checked = True Else CheckBox1.Checked = False
-                    If doingEvent(2) = "0" Then CheckBox2.Checked = True Else CheckBox2.Checked = False
-                    If doingEvent(3) = "0" Then CheckBox3.Checked = True Else CheckBox3.Checked = False
+                    ToggleLogoButton.Text = currentBlock1(45, 3) 'Show logo
+                    ToggleLogoButton.BackColor = Color.White
+                    ClearFormsButton.PerformClick()
+                    If doingEvent(1) = "0" Then FiftyFiftyAvailableCheckBox.Checked = True Else FiftyFiftyAvailableCheckBox.Checked = False
+                    If doingEvent(2) = "0" Then PhoneAFriendAvailableCheckBox.Checked = True Else PhoneAFriendAvailableCheckBox.Checked = False
+                    If doingEvent(3) = "0" Then AskTheAudienceAvailableCheckBox.Checked = True Else AskTheAudienceAvailableCheckBox.Checked = False
                 Case "@button26", "@button27", "@button28" 'Lifelines Pings
-                    Host.PictureBox7.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
-                    Player.PictureBox7.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
-                    Timer1.Start()
+                    Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
+                    Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
+                    LifelinesRefreshTimer.Start()
                 Case "@button30" 'Start the game
-                    Player.PictureBox12.Visible = False
-                    Host.Label1.Text = "Qaway:" & Str(15 - doingEvent(2))
+                    Player.MoneyWonPictureBox.Visible = False
+                    Host.QuestionsLeftLabel.Text = "Qaway:" & Str(15 - doingEvent(2))
                     If doingEvent(2) < 15 Then
                         Select Case doingEvent(1)
                             Case 0, 1
-                                Host.Label2.Text = "100" 'Возможный выигрыш
-                                Host.Label3.Text = "0" 'Текущий выигрыш
-                                Host.Label4.Text = "0" 'Возможная потеря
-                                Host.Label6.Text = "0" 'Несгораемая сумма
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                                Host.PossibleWinLabel.Text = "100" 'Возможный выигрыш
+                                Host.CurrentWinLabel.Text = "0" 'Текущий выигрыш
+                                Host.PossibleLossLabel.Text = "0" 'Возможная потеря
+                                Host.GuaranteedSumLabel.Text = "0" 'Несгораемая сумма
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                             Case 2
-                                Host.Label2.Text = "200"
-                                Host.Label3.Text = "100"
-                                Host.Label4.Text = "100"
-                                Host.Label6.Text = "0"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                                Host.PossibleWinLabel.Text = "200"
+                                Host.CurrentWinLabel.Text = "100"
+                                Host.PossibleLossLabel.Text = "100"
+                                Host.GuaranteedSumLabel.Text = "0"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                             Case 3
-                                Host.Label2.Text = "300"
-                                Host.Label3.Text = "200"
-                                Host.Label4.Text = "200"
-                                Host.Label6.Text = "0"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                                Host.PossibleWinLabel.Text = "300"
+                                Host.CurrentWinLabel.Text = "200"
+                                Host.PossibleLossLabel.Text = "200"
+                                Host.GuaranteedSumLabel.Text = "0"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                             Case 4
-                                Host.Label2.Text = "500"
-                                Host.Label3.Text = "200"
-                                Host.Label4.Text = "200"
-                                Host.Label6.Text = "0"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                                Host.PossibleWinLabel.Text = "500"
+                                Host.CurrentWinLabel.Text = "200"
+                                Host.PossibleLossLabel.Text = "200"
+                                Host.GuaranteedSumLabel.Text = "0"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                             Case 5
-                                Host.Label2.Text = "1,000"
-                                Host.Label3.Text = "500"
-                                Host.Label4.Text = "500"
-                                Host.Label6.Text = "0"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                                Host.PossibleWinLabel.Text = "1,000"
+                                Host.CurrentWinLabel.Text = "500"
+                                Host.PossibleLossLabel.Text = "500"
+                                Host.GuaranteedSumLabel.Text = "0"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                             Case 6
-                                Host.Label2.Text = "2,000"
-                                Host.Label3.Text = "1,000"
-                                Host.Label4.Text = "0"
-                                Host.Label6.Text = "1,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                                Host.PossibleWinLabel.Text = "2,000"
+                                Host.CurrentWinLabel.Text = "1,000"
+                                Host.PossibleLossLabel.Text = "0"
+                                Host.GuaranteedSumLabel.Text = "1,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                             Case 7
-                                Host.Label2.Text = "4,000"
-                                Host.Label3.Text = "2,000"
-                                Host.Label4.Text = "1,000"
-                                Host.Label6.Text = "1,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                                Host.PossibleWinLabel.Text = "4,000"
+                                Host.CurrentWinLabel.Text = "2,000"
+                                Host.PossibleLossLabel.Text = "1,000"
+                                Host.GuaranteedSumLabel.Text = "1,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                             Case 8
-                                Host.Label2.Text = "8,000"
-                                Host.Label3.Text = "4,000"
-                                Host.Label4.Text = "3,000"
-                                Host.Label6.Text = "1,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                                Host.PossibleWinLabel.Text = "8,000"
+                                Host.CurrentWinLabel.Text = "4,000"
+                                Host.PossibleLossLabel.Text = "3,000"
+                                Host.GuaranteedSumLabel.Text = "1,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                             Case 9
-                                Host.Label2.Text = "16,000"
-                                Host.Label3.Text = "8,000"
-                                Host.Label4.Text = "7,000"
-                                Host.Label6.Text = "1,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                                Host.PossibleWinLabel.Text = "16,000"
+                                Host.CurrentWinLabel.Text = "8,000"
+                                Host.PossibleLossLabel.Text = "7,000"
+                                Host.GuaranteedSumLabel.Text = "1,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                             Case 10
-                                Host.Label2.Text = "32,000"
-                                Host.Label3.Text = "16,000"
-                                Host.Label4.Text = "15,000"
-                                Host.Label6.Text = "1,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                                Host.PossibleWinLabel.Text = "32,000"
+                                Host.CurrentWinLabel.Text = "16,000"
+                                Host.PossibleLossLabel.Text = "15,000"
+                                Host.GuaranteedSumLabel.Text = "1,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                             Case 11
-                                Host.Label2.Text = "64,000"
-                                Host.Label3.Text = "32,000"
-                                Host.Label4.Text = "0"
-                                Host.Label6.Text = "32,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                                Host.PossibleWinLabel.Text = "64,000"
+                                Host.CurrentWinLabel.Text = "32,000"
+                                Host.PossibleLossLabel.Text = "0"
+                                Host.GuaranteedSumLabel.Text = "32,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                             Case 12
-                                Host.Label2.Text = "125,000"
-                                Host.Label3.Text = "64,000"
-                                Host.Label4.Text = "32,000"
-                                Host.Label6.Text = "32,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                                Host.PossibleWinLabel.Text = "125,000"
+                                Host.CurrentWinLabel.Text = "64,000"
+                                Host.PossibleLossLabel.Text = "32,000"
+                                Host.GuaranteedSumLabel.Text = "32,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                             Case 13
-                                Host.Label2.Text = "250,000"
-                                Host.Label3.Text = "125,000"
-                                Host.Label4.Text = "93,000"
-                                Host.Label6.Text = "32,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                                Host.PossibleWinLabel.Text = "250,000"
+                                Host.CurrentWinLabel.Text = "125,000"
+                                Host.PossibleLossLabel.Text = "93,000"
+                                Host.GuaranteedSumLabel.Text = "32,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                             Case 14
-                                Host.Label2.Text = "500,000"
-                                Host.Label3.Text = "250,000"
-                                Host.Label4.Text = "218,000"
-                                Host.Label6.Text = "32,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                                Host.PossibleWinLabel.Text = "500,000"
+                                Host.CurrentWinLabel.Text = "250,000"
+                                Host.PossibleLossLabel.Text = "218,000"
+                                Host.GuaranteedSumLabel.Text = "32,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                             Case 15
-                                Host.Label2.Text = "1,000,000"
-                                Host.Label3.Text = "500,000"
-                                Host.Label4.Text = "468,000"
-                                Host.Label6.Text = "32,000"
-                                Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                                Host.PossibleWinLabel.Text = "1,000,000"
+                                Host.CurrentWinLabel.Text = "500,000"
+                                Host.PossibleLossLabel.Text = "468,000"
+                                Host.GuaranteedSumLabel.Text = "32,000"
+                                Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
                         End Select
                     End If
-                    Host.Label5.Text = ""
-                    Label16.Text = ""
-                    Label17.Text = ""
-                    Label18.Text = ""
-                    Label19.Text = ""
-                    Label20.Text = ""
-                    Player.Label16.Visible = True
-                    Player.Label17.Visible = True
-                    Player.Label18.Visible = True
-                    Player.Label19.Visible = True
-                    Player.Label20.Visible = True
-                    Player.PictureBox2.Visible = True
-                    Player.PictureBox3.Visible = True
-                    Player.PictureBox4.Visible = True
-                    Player.PictureBox5.Visible = True
-                    Player.PictureBox13.Visible = False
-                    Player.Label5.Visible = False
+                    Host.FinalAnswerLetterLabel.Text = ""
+                    QuestionTextLabel.Text = ""
+                    AnswerATextLabel.Text = ""
+                    AnswerBTextLabel.Text = ""
+                    AnswerCTextLabel.Text = ""
+                    AnswerDTextLabel.Text = ""
+                    Player.QuestionTextLabel.Visible = True
+                    Player.AnswerATextLabel.Visible = True
+                    Player.AnswerBTextLabel.Visible = True
+                    Player.AnswerCTextLabel.Visible = True
+                    Player.AnswerDTextLabel.Visible = True
+                    Player.AnswerAFramePictureBox.Visible = True
+                    Player.AnswerBFramePictureBox.Visible = True
+                    Player.AnswerCFramePictureBox.Visible = True
+                    Player.AnswerDFramePictureBox.Visible = True
+                    Player.PrizePictureBox.Visible = False
+                    Player.WinnerNameLabel.Visible = False
                     Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-                    PictureBox2.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-                    PictureBox3.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-                    PictureBox4.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
-                    PictureBox5.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
-                    Label17.BackColor = Color.FromArgb(42, 42, 42)
-                    Label17.ForeColor = Color.White
-                    Label18.BackColor = Color.FromArgb(42, 42, 42)
-                    Label18.ForeColor = Color.White
-                    Label19.BackColor = Color.FromArgb(42, 42, 42)
-                    Label19.ForeColor = Color.White
-                    Label20.BackColor = Color.FromArgb(42, 42, 42)
-                    Label20.ForeColor = Color.White
-                    Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & doingEvent(2) & ".png"
-                    Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & doingEvent(2) & ".png"
-                    Host.Label11.Text = ""
+                    AnswerAFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+                    AnswerBFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+                    AnswerCFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\LEFT.png")
+                    AnswerDFramePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\RIGHT.png")
+                    AnswerATextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerATextLabel.ForeColor = Color.White
+                    AnswerBTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerBTextLabel.ForeColor = Color.White
+                    AnswerCTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerCTextLabel.ForeColor = Color.White
+                    AnswerDTextLabel.BackColor = Color.FromArgb(42, 42, 42)
+                    AnswerDTextLabel.ForeColor = Color.White
+                    Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & doingEvent(2) & ".png"
+                    Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & doingEvent(2) & ".png"
+                    Host.QuestionCommentLabel.Text = ""
                     commentShow = False
-                    CheckBox10.Checked = False
-                    Host.PictureBox0.Visible = False
-                    Player.PictureBox0.Visible = False
+                    MoneyTakenCheckBox.Checked = False
+                    Host.LogoPictureBox.Visible = False
+                    Player.LogoPictureBox.Visible = False
                     splashOn = False
-                    Button16.Text = currentBlock1(45, 3) 'Show logo
-                    Button16.BackColor = Color.White
+                    ToggleLogoButton.Text = currentBlock1(45, 3) 'Show logo
+                    ToggleLogoButton.BackColor = Color.White
                 Case "@button33" 'Goodbye Punter
-                    Button24.PerformClick()
-                    Button52.PerformClick()
+                    ClearFormsButton.PerformClick()
+                    MoneyTreeLevel0Button.PerformClick()
                     questionNumber = 1
-                    CheckBox1.Checked = True
-                    CheckBox2.Checked = True
-                    CheckBox3.Checked = True
-                    CheckBox10.Checked = False
+                    FiftyFiftyAvailableCheckBox.Checked = True
+                    PhoneAFriendAvailableCheckBox.Checked = True
+                    AskTheAudienceAvailableCheckBox.Checked = True
+                    MoneyTakenCheckBox.Checked = False
                     If splashOn = False Then
-                        Button16.PerformClick()
+                        ToggleLogoButton.PerformClick()
                     End If
                 Case "@numericupdown1" 'Смена номера вопроса
                     questionNumber = doingEvent(1)
                 Case "@button24" 'Clear forms
-                    Button24.PerformClick()
+                    ClearFormsButton.PerformClick()
                 Case "@button20_1" 'Take a money 1
-                    CheckBox10.Checked = doingEvent(1)
-                    Timer3.Start()
+                    MoneyTakenCheckBox.Checked = doingEvent(1)
+                    PrizeRevealTimer.Start()
                     If winNumber < 15 Then
-                        Player.PictureBox13.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
+                        Player.PrizePictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\TPM" & winNumber & ".png")
                     End If
-                    Button20.BackColor = Color.Blue
-                    CheckBox10.Checked = True
+                    TakeTheMoneyButton.BackColor = Color.Blue
+                    MoneyTakenCheckBox.Checked = True
                 Case "@button20_2" 'Take a money 2
-                    CheckBox10.Checked = doingEvent(1)
-                    Player.Label5.Visible = False
-                    Player.Label16.Visible = True
-                    Player.Label17.Visible = True
-                    Player.Label18.Visible = True
-                    Player.Label19.Visible = True
-                    Player.Label20.Visible = True
-                    Player.PictureBox2.Visible = True
-                    Player.PictureBox3.Visible = True
-                    Player.PictureBox4.Visible = True
-                    Player.PictureBox5.Visible = True
-                    Player.PictureBox13.Visible = False
+                    MoneyTakenCheckBox.Checked = doingEvent(1)
+                    Player.WinnerNameLabel.Visible = False
+                    Player.QuestionTextLabel.Visible = True
+                    Player.AnswerATextLabel.Visible = True
+                    Player.AnswerBTextLabel.Visible = True
+                    Player.AnswerCTextLabel.Visible = True
+                    Player.AnswerDTextLabel.Visible = True
+                    Player.AnswerAFramePictureBox.Visible = True
+                    Player.AnswerBFramePictureBox.Visible = True
+                    Player.AnswerCFramePictureBox.Visible = True
+                    Player.AnswerDFramePictureBox.Visible = True
+                    Player.PrizePictureBox.Visible = False
                     Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-                    Timer3.Stop()
-                    Button20.BackColor = Color.White
+                    PrizeRevealTimer.Stop()
+                    TakeTheMoneyButton.BackColor = Color.White
                 Case "@lifelines_state", "@button17", "@button15", "@button18" '50-50, PAF or ATA state changed
-                    Host.PictureBox7.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
-                    Player.PictureBox7.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
+                    Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
+                    Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & doingEvent(1) & doingEvent(2) & doingEvent(3) & ".png"
                 Case "@checkbox4" 'Host frame
-                    CheckBox4.Checked = doingEvent(1)
-                    If CheckBox4.Checked = True Then
+                    HostFrameCheckBox.Checked = doingEvent(1)
+                    If HostFrameCheckBox.Checked = True Then
                         Host.FormBorderStyle = FormBorderStyle.Sizable
                     Else
                         Host.FormBorderStyle = FormBorderStyle.None
                     End If
                 Case "@checkbox5" 'Player frame state
-                    CheckBox5.Checked = doingEvent(1)
-                    If CheckBox5.Checked = True Then
+                    PlayerFrameCheckBox.Checked = doingEvent(1)
+                    If PlayerFrameCheckBox.Checked = True Then
                         Player.FormBorderStyle = FormBorderStyle.Sizable
                     Else
                         Player.FormBorderStyle = FormBorderStyle.None
                     End If
                 Case "@checkbox7" 'Host window visibility
-                    CheckBox7.Checked = doingEvent(1)
-                    If CheckBox7.Checked = True Then
+                    HostVisibleCheckBox.Checked = doingEvent(1)
+                    If HostVisibleCheckBox.Checked = True Then
                         Host.Show()
                     Else
                         Host.Hide()
                     End If
                 Case "@checkbox8" 'Player window visibility
-                    CheckBox8.Checked = doingEvent(1)
-                    If CheckBox8.Checked = True Then
+                    PlayerVisibleCheckBox.Checked = doingEvent(1)
+                    If PlayerVisibleCheckBox.Checked = True Then
                         Player.Show()
                     Else
                         Player.Hide()
                     End If
                 Case "@button44" 'Send (message)
-                    Host.Label12.Text = doingEvent(1)
+                    Host.HostMessageLabel.Text = doingEvent(1)
                 Case "@button45" 'Clear (message)
-                    Host.Label12.Text = Nothing
+                    Host.HostMessageLabel.Text = Nothing
                 Case "@button14" 'Show hint
                     If doingEvent(1) = True Then commentShow = False Else commentShow = True
-                    currentBlock2(ListBox1.SelectedIndex + 1, 9) = doingEvent(2)
-                    Button14.PerformClick()
+                    currentBlock2(QuestionListBox.SelectedIndex + 1, 9) = doingEvent(2)
+                    ToggleHintButton.PerformClick()
                 Case "@button16" 'Show logo
                     If doingEvent(1) = True Then splashOn = False Else splashOn = True
                     If splashOn = False Then
-                        Host.PictureBox0.Location = New System.Drawing.Point(0, 0)
-                        Host.PictureBox0.Visible = True
-                        Player.PictureBox0.Location = New System.Drawing.Point(0, 0)
-                        Player.PictureBox0.Visible = True
+                        Host.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+                        Host.LogoPictureBox.Visible = True
+                        Player.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+                        Player.LogoPictureBox.Visible = True
                         splashOn = True
                     Else
-                        Host.PictureBox0.Visible = False
-                        Player.PictureBox0.Visible = False
+                        Host.LogoPictureBox.Visible = False
+                        Player.LogoPictureBox.Visible = False
                         splashOn = False
                     End If
                 Case "@numericupdown2" 'Host window location
@@ -3436,228 +3436,228 @@
                     winNumber = doingEvent(1)
                     Select Case questionNumber
                         Case 0
-                            Host.Label2.Text = "100" 'Возможный выигрыш
-                            Host.Label3.Text = "0" 'Текущий выигрыш
-                            Host.Label4.Text = "0" 'Возможная потеря
-                            Host.Label6.Text = "0" 'Несгораемая сумма
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
+                            Host.PossibleWinLabel.Text = "100" 'Возможный выигрыш
+                            Host.CurrentWinLabel.Text = "0" 'Текущий выигрыш
+                            Host.PossibleLossLabel.Text = "0" 'Возможная потеря
+                            Host.GuaranteedSumLabel.Text = "0" 'Несгораемая сумма
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                         Case 1
-                            Host.Label2.Text = "200"
-                            Host.Label3.Text = "100"
-                            Host.Label4.Text = "100"
-                            Host.Label6.Text = "0"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
+                            Host.PossibleWinLabel.Text = "200"
+                            Host.CurrentWinLabel.Text = "100"
+                            Host.PossibleLossLabel.Text = "100"
+                            Host.GuaranteedSumLabel.Text = "0"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                         Case 2
-                            Host.Label2.Text = "300"
-                            Host.Label3.Text = "200"
-                            Host.Label4.Text = "200"
-                            Host.Label6.Text = "0"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
+                            Host.PossibleWinLabel.Text = "300"
+                            Host.CurrentWinLabel.Text = "200"
+                            Host.PossibleLossLabel.Text = "200"
+                            Host.GuaranteedSumLabel.Text = "0"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                         Case 3
-                            Host.Label2.Text = "500"
-                            Host.Label3.Text = "200"
-                            Host.Label4.Text = "200"
-                            Host.Label6.Text = "0"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
+                            Host.PossibleWinLabel.Text = "500"
+                            Host.CurrentWinLabel.Text = "200"
+                            Host.PossibleLossLabel.Text = "200"
+                            Host.GuaranteedSumLabel.Text = "0"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                         Case 4
-                            Host.Label2.Text = "1,000"
-                            Host.Label3.Text = "500"
-                            Host.Label4.Text = "500"
-                            Host.Label6.Text = "0"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
+                            Host.PossibleWinLabel.Text = "1,000"
+                            Host.CurrentWinLabel.Text = "500"
+                            Host.PossibleLossLabel.Text = "500"
+                            Host.GuaranteedSumLabel.Text = "0"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                         Case 5
-                            Host.Label2.Text = "2,000"
-                            Host.Label3.Text = "1,000"
-                            Host.Label4.Text = "0"
-                            Host.Label6.Text = "1,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
+                            Host.PossibleWinLabel.Text = "2,000"
+                            Host.CurrentWinLabel.Text = "1,000"
+                            Host.PossibleLossLabel.Text = "0"
+                            Host.GuaranteedSumLabel.Text = "1,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                         Case 6
-                            Host.Label2.Text = "4,000"
-                            Host.Label3.Text = "2,000"
-                            Host.Label4.Text = "1,000"
-                            Host.Label6.Text = "1,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
+                            Host.PossibleWinLabel.Text = "4,000"
+                            Host.CurrentWinLabel.Text = "2,000"
+                            Host.PossibleLossLabel.Text = "1,000"
+                            Host.GuaranteedSumLabel.Text = "1,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                         Case 7
-                            Host.Label2.Text = "8,000"
-                            Host.Label3.Text = "4,000"
-                            Host.Label4.Text = "3,000"
-                            Host.Label6.Text = "1,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
+                            Host.PossibleWinLabel.Text = "8,000"
+                            Host.CurrentWinLabel.Text = "4,000"
+                            Host.PossibleLossLabel.Text = "3,000"
+                            Host.GuaranteedSumLabel.Text = "1,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                         Case 8
-                            Host.Label2.Text = "16,000"
-                            Host.Label3.Text = "8,000"
-                            Host.Label4.Text = "7,000"
-                            Host.Label6.Text = "1,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
+                            Host.PossibleWinLabel.Text = "16,000"
+                            Host.CurrentWinLabel.Text = "8,000"
+                            Host.PossibleLossLabel.Text = "7,000"
+                            Host.GuaranteedSumLabel.Text = "1,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                         Case 9
-                            Host.Label2.Text = "32,000"
-                            Host.Label3.Text = "16,000"
-                            Host.Label4.Text = "15,000"
-                            Host.Label6.Text = "1,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
+                            Host.PossibleWinLabel.Text = "32,000"
+                            Host.CurrentWinLabel.Text = "16,000"
+                            Host.PossibleLossLabel.Text = "15,000"
+                            Host.GuaranteedSumLabel.Text = "1,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                         Case 10
-                            Host.Label2.Text = "64,000"
-                            Host.Label3.Text = "32,000"
-                            Host.Label4.Text = "0"
-                            Host.Label6.Text = "32,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
+                            Host.PossibleWinLabel.Text = "64,000"
+                            Host.CurrentWinLabel.Text = "32,000"
+                            Host.PossibleLossLabel.Text = "0"
+                            Host.GuaranteedSumLabel.Text = "32,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                         Case 11
-                            Host.Label2.Text = "125,000"
-                            Host.Label3.Text = "64,000"
-                            Host.Label4.Text = "32,000"
-                            Host.Label6.Text = "32,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
+                            Host.PossibleWinLabel.Text = "125,000"
+                            Host.CurrentWinLabel.Text = "64,000"
+                            Host.PossibleLossLabel.Text = "32,000"
+                            Host.GuaranteedSumLabel.Text = "32,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                         Case 12
-                            Host.Label2.Text = "250,000"
-                            Host.Label3.Text = "125,000"
-                            Host.Label4.Text = "93,000"
-                            Host.Label6.Text = "32,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
+                            Host.PossibleWinLabel.Text = "250,000"
+                            Host.CurrentWinLabel.Text = "125,000"
+                            Host.PossibleLossLabel.Text = "93,000"
+                            Host.GuaranteedSumLabel.Text = "32,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                         Case 13
-                            Host.Label2.Text = "500,000"
-                            Host.Label3.Text = "250,000"
-                            Host.Label4.Text = "218,000"
-                            Host.Label6.Text = "32,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
+                            Host.PossibleWinLabel.Text = "500,000"
+                            Host.CurrentWinLabel.Text = "250,000"
+                            Host.PossibleLossLabel.Text = "218,000"
+                            Host.GuaranteedSumLabel.Text = "32,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                         Case 14
-                            Host.Label2.Text = "1,000,000"
-                            Host.Label3.Text = "500,000"
-                            Host.Label4.Text = "468,000"
-                            Host.Label6.Text = "32,000"
-                            Player.PictureBox12.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
+                            Host.PossibleWinLabel.Text = "1,000,000"
+                            Host.CurrentWinLabel.Text = "500,000"
+                            Host.PossibleLossLabel.Text = "468,000"
+                            Host.GuaranteedSumLabel.Text = "32,000"
+                            Player.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
                         Case 15
-                            Host.Label2.Text = "1,000,000"
-                            Host.Label3.Text = "1,000,000"
-                            Host.Label4.Text = "0"
-                            Host.Label6.Text = "1,000,000"
+                            Host.PossibleWinLabel.Text = "1,000,000"
+                            Host.CurrentWinLabel.Text = "1,000,000"
+                            Host.PossibleLossLabel.Text = "0"
+                            Host.GuaranteedSumLabel.Text = "1,000,000"
                     End Select
-                    Host.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                    Player.PictureBox6.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
-                Case "@50-50_button1" '50:50 Button1
-                    Label17.Text = doingEvent(1)
-                    Label18.Text = doingEvent(2)
-                    Label19.Text = doingEvent(3)
-                    Label20.Text = doingEvent(4)
-                    CheckBox1.Checked = False
-                    Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-                    Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-                Case "@paf_button1" 'PAF Button1
-                    FormPAF.Timer1.Stop()
-                    Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-                    Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-                    Host.PictureBox8.Visible = False
-                    Player.PictureBox8.Visible = False
+                    Host.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                    Player.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
+                Case "@50-50_button1" '50:50 AskQuestionButton
+                    AnswerATextLabel.Text = doingEvent(1)
+                    AnswerBTextLabel.Text = doingEvent(2)
+                    AnswerCTextLabel.Text = doingEvent(3)
+                    AnswerDTextLabel.Text = doingEvent(4)
+                    FiftyFiftyAvailableCheckBox.Checked = False
+                    Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+                    Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+                Case "@paf_button1" 'PAF AskQuestionButton
+                    FormPAF.ClockTimer.Stop()
+                    Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+                    Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+                    Host.ClockPictureBox.Visible = False
+                    Player.ClockPictureBox.Visible = False
                     My.Computer.Audio.Stop()
-                Case "@paf_button2" 'PAF Button2
-                    FormPAF.Timer1.Stop()
+                Case "@paf_button2" 'PAF EnableAnswerAButton
+                    FormPAF.ClockTimer.Stop()
                     FormPAF.clockFrame = 1
-                    Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-                    Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (1).png"
-                    FormPAF.Timer1.Start()
-                    Host.PictureBox8.Visible = True
-                    Player.PictureBox8.Visible = True
+                    Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+                    Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
+                    FormPAF.ClockTimer.Start()
+                    Host.ClockPictureBox.Visible = True
+                    Player.ClockPictureBox.Visible = True
                     My.Computer.Audio.Stop()
-                Case "@paf_button3" 'PAF Button3
-                    FormPAF.Timer1.Stop()
-                    CheckBox2.Checked = False
-                    Host.PictureBox8.ImageLocation = "source\CLOCK\Clock (62).png"
-                    Player.PictureBox8.ImageLocation = "source\CLOCK\Clock (62).png"
+                Case "@paf_button3" 'PAF EnableAnswerBButton
+                    FormPAF.ClockTimer.Stop()
+                    PhoneAFriendAvailableCheckBox.Checked = False
+                    Host.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
+                    Player.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
                     My.Computer.Audio.Stop()
                 Case "@paf_closed" 'PAF closed
-                    FormPAF.Timer1.Stop()
-                    Host.PictureBox8.Visible = False
-                    Player.PictureBox8.Visible = False
+                    FormPAF.ClockTimer.Stop()
+                    Host.ClockPictureBox.Visible = False
+                    Player.ClockPictureBox.Visible = False
                     My.Computer.Audio.Stop()
-                    Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-                    Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-                Case "@ata_button2" 'ATA Button2
+                    Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+                    Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+                Case "@ata_button2" 'ATA EnableAnswerAButton
                     Host.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Host Screen ATA.png")
                     Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen ATA.png")
-                Case "@ata_button3" 'ATA Button3
-                    Host.Label10.Text = doingEvent(5) & "%"
-                    Host.Label9.Text = doingEvent(6) & "%"
-                    Host.Label8.Text = doingEvent(7) & "%"
-                    Host.Label7.Text = doingEvent(8) & "%"
-                    Host.Label10.Visible = True
-                    Host.Label9.Visible = True
-                    Host.Label8.Visible = True
-                    Host.Label7.Visible = True
-                    Host.PictureBox12.Visible = True
-                    Host.PictureBox11.Visible = True
-                    Host.PictureBox10.Visible = True
-                    Host.PictureBox9.Visible = True
-                    Host.PictureBox12.Height = doingEvent(1) * 1.2
-                    Host.PictureBox11.Height = doingEvent(2) * 1.2
-                    Host.PictureBox10.Height = doingEvent(3) * 1.2
-                    Host.PictureBox9.Height = doingEvent(4) * 1.2
-                    Host.PictureBox12.Top = 515 - doingEvent(1) * 1.2
-                    Host.PictureBox11.Top = 515 - doingEvent(2) * 1.2
-                    Host.PictureBox10.Top = 515 - doingEvent(3) * 1.2
-                    Host.PictureBox9.Top = 515 - doingEvent(4) * 1.2
-                    Player.Label1.Text = doingEvent(5) & "%"
-                    Player.Label2.Text = doingEvent(6) & "%"
-                    Player.Label3.Text = doingEvent(7) & "%"
-                    Player.Label4.Text = doingEvent(8) & "%"
-                    Player.Label1.Visible = True
-                    Player.Label2.Visible = True
-                    Player.Label3.Visible = True
-                    Player.Label4.Visible = True
-                    Player.PictureBox11.Visible = True
-                    Player.PictureBox10.Visible = True
-                    Player.PictureBox9.Visible = True
-                    Player.PictureBox1.Visible = True
-                    Player.PictureBox11.Height = doingEvent(1) * 2.4
-                    Player.PictureBox10.Height = doingEvent(2) * 2.4
-                    Player.PictureBox9.Height = doingEvent(3) * 2.4
-                    Player.PictureBox1.Height = doingEvent(4) * 2.4
-                    Player.PictureBox11.Top = 538 - doingEvent(1) * 2.4
-                    Player.PictureBox10.Top = 538 - doingEvent(2) * 2.4
-                    Player.PictureBox9.Top = 538 - doingEvent(3) * 2.4
-                    Player.PictureBox1.Top = 538 - doingEvent(4) * 2.4
-                    TextBox10.Text = doingEvent(9)
-                    Host.Label12.Text = doingEvent(9)
-                    CheckBox3.Checked = False
+                Case "@ata_button3" 'ATA EnableAnswerBButton
+                    Host.AnswerAPercentLabel.Text = doingEvent(5) & "%"
+                    Host.AnswerBPercentLabel.Text = doingEvent(6) & "%"
+                    Host.AnswerCPercentLabel.Text = doingEvent(7) & "%"
+                    Host.AnswerDPercentLabel.Text = doingEvent(8) & "%"
+                    Host.AnswerAPercentLabel.Visible = True
+                    Host.AnswerBPercentLabel.Visible = True
+                    Host.AnswerCPercentLabel.Visible = True
+                    Host.AnswerDPercentLabel.Visible = True
+                    Host.AnswerAChartPictureBox.Visible = True
+                    Host.AnswerBChartPictureBox.Visible = True
+                    Host.AnswerCChartPictureBox.Visible = True
+                    Host.AnswerDChartPictureBox.Visible = True
+                    Host.AnswerAChartPictureBox.Height = doingEvent(1) * 1.2
+                    Host.AnswerBChartPictureBox.Height = doingEvent(2) * 1.2
+                    Host.AnswerCChartPictureBox.Height = doingEvent(3) * 1.2
+                    Host.AnswerDChartPictureBox.Height = doingEvent(4) * 1.2
+                    Host.AnswerAChartPictureBox.Top = 515 - doingEvent(1) * 1.2
+                    Host.AnswerBChartPictureBox.Top = 515 - doingEvent(2) * 1.2
+                    Host.AnswerCChartPictureBox.Top = 515 - doingEvent(3) * 1.2
+                    Host.AnswerDChartPictureBox.Top = 515 - doingEvent(4) * 1.2
+                    Player.AnswerAPercentLabel.Text = doingEvent(5) & "%"
+                    Player.AnswerBPercentLabel.Text = doingEvent(6) & "%"
+                    Player.AnswerCPercentLabel.Text = doingEvent(7) & "%"
+                    Player.AnswerDPercentLabel.Text = doingEvent(8) & "%"
+                    Player.AnswerAPercentLabel.Visible = True
+                    Player.AnswerBPercentLabel.Visible = True
+                    Player.AnswerCPercentLabel.Visible = True
+                    Player.AnswerDPercentLabel.Visible = True
+                    Player.AnswerAChartPictureBox.Visible = True
+                    Player.AnswerBChartPictureBox.Visible = True
+                    Player.AnswerCChartPictureBox.Visible = True
+                    Player.AnswerDChartPictureBox.Visible = True
+                    Player.AnswerAChartPictureBox.Height = doingEvent(1) * 2.4
+                    Player.AnswerBChartPictureBox.Height = doingEvent(2) * 2.4
+                    Player.AnswerCChartPictureBox.Height = doingEvent(3) * 2.4
+                    Player.AnswerDChartPictureBox.Height = doingEvent(4) * 2.4
+                    Player.AnswerAChartPictureBox.Top = 538 - doingEvent(1) * 2.4
+                    Player.AnswerBChartPictureBox.Top = 538 - doingEvent(2) * 2.4
+                    Player.AnswerCChartPictureBox.Top = 538 - doingEvent(3) * 2.4
+                    Player.AnswerDChartPictureBox.Top = 538 - doingEvent(4) * 2.4
+                    HostMessageTextBox.Text = doingEvent(9)
+                    Host.HostMessageLabel.Text = doingEvent(9)
+                    AskTheAudienceAvailableCheckBox.Checked = False
                 Case "@ata_closed" 'ATA closed
                     Host.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-                    Host.Label10.Visible = False
-                    Host.Label9.Visible = False
-                    Host.Label8.Visible = False
-                    Host.Label7.Visible = False
-                    Host.PictureBox12.Visible = False
-                    Host.PictureBox11.Visible = False
-                    Host.PictureBox10.Visible = False
-                    Host.PictureBox9.Visible = False
+                    Host.AnswerAPercentLabel.Visible = False
+                    Host.AnswerBPercentLabel.Visible = False
+                    Host.AnswerCPercentLabel.Visible = False
+                    Host.AnswerDPercentLabel.Visible = False
+                    Host.AnswerAChartPictureBox.Visible = False
+                    Host.AnswerBChartPictureBox.Visible = False
+                    Host.AnswerCChartPictureBox.Visible = False
+                    Host.AnswerDChartPictureBox.Visible = False
                     Player.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\Player Screen.png")
-                    Player.Label1.Visible = False
-                    Player.Label2.Visible = False
-                    Player.Label3.Visible = False
-                    Player.Label4.Visible = False
-                    Player.PictureBox11.Visible = False
-                    Player.PictureBox10.Visible = False
-                    Player.PictureBox9.Visible = False
-                    Player.PictureBox1.Visible = False
+                    Player.AnswerAPercentLabel.Visible = False
+                    Player.AnswerBPercentLabel.Visible = False
+                    Player.AnswerCPercentLabel.Visible = False
+                    Player.AnswerDPercentLabel.Visible = False
+                    Player.AnswerAChartPictureBox.Visible = False
+                    Player.AnswerBChartPictureBox.Visible = False
+                    Player.AnswerCChartPictureBox.Visible = False
+                    Player.AnswerDChartPictureBox.Visible = False
                     My.Computer.Audio.Stop()
-                    Host.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
-                    Player.PictureBox7.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+                    Host.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
+                    Player.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
                     'Case "@sync" 'Синхронизация
                     '    numberRightAnswer = doingEvent(1) '1
-                    '    currentBlock2(ListBox1.SelectedIndex + 1, 9) = doingEvent(2) '2
+                    '    currentBlock2(QuestionListBox.SelectedIndex + 1, 9) = doingEvent(2) '2
                     '    winNumber = doingEvent(3) '3
-                    '    CheckBox10.Checked = doingEvent(4) '4
-                    '    NumericUpDown1.Value = doingEvent(5) '5
+                    '    MoneyTakenCheckBox.Checked = doingEvent(4) '4
+                    '    QuestionNumberNumericUpDown.Value = doingEvent(5) '5
                     '    activ50 = doingEvent(6) '6
                     '    activPAF = doingEvent(7) '7
                     '    activATA = doingEvent(8) '8
-                    '    CheckBox4.Checked = doingEvent(9) '9
-                    '    CheckBox5.Checked = doingEvent(10) '10
-                    '    CheckBox7.Checked = doingEvent(11) '11
-                    '    CheckBox8.Checked = doingEvent(12) '12
+                    '    HostFrameCheckBox.Checked = doingEvent(9) '9
+                    '    PlayerFrameCheckBox.Checked = doingEvent(10) '10
+                    '    HostVisibleCheckBox.Checked = doingEvent(11) '11
+                    '    PlayerVisibleCheckBox.Checked = doingEvent(12) '12
                     '    commentShow = doingEvent(13) '13
                     '    splashOn = doingEvent(14) '14
-                    '    NumericUpDown2.Value = doingEvent(15) '15
-                    '    NumericUpDown3.Value = doingEvent(16) '16
-                    '    NumericUpDown4.Value = doingEvent(17) '17
-                    '    NumericUpDown5.Value = doingEvent(18) '18
+                    '    HostScreenXNumericUpDown.Value = doingEvent(15) '15
+                    '    HostScreenYNumericUpDown.Value = doingEvent(16) '16
+                    '    PlayerScreenXNumericUpDown.Value = doingEvent(17) '17
+                    '    PlayerScreenYNumericUpDown.Value = doingEvent(18) '18
 
 
             End Select
@@ -3669,8 +3669,8 @@
         'При отключении соединения
         My.Computer.Audio.Play("source\MUSIC\Timp Hit.wav", AudioPlayMode.Background)
         If Me.WindowState <> FormWindowState.Normal Then Me.WindowState = FormWindowState.Normal
-        Button7.Text = currentBlock1(33, 3) 'Connect
-        Button7.BackColor = Color.Orange
+        ConnectButton.Text = currentBlock1(33, 3) 'Connect
+        ConnectButton.BackColor = Color.Orange
     End Sub
 End Class
 
@@ -3678,112 +3678,112 @@ End Class
 'doingEvent:
 ' 0 - @sync
 ' 1 - numberRightAnswer
-' 2 - currentBlock2(ListBox1.SelectedIndex + 1, 9)
+' 2 - currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
 ' 3 - winNumber
-' 4 - CheckBox10.Checked
-' 5 - NumericUpDown1.Value
+' 4 - MoneyTakenCheckBox.Checked
+' 5 - QuestionNumberNumericUpDown.Value
 ' 6 - activ50
 ' 7 - activPAF
 ' 8 - activATA
-' 9 - CheckBox4.Checked
-'10 - CheckBox5.Checked
-'11 - CheckBox7.Checked
-'12 - CheckBox8.Checked
+' 9 - HostFrameCheckBox.Checked
+'10 - PlayerFrameCheckBox.Checked
+'11 - HostVisibleCheckBox.Checked
+'12 - PlayerVisibleCheckBox.Checked
 '13 - commentShow
 '14 - splashOn
-'15 - NumericUpDown2.Value
-'16 - NumericUpDown3.Value
-'17 - NumericUpDown4.Value
-'18 - NumericUpDown5.Value
+'15 - HostScreenXNumericUpDown.Value
+'16 - HostScreenYNumericUpDown.Value
+'17 - PlayerScreenXNumericUpDown.Value
+'18 - PlayerScreenYNumericUpDown.Value
 
 '19 - FormPAF.clockFrame
-'20 - Host.PictureBox8.ImageLocation
-'21 - Player.PictureBox8.ImageLocation
-'22 - Host.PictureBox8.Visible
-'23 - Player.PictureBox8.Visible
+'20 - Host.ClockPictureBox.ImageLocation
+'21 - Player.ClockPictureBox.ImageLocation
+'22 - Host.ClockPictureBox.Visible
+'23 - Player.ClockPictureBox.Visible
 
-'24 - Host.Label10.Text
-'25 - Host.Label9.Text
-'26 - Host.Label8.Text
-'27 - Host.Label7.Text
-'28 - Host.Label10.Visible
-'29 - Host.Label9.Visible
-'30 - Host.Label8.Visible
-'31 - Host.Label7.Visible
-'32 - Host.PictureBox12.Visible
-'33 - Host.PictureBox11.Visible
-'34 - Host.PictureBox10.Visible
-'35 - Host.PictureBox9.Visible
-'36 - Host.PictureBox12.Height
-'37 - Host.PictureBox11.Height
-'38 - Host.PictureBox10.Height
-'39 - Host.PictureBox9.Height
-'40 - Host.PictureBox12.Top
-'41 - Host.PictureBox11.Top
-'42 - Host.PictureBox10.Top
-'43 - Host.PictureBox9.Top
-'44 - Player.Label1.Text
-'45 - Player.Label2.Text
-'46 - Player.Label3.Text
-'47 - Player.Label4.Text
-'48 - Player.Label1.Visible
-'49 - Player.Label2.Visible
-'50 - Player.Label3.Visible
-'51 - Player.Label4.Visible
-'52 - Player.PictureBox11.Visible
-'53 - Player.PictureBox10.Visible
-'54 - Player.PictureBox9.Visible
-'55 - Player.PictureBox1.Visible
-'56 - Player.PictureBox11.Height
-'57 - Player.PictureBox10.Height
-'58 - Player.PictureBox9.Height
-'59 - Player.PictureBox1.Height
-'60 - Player.PictureBox11.Top
-'61 - Player.PictureBox10.Top
-'62 - Player.PictureBox9.Top
-'63 - Player.PictureBox1.Top
+'24 - Host.AnswerAPercentLabel.Text
+'25 - Host.AnswerBPercentLabel.Text
+'26 - Host.AnswerCPercentLabel.Text
+'27 - Host.AnswerDPercentLabel.Text
+'28 - Host.AnswerAPercentLabel.Visible
+'29 - Host.AnswerBPercentLabel.Visible
+'30 - Host.AnswerCPercentLabel.Visible
+'31 - Host.AnswerDPercentLabel.Visible
+'32 - Host.AnswerAChartPictureBox.Visible
+'33 - Host.AnswerBChartPictureBox.Visible
+'34 - Host.AnswerCChartPictureBox.Visible
+'35 - Host.AnswerDChartPictureBox.Visible
+'36 - Host.AnswerAChartPictureBox.Height
+'37 - Host.AnswerBChartPictureBox.Height
+'38 - Host.AnswerCChartPictureBox.Height
+'39 - Host.AnswerDChartPictureBox.Height
+'40 - Host.AnswerAChartPictureBox.Top
+'41 - Host.AnswerBChartPictureBox.Top
+'42 - Host.AnswerCChartPictureBox.Top
+'43 - Host.AnswerDChartPictureBox.Top
+'44 - Player.AnswerAPercentLabel.Text
+'45 - Player.AnswerBPercentLabel.Text
+'46 - Player.AnswerCPercentLabel.Text
+'47 - Player.AnswerDPercentLabel.Text
+'48 - Player.AnswerAPercentLabel.Visible
+'49 - Player.AnswerBPercentLabel.Visible
+'50 - Player.AnswerCPercentLabel.Visible
+'51 - Player.AnswerDPercentLabel.Visible
+'52 - Player.AnswerAChartPictureBox.Visible
+'53 - Player.AnswerBChartPictureBox.Visible
+'54 - Player.AnswerCChartPictureBox.Visible
+'55 - Player.AnswerDChartPictureBox.Visible
+'56 - Player.AnswerAChartPictureBox.Height
+'57 - Player.AnswerBChartPictureBox.Height
+'58 - Player.AnswerCChartPictureBox.Height
+'59 - Player.AnswerDChartPictureBox.Height
+'60 - Player.AnswerAChartPictureBox.Top
+'61 - Player.AnswerBChartPictureBox.Top
+'62 - Player.AnswerCChartPictureBox.Top
+'63 - Player.AnswerDChartPictureBox.Top
 
 '64 - Host.BackgroundImage
 '65 - Host.BackgroundImage
-'66 - Host.PictureBox2.BackgroundImage
-'67 - Host.PictureBox3.BackgroundImage
-'68 - Host.PictureBox4.BackgroundImage
-'69 - Host.PictureBox5.BackgroundImage
-'70 - Host.PictureBox6.BackgroundImage
-'71 - Host.PictureBox7.BackgroundImage
-'72 - Host.Label16.Text
-'73 - Host.Label17.Text
-'74 - Host.Label18.Text
-'75 - Host.Label19.Text
-'76 - Host.Label20.Text
-'77 - Host.Label1.Text
-'78 - Host.Label2.Text
-'79 - Host.Label3.Text
-'80 - Host.Label4.Text
-'81 - Host.Label5.Text
-'82 - Host.Label6.Text
-'83 - Host.Label11.Text
-'84 - Host.Label12.Text
-'85 - Host.PictureBox0.Visible
+'66 - Host.AnswerAFramePictureBox.BackgroundImage
+'67 - Host.AnswerBFramePictureBox.BackgroundImage
+'68 - Host.AnswerCFramePictureBox.BackgroundImage
+'69 - Host.AnswerDFramePictureBox.BackgroundImage
+'70 - Host.MoneyTreePictureBox.BackgroundImage
+'71 - Host.LifelinesPictureBox.BackgroundImage
+'72 - Host.QuestionTextLabel.Text
+'73 - Host.AnswerATextLabel.Text
+'74 - Host.AnswerBTextLabel.Text
+'75 - Host.AnswerCTextLabel.Text
+'76 - Host.AnswerDTextLabel.Text
+'77 - Host.QuestionsLeftLabel.Text
+'78 - Host.PossibleWinLabel.Text
+'79 - Host.CurrentWinLabel.Text
+'80 - Host.PossibleLossLabel.Text
+'81 - Host.FinalAnswerLetterLabel.Text
+'82 - Host.GuaranteedSumLabel.Text
+'83 - Host.QuestionCommentLabel.Text
+'84 - Host.HostMessageLabel.Text
+'85 - Host.LogoPictureBox.Visible
 
 '86 - Player.BackgroundImage
-'87 - Player.PictureBox2.BackgroundImage
-'88 - Player.PictureBox3.BackgroundImage
-'89 - Player.PictureBox4.BackgroundImage
-'90 - Player.PictureBox5.BackgroundImage
-'91 - Player.PictureBox6.BackgroundImage
-'92 - Player.PictureBox7.BackgroundImage
-'93 - Player.Label16.Text
-'94 - Player.Label17.Text
-'95 - Player.Label18.Text
-'96 - Player.Label19.Text
-'97 - Player.Label20.Text
-'98 - Player.Label5.Text
-'99 - Player.PictureBox12.BackgroundImage
-'100 - Player.PictureBox13.BackgroundImage
-'101 - Player.PictureBox0.Visible
+'87 - Player.AnswerAFramePictureBox.BackgroundImage
+'88 - Player.AnswerBFramePictureBox.BackgroundImage
+'89 - Player.AnswerCFramePictureBox.BackgroundImage
+'90 - Player.AnswerDFramePictureBox.BackgroundImage
+'91 - Player.MoneyTreePictureBox.BackgroundImage
+'92 - Player.LifelinesPictureBox.BackgroundImage
+'93 - Player.QuestionTextLabel.Text
+'94 - Player.AnswerATextLabel.Text
+'95 - Player.AnswerBTextLabel.Text
+'96 - Player.AnswerCTextLabel.Text
+'97 - Player.AnswerDTextLabel.Text
+'98 - Player.WinnerNameLabel.Text
+'99 - Player.MoneyWonPictureBox.BackgroundImage
+'100 - Player.PrizePictureBox.BackgroundImage
+'101 - Player.LogoPictureBox.Visible
 
-'"@sync|questionText|textAnswerA|textAnswerB|textAnswerC|textAnswerD|numberRightAnswer|currentBlock2(ListBox1.SelectedIndex + 1, 9)|winNumber|CheckBox10.Checked|NumericUpDown1.Value|activ50|activPAF|activATA|CheckBox4.Checked|CheckBox5.Checked|CheckBox7.Checked|CheckBox8.Checked|commentShow|splashOn|NumericUpDown2.Value|NumericUpDown3.Value|NumericUpDown4.Value|NumericUpDown5.Value|FormPAF.clockFrame|Host.PictureBox8.ImageLocation|Player.PictureBox8.ImageLocation|Host.PictureBox8.Visible|Player.PictureBox8.Visible|Host.Label10.Text|Host.Label9.Text|Host.Label8.Text|Host.Label7.Text|Host.Label10.Visible|Host.Label9.Visible|Host.Label8.Visible|Host.Label7.Visible|Host.PictureBox12.Visible|Host.PictureBox11.Visible|Host.PictureBox10.Visible|Host.PictureBox9.Visible|Host.PictureBox12.Height|Host.PictureBox11.Height|Host.PictureBox10.Height|Host.PictureBox9.Height|Host.PictureBox12.Top|Host.PictureBox11.Top|Host.PictureBox10.Top|Host.PictureBox9.Top|Player.Label1.Text|Player.Label2.Text|Player.Label3.Text|Player.Label4.Text|Player.Label1.Visible|Player.Label2.Visible|Player.Label3.Visible|Player.Label4.Visible|Player.PictureBox11.Visible|Player.PictureBox10.Visible|Player.PictureBox9.Visible|Player.PictureBox1.Visible|Player.PictureBox11.Height|Player.PictureBox10.Height|Player.PictureBox9.Height|Player.PictureBox1.Height|Player.PictureBox11.Top|Player.PictureBox10.Top|Player.PictureBox9.Top|Player.PictureBox1.Top|Host.BackgroundImage|Host.PictureBox2.BackgroundImage|Host.PictureBox3.BackgroundImage|Host.PictureBox4.BackgroundImage|Host.PictureBox5.BackgroundImage|Host.PictureBox6.BackgroundImage|Host.PictureBox7.BackgroundImage|Host.Label16.Text|Host.Label17.Text|Host.Label18.Text|Host.Label19.Text|Host.Label20.Text|Host.Label1.Text|Host.Label2.Text|Host.Label3.Text|Host.Label4.Text|Host.Label5.Text|Host.Label6.Text|Host.Label11.Text|Host.Label12.Text|Host.PictureBox0.Visible|Player.BackgroundImage|Player.PictureBox2.BackgroundImage|Player.PictureBox3.BackgroundImage|Player.PictureBox4.BackgroundImage|Player.PictureBox5.BackgroundImage|Player.PictureBox6.BackgroundImage|Player.PictureBox7.BackgroundImage|Player.Label16.Text|Player.Label17.Text|Player.Label18.Text|Player.Label19.Text|Player.Label20.Text|Player.Label5.Text|Player.PictureBox12.BackgroundImage|Player.PictureBox13.BackgroundImage|Player.PictureBox0.Visible|"
+'"@sync|questionText|textAnswerA|textAnswerB|textAnswerC|textAnswerD|numberRightAnswer|currentBlock2(QuestionListBox.SelectedIndex + 1, 9)|winNumber|MoneyTakenCheckBox.Checked|QuestionNumberNumericUpDown.Value|activ50|activPAF|activATA|HostFrameCheckBox.Checked|PlayerFrameCheckBox.Checked|HostVisibleCheckBox.Checked|PlayerVisibleCheckBox.Checked|commentShow|splashOn|HostScreenXNumericUpDown.Value|HostScreenYNumericUpDown.Value|PlayerScreenXNumericUpDown.Value|PlayerScreenYNumericUpDown.Value|FormPAF.clockFrame|Host.ClockPictureBox.ImageLocation|Player.ClockPictureBox.ImageLocation|Host.ClockPictureBox.Visible|Player.ClockPictureBox.Visible|Host.AnswerAPercentLabel.Text|Host.AnswerBPercentLabel.Text|Host.AnswerCPercentLabel.Text|Host.AnswerDPercentLabel.Text|Host.AnswerAPercentLabel.Visible|Host.AnswerBPercentLabel.Visible|Host.AnswerCPercentLabel.Visible|Host.AnswerDPercentLabel.Visible|Host.AnswerAChartPictureBox.Visible|Host.AnswerBChartPictureBox.Visible|Host.AnswerCChartPictureBox.Visible|Host.AnswerDChartPictureBox.Visible|Host.AnswerAChartPictureBox.Height|Host.AnswerBChartPictureBox.Height|Host.AnswerCChartPictureBox.Height|Host.AnswerDChartPictureBox.Height|Host.AnswerAChartPictureBox.Top|Host.AnswerBChartPictureBox.Top|Host.AnswerCChartPictureBox.Top|Host.AnswerDChartPictureBox.Top|Player.AnswerAPercentLabel.Text|Player.AnswerBPercentLabel.Text|Player.AnswerCPercentLabel.Text|Player.AnswerDPercentLabel.Text|Player.AnswerAPercentLabel.Visible|Player.AnswerBPercentLabel.Visible|Player.AnswerCPercentLabel.Visible|Player.AnswerDPercentLabel.Visible|Player.AnswerAChartPictureBox.Visible|Player.AnswerBChartPictureBox.Visible|Player.AnswerCChartPictureBox.Visible|Player.AnswerDChartPictureBox.Visible|Player.AnswerAChartPictureBox.Height|Player.AnswerBChartPictureBox.Height|Player.AnswerCChartPictureBox.Height|Player.AnswerDChartPictureBox.Height|Player.AnswerAChartPictureBox.Top|Player.AnswerBChartPictureBox.Top|Player.AnswerCChartPictureBox.Top|Player.AnswerDChartPictureBox.Top|Host.BackgroundImage|Host.AnswerAFramePictureBox.BackgroundImage|Host.AnswerBFramePictureBox.BackgroundImage|Host.AnswerCFramePictureBox.BackgroundImage|Host.AnswerDFramePictureBox.BackgroundImage|Host.MoneyTreePictureBox.BackgroundImage|Host.LifelinesPictureBox.BackgroundImage|Host.QuestionTextLabel.Text|Host.AnswerATextLabel.Text|Host.AnswerBTextLabel.Text|Host.AnswerCTextLabel.Text|Host.AnswerDTextLabel.Text|Host.QuestionsLeftLabel.Text|Host.PossibleWinLabel.Text|Host.CurrentWinLabel.Text|Host.PossibleLossLabel.Text|Host.FinalAnswerLetterLabel.Text|Host.GuaranteedSumLabel.Text|Host.QuestionCommentLabel.Text|Host.HostMessageLabel.Text|Host.LogoPictureBox.Visible|Player.BackgroundImage|Player.AnswerAFramePictureBox.BackgroundImage|Player.AnswerBFramePictureBox.BackgroundImage|Player.AnswerCFramePictureBox.BackgroundImage|Player.AnswerDFramePictureBox.BackgroundImage|Player.MoneyTreePictureBox.BackgroundImage|Player.LifelinesPictureBox.BackgroundImage|Player.QuestionTextLabel.Text|Player.AnswerATextLabel.Text|Player.AnswerBTextLabel.Text|Player.AnswerCTextLabel.Text|Player.AnswerDTextLabel.Text|Player.WinnerNameLabel.Text|Player.MoneyWonPictureBox.BackgroundImage|Player.PrizePictureBox.BackgroundImage|Player.LogoPictureBox.Visible|"
 
 'Case "@connect_success" 'При успешном соединении
 'Case "@button1" 'Ask It                                                                                                 questionText & Str(numberRightAnswer) & questionNumber
@@ -3792,35 +3792,35 @@ End Class
 'Case "@button4" 'Enable C                                                                                                                                          textAnswerC
 'Case "@button5" 'Enable D                                                                                                                                          textAnswerD
 'Case "@button6" 'Enable All                                                           questionText & textAnswerA & textAnswerB & textAnswerC & textAnswerD & numberRightAnswer
-'Case "@button8", "@button9", "@button10", "@button11" 'Receive A, B, C, D                                                         currentBlock2(ListBox1.SelectedIndex + 1, 9)
-'Case "@button12" 'What's correct                                                                                                                            CheckBox10.Checked
-'Case "@millionaire" '@button12 + winNumber=15                                                                                                                   TextBox11.Text
-'Case "@button13" 'Lx                                                                                                                                      NumericUpDown1.Value
+'Case "@button8", "@button9", "@button10", "@button11" 'Receive A, B, C, D                                                         currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
+'Case "@button12" 'What's correct                                                                                                                            MoneyTakenCheckBox.Checked
+'Case "@millionaire" '@button12 + winNumber=15                                                                                                                   ContestantNameTextBox.Text
+'Case "@button13" 'Lx                                                                                                                                      QuestionNumberNumericUpDown.Value
 'Case "@button25" 'Lifeline Explanations                                                                                              activ50 & activPAF & activATA & winNumber
 'Case "@button26", "@button27", "@button28" 'Lifelines Pings                                                                                      activ50 & activPAF & activATA
 'Case "@button30" 'Start the game                                                                                                                    questionNumber & winNumber
 'Case "@button33" 'Goodbye Punter                                                                                                                                           ---
-'Case "@numericupdown1" 'Смена номера вопроса                                                                                                              NumericUpDown1.Value
+'Case "@numericupdown1" 'Смена номера вопроса                                                                                                              QuestionNumberNumericUpDown.Value
 'Case "@button24" 'Clear forms                                                                                                                                              ---
-'Case "@button20" 'Take a money                                                                                                                              CheckBox10.Checked
+'Case "@button20" 'Take a money                                                                                                                              MoneyTakenCheckBox.Checked
 'Case "@lifelines_state", "@button17", "@button15", "@button18" '50-50, PAF or ATA state changed                                                  activ50 & activPAF & activATA
-'Case "@checkbox4" 'Host frame                                                                                                                                CheckBox4.Checked
-'Case "@checkbox5" 'Player frame state                                                                                                                        CheckBox5.Checked
-'Case "@checkbox7" 'Host window visibility                                                                                                                    CheckBox7.Checked
-'Case "@checkbox8" 'Player window visibility                                                                                                                  CheckBox8.Checked
-'Case "@button44" 'Send (message)                                                                                                                                TextBox10.Text
+'Case "@checkbox4" 'Host frame                                                                                                                                HostFrameCheckBox.Checked
+'Case "@checkbox5" 'Player frame state                                                                                                                        PlayerFrameCheckBox.Checked
+'Case "@checkbox7" 'Host window visibility                                                                                                                    HostVisibleCheckBox.Checked
+'Case "@checkbox8" 'Player window visibility                                                                                                                  PlayerVisibleCheckBox.Checked
+'Case "@button44" 'Send (message)                                                                                                                                HostMessageTextBox.Text
 'Case "@button45" 'Clear (message)                                                                                                                                          ---
-'Case "@button14" 'Show hint                                                                                         commentShow & currentBlock2(ListBox1.SelectedIndex + 1, 9)
+'Case "@button14" 'Show hint                                                                                         commentShow & currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
 'Case "@button16" 'Show logo                                                                                                                                           splashOn
-'Case "@numericupdown2" 'Host window location                                                                                       NumericUpDown2.Value & NumericUpDown3.Value
-'Case "@numericupdown4" 'Player window location                                                                                     NumericUpDown4.Value & NumericUpDown5.Value
+'Case "@numericupdown2" 'Host window location                                                                                       HostScreenXNumericUpDown.Value & HostScreenYNumericUpDown.Value
+'Case "@numericupdown4" 'Player window location                                                                                     PlayerScreenXNumericUpDown.Value & PlayerScreenYNumericUpDown.Value
 'Case "@button42", "@button43", "@button52", "@button51", "@button50", "@button49" 'Tree Up or Tree Down                                                              winNumber
-'Case "@50-50_button1" '50:50 Button1                                                                                 Label17.Text & Label18.Text & Label19.Text & Label20.Text
-'Case "@paf_button1" 'PAF Button1                                                                                                                                           ---
-'Case "@paf_button2" 'PAF Button2                                                                                                                                           ---
-'Case "@paf_button3" 'PAF Button3                                                                                                                                           ---
+'Case "@50-50_button1" '50:50 AskQuestionButton                                                                                 AnswerATextLabel.Text & AnswerBTextLabel.Text & AnswerCTextLabel.Text & AnswerDTextLabel.Text
+'Case "@paf_button1" 'PAF AskQuestionButton                                                                                                                                           ---
+'Case "@paf_button2" 'PAF EnableAnswerAButton                                                                                                                                           ---
+'Case "@paf_button3" 'PAF EnableAnswerBButton                                                                                                                                           ---
 'Case "@paf_closed" 'PAF closed                                                                                                                                             ---
-'Case "@ata_button2" 'ATA Button2                                                                                                                                           ---
-'Case "@ata_button3" 'ATA Button3                              FormATA.percentsA & FormATA.percentsB & FormATA.percentsC & FormATA.percentsD & FormATA.NumericUpDown5.Value & _ 
-'                                                                 & FormATA.NumericUpDown6.Value & FormATA.NumericUpDown7.Value & FormATA.NumericUpDown8.Value & TextBox10.Text
+'Case "@ata_button2" 'ATA EnableAnswerAButton                                                                                                                                           ---
+'Case "@ata_button3" 'ATA EnableAnswerBButton                              FormATA.percentsA & FormATA.percentsB & FormATA.percentsC & FormATA.percentsD & FormATA.AnswerAPercentNumericUpDown.Value & _ 
+'                                                                 & FormATA.AnswerBPercentNumericUpDown.Value & FormATA.AnswerCPercentNumericUpDown.Value & FormATA.AnswerDPercentNumericUpDown.Value & HostMessageTextBox.Text
 'Case "@ata_closed" 'ATA closed                                                                                                                                             ---

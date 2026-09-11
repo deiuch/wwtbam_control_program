@@ -13,12 +13,12 @@ Public Class Editor
         Dim currentRow As String()
         Dim i0 As Integer
         Dim i1 As Integer
-        OpenFileDialog1.InitialDirectory = Project.sourcePath
+        OpenBaseFileDialog.InitialDirectory = Project.sourcePath
         FileNameQ = Project.FileNameQ
-        Label1.Text = Project.FileNameQ
-        OpenFileDialog1.FileName = FileNameQ
+        QuestionFilePathLabel.Text = Project.FileNameQ
+        OpenBaseFileDialog.FileName = FileNameQ
         If FileNameQ <> "*.questions" Then
-            ListBox1.Enabled = True
+            QuestionListBox.Enabled = True
             REM ****************************
             REM Считывание базы данных вопросов из выбранного файла
             i1 = 0
@@ -64,81 +64,81 @@ Public Class Editor
                 Next
             Next
             REM ***********************
-            REM Заполнение ListBox1
-            ListBox1.Items.Clear()
+            REM Заполнение QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            REM /Заполнение ListBox1
+            REM /Заполнение QuestionListBox
             REM /***********************
-            ListBox1.SelectedIndex = Project.ListBox1.SelectedIndex
+            QuestionListBox.SelectedIndex = Project.QuestionListBox.SelectedIndex
         Else
-            ListBox1.Enabled = False
-            ListBox1.Items.Clear()
+            QuestionListBox.Enabled = False
+            QuestionListBox.Items.Clear()
             MsgBox("You don't choosed question base file! Please, press ""Open"" button.")
-            Button3.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
-            Label1.Text = "Question File Adress (Choose question base file with format ""*.question"")"
+            OpenBaseFileButton.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
+            QuestionFilePathLabel.Text = "Question File Adress (Choose question base file with format ""*.question"")"
         End If
         'Перевод "F" Editor
         Me.Text = Project.currentBlock1(117, 3) '0
-        Label2.Text = Project.currentBlock1(118, 3) '1
-        Button1.Text = Project.currentBlock1(119, 3) '2
-        Button2.Text = Project.currentBlock1(120, 3) '3
-        Button3.Text = Project.currentBlock1(121, 3) '4
-        Button4.Text = Project.currentBlock1(122, 3) '5
+        QuestionCommentLabel.Text = Project.currentBlock1(118, 3) '1
+        SaveTemporarilyButton.Text = Project.currentBlock1(119, 3) '2
+        SaveBaseFileButton.Text = Project.currentBlock1(120, 3) '3
+        OpenBaseFileButton.Text = Project.currentBlock1(121, 3) '4
+        CreateBaseFileButton.Text = Project.currentBlock1(122, 3) '5
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        rightAnswerNumber = Int(currentBlock2(ListBox1.SelectedIndex + 1, 8)) 'Выбор номера правильного ответа из массива
-        rightAnswerText = currentBlock2(ListBox1.SelectedIndex + 1, rightAnswerNumber + 3) 'Текст ответа из массива (номер ответа + 3)
+    Private Sub QuestionListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles QuestionListBox.SelectedIndexChanged
+        rightAnswerNumber = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 8)) 'Выбор номера правильного ответа из массива
+        rightAnswerText = currentBlock2(QuestionListBox.SelectedIndex + 1, rightAnswerNumber + 3) 'Текст ответа из массива (номер ответа + 3)
         For x = 1 To 5
-            Me.Controls("TextBox" & x).Text = currentBlock2(ListBox1.SelectedIndex + 1, x + 2)
+            Me.Controls("QuestionFieldTextBox" & x).Text = currentBlock2(QuestionListBox.SelectedIndex + 1, x + 2)
         Next
         Select Case rightAnswerNumber
             Case 1
-                RadioButton1.Checked = True
+                AnswerARadioButton.Checked = True
             Case 2
-                RadioButton2.Checked = True
+                AnswerBRadioButton.Checked = True
             Case 3
-                RadioButton3.Checked = True
+                AnswerCRadioButton.Checked = True
             Case 4
-                RadioButton4.Checked = True
+                AnswerDRadioButton.Checked = True
         End Select
-        TextBox6.Text = currentBlock2(ListBox1.SelectedIndex + 1, 9)
+        QuestionCommentTextBox.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub SaveTemporarilyButton_Click(sender As Object, e As EventArgs) Handles SaveTemporarilyButton.Click
         'Save temporarily
-        If TextBox1.Text <> "" Then
-            Project.ListBox1.SelectedIndex = ListBox1.SelectedIndex
-            Project.currentBlock2(ListBox1.SelectedIndex + 1, 3) = TextBox1.Text 'Временное сохранение текста вопроса
-            Project.currentBlock2(ListBox1.SelectedIndex + 1, 4) = TextBox2.Text 'Временное сохранение текста ответа A
-            Project.currentBlock2(ListBox1.SelectedIndex + 1, 5) = TextBox3.Text 'Временное сохранение текста ответа B
-            Project.currentBlock2(ListBox1.SelectedIndex + 1, 6) = TextBox4.Text 'Временное сохранение текста ответа C
-            Project.currentBlock2(ListBox1.SelectedIndex + 1, 7) = TextBox5.Text 'Временное сохранение текста ответа D
-            If RadioButton1.Checked = True Then
-                Project.currentBlock2(ListBox1.SelectedIndex + 1, 8) = 1 'Временное сохранение правильного ответа 1
+        If QuestionFieldTextBox1.Text <> "" Then
+            Project.QuestionListBox.SelectedIndex = QuestionListBox.SelectedIndex
+            Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 3) = QuestionFieldTextBox1.Text 'Временное сохранение текста вопроса
+            Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 4) = QuestionFieldTextBox2.Text 'Временное сохранение текста ответа A
+            Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 5) = QuestionFieldTextBox3.Text 'Временное сохранение текста ответа B
+            Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 6) = QuestionFieldTextBox4.Text 'Временное сохранение текста ответа C
+            Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 7) = QuestionFieldTextBox5.Text 'Временное сохранение текста ответа D
+            If AnswerARadioButton.Checked = True Then
+                Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 1 'Временное сохранение правильного ответа 1
             End If
-            If RadioButton2.Checked = True Then
-                Project.currentBlock2(ListBox1.SelectedIndex + 1, 8) = 2 'Временное сохранение правильного ответа 2
+            If AnswerBRadioButton.Checked = True Then
+                Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 2 'Временное сохранение правильного ответа 2
             End If
-            If RadioButton3.Checked = True Then
-                Project.currentBlock2(ListBox1.SelectedIndex + 1, 8) = 3 'Временное сохранение правильного ответа 3
+            If AnswerCRadioButton.Checked = True Then
+                Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 3 'Временное сохранение правильного ответа 3
             End If
-            If RadioButton4.Checked = True Then
-                Project.currentBlock2(ListBox1.SelectedIndex + 1, 8) = 4 'Временное сохранение правильного ответа 4
+            If AnswerDRadioButton.Checked = True Then
+                Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 4 'Временное сохранение правильного ответа 4
             End If
-            Project.currentBlock2(ListBox1.SelectedIndex + 1, 9) = TextBox6.Text 'Временное сохранение текста комментария
-            'Перезагрузка Project.ListBox1
-            Project.ListBox1.Items.Clear()
+            Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 9) = QuestionCommentTextBox.Text 'Временное сохранение текста комментария
+            'Перезагрузка Project.QuestionListBox
+            Project.QuestionListBox.Items.Clear()
             For i1 = 1 To Project.currentBlock2.GetUpperBound(0)
                 If (Project.currentBlock2(1, 3)) <> Nothing Then
-                    Project.ListBox1.Items.Add(Project.currentBlock2(i1, 2) & ": " & Project.currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    Project.QuestionListBox.Items.Add(Project.currentBlock2(i1, 2) & ": " & Project.currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            Project.ListBox1.SelectedIndex = ListBox1.SelectedIndex
+            Project.QuestionListBox.SelectedIndex = QuestionListBox.SelectedIndex
             'Приравнивание массивов
             For i1 = 1 To Project.currentBlock2.GetUpperBound(0)
                 For i2 = 1 To Project.maxCow
@@ -147,33 +147,33 @@ Public Class Editor
                     End If
                 Next
             Next
-            'Перезагрузка ListBox1
-            ListBox1.Items.Clear()
+            'Перезагрузка QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            ListBox1.SelectedIndex = Project.ListBox1.SelectedIndex
-            Project.Label5.Text = Project.currentBlock2(Project.ListBox1.SelectedIndex + 1, 3) & Chr(13) & "A: " & Project.currentBlock2(Project.ListBox1.SelectedIndex + 1, 4) & " B: " & Project.currentBlock2(Project.ListBox1.SelectedIndex + 1, 5) & " C: " & Project.currentBlock2(Project.ListBox1.SelectedIndex + 1, 6) & " D: " & Project.currentBlock2(Project.ListBox1.SelectedIndex + 1, 7) & ". " & Project.currentBlock1(143, 3) & " " & Project.rightAnswerText
-            If ListBox1.SelectedIndex = Project.questionNumber - 1 And Project.Button1.BackColor <> Color.Yellow Then 'Если редактируемый вопрос = задаваемому и Кнопка "Задать выбранный вопрос" не жёлтая, то...
-                Project.questionText = Project.currentBlock2(ListBox1.SelectedIndex + 1, 3)
-                Project.textAnswerA = Project.currentBlock2(ListBox1.SelectedIndex + 1, 4)
-                Project.textAnswerB = Project.currentBlock2(ListBox1.SelectedIndex + 1, 5)
-                Project.textAnswerC = Project.currentBlock2(ListBox1.SelectedIndex + 1, 6)
-                Project.textAnswerD = Project.currentBlock2(ListBox1.SelectedIndex + 1, 7)
-                Project.Label16.Text = Project.questionText
-                Project.Label17.Text = Project.textAnswerA
-                Project.Label18.Text = Project.textAnswerB
-                Project.Label19.Text = Project.textAnswerC
-                Project.Label20.Text = Project.textAnswerD
-                Project.numberRightAnswer = Project.currentBlock2(ListBox1.SelectedIndex + 1, 8)
-                Host.Label11.Text = Project.currentBlock2(ListBox1.SelectedIndex + 1, 9)
+            QuestionListBox.SelectedIndex = Project.QuestionListBox.SelectedIndex
+            Project.QuestionPreviewLabel.Text = Project.currentBlock2(Project.QuestionListBox.SelectedIndex + 1, 3) & Chr(13) & "A: " & Project.currentBlock2(Project.QuestionListBox.SelectedIndex + 1, 4) & " B: " & Project.currentBlock2(Project.QuestionListBox.SelectedIndex + 1, 5) & " C: " & Project.currentBlock2(Project.QuestionListBox.SelectedIndex + 1, 6) & " D: " & Project.currentBlock2(Project.QuestionListBox.SelectedIndex + 1, 7) & ". " & Project.currentBlock1(143, 3) & " " & Project.rightAnswerText
+            If QuestionListBox.SelectedIndex = Project.questionNumber - 1 And Project.AskQuestionButton.BackColor <> Color.Yellow Then 'Если редактируемый вопрос = задаваемому и Кнопка "Задать выбранный вопрос" не жёлтая, то...
+                Project.questionText = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
+                Project.textAnswerA = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 4)
+                Project.textAnswerB = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 5)
+                Project.textAnswerC = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 6)
+                Project.textAnswerD = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 7)
+                Project.QuestionTextLabel.Text = Project.questionText
+                Project.AnswerATextLabel.Text = Project.textAnswerA
+                Project.AnswerBTextLabel.Text = Project.textAnswerB
+                Project.AnswerCTextLabel.Text = Project.textAnswerC
+                Project.AnswerDTextLabel.Text = Project.textAnswerD
+                Project.numberRightAnswer = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 8)
+                Host.QuestionCommentLabel.Text = Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
                 'Сеть
-                If Project.Button7.BackColor = Color.Green Then
+                If Project.ConnectButton.BackColor = Color.Green Then
                     Dim NetworkInfo As New IONetwork
                     With NetworkInfo
-                        .Command = "@button6|" & Project.questionText & "|" & Project.textAnswerA & "|" & Project.textAnswerB & "|" & Project.textAnswerC & "|" & Project.textAnswerD & "|" & Project.numberRightAnswer & "|" & Project.currentBlock2(ListBox1.SelectedIndex + 1, 9) & "|"
+                        .Command = "@button6|" & Project.questionText & "|" & Project.textAnswerA & "|" & Project.textAnswerB & "|" & Project.textAnswerC & "|" & Project.textAnswerD & "|" & Project.numberRightAnswer & "|" & Project.currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & "|"
                     End With
                     Project.Client_SendIONetwork(NetworkInfo)
                 End If
@@ -183,44 +183,44 @@ Public Class Editor
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub SaveBaseFileButton_Click(sender As Object, e As EventArgs) Handles SaveBaseFileButton.Click
         'Save base file
-        If TextBox1.Text <> "" Then
+        If QuestionFieldTextBox1.Text <> "" Then
             Dim tmpText As String
             Dim listSelect As Integer
-            If Button1.Enabled = False Then
-                listSelect = ListBox1.SelectedIndex
-                currentBlock2(ListBox1.SelectedIndex + 1, 3) = TextBox1.Text 'Временное сохранение текста вопроса
-                currentBlock2(ListBox1.SelectedIndex + 1, 4) = TextBox2.Text 'Временное сохранение текста ответа A
-                currentBlock2(ListBox1.SelectedIndex + 1, 5) = TextBox3.Text 'Временное сохранение текста ответа B
-                currentBlock2(ListBox1.SelectedIndex + 1, 6) = TextBox4.Text 'Временное сохранение текста ответа C
-                currentBlock2(ListBox1.SelectedIndex + 1, 7) = TextBox5.Text 'Временное сохранение текста ответа D
-                If RadioButton1.Checked = True Then
-                    currentBlock2(ListBox1.SelectedIndex + 1, 8) = 1 'Временное сохранение правильного ответа 1
+            If SaveTemporarilyButton.Enabled = False Then
+                listSelect = QuestionListBox.SelectedIndex
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 3) = QuestionFieldTextBox1.Text 'Временное сохранение текста вопроса
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 4) = QuestionFieldTextBox2.Text 'Временное сохранение текста ответа A
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 5) = QuestionFieldTextBox3.Text 'Временное сохранение текста ответа B
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 6) = QuestionFieldTextBox4.Text 'Временное сохранение текста ответа C
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 7) = QuestionFieldTextBox5.Text 'Временное сохранение текста ответа D
+                If AnswerARadioButton.Checked = True Then
+                    currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 1 'Временное сохранение правильного ответа 1
                 End If
-                If RadioButton2.Checked = True Then
-                    currentBlock2(ListBox1.SelectedIndex + 1, 8) = 2 'Временное сохранение правильного ответа 2
+                If AnswerBRadioButton.Checked = True Then
+                    currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 2 'Временное сохранение правильного ответа 2
                 End If
-                If RadioButton3.Checked = True Then
-                    currentBlock2(ListBox1.SelectedIndex + 1, 8) = 3 'Временное сохранение правильного ответа 3
+                If AnswerCRadioButton.Checked = True Then
+                    currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 3 'Временное сохранение правильного ответа 3
                 End If
-                If RadioButton4.Checked = True Then
-                    currentBlock2(ListBox1.SelectedIndex + 1, 8) = 4 'Временное сохранение правильного ответа 4
+                If AnswerDRadioButton.Checked = True Then
+                    currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = 4 'Временное сохранение правильного ответа 4
                 End If
-                currentBlock2(ListBox1.SelectedIndex + 1, 9) = TextBox6.Text 'Временное сохранение текста комментария
-                ListBox1.Items.Clear()
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 9) = QuestionCommentTextBox.Text 'Временное сохранение текста комментария
+                QuestionListBox.Items.Clear()
                 For i1 = 1 To currentBlock2.GetUpperBound(0)
                     If (currentBlock2(1, 3)) <> Nothing Then
-                        ListBox1.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3))
+                        QuestionListBox.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3))
                     End If
                 Next
-                ListBox1.SelectedIndex = listSelect
+                QuestionListBox.SelectedIndex = listSelect
             Else
-                Button1.PerformClick()
+                SaveTemporarilyButton.PerformClick()
             End If
-            SaveFileDialog1.FileName = OpenFileDialog1.FileName
+            SaveBaseFileDialog.FileName = OpenBaseFileDialog.FileName
             FileClose(1)
-            FileOpen(1, SaveFileDialog1.FileName, OpenMode.Output)
+            FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 tmpText = ""
                 For i2 = 1 To Project.maxCow
@@ -241,18 +241,18 @@ Public Class Editor
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub OpenBaseFileButton_Click(sender As Object, e As EventArgs) Handles OpenBaseFileButton.Click
         'Open file...
-        OpenFileDialog1.FileName = "*.questions"
-        OpenFileDialog1.InitialDirectory = CurDir() & "\Bases"
-        OpenFileDialog1.CheckFileExists = True
-        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            FileNameQ = OpenFileDialog1.FileName
+        OpenBaseFileDialog.FileName = "*.questions"
+        OpenBaseFileDialog.InitialDirectory = CurDir() & "\Bases"
+        OpenBaseFileDialog.CheckFileExists = True
+        If OpenBaseFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            FileNameQ = OpenBaseFileDialog.FileName
             Call openfilesdata(FileNameQ)
-            If OpenFileDialog1.FileName <> Project.OpenFileDialog1.FileName Then
-                Button1.Enabled = False
+            If OpenBaseFileDialog.FileName <> Project.OpenQuestionBaseDialog.FileName Then
+                SaveTemporarilyButton.Enabled = False
             Else
-                Button1.Enabled = True
+                SaveTemporarilyButton.Enabled = True
             End If
         End If
     End Sub
@@ -262,9 +262,9 @@ Public Class Editor
         Dim currentRow As String()
         Dim i0 As Integer
         Dim i1 As Integer
-        Label1.Text = FileNameQ
+        QuestionFilePathLabel.Text = FileNameQ
         If FileNameQ <> "*.questions" Then
-            ListBox1.Enabled = True
+            QuestionListBox.Enabled = True
             REM ****************************
             REM Считывание базы данных вопросов из выбранного файла
             i1 = 0
@@ -309,43 +309,43 @@ Public Class Editor
             REM /**********************
 
             REM ***********************
-            REM Заполнение ListBox1
-            ListBox1.Items.Clear()
+            REM Заполнение QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0) 'Можно 15, но мы сделали резерв
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock0(i1, 2) & ": " & currentBlock0(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock0(i1, 2) & ": " & currentBlock0(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            REM /Заполнение ListBox1
+            REM /Заполнение QuestionListBox
             REM /***********************
-            Button3.BackColor = Color.White
-            ListBox1.SelectedIndex = 0
+            OpenBaseFileButton.BackColor = Color.White
+            QuestionListBox.SelectedIndex = 0
         Else
-            ListBox1.Enabled = False
-            ListBox1.Items.Clear()
+            QuestionListBox.Enabled = False
+            QuestionListBox.Items.Clear()
             MsgBox("You don't choosed question base file! Please, press ""Open file..."" button.")
-            Button3.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
-            Label1.Text = "Question File Adress (Choose question base file with format ""*.question"")"
+            OpenBaseFileButton.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
+            QuestionFilePathLabel.Text = "Question File Adress (Choose question base file with format ""*.question"")"
         End If
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub CreateBaseFileButton_Click(sender As Object, e As EventArgs) Handles CreateBaseFileButton.Click
         'Create new file...
         Dim n As Integer
         While My.Computer.FileSystem.FileExists(CurDir() & "\Bases\NewBase" & n & ".questions") = True
             n = n + 1
         End While
-        SaveFileDialog1.FileName = "NewBase" & n & ".questions"
-        SaveFileDialog1.InitialDirectory = CurDir() & "\Bases"
-        SaveFileDialog1.CreatePrompt = False
-        SaveFileDialog1.OverwritePrompt = True
-        SaveFileDialog1.CheckPathExists = True
-        If SaveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+        SaveBaseFileDialog.FileName = "NewBase" & n & ".questions"
+        SaveBaseFileDialog.InitialDirectory = CurDir() & "\Bases"
+        SaveBaseFileDialog.CreatePrompt = False
+        SaveBaseFileDialog.OverwritePrompt = True
+        SaveBaseFileDialog.CheckPathExists = True
+        If SaveBaseFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Try
-                FileCopy(CurDir() & "\Bases\" & Project.currentBlock1(2, 3) & "Base_Example.questions", SaveFileDialog1.FileName)
+                FileCopy(CurDir() & "\Bases\" & Project.currentBlock1(2, 3) & "Base_Example.questions", SaveBaseFileDialog.FileName)
             Catch
                 FileClose(1)
-                FileOpen(1, SaveFileDialog1.FileName, OpenMode.Output)
+                FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
                 Print(1, "|1|First question?|Answer A1|Answer B1|Answer C1|Answer D1|1|Comment for question number 1.|" & Chr(13) & Chr(10) & _
                       "|2|Second question?|Answer A2|Answer B2|Answer C2|Answer D2|1|Comment for question number 2.|" & Chr(13) & Chr(10) & _
                       "|3|Third question?|Answer A3|Answer B3|Answer C3|Answer D3|1|Comment for question number 3.|" & Chr(13) & Chr(10) & _
@@ -363,13 +363,13 @@ Public Class Editor
                       "|15|Fifteenth question?|Answer A15|Answer B15|Answer C15|Answer D15|1|Comment for question number 15.|" & Chr(13) & Chr(10))
                 FileClose(1)
             End Try
-            OpenFileDialog1.FileName = SaveFileDialog1.FileName
-            FileNameQ = OpenFileDialog1.FileName
+            OpenBaseFileDialog.FileName = SaveBaseFileDialog.FileName
+            FileNameQ = OpenBaseFileDialog.FileName
             Call openfilesdata(FileNameQ)
-            If OpenFileDialog1.FileName <> Project.OpenFileDialog1.FileName Then
-                Button1.Enabled = False
+            If OpenBaseFileDialog.FileName <> Project.OpenQuestionBaseDialog.FileName Then
+                SaveTemporarilyButton.Enabled = False
             Else
-                Button1.Enabled = True
+                SaveTemporarilyButton.Enabled = True
             End If
         End If
     End Sub

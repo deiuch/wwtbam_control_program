@@ -13,12 +13,12 @@ Public Class EditorFFF
         Dim currentRow As String()
         Dim i0 As Integer
         Dim i1 As Integer
-        OpenFileDialog1.InitialDirectory = FastestFingerFirst.sourcePath
-        FileNameQ = FastestFingerFirst.OpenFileDialog1.FileName
-        Label1.Text = FastestFingerFirst.OpenFileDialog1.FileName
-        OpenFileDialog1.FileName = FileNameQ
+        OpenBaseFileDialog.InitialDirectory = FastestFingerFirst.sourcePath
+        FileNameQ = FastestFingerFirst.OpenQuestionBaseDialog.FileName
+        QuestionFilePathLabel.Text = FastestFingerFirst.OpenQuestionBaseDialog.FileName
+        OpenBaseFileDialog.FileName = FileNameQ
         If FileNameQ <> "*.fff" Then
-            ListBox1.Enabled = True
+            QuestionListBox.Enabled = True
             REM ****************************
             REM Считывание базы данных вопросов из выбранного файла
             i1 = 0
@@ -64,77 +64,77 @@ Public Class EditorFFF
                 Next
             Next
             REM ***********************
-            REM Заполнение ListBox1
-            ListBox1.Items.Clear()
+            REM Заполнение QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            REM /Заполнение ListBox1
+            REM /Заполнение QuestionListBox
             REM /***********************
-            ListBox1.SelectedIndex = FastestFingerFirst.ListBox1.SelectedIndex
+            QuestionListBox.SelectedIndex = FastestFingerFirst.QuestionListBox.SelectedIndex
         Else
-            ListBox1.Enabled = False
-            ListBox1.Items.Clear()
+            QuestionListBox.Enabled = False
+            QuestionListBox.Items.Clear()
             MsgBox("You don't choosed question base file! Please, press ""Open"" button.")
-            Button3.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
-            Label1.Text = "Question File Adress (Choose question base file with format ""*.fff"")"
+            OpenBaseFileButton.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
+            QuestionFilePathLabel.Text = "Question File Adress (Choose question base file with format ""*.fff"")"
         End If
         'Перевод "F" Editor
         Me.Text = FastestFingerFirst.currentBlock1(117, 3) '0
-        Label2.Text = FastestFingerFirst.currentBlock1(118, 3) '1
-        Button1.Text = FastestFingerFirst.currentBlock1(119, 3) '2
-        Button2.Text = FastestFingerFirst.currentBlock1(120, 3) '3
-        Button3.Text = FastestFingerFirst.currentBlock1(121, 3) '4
-        Button4.Text = FastestFingerFirst.currentBlock1(122, 3) '5
-        Label7.Text = FastestFingerFirst.currentBlock1(131, 3) '8
-        Label8.Text = FastestFingerFirst.currentBlock1(132, 3) '9
-        Label9.Text = FastestFingerFirst.currentBlock1(133, 3) '10
-        Label10.Text = FastestFingerFirst.currentBlock1(134, 3) '11
+        QuestionCommentLabel.Text = FastestFingerFirst.currentBlock1(118, 3) '1
+        SaveTemporarilyButton.Text = FastestFingerFirst.currentBlock1(119, 3) '2
+        SaveBaseFileButton.Text = FastestFingerFirst.currentBlock1(120, 3) '3
+        OpenBaseFileButton.Text = FastestFingerFirst.currentBlock1(121, 3) '4
+        CreateBaseFileButton.Text = FastestFingerFirst.currentBlock1(122, 3) '5
+        RightOrder1Label.Text = FastestFingerFirst.currentBlock1(131, 3) '8
+        RightOrder2Label.Text = FastestFingerFirst.currentBlock1(132, 3) '9
+        RightOrder3Label.Text = FastestFingerFirst.currentBlock1(133, 3) '10
+        RightOrder4Label.Text = FastestFingerFirst.currentBlock1(134, 3) '11
         'Перевод "I"
-        Label11.Text = FastestFingerFirst.currentBlock1(144, 3) '1
+        RightOrderLabel.Text = FastestFingerFirst.currentBlock1(144, 3) '1
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        rightAnswerNumber = Int(currentBlock2(ListBox1.SelectedIndex + 1, 8) & currentBlock2(ListBox1.SelectedIndex + 1, 9) & currentBlock2(ListBox1.SelectedIndex + 1, 10) & currentBlock2(ListBox1.SelectedIndex + 1, 11)) 'Выбор номера правильного ответа из массива
-        'rightAnswerText = currentBlock2(ListBox1.SelectedIndex + 1, rightAnswerNumber + 3) 'Текст ответа из массива (номер ответа + 3)
+    Private Sub QuestionListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles QuestionListBox.SelectedIndexChanged
+        rightAnswerNumber = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 8) & currentBlock2(QuestionListBox.SelectedIndex + 1, 9) & currentBlock2(QuestionListBox.SelectedIndex + 1, 10) & currentBlock2(QuestionListBox.SelectedIndex + 1, 11)) 'Выбор номера правильного ответа из массива
+        'rightAnswerText = currentBlock2(QuestionListBox.SelectedIndex + 1, rightAnswerNumber + 3) 'Текст ответа из массива (номер ответа + 3)
         For x = 1 To 5
-            Me.Controls("TextBox" & x).Text = currentBlock2(ListBox1.SelectedIndex + 1, x + 2)
+            Me.Controls("QuestionFieldTextBox" & x).Text = currentBlock2(QuestionListBox.SelectedIndex + 1, x + 2)
         Next
-        ComboBox1.SelectedIndex = Int(currentBlock2(ListBox1.SelectedIndex + 1, 8))
-        ComboBox2.SelectedIndex = Int(currentBlock2(ListBox1.SelectedIndex + 1, 9))
-        ComboBox3.SelectedIndex = Int(currentBlock2(ListBox1.SelectedIndex + 1, 10))
-        ComboBox4.SelectedIndex = Int(currentBlock2(ListBox1.SelectedIndex + 1, 11))
-        TextBox6.Text = currentBlock2(ListBox1.SelectedIndex + 1, 12)
+        RightOrder1ComboBox.SelectedIndex = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 8))
+        RightOrder2ComboBox.SelectedIndex = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 9))
+        RightOrder3ComboBox.SelectedIndex = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 10))
+        RightOrder4ComboBox.SelectedIndex = Int(currentBlock2(QuestionListBox.SelectedIndex + 1, 11))
+        QuestionCommentTextBox.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 12)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub SaveTemporarilyButton_Click(sender As Object, e As EventArgs) Handles SaveTemporarilyButton.Click
         'Save temporarily
-        If TextBox1.Text <> "" Then
-            FastestFingerFirst.ListBox1.SelectedIndex = ListBox1.SelectedIndex
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 3) = TextBox1.Text 'Временное сохранение текста вопроса
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 4) = TextBox2.Text 'Временное сохранение текста ответа A
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 5) = TextBox3.Text 'Временное сохранение текста ответа B
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 6) = TextBox4.Text 'Временное сохранение текста ответа C
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 7) = TextBox5.Text 'Временное сохранение текста ответа D
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 8) = ComboBox1.SelectedIndex 'Временное сохранение первого ответа
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 9) = ComboBox2.SelectedIndex 'Временное сохранение второго ответа
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 10) = ComboBox3.SelectedIndex 'Временное сохранение третьего ответа
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 11) = ComboBox4.SelectedIndex 'Временное сохранение четвёртого ответа
-            FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 12) = TextBox6.Text 'Временное сохранение текста комментария
-            FastestFingerFirst.first = ComboBox1.SelectedIndex
-            FastestFingerFirst.second = ComboBox2.SelectedIndex
-            FastestFingerFirst.third = ComboBox3.SelectedIndex
-            FastestFingerFirst.fourth = ComboBox4.SelectedIndex
-            'Перезагрузка FastestFingerFirst.ListBox1
-            FastestFingerFirst.ListBox1.Items.Clear()
+        If QuestionFieldTextBox1.Text <> "" Then
+            FastestFingerFirst.QuestionListBox.SelectedIndex = QuestionListBox.SelectedIndex
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 3) = QuestionFieldTextBox1.Text 'Временное сохранение текста вопроса
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 4) = QuestionFieldTextBox2.Text 'Временное сохранение текста ответа A
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 5) = QuestionFieldTextBox3.Text 'Временное сохранение текста ответа B
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 6) = QuestionFieldTextBox4.Text 'Временное сохранение текста ответа C
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 7) = QuestionFieldTextBox5.Text 'Временное сохранение текста ответа D
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = RightOrder1ComboBox.SelectedIndex 'Временное сохранение первого ответа
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 9) = RightOrder2ComboBox.SelectedIndex 'Временное сохранение второго ответа
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 10) = RightOrder3ComboBox.SelectedIndex 'Временное сохранение третьего ответа
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 11) = RightOrder4ComboBox.SelectedIndex 'Временное сохранение четвёртого ответа
+            FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 12) = QuestionCommentTextBox.Text 'Временное сохранение текста комментария
+            FastestFingerFirst.first = RightOrder1ComboBox.SelectedIndex
+            FastestFingerFirst.second = RightOrder2ComboBox.SelectedIndex
+            FastestFingerFirst.third = RightOrder3ComboBox.SelectedIndex
+            FastestFingerFirst.fourth = RightOrder4ComboBox.SelectedIndex
+            'Перезагрузка FastestFingerFirst.QuestionListBox
+            FastestFingerFirst.QuestionListBox.Items.Clear()
             For i1 = 1 To FastestFingerFirst.currentBlock2.GetUpperBound(0)
                 If (FastestFingerFirst.currentBlock2(1, 3)) <> Nothing Then
-                    FastestFingerFirst.ListBox1.Items.Add(FastestFingerFirst.currentBlock2(i1, 2) & ": " & FastestFingerFirst.currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    FastestFingerFirst.QuestionListBox.Items.Add(FastestFingerFirst.currentBlock2(i1, 2) & ": " & FastestFingerFirst.currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            FastestFingerFirst.ListBox1.SelectedIndex = ListBox1.SelectedIndex
+            FastestFingerFirst.QuestionListBox.SelectedIndex = QuestionListBox.SelectedIndex
             'Приравнивание массивов
             For i1 = 1 To FastestFingerFirst.currentBlock2.GetUpperBound(0)
                 For i2 = 1 To FastestFingerFirst.maxCow
@@ -143,54 +143,54 @@ Public Class EditorFFF
                     End If
                 Next
             Next
-            'Перезагрузка ListBox1
-            ListBox1.Items.Clear()
+            'Перезагрузка QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            ListBox1.SelectedIndex = FastestFingerFirst.ListBox1.SelectedIndex
+            QuestionListBox.SelectedIndex = FastestFingerFirst.QuestionListBox.SelectedIndex
             If FastestFingerFirst.fourth <> 0 Then
-                FastestFingerFirst.Label22.Text = FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 3) & Chr(13) & "A: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 4) & " B: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 5) & " C: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 6) & " D: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 7) & ". " & FastestFingerFirst.currentBlock1(144, 3) & " " & FastestFingerFirst.first & ", " & FastestFingerFirst.second & ", " & FastestFingerFirst.third & ", " & FastestFingerFirst.fourth
+                FastestFingerFirst.FullQuestionTextLabel.Text = FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 3) & Chr(13) & "A: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 4) & " B: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 5) & " C: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 6) & " D: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 7) & ". " & FastestFingerFirst.currentBlock1(144, 3) & " " & FastestFingerFirst.first & ", " & FastestFingerFirst.second & ", " & FastestFingerFirst.third & ", " & FastestFingerFirst.fourth
             Else
-                FastestFingerFirst.Label22.Text = FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 3) & Chr(13) & "A: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 4) & " B: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 5) & " C: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 6) & " D: " & FastestFingerFirst.currentBlock2(ListBox1.SelectedIndex + 1, 7) & ". " & FastestFingerFirst.currentBlock1(143, 3) & " " & FastestFingerFirst.first
+                FastestFingerFirst.FullQuestionTextLabel.Text = FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 3) & Chr(13) & "A: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 4) & " B: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 5) & " C: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 6) & " D: " & FastestFingerFirst.currentBlock2(QuestionListBox.SelectedIndex + 1, 7) & ". " & FastestFingerFirst.currentBlock1(143, 3) & " " & FastestFingerFirst.first
             End If
         Else
             My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Exclamation)
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub SaveBaseFileButton_Click(sender As Object, e As EventArgs) Handles SaveBaseFileButton.Click
         'Save base file
-        If TextBox1.Text <> "" Then
+        If QuestionFieldTextBox1.Text <> "" Then
             Dim tmpText As String
             Dim listSelect As Integer
-            If Button1.Enabled = False Then
-                listSelect = ListBox1.SelectedIndex
-                currentBlock2(ListBox1.SelectedIndex + 1, 3) = TextBox1.Text 'Временное сохранение текста вопроса
-                currentBlock2(ListBox1.SelectedIndex + 1, 4) = TextBox2.Text 'Временное сохранение текста ответа A
-                currentBlock2(ListBox1.SelectedIndex + 1, 5) = TextBox3.Text 'Временное сохранение текста ответа B
-                currentBlock2(ListBox1.SelectedIndex + 1, 6) = TextBox4.Text 'Временное сохранение текста ответа C
-                currentBlock2(ListBox1.SelectedIndex + 1, 7) = TextBox5.Text 'Временное сохранение текста ответа D
-                currentBlock2(ListBox1.SelectedIndex + 1, 8) = ComboBox1.SelectedIndex 'Временное сохранение первого ответа
-                currentBlock2(ListBox1.SelectedIndex + 1, 9) = ComboBox2.SelectedIndex 'Временное сохранение второго ответа
-                currentBlock2(ListBox1.SelectedIndex + 1, 10) = ComboBox3.SelectedIndex 'Временное сохранение третьего ответа
-                currentBlock2(ListBox1.SelectedIndex + 1, 11) = ComboBox4.SelectedIndex 'Временное сохранение четвёртого ответа
-                currentBlock2(ListBox1.SelectedIndex + 1, 12) = TextBox6.Text 'Временное сохранение текста комментария
-                ListBox1.Items.Clear()
+            If SaveTemporarilyButton.Enabled = False Then
+                listSelect = QuestionListBox.SelectedIndex
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 3) = QuestionFieldTextBox1.Text 'Временное сохранение текста вопроса
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 4) = QuestionFieldTextBox2.Text 'Временное сохранение текста ответа A
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 5) = QuestionFieldTextBox3.Text 'Временное сохранение текста ответа B
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 6) = QuestionFieldTextBox4.Text 'Временное сохранение текста ответа C
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 7) = QuestionFieldTextBox5.Text 'Временное сохранение текста ответа D
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 8) = RightOrder1ComboBox.SelectedIndex 'Временное сохранение первого ответа
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 9) = RightOrder2ComboBox.SelectedIndex 'Временное сохранение второго ответа
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 10) = RightOrder3ComboBox.SelectedIndex 'Временное сохранение третьего ответа
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 11) = RightOrder4ComboBox.SelectedIndex 'Временное сохранение четвёртого ответа
+                currentBlock2(QuestionListBox.SelectedIndex + 1, 12) = QuestionCommentTextBox.Text 'Временное сохранение текста комментария
+                QuestionListBox.Items.Clear()
                 For i1 = 1 To currentBlock2.GetUpperBound(0)
                     If (currentBlock2(1, 3)) <> Nothing Then
-                        ListBox1.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3))
+                        QuestionListBox.Items.Add(currentBlock2(i1, 2) & ": " & currentBlock2(i1, 3))
                     End If
                 Next
-                ListBox1.SelectedIndex = listSelect
+                QuestionListBox.SelectedIndex = listSelect
             Else
-                Button1.PerformClick()
+                SaveTemporarilyButton.PerformClick()
             End If
-            SaveFileDialog1.FileName = OpenFileDialog1.FileName
+            SaveBaseFileDialog.FileName = OpenBaseFileDialog.FileName
             FileClose(1)
-            FileOpen(1, SaveFileDialog1.FileName, OpenMode.Output)
+            FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 tmpText = ""
                 For i2 = 1 To FastestFingerFirst.maxCow
@@ -211,18 +211,18 @@ Public Class EditorFFF
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub OpenBaseFileButton_Click(sender As Object, e As EventArgs) Handles OpenBaseFileButton.Click
         'Open file...
-        OpenFileDialog1.FileName = "*.fff"
-        OpenFileDialog1.InitialDirectory = CurDir() & "\Bases"
-        OpenFileDialog1.CheckFileExists = True
-        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            FileNameQ = OpenFileDialog1.FileName
+        OpenBaseFileDialog.FileName = "*.fff"
+        OpenBaseFileDialog.InitialDirectory = CurDir() & "\Bases"
+        OpenBaseFileDialog.CheckFileExists = True
+        If OpenBaseFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            FileNameQ = OpenBaseFileDialog.FileName
             Call openfilesdata(FileNameQ)
-            If OpenFileDialog1.FileName <> FastestFingerFirst.OpenFileDialog1.FileName Then
-                Button1.Enabled = False
+            If OpenBaseFileDialog.FileName <> FastestFingerFirst.OpenQuestionBaseDialog.FileName Then
+                SaveTemporarilyButton.Enabled = False
             Else
-                Button1.Enabled = True
+                SaveTemporarilyButton.Enabled = True
             End If
         End If
     End Sub
@@ -232,9 +232,9 @@ Public Class EditorFFF
         Dim currentRow As String()
         Dim i0 As Integer
         Dim i1 As Integer
-        Label1.Text = FileNameQ
+        QuestionFilePathLabel.Text = FileNameQ
         If FileNameQ <> "*.fff" Then
-            ListBox1.Enabled = True
+            QuestionListBox.Enabled = True
             REM ****************************
             REM Считывание базы данных вопросов из выбранного файла
             i1 = 0
@@ -279,43 +279,43 @@ Public Class EditorFFF
             REM /**********************
 
             REM ***********************
-            REM Заполнение ListBox1
-            ListBox1.Items.Clear()
+            REM Заполнение QuestionListBox
+            QuestionListBox.Items.Clear()
             For i1 = 1 To currentBlock2.GetUpperBound(0) 'Можно 15, но мы сделали резерв
                 If (currentBlock2(1, 3)) <> Nothing Then
-                    ListBox1.Items.Add(currentBlock0(i1, 2) & ": " & currentBlock0(i1, 3).Replace(Chr(13) & Chr(10), " "))
+                    QuestionListBox.Items.Add(currentBlock0(i1, 2) & ": " & currentBlock0(i1, 3).Replace(Chr(13) & Chr(10), " "))
                 End If
             Next
-            REM /Заполнение ListBox1
+            REM /Заполнение QuestionListBox
             REM /***********************
-            Button3.BackColor = Color.White
-            ListBox1.SelectedIndex = 0
+            OpenBaseFileButton.BackColor = Color.White
+            QuestionListBox.SelectedIndex = 0
         Else
-            ListBox1.Enabled = False
-            ListBox1.Items.Clear()
+            QuestionListBox.Enabled = False
+            QuestionListBox.Items.Clear()
             MsgBox("You don't choosed question base file! Please, press ""Open file..."" button.")
-            Button3.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
-            Label1.Text = "Question File Adress (Choose question base file with format ""*.fff"")"
+            OpenBaseFileButton.BackColor = Color.FromArgb(255, 128, 0) 'Open button -> Orange
+            QuestionFilePathLabel.Text = "Question File Adress (Choose question base file with format ""*.fff"")"
         End If
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub CreateBaseFileButton_Click(sender As Object, e As EventArgs) Handles CreateBaseFileButton.Click
         'Create new file...
         Dim n As Integer
         While My.Computer.FileSystem.FileExists(CurDir() & "\Bases\NewBaseFFF" & n & ".fff") = True
             n = n + 1
         End While
-        SaveFileDialog1.FileName = "NewBaseFFF" & n & ".fff"
-        SaveFileDialog1.InitialDirectory = CurDir() & "\Bases"
-        SaveFileDialog1.CreatePrompt = False
-        SaveFileDialog1.OverwritePrompt = True
-        SaveFileDialog1.CheckPathExists = True
-        If SaveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+        SaveBaseFileDialog.FileName = "NewBaseFFF" & n & ".fff"
+        SaveBaseFileDialog.InitialDirectory = CurDir() & "\Bases"
+        SaveBaseFileDialog.CreatePrompt = False
+        SaveBaseFileDialog.OverwritePrompt = True
+        SaveBaseFileDialog.CheckPathExists = True
+        If SaveBaseFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Try
-                FileCopy(CurDir() & "\Bases\" & FastestFingerFirst.currentBlock1(2, 3) & "Qualify.fff", SaveFileDialog1.FileName)
+                FileCopy(CurDir() & "\Bases\" & FastestFingerFirst.currentBlock1(2, 3) & "Qualify.fff", SaveBaseFileDialog.FileName)
             Catch
                 FileClose(1)
-                FileOpen(1, SaveFileDialog1.FileName, OpenMode.Output)
+                FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
                 Print(1, "|1|Fatest Finger 1 Question.|Answer A1|Answer B1|Answer C1|Answer D1|1|2|3|4|Comment for question 1.|" & Chr(13) & Chr(10) & _
                       "|2|Fatest Finger 2 Question.|Answer A2|Answer B2|Answer C2|Answer D2|1|2|3|4|Comment for question 2.|" & Chr(13) & Chr(10) & _
                       "|3|Fatest Finger 3 Question.|Answer A3|Answer B3|Answer C3|Answer D3|1|2|3|4|Comment for question 3.|" & Chr(13) & Chr(10) & _
@@ -326,13 +326,13 @@ Public Class EditorFFF
                       "|8|Fatest Finger 8 Question.|Answer A8|Answer B8|Answer C8|Answer D8|1|2|3|4|Comment for question 8.|" & Chr(13) & Chr(10))
                 FileClose(1)
             End Try
-            OpenFileDialog1.FileName = SaveFileDialog1.FileName
-            FileNameQ = OpenFileDialog1.FileName
+            OpenBaseFileDialog.FileName = SaveBaseFileDialog.FileName
+            FileNameQ = OpenBaseFileDialog.FileName
             Call openfilesdata(FileNameQ)
-            If OpenFileDialog1.FileName <> FastestFingerFirst.OpenFileDialog1.FileName Then
-                Button1.Enabled = False
+            If OpenBaseFileDialog.FileName <> FastestFingerFirst.OpenQuestionBaseDialog.FileName Then
+                SaveTemporarilyButton.Enabled = False
             Else
-                Button1.Enabled = True
+                SaveTemporarilyButton.Enabled = True
             End If
         End If
     End Sub

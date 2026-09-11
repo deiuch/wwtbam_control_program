@@ -9,7 +9,7 @@ Public Class FormStart
 
     Private Sub FormStart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MaximizeBox = False
-        Project.OpenFileDialog1.InitialDirectory = "\Bases"
+        Project.OpenQuestionBaseDialog.InitialDirectory = "\Bases"
         My.Computer.Audio.Play("source\MUSIC\Roll 1.wav")
         Host.Hide()
         Player.Hide()
@@ -27,17 +27,17 @@ Public Class FormStart
             ReDim ini(25)
             ini = MyReader.ReadFields()
         End Using
-        If ini(1) = "1" Then CheckBox1.Checked = True Else CheckBox1.Checked = False
-        If ini(2) = "1" Then CheckBox2.Checked = True Else CheckBox2.Checked = False
-        If ini(3) = "1" Then CheckBox3.Checked = True Else CheckBox3.Checked = False
-        NumericUpDown2.Value = ini(4)
-        NumericUpDown3.Value = ini(5)
-        NumericUpDown4.Value = ini(6)
-        NumericUpDown5.Value = ini(7)
-        NumericUpDown6.Value = ini(8)
-        NumericUpDown7.Value = ini(9)
+        If ini(1) = "1" Then HostScreenCheckBox.Checked = True Else HostScreenCheckBox.Checked = False
+        If ini(2) = "1" Then PlayerScreenCheckBox.Checked = True Else PlayerScreenCheckBox.Checked = False
+        If ini(3) = "1" Then AudienceScreenCheckBox.Checked = True Else AudienceScreenCheckBox.Checked = False
+        HostScreenXNumericUpDown.Value = ini(4)
+        HostScreenYNumericUpDown.Value = ini(5)
+        PlayerScreenXNumericUpDown.Value = ini(6)
+        PlayerScreenYNumericUpDown.Value = ini(7)
+        AudienceScreenXNumericUpDown.Value = ini(8)
+        AudienceScreenYNumericUpDown.Value = ini(9)
         'Поиск файлов языка
-        ComboBox1.Items.Clear()
+        LanguageComboBox.Items.Clear()
         Dim currentRow As String()
         Dim i0 As Integer = 0
         Dim i1 As Integer = 0
@@ -48,28 +48,28 @@ Public Class FormStart
                 MyReader.SetDelimiters("|")
                 ReDim currentRow(5)
                 currentRow = MyReader.ReadFields()
-                ComboBox1.Items.Add(currentRow(2))
+                LanguageComboBox.Items.Add(currentRow(2))
             End Using
         Next
         'Если языки не найдены
-        If ComboBox1.Items.Count = 0 Then
+        If LanguageComboBox.Items.Count = 0 Then
             MsgBox("No language packs was found!" & Chr(13) & Chr(10) & "Языковые пакеты не обнаружены!")
             End
         End If
-        ComboBox1.SelectedIndex = 0
+        LanguageComboBox.SelectedIndex = 0
         'Выбор последнего использованного языка
         Try
-            ComboBox1.SelectedIndex = ComboBox1.FindStringExact(ini(11))
+            LanguageComboBox.SelectedIndex = LanguageComboBox.FindStringExact(ini(11))
         Catch
         End Try
-        If ComboBox1.SelectedIndex < 0 Then
-            ComboBox1.SelectedIndex = 0
+        If LanguageComboBox.SelectedIndex < 0 Then
+            LanguageComboBox.SelectedIndex = 0
         End If
         'Поиск последнего открытого файла базы вопросов
-        If My.Computer.FileSystem.FileExists(ini(10)) = True And Not ini(10) = Nothing Then TextBox1.Text = ini(10)
+        If My.Computer.FileSystem.FileExists(ini(10)) = True And Not ini(10) = Nothing Then QuestionBaseFileTextBox.Text = ini(10)
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub LanguageComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LanguageComboBox.SelectedIndexChanged
         'Выбор языка
         REM ****************************
         REM Языковая поддержка программы *.lng
@@ -77,7 +77,7 @@ Public Class FormStart
         Dim currentRow As String()
         Dim i0 As Integer = 0
         Dim i1 As Integer = 0
-        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(files(ComboBox1.SelectedIndex), System.Text.Encoding.Default)
+        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(files(LanguageComboBox.SelectedIndex), System.Text.Encoding.Default)
             MyReader.TextFieldType = FileIO.FieldType.Delimited
             MyReader.SetDelimiters("|")
             ReDim currentRow(5)
@@ -102,54 +102,54 @@ Public Class FormStart
         REM /****************************
         'Перевод "A" FormStart
         Me.Text = currentBlock1(11, 3)
-        Label1.Text = currentBlock1(12, 3)
-        CheckBox1.Text = currentBlock1(13, 3)
-        CheckBox2.Text = currentBlock1(14, 3)
-        CheckBox3.Text = currentBlock1(15, 3)
-        Label2.Text = currentBlock1(16, 3)
-        TextBox1.Text = CurDir() & currentBlock1(17, 3)
-        Button46.Text = currentBlock1(18, 3)
-        Label3.Text = currentBlock1(19, 3)
-        Button1.Text = currentBlock1(20, 3)
+        TitleLabel.Text = currentBlock1(12, 3)
+        HostScreenCheckBox.Text = currentBlock1(13, 3)
+        PlayerScreenCheckBox.Text = currentBlock1(14, 3)
+        AudienceScreenCheckBox.Text = currentBlock1(15, 3)
+        QuestionBaseFileLabel.Text = currentBlock1(16, 3)
+        QuestionBaseFileTextBox.Text = CurDir() & currentBlock1(17, 3)
+        OpenQuestionBaseButton.Text = currentBlock1(18, 3)
+        LanguageLabel.Text = currentBlock1(19, 3)
+        StartButton.Text = currentBlock1(20, 3)
         'Размер шрифта FormStart
-        'Label1.Font = New Font(DefaultFont, Int(currentBlock1(12, 4)))
-        'CheckBox1.Font = New Font(DefaultFont, Int(currentBlock1(13, 4)))
-        'CheckBox2.Font = New Font(DefaultFont, Int(currentBlock1(14, 4)))
-        'CheckBox3.Font = New Font(DefaultFont, Int(currentBlock1(15, 4)))
-        'Label2.Font = New Font(DefaultFont, Int(currentBlock1(16, 4)))
-        'TextBox1.Font = New Font(DefaultFont, Int(currentBlock1(17, 4)))
-        'Button46.Font = New Font(DefaultFont, Int(currentBlock1(18, 4)))
-        'Label3.Font = New Font(DefaultFont, Int(currentBlock1(19, 4)))
-        'Button1.Font = New Font(DefaultFont, Int(currentBlock1(20, 4)))
+        'TitleLabel.Font = New Font(DefaultFont, Int(currentBlock1(12, 4)))
+        'HostScreenCheckBox.Font = New Font(DefaultFont, Int(currentBlock1(13, 4)))
+        'PlayerScreenCheckBox.Font = New Font(DefaultFont, Int(currentBlock1(14, 4)))
+        'AudienceScreenCheckBox.Font = New Font(DefaultFont, Int(currentBlock1(15, 4)))
+        'QuestionBaseFileLabel.Font = New Font(DefaultFont, Int(currentBlock1(16, 4)))
+        'QuestionBaseFileTextBox.Font = New Font(DefaultFont, Int(currentBlock1(17, 4)))
+        'OpenQuestionBaseButton.Font = New Font(DefaultFont, Int(currentBlock1(18, 4)))
+        'LanguageLabel.Font = New Font(DefaultFont, Int(currentBlock1(19, 4)))
+        'StartButton.Font = New Font(DefaultFont, Int(currentBlock1(20, 4)))
     End Sub
 
-    Private Sub Button46_Click(sender As Object, e As EventArgs) Handles Button46.Click
+    Private Sub OpenQuestionBaseButton_Click(sender As Object, e As EventArgs) Handles OpenQuestionBaseButton.Click
         'Open button
-        Project.OpenFileDialog1.FileName = "*.questions"
-        Project.OpenFileDialog1.InitialDirectory = CurDir() & "\Bases"
-        Project.OpenFileDialog1.CheckFileExists = True
-        If Project.OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            TextBox1.Text = Project.OpenFileDialog1.FileName
+        Project.OpenQuestionBaseDialog.FileName = "*.questions"
+        Project.OpenQuestionBaseDialog.InitialDirectory = CurDir() & "\Bases"
+        Project.OpenQuestionBaseDialog.CheckFileExists = True
+        If Project.OpenQuestionBaseDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            QuestionBaseFileTextBox.Text = Project.OpenQuestionBaseDialog.FileName
         End If
-        If TextBox1.Text = "*.question" Or TextBox1.Text = Nothing Then
-            TextBox1.Text = CurDir() & "\Bases\" & Project.currentBlock1(2, 3) & "Base_Example.questions"
+        If QuestionBaseFileTextBox.Text = "*.question" Or QuestionBaseFileTextBox.Text = Nothing Then
+            QuestionBaseFileTextBox.Text = CurDir() & "\Bases\" & Project.currentBlock1(2, 3) & "Base_Example.questions"
         End If
     End Sub
 
-    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged, NumericUpDown3.ValueChanged
-        Host.Location = New Point(NumericUpDown2.Value, NumericUpDown3.Value)
+    Private Sub HostScreenXNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles HostScreenXNumericUpDown.ValueChanged, HostScreenYNumericUpDown.ValueChanged
+        Host.Location = New Point(HostScreenXNumericUpDown.Value, HostScreenYNumericUpDown.Value)
     End Sub
 
-    Private Sub NumericUpDown4_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown4.ValueChanged, NumericUpDown5.ValueChanged
-        Player.Location = New Point(NumericUpDown4.Value, NumericUpDown5.Value)
+    Private Sub PlayerScreenXNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles PlayerScreenXNumericUpDown.ValueChanged, PlayerScreenYNumericUpDown.ValueChanged
+        Player.Location = New Point(PlayerScreenXNumericUpDown.Value, PlayerScreenYNumericUpDown.Value)
     End Sub
 
-    Private Sub NumericUpDown6_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown6.ValueChanged, NumericUpDown7.ValueChanged
-        Audience.Location = New Point(NumericUpDown6.Value, NumericUpDown7.Value)
+    Private Sub AudienceScreenXNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles AudienceScreenXNumericUpDown.ValueChanged, AudienceScreenYNumericUpDown.ValueChanged
+        Audience.Location = New Point(AudienceScreenXNumericUpDown.Value, AudienceScreenYNumericUpDown.Value)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If My.Computer.FileSystem.FileExists(TextBox1.Text) = True Then
+    Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
+        If My.Computer.FileSystem.FileExists(QuestionBaseFileTextBox.Text) = True Then
             Me.Cursor = Cursors.WaitCursor
             'Перевод
             For i1 = 1 To currentBlock1.GetUpperBound(0)
@@ -157,21 +157,21 @@ Public Class FormStart
                     Project.currentBlock1(i1, i2) = currentBlock1(i1, i2)
                 Next
             Next
-            ini(11) = ComboBox1.SelectedItem
+            ini(11) = LanguageComboBox.SelectedItem
             For x = 1 To ini.GetUpperBound(0)
                 Project.ini(x) = ini(x)
             Next
             My.Computer.Audio.Play("source\MUSIC\Roll 2.wav")
-            Project.CheckBox7.Checked = CheckBox1.Checked
-            Project.CheckBox8.Checked = CheckBox2.Checked
-            Project.CheckBox9.Checked = CheckBox3.Checked
-            Project.NumericUpDown2.Value = NumericUpDown2.Value
-            Project.NumericUpDown3.Value = NumericUpDown3.Value
-            Project.NumericUpDown4.Value = NumericUpDown4.Value
-            Project.NumericUpDown5.Value = NumericUpDown5.Value
-            Project.NumericUpDown6.Value = NumericUpDown6.Value
-            Project.NumericUpDown7.Value = NumericUpDown7.Value
-            Project.FileNameQ = TextBox1.Text
+            Project.HostVisibleCheckBox.Checked = HostScreenCheckBox.Checked
+            Project.PlayerVisibleCheckBox.Checked = PlayerScreenCheckBox.Checked
+            Project.AudienceVisibleCheckBox.Checked = AudienceScreenCheckBox.Checked
+            Project.HostScreenXNumericUpDown.Value = HostScreenXNumericUpDown.Value
+            Project.HostScreenYNumericUpDown.Value = HostScreenYNumericUpDown.Value
+            Project.PlayerScreenXNumericUpDown.Value = PlayerScreenXNumericUpDown.Value
+            Project.PlayerScreenYNumericUpDown.Value = PlayerScreenYNumericUpDown.Value
+            Project.AudienceScreenXNumericUpDown.Value = AudienceScreenXNumericUpDown.Value
+            Project.AudienceScreenYNumericUpDown.Value = AudienceScreenYNumericUpDown.Value
+            Project.FileNameQ = QuestionBaseFileTextBox.Text
             Call Project.openfilesdata(Project.FileNameQ)
             Project.Show()
         Else
@@ -180,17 +180,17 @@ Public Class FormStart
     End Sub
 
     Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.FormClosing
-        If CheckBox1.Checked = True Then ini(1) = "1" Else ini(1) = "0"
-        If CheckBox2.Checked = True Then ini(2) = "1" Else ini(2) = "0"
-        If CheckBox3.Checked = True Then ini(3) = "1" Else ini(3) = "0"
-        ini(4) = NumericUpDown2.Value
-        ini(5) = NumericUpDown3.Value
-        ini(6) = NumericUpDown4.Value
-        ini(7) = NumericUpDown5.Value
-        ini(8) = NumericUpDown6.Value
-        ini(9) = NumericUpDown7.Value
-        ini(10) = TextBox1.Text
-        ini(11) = ComboBox1.SelectedItem
+        If HostScreenCheckBox.Checked = True Then ini(1) = "1" Else ini(1) = "0"
+        If PlayerScreenCheckBox.Checked = True Then ini(2) = "1" Else ini(2) = "0"
+        If AudienceScreenCheckBox.Checked = True Then ini(3) = "1" Else ini(3) = "0"
+        ini(4) = HostScreenXNumericUpDown.Value
+        ini(5) = HostScreenYNumericUpDown.Value
+        ini(6) = PlayerScreenXNumericUpDown.Value
+        ini(7) = PlayerScreenYNumericUpDown.Value
+        ini(8) = AudienceScreenXNumericUpDown.Value
+        ini(9) = AudienceScreenYNumericUpDown.Value
+        ini(10) = QuestionBaseFileTextBox.Text
+        ini(11) = LanguageComboBox.SelectedItem
         FileClose(1)
         FileOpen(1, CurDir() & "\wwtbam_set.ini", OpenMode.Output)
         Print(1, "|" & ini(1) & "|" & ini(2) & "|" & ini(3) & "|" & ini(4) & "|" & ini(5) & "|" & ini(6) & "|" & ini(7) & "|" & ini(8) & "|" & ini(9) & "|" & ini(10) & "|" & ini(11) & "|" & ini(12) & "|" & ini(13) & "|" & ini(14) & "|" & ini(15) & "|")

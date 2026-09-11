@@ -23,137 +23,137 @@ Partial Class Form50_50
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form50_50))
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.AnswerDLetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerCLetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerBLetterLabel = New System.Windows.Forms.Label()
+        Me.AnswerALetterLabel = New System.Windows.Forms.Label()
+        Me.ExecuteButton = New System.Windows.Forms.Button()
+        Me.KeepAnswerDCheckBox = New System.Windows.Forms.CheckBox()
+        Me.KeepAnswerCCheckBox = New System.Windows.Forms.CheckBox()
+        Me.KeepAnswerBCheckBox = New System.Windows.Forms.CheckBox()
+        Me.KeepAnswerACheckBox = New System.Windows.Forms.CheckBox()
+        Me.RandomiseButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label4
+        'AnswerDLetterLabel
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(210, 71)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 31)
-        Me.Label4.TabIndex = 23
-        Me.Label4.Text = "D"
+        Me.AnswerDLetterLabel.AutoSize = True
+        Me.AnswerDLetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerDLetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDLetterLabel.Location = New System.Drawing.Point(210, 71)
+        Me.AnswerDLetterLabel.Name = "AnswerDLetterLabel"
+        Me.AnswerDLetterLabel.Size = New System.Drawing.Size(34, 31)
+        Me.AnswerDLetterLabel.TabIndex = 23
+        Me.AnswerDLetterLabel.Text = "D"
         '
-        'Label3
+        'AnswerCLetterLabel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(158, 71)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(34, 31)
-        Me.Label3.TabIndex = 22
-        Me.Label3.Text = "C"
+        Me.AnswerCLetterLabel.AutoSize = True
+        Me.AnswerCLetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerCLetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCLetterLabel.Location = New System.Drawing.Point(158, 71)
+        Me.AnswerCLetterLabel.Name = "AnswerCLetterLabel"
+        Me.AnswerCLetterLabel.Size = New System.Drawing.Size(34, 31)
+        Me.AnswerCLetterLabel.TabIndex = 22
+        Me.AnswerCLetterLabel.Text = "C"
         '
-        'Label2
+        'AnswerBLetterLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(210, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(32, 31)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "B"
+        Me.AnswerBLetterLabel.AutoSize = True
+        Me.AnswerBLetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerBLetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBLetterLabel.Location = New System.Drawing.Point(210, 23)
+        Me.AnswerBLetterLabel.Name = "AnswerBLetterLabel"
+        Me.AnswerBLetterLabel.Size = New System.Drawing.Size(32, 31)
+        Me.AnswerBLetterLabel.TabIndex = 21
+        Me.AnswerBLetterLabel.Text = "B"
         '
-        'Label1
+        'AnswerALetterLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(159, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 31)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "A"
+        Me.AnswerALetterLabel.AutoSize = True
+        Me.AnswerALetterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerALetterLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerALetterLabel.Location = New System.Drawing.Point(159, 23)
+        Me.AnswerALetterLabel.Name = "AnswerALetterLabel"
+        Me.AnswerALetterLabel.Size = New System.Drawing.Size(32, 31)
+        Me.AnswerALetterLabel.TabIndex = 20
+        Me.AnswerALetterLabel.Text = "A"
         '
-        'Button1
+        'ExecuteButton
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(31, 115)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "Execute"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.ExecuteButton.BackColor = System.Drawing.Color.White
+        Me.ExecuteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ExecuteButton.Location = New System.Drawing.Point(31, 115)
+        Me.ExecuteButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ExecuteButton.Name = "ExecuteButton"
+        Me.ExecuteButton.Size = New System.Drawing.Size(100, 23)
+        Me.ExecuteButton.TabIndex = 19
+        Me.ExecuteButton.Text = "Execute"
+        Me.ExecuteButton.UseVisualStyleBackColor = False
         '
-        'CheckBox4
+        'KeepAnswerDCheckBox
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Checked = True
-        Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox4.ForeColor = System.Drawing.Color.White
-        Me.CheckBox4.Location = New System.Drawing.Point(46, 91)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(72, 17)
-        Me.CheckBox4.TabIndex = 18
-        Me.CheckBox4.Text = "Answer D"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.KeepAnswerDCheckBox.AutoSize = True
+        Me.KeepAnswerDCheckBox.Checked = True
+        Me.KeepAnswerDCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.KeepAnswerDCheckBox.ForeColor = System.Drawing.Color.White
+        Me.KeepAnswerDCheckBox.Location = New System.Drawing.Point(46, 91)
+        Me.KeepAnswerDCheckBox.Name = "KeepAnswerDCheckBox"
+        Me.KeepAnswerDCheckBox.Size = New System.Drawing.Size(72, 17)
+        Me.KeepAnswerDCheckBox.TabIndex = 18
+        Me.KeepAnswerDCheckBox.Text = "Answer D"
+        Me.KeepAnswerDCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'KeepAnswerCCheckBox
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Checked = True
-        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox3.ForeColor = System.Drawing.Color.White
-        Me.CheckBox3.Location = New System.Drawing.Point(46, 68)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(71, 17)
-        Me.CheckBox3.TabIndex = 17
-        Me.CheckBox3.Text = "Answer C"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.KeepAnswerCCheckBox.AutoSize = True
+        Me.KeepAnswerCCheckBox.Checked = True
+        Me.KeepAnswerCCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.KeepAnswerCCheckBox.ForeColor = System.Drawing.Color.White
+        Me.KeepAnswerCCheckBox.Location = New System.Drawing.Point(46, 68)
+        Me.KeepAnswerCCheckBox.Name = "KeepAnswerCCheckBox"
+        Me.KeepAnswerCCheckBox.Size = New System.Drawing.Size(71, 17)
+        Me.KeepAnswerCCheckBox.TabIndex = 17
+        Me.KeepAnswerCCheckBox.Text = "Answer C"
+        Me.KeepAnswerCCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'KeepAnswerBCheckBox
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Checked = True
-        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.ForeColor = System.Drawing.Color.White
-        Me.CheckBox2.Location = New System.Drawing.Point(46, 45)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(71, 17)
-        Me.CheckBox2.TabIndex = 16
-        Me.CheckBox2.Text = "Answer B"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.KeepAnswerBCheckBox.AutoSize = True
+        Me.KeepAnswerBCheckBox.Checked = True
+        Me.KeepAnswerBCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.KeepAnswerBCheckBox.ForeColor = System.Drawing.Color.White
+        Me.KeepAnswerBCheckBox.Location = New System.Drawing.Point(46, 45)
+        Me.KeepAnswerBCheckBox.Name = "KeepAnswerBCheckBox"
+        Me.KeepAnswerBCheckBox.Size = New System.Drawing.Size(71, 17)
+        Me.KeepAnswerBCheckBox.TabIndex = 16
+        Me.KeepAnswerBCheckBox.Text = "Answer B"
+        Me.KeepAnswerBCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'KeepAnswerACheckBox
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.ForeColor = System.Drawing.Color.White
-        Me.CheckBox1.Location = New System.Drawing.Point(46, 22)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(71, 17)
-        Me.CheckBox1.TabIndex = 15
-        Me.CheckBox1.Text = "Answer A"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.KeepAnswerACheckBox.AutoSize = True
+        Me.KeepAnswerACheckBox.Checked = True
+        Me.KeepAnswerACheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.KeepAnswerACheckBox.ForeColor = System.Drawing.Color.White
+        Me.KeepAnswerACheckBox.Location = New System.Drawing.Point(46, 22)
+        Me.KeepAnswerACheckBox.Name = "KeepAnswerACheckBox"
+        Me.KeepAnswerACheckBox.Size = New System.Drawing.Size(71, 17)
+        Me.KeepAnswerACheckBox.TabIndex = 15
+        Me.KeepAnswerACheckBox.Text = "Answer A"
+        Me.KeepAnswerACheckBox.UseVisualStyleBackColor = True
         '
-        'Button2
+        'RandomiseButton
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(151, 115)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 24
-        Me.Button2.Text = "Randomise"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.RandomiseButton.BackColor = System.Drawing.Color.White
+        Me.RandomiseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.RandomiseButton.Location = New System.Drawing.Point(151, 115)
+        Me.RandomiseButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.RandomiseButton.Name = "RandomiseButton"
+        Me.RandomiseButton.Size = New System.Drawing.Size(100, 23)
+        Me.RandomiseButton.TabIndex = 24
+        Me.RandomiseButton.Text = "Randomise"
+        Me.RandomiseButton.UseVisualStyleBackColor = False
         '
         'Form50_50
         '
@@ -161,16 +161,16 @@ Partial Class Form50_50
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(284, 161)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.CheckBox4)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.RandomiseButton)
+        Me.Controls.Add(Me.AnswerDLetterLabel)
+        Me.Controls.Add(Me.AnswerCLetterLabel)
+        Me.Controls.Add(Me.AnswerBLetterLabel)
+        Me.Controls.Add(Me.AnswerALetterLabel)
+        Me.Controls.Add(Me.ExecuteButton)
+        Me.Controls.Add(Me.KeepAnswerDCheckBox)
+        Me.Controls.Add(Me.KeepAnswerCCheckBox)
+        Me.Controls.Add(Me.KeepAnswerBCheckBox)
+        Me.Controls.Add(Me.KeepAnswerACheckBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -183,14 +183,14 @@ Partial Class Form50_50
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents AnswerDLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerALetterLabel As System.Windows.Forms.Label
+    Friend WithEvents ExecuteButton As System.Windows.Forms.Button
+    Friend WithEvents KeepAnswerDCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents KeepAnswerCCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents KeepAnswerBCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents KeepAnswerACheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents RandomiseButton As System.Windows.Forms.Button
 End Class

@@ -23,442 +23,442 @@ Partial Class Host
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Host))
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.PictureBox0 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox0, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.HostMessageLabel = New System.Windows.Forms.Label()
+        Me.QuestionCommentLabel = New System.Windows.Forms.Label()
+        Me.AnswerDChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerCChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerBChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerAChartPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerDPercentLabel = New System.Windows.Forms.Label()
+        Me.AnswerCPercentLabel = New System.Windows.Forms.Label()
+        Me.AnswerBPercentLabel = New System.Windows.Forms.Label()
+        Me.AnswerAPercentLabel = New System.Windows.Forms.Label()
+        Me.ClockPictureBox = New System.Windows.Forms.PictureBox()
+        Me.GuaranteedSumLabel = New System.Windows.Forms.Label()
+        Me.FinalAnswerLetterLabel = New System.Windows.Forms.Label()
+        Me.PossibleLossLabel = New System.Windows.Forms.Label()
+        Me.CurrentWinLabel = New System.Windows.Forms.Label()
+        Me.PossibleWinLabel = New System.Windows.Forms.Label()
+        Me.QuestionsLeftLabel = New System.Windows.Forms.Label()
+        Me.LifelinesPictureBox = New System.Windows.Forms.PictureBox()
+        Me.MoneyTreePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerDTextLabel = New System.Windows.Forms.Label()
+        Me.AnswerCTextLabel = New System.Windows.Forms.Label()
+        Me.AnswerBTextLabel = New System.Windows.Forms.Label()
+        Me.AnswerATextLabel = New System.Windows.Forms.Label()
+        Me.AnswerDFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerCFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerBFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.AnswerAFramePictureBox = New System.Windows.Forms.PictureBox()
+        Me.QuestionTextLabel = New System.Windows.Forms.Label()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
+        CType(Me.AnswerDChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerCChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerBChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerAChartPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClockPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LifelinesPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MoneyTreePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerDFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerCFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerBFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnswerAFramePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label12
+        'HostMessageLabel
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(19, 601)
-        Me.Label12.MaximumSize = New System.Drawing.Size(600, 120)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(107, 16)
-        Me.Label12.TabIndex = 153
-        Me.Label12.Text = "Message to host"
+        Me.HostMessageLabel.AutoSize = True
+        Me.HostMessageLabel.BackColor = System.Drawing.Color.Transparent
+        Me.HostMessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.HostMessageLabel.ForeColor = System.Drawing.Color.White
+        Me.HostMessageLabel.Location = New System.Drawing.Point(19, 601)
+        Me.HostMessageLabel.MaximumSize = New System.Drawing.Size(600, 120)
+        Me.HostMessageLabel.Name = "HostMessageLabel"
+        Me.HostMessageLabel.Size = New System.Drawing.Size(107, 16)
+        Me.HostMessageLabel.TabIndex = 153
+        Me.HostMessageLabel.Text = "Message to host"
         '
-        'Label11
+        'QuestionCommentLabel
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(19, 381)
-        Me.Label11.MaximumSize = New System.Drawing.Size(400, 210)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(137, 16)
-        Me.Label11.TabIndex = 152
-        Me.Label11.Text = "Comment for question"
+        Me.QuestionCommentLabel.AutoSize = True
+        Me.QuestionCommentLabel.BackColor = System.Drawing.Color.Transparent
+        Me.QuestionCommentLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionCommentLabel.ForeColor = System.Drawing.Color.White
+        Me.QuestionCommentLabel.Location = New System.Drawing.Point(19, 381)
+        Me.QuestionCommentLabel.MaximumSize = New System.Drawing.Size(400, 210)
+        Me.QuestionCommentLabel.Name = "QuestionCommentLabel"
+        Me.QuestionCommentLabel.Size = New System.Drawing.Size(137, 16)
+        Me.QuestionCommentLabel.TabIndex = 152
+        Me.QuestionCommentLabel.Text = "Comment for question"
         '
-        'PictureBox9
+        'AnswerDChartPictureBox
         '
-        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(583, 396)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(17, 120)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 151
-        Me.PictureBox9.TabStop = False
-        Me.PictureBox9.Visible = False
+        Me.AnswerDChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerDChartPictureBox.Image = CType(resources.GetObject("AnswerDChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerDChartPictureBox.Location = New System.Drawing.Point(583, 396)
+        Me.AnswerDChartPictureBox.Name = "AnswerDChartPictureBox"
+        Me.AnswerDChartPictureBox.Size = New System.Drawing.Size(17, 120)
+        Me.AnswerDChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerDChartPictureBox.TabIndex = 151
+        Me.AnswerDChartPictureBox.TabStop = False
+        Me.AnswerDChartPictureBox.Visible = False
         '
-        'PictureBox10
+        'AnswerCChartPictureBox
         '
-        Me.PictureBox10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(558, 396)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(17, 120)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 150
-        Me.PictureBox10.TabStop = False
-        Me.PictureBox10.Visible = False
+        Me.AnswerCChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerCChartPictureBox.Image = CType(resources.GetObject("AnswerCChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerCChartPictureBox.Location = New System.Drawing.Point(558, 396)
+        Me.AnswerCChartPictureBox.Name = "AnswerCChartPictureBox"
+        Me.AnswerCChartPictureBox.Size = New System.Drawing.Size(17, 120)
+        Me.AnswerCChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerCChartPictureBox.TabIndex = 150
+        Me.AnswerCChartPictureBox.TabStop = False
+        Me.AnswerCChartPictureBox.Visible = False
         '
-        'PictureBox11
+        'AnswerBChartPictureBox
         '
-        Me.PictureBox11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(533, 396)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(17, 120)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 149
-        Me.PictureBox11.TabStop = False
-        Me.PictureBox11.Visible = False
+        Me.AnswerBChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerBChartPictureBox.Image = CType(resources.GetObject("AnswerBChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerBChartPictureBox.Location = New System.Drawing.Point(533, 396)
+        Me.AnswerBChartPictureBox.Name = "AnswerBChartPictureBox"
+        Me.AnswerBChartPictureBox.Size = New System.Drawing.Size(17, 120)
+        Me.AnswerBChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerBChartPictureBox.TabIndex = 149
+        Me.AnswerBChartPictureBox.TabStop = False
+        Me.AnswerBChartPictureBox.Visible = False
         '
-        'PictureBox12
+        'AnswerAChartPictureBox
         '
-        Me.PictureBox12.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
-        Me.PictureBox12.Location = New System.Drawing.Point(508, 396)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(17, 120)
-        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox12.TabIndex = 148
-        Me.PictureBox12.TabStop = False
-        Me.PictureBox12.Visible = False
+        Me.AnswerAChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AnswerAChartPictureBox.Image = CType(resources.GetObject("AnswerAChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerAChartPictureBox.Location = New System.Drawing.Point(508, 396)
+        Me.AnswerAChartPictureBox.Name = "AnswerAChartPictureBox"
+        Me.AnswerAChartPictureBox.Size = New System.Drawing.Size(17, 120)
+        Me.AnswerAChartPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AnswerAChartPictureBox.TabIndex = 148
+        Me.AnswerAChartPictureBox.TabStop = False
+        Me.AnswerAChartPictureBox.Visible = False
         '
-        'Label7
+        'AnswerDPercentLabel
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(580, 381)
-        Me.Label7.MinimumSize = New System.Drawing.Size(25, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(25, 12)
-        Me.Label7.TabIndex = 147
-        Me.Label7.Text = "0%"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label7.Visible = False
+        Me.AnswerDPercentLabel.AutoSize = True
+        Me.AnswerDPercentLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerDPercentLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerDPercentLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDPercentLabel.Location = New System.Drawing.Point(580, 381)
+        Me.AnswerDPercentLabel.MinimumSize = New System.Drawing.Size(25, 0)
+        Me.AnswerDPercentLabel.Name = "AnswerDPercentLabel"
+        Me.AnswerDPercentLabel.Size = New System.Drawing.Size(25, 12)
+        Me.AnswerDPercentLabel.TabIndex = 147
+        Me.AnswerDPercentLabel.Text = "0%"
+        Me.AnswerDPercentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerDPercentLabel.Visible = False
         '
-        'Label8
+        'AnswerCPercentLabel
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(554, 381)
-        Me.Label8.MinimumSize = New System.Drawing.Size(25, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(25, 12)
-        Me.Label8.TabIndex = 146
-        Me.Label8.Text = "0%"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label8.Visible = False
+        Me.AnswerCPercentLabel.AutoSize = True
+        Me.AnswerCPercentLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerCPercentLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerCPercentLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCPercentLabel.Location = New System.Drawing.Point(554, 381)
+        Me.AnswerCPercentLabel.MinimumSize = New System.Drawing.Size(25, 0)
+        Me.AnswerCPercentLabel.Name = "AnswerCPercentLabel"
+        Me.AnswerCPercentLabel.Size = New System.Drawing.Size(25, 12)
+        Me.AnswerCPercentLabel.TabIndex = 146
+        Me.AnswerCPercentLabel.Text = "0%"
+        Me.AnswerCPercentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerCPercentLabel.Visible = False
         '
-        'Label9
+        'AnswerBPercentLabel
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(530, 381)
-        Me.Label9.MinimumSize = New System.Drawing.Size(25, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(25, 12)
-        Me.Label9.TabIndex = 145
-        Me.Label9.Text = "0%"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label9.Visible = False
+        Me.AnswerBPercentLabel.AutoSize = True
+        Me.AnswerBPercentLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerBPercentLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerBPercentLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBPercentLabel.Location = New System.Drawing.Point(530, 381)
+        Me.AnswerBPercentLabel.MinimumSize = New System.Drawing.Size(25, 0)
+        Me.AnswerBPercentLabel.Name = "AnswerBPercentLabel"
+        Me.AnswerBPercentLabel.Size = New System.Drawing.Size(25, 12)
+        Me.AnswerBPercentLabel.TabIndex = 145
+        Me.AnswerBPercentLabel.Text = "0%"
+        Me.AnswerBPercentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerBPercentLabel.Visible = False
         '
-        'Label10
+        'AnswerAPercentLabel
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(504, 381)
-        Me.Label10.MinimumSize = New System.Drawing.Size(25, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(25, 12)
-        Me.Label10.TabIndex = 144
-        Me.Label10.Text = "0%"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label10.Visible = False
+        Me.AnswerAPercentLabel.AutoSize = True
+        Me.AnswerAPercentLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerAPercentLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerAPercentLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerAPercentLabel.Location = New System.Drawing.Point(504, 381)
+        Me.AnswerAPercentLabel.MinimumSize = New System.Drawing.Size(25, 0)
+        Me.AnswerAPercentLabel.Name = "AnswerAPercentLabel"
+        Me.AnswerAPercentLabel.Size = New System.Drawing.Size(25, 12)
+        Me.AnswerAPercentLabel.TabIndex = 144
+        Me.AnswerAPercentLabel.Text = "0%"
+        Me.AnswerAPercentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AnswerAPercentLabel.Visible = False
         '
-        'PictureBox8
+        'ClockPictureBox
         '
-        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox8.Location = New System.Drawing.Point(455, 380)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(157, 157)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox8.TabIndex = 143
-        Me.PictureBox8.TabStop = False
+        Me.ClockPictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.ClockPictureBox.Location = New System.Drawing.Point(455, 380)
+        Me.ClockPictureBox.Name = "ClockPictureBox"
+        Me.ClockPictureBox.Size = New System.Drawing.Size(157, 157)
+        Me.ClockPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ClockPictureBox.TabIndex = 143
+        Me.ClockPictureBox.TabStop = False
         '
-        'Label6
+        'GuaranteedSumLabel
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(234, Byte), Integer))
-        Me.Label6.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(408, 308)
-        Me.Label6.MaximumSize = New System.Drawing.Size(204, 51)
-        Me.Label6.MinimumSize = New System.Drawing.Size(204, 51)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(204, 51)
-        Me.Label6.TabIndex = 142
-        Me.Label6.Text = "EarnGrnt"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.GuaranteedSumLabel.AutoSize = True
+        Me.GuaranteedSumLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.GuaranteedSumLabel.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.GuaranteedSumLabel.ForeColor = System.Drawing.Color.White
+        Me.GuaranteedSumLabel.Location = New System.Drawing.Point(408, 308)
+        Me.GuaranteedSumLabel.MaximumSize = New System.Drawing.Size(204, 51)
+        Me.GuaranteedSumLabel.MinimumSize = New System.Drawing.Size(204, 51)
+        Me.GuaranteedSumLabel.Name = "GuaranteedSumLabel"
+        Me.GuaranteedSumLabel.Size = New System.Drawing.Size(204, 51)
+        Me.GuaranteedSumLabel.TabIndex = 142
+        Me.GuaranteedSumLabel.Text = "EarnGrnt"
+        Me.GuaranteedSumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label5
+        'FinalAnswerLetterLabel
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Gray
-        Me.Label5.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(492, 264)
-        Me.Label5.MaximumSize = New System.Drawing.Size(36, 36)
-        Me.Label5.MinimumSize = New System.Drawing.Size(36, 36)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 36)
-        Me.Label5.TabIndex = 141
-        Me.Label5.Text = "R"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.FinalAnswerLetterLabel.AutoSize = True
+        Me.FinalAnswerLetterLabel.BackColor = System.Drawing.Color.Gray
+        Me.FinalAnswerLetterLabel.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.FinalAnswerLetterLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.FinalAnswerLetterLabel.Location = New System.Drawing.Point(492, 264)
+        Me.FinalAnswerLetterLabel.MaximumSize = New System.Drawing.Size(36, 36)
+        Me.FinalAnswerLetterLabel.MinimumSize = New System.Drawing.Size(36, 36)
+        Me.FinalAnswerLetterLabel.Name = "FinalAnswerLetterLabel"
+        Me.FinalAnswerLetterLabel.Size = New System.Drawing.Size(36, 36)
+        Me.FinalAnswerLetterLabel.TabIndex = 141
+        Me.FinalAnswerLetterLabel.Text = "R"
+        Me.FinalAnswerLetterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label4
+        'PossibleLossLabel
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Red
-        Me.Label4.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(204, 308)
-        Me.Label4.MaximumSize = New System.Drawing.Size(204, 51)
-        Me.Label4.MinimumSize = New System.Drawing.Size(204, 51)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(204, 51)
-        Me.Label4.TabIndex = 140
-        Me.Label4.Text = "PosLose"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PossibleLossLabel.AutoSize = True
+        Me.PossibleLossLabel.BackColor = System.Drawing.Color.Red
+        Me.PossibleLossLabel.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.PossibleLossLabel.ForeColor = System.Drawing.Color.White
+        Me.PossibleLossLabel.Location = New System.Drawing.Point(204, 308)
+        Me.PossibleLossLabel.MaximumSize = New System.Drawing.Size(204, 51)
+        Me.PossibleLossLabel.MinimumSize = New System.Drawing.Size(204, 51)
+        Me.PossibleLossLabel.Name = "PossibleLossLabel"
+        Me.PossibleLossLabel.Size = New System.Drawing.Size(204, 51)
+        Me.PossibleLossLabel.TabIndex = 140
+        Me.PossibleLossLabel.Text = "PosLose"
+        Me.PossibleLossLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label3
+        'CurrentWinLabel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(204, 257)
-        Me.Label3.MaximumSize = New System.Drawing.Size(204, 51)
-        Me.Label3.MinimumSize = New System.Drawing.Size(204, 51)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(204, 51)
-        Me.Label3.TabIndex = 139
-        Me.Label3.Text = "Prise"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CurrentWinLabel.AutoSize = True
+        Me.CurrentWinLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.CurrentWinLabel.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.CurrentWinLabel.ForeColor = System.Drawing.Color.White
+        Me.CurrentWinLabel.Location = New System.Drawing.Point(204, 257)
+        Me.CurrentWinLabel.MaximumSize = New System.Drawing.Size(204, 51)
+        Me.CurrentWinLabel.MinimumSize = New System.Drawing.Size(204, 51)
+        Me.CurrentWinLabel.Name = "CurrentWinLabel"
+        Me.CurrentWinLabel.Size = New System.Drawing.Size(204, 51)
+        Me.CurrentWinLabel.TabIndex = 139
+        Me.CurrentWinLabel.Text = "Prise"
+        Me.CurrentWinLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label2
+        'PossibleWinLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(0, 308)
-        Me.Label2.MaximumSize = New System.Drawing.Size(204, 51)
-        Me.Label2.MinimumSize = New System.Drawing.Size(204, 51)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(204, 51)
-        Me.Label2.TabIndex = 138
-        Me.Label2.Text = "PosWin"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PossibleWinLabel.AutoSize = True
+        Me.PossibleWinLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PossibleWinLabel.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.PossibleWinLabel.ForeColor = System.Drawing.Color.White
+        Me.PossibleWinLabel.Location = New System.Drawing.Point(0, 308)
+        Me.PossibleWinLabel.MaximumSize = New System.Drawing.Size(204, 51)
+        Me.PossibleWinLabel.MinimumSize = New System.Drawing.Size(204, 51)
+        Me.PossibleWinLabel.Name = "PossibleWinLabel"
+        Me.PossibleWinLabel.Size = New System.Drawing.Size(204, 51)
+        Me.PossibleWinLabel.TabIndex = 138
+        Me.PossibleWinLabel.Text = "PosWin"
+        Me.PossibleWinLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'QuestionsLeftLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 257)
-        Me.Label1.MaximumSize = New System.Drawing.Size(204, 51)
-        Me.Label1.MinimumSize = New System.Drawing.Size(204, 51)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(204, 51)
-        Me.Label1.TabIndex = 137
-        Me.Label1.Text = "Qaway: 0"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.QuestionsLeftLabel.AutoSize = True
+        Me.QuestionsLeftLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.QuestionsLeftLabel.Font = New System.Drawing.Font("Arial", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionsLeftLabel.ForeColor = System.Drawing.Color.White
+        Me.QuestionsLeftLabel.Location = New System.Drawing.Point(0, 257)
+        Me.QuestionsLeftLabel.MaximumSize = New System.Drawing.Size(204, 51)
+        Me.QuestionsLeftLabel.MinimumSize = New System.Drawing.Size(204, 51)
+        Me.QuestionsLeftLabel.Name = "QuestionsLeftLabel"
+        Me.QuestionsLeftLabel.Size = New System.Drawing.Size(204, 51)
+        Me.QuestionsLeftLabel.TabIndex = 137
+        Me.QuestionsLeftLabel.Text = "Qaway: 0"
+        Me.QuestionsLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox7
+        'LifelinesPictureBox
         '
-        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox7.Location = New System.Drawing.Point(675, 270)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(300, 59)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 136
-        Me.PictureBox7.TabStop = False
+        Me.LifelinesPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.LifelinesPictureBox.Image = CType(resources.GetObject("LifelinesPictureBox.Image"), System.Drawing.Image)
+        Me.LifelinesPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LifelinesPictureBox.Location = New System.Drawing.Point(675, 270)
+        Me.LifelinesPictureBox.Name = "LifelinesPictureBox"
+        Me.LifelinesPictureBox.Size = New System.Drawing.Size(300, 59)
+        Me.LifelinesPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.LifelinesPictureBox.TabIndex = 136
+        Me.LifelinesPictureBox.TabStop = False
         '
-        'PictureBox6
+        'MoneyTreePictureBox
         '
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox6.Location = New System.Drawing.Point(675, 270)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(300, 443)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 135
-        Me.PictureBox6.TabStop = False
+        Me.MoneyTreePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.MoneyTreePictureBox.Image = CType(resources.GetObject("MoneyTreePictureBox.Image"), System.Drawing.Image)
+        Me.MoneyTreePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.MoneyTreePictureBox.Location = New System.Drawing.Point(675, 270)
+        Me.MoneyTreePictureBox.Name = "MoneyTreePictureBox"
+        Me.MoneyTreePictureBox.Size = New System.Drawing.Size(300, 443)
+        Me.MoneyTreePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.MoneyTreePictureBox.TabIndex = 135
+        Me.MoneyTreePictureBox.TabStop = False
         '
-        'Label20
+        'AnswerDTextLabel
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label20.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label20.Location = New System.Drawing.Point(591, 196)
-        Me.Label20.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label20.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(147, 39)
-        Me.Label20.TabIndex = 130
-        Me.Label20.Text = "Answer D"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AnswerDTextLabel.AutoSize = True
+        Me.AnswerDTextLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.AnswerDTextLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerDTextLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerDTextLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerDTextLabel.Location = New System.Drawing.Point(591, 196)
+        Me.AnswerDTextLabel.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.AnswerDTextLabel.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.AnswerDTextLabel.Name = "AnswerDTextLabel"
+        Me.AnswerDTextLabel.Size = New System.Drawing.Size(147, 39)
+        Me.AnswerDTextLabel.TabIndex = 130
+        Me.AnswerDTextLabel.Text = "Answer D"
+        Me.AnswerDTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label19
+        'AnswerCTextLabel
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label19.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label19.Location = New System.Drawing.Point(132, 197)
-        Me.Label19.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label19.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(145, 39)
-        Me.Label19.TabIndex = 129
-        Me.Label19.Text = "Answer C"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AnswerCTextLabel.AutoSize = True
+        Me.AnswerCTextLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.AnswerCTextLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerCTextLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerCTextLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerCTextLabel.Location = New System.Drawing.Point(132, 197)
+        Me.AnswerCTextLabel.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.AnswerCTextLabel.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.AnswerCTextLabel.Name = "AnswerCTextLabel"
+        Me.AnswerCTextLabel.Size = New System.Drawing.Size(145, 39)
+        Me.AnswerCTextLabel.TabIndex = 129
+        Me.AnswerCTextLabel.Text = "Answer C"
+        Me.AnswerCTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label18
+        'AnswerBTextLabel
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label18.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label18.Location = New System.Drawing.Point(591, 131)
-        Me.Label18.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label18.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(147, 39)
-        Me.Label18.TabIndex = 128
-        Me.Label18.Text = "Answer B"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AnswerBTextLabel.AutoSize = True
+        Me.AnswerBTextLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.AnswerBTextLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerBTextLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerBTextLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerBTextLabel.Location = New System.Drawing.Point(591, 131)
+        Me.AnswerBTextLabel.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.AnswerBTextLabel.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.AnswerBTextLabel.Name = "AnswerBTextLabel"
+        Me.AnswerBTextLabel.Size = New System.Drawing.Size(147, 39)
+        Me.AnswerBTextLabel.TabIndex = 128
+        Me.AnswerBTextLabel.Text = "Answer B"
+        Me.AnswerBTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label17
+        'AnswerATextLabel
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.Label17.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label17.Location = New System.Drawing.Point(133, 131)
-        Me.Label17.MaximumSize = New System.Drawing.Size(335, 39)
-        Me.Label17.MinimumSize = New System.Drawing.Size(0, 39)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(144, 39)
-        Me.Label17.TabIndex = 127
-        Me.Label17.Text = "Answer A"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AnswerATextLabel.AutoSize = True
+        Me.AnswerATextLabel.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.AnswerATextLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AnswerATextLabel.ForeColor = System.Drawing.Color.White
+        Me.AnswerATextLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerATextLabel.Location = New System.Drawing.Point(133, 131)
+        Me.AnswerATextLabel.MaximumSize = New System.Drawing.Size(335, 39)
+        Me.AnswerATextLabel.MinimumSize = New System.Drawing.Size(0, 39)
+        Me.AnswerATextLabel.Name = "AnswerATextLabel"
+        Me.AnswerATextLabel.Size = New System.Drawing.Size(144, 39)
+        Me.AnswerATextLabel.TabIndex = 127
+        Me.AnswerATextLabel.Text = "Answer A"
+        Me.AnswerATextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'PictureBox5
+        'AnswerDFramePictureBox
         '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox5.Location = New System.Drawing.Point(512, 187)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox5.TabIndex = 134
-        Me.PictureBox5.TabStop = False
+        Me.AnswerDFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerDFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerDFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerDFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerDFramePictureBox.Location = New System.Drawing.Point(512, 187)
+        Me.AnswerDFramePictureBox.Name = "AnswerDFramePictureBox"
+        Me.AnswerDFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerDFramePictureBox.TabIndex = 134
+        Me.AnswerDFramePictureBox.TabStop = False
         '
-        'PictureBox4
+        'AnswerCFramePictureBox
         '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox4.InitialImage = CType(resources.GetObject("PictureBox4.InitialImage"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(0, 187)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox4.TabIndex = 133
-        Me.PictureBox4.TabStop = False
+        Me.AnswerCFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerCFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerCFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerCFramePictureBox.InitialImage = CType(resources.GetObject("AnswerCFramePictureBox.InitialImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.Location = New System.Drawing.Point(0, 187)
+        Me.AnswerCFramePictureBox.Name = "AnswerCFramePictureBox"
+        Me.AnswerCFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerCFramePictureBox.TabIndex = 133
+        Me.AnswerCFramePictureBox.TabStop = False
         '
-        'PictureBox3
+        'AnswerBFramePictureBox
         '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox3.Location = New System.Drawing.Point(512, 122)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox3.TabIndex = 132
-        Me.PictureBox3.TabStop = False
+        Me.AnswerBFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerBFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerBFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerBFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerBFramePictureBox.Location = New System.Drawing.Point(512, 122)
+        Me.AnswerBFramePictureBox.Name = "AnswerBFramePictureBox"
+        Me.AnswerBFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerBFramePictureBox.TabIndex = 132
+        Me.AnswerBFramePictureBox.TabStop = False
         '
-        'PictureBox2
+        'AnswerAFramePictureBox
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 122)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(512, 57)
-        Me.PictureBox2.TabIndex = 131
-        Me.PictureBox2.TabStop = False
+        Me.AnswerAFramePictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.AnswerAFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerAFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerAFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AnswerAFramePictureBox.Location = New System.Drawing.Point(0, 122)
+        Me.AnswerAFramePictureBox.Name = "AnswerAFramePictureBox"
+        Me.AnswerAFramePictureBox.Size = New System.Drawing.Size(512, 57)
+        Me.AnswerAFramePictureBox.TabIndex = 131
+        Me.AnswerAFramePictureBox.TabStop = False
         '
-        'Label16
+        'QuestionTextLabel
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label16.Location = New System.Drawing.Point(128, 14)
-        Me.Label16.MaximumSize = New System.Drawing.Size(766, 90)
-        Me.Label16.MinimumSize = New System.Drawing.Size(766, 90)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(766, 90)
-        Me.Label16.TabIndex = 126
-        Me.Label16.Text = "Question Text"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.QuestionTextLabel.AutoSize = True
+        Me.QuestionTextLabel.BackColor = System.Drawing.Color.Transparent
+        Me.QuestionTextLabel.Font = New System.Drawing.Font("ITC Conduit Cyrillic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.QuestionTextLabel.ForeColor = System.Drawing.Color.White
+        Me.QuestionTextLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionTextLabel.Location = New System.Drawing.Point(128, 14)
+        Me.QuestionTextLabel.MaximumSize = New System.Drawing.Size(766, 90)
+        Me.QuestionTextLabel.MinimumSize = New System.Drawing.Size(766, 90)
+        Me.QuestionTextLabel.Name = "QuestionTextLabel"
+        Me.QuestionTextLabel.Size = New System.Drawing.Size(766, 90)
+        Me.QuestionTextLabel.TabIndex = 126
+        Me.QuestionTextLabel.Text = "Question Text"
+        Me.QuestionTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox0
+        'LogoPictureBox
         '
-        Me.PictureBox0.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox0.BackgroundImage = CType(resources.GetObject("PictureBox0.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox0.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox0.Name = "PictureBox0"
-        Me.PictureBox0.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox0.TabIndex = 154
-        Me.PictureBox0.TabStop = False
-        Me.PictureBox0.Visible = False
+        Me.LogoPictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.LogoPictureBox.BackgroundImage = CType(resources.GetObject("LogoPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.LogoPictureBox.Size = New System.Drawing.Size(50, 50)
+        Me.LogoPictureBox.TabIndex = 154
+        Me.LogoPictureBox.TabStop = False
+        Me.LogoPictureBox.Visible = False
         '
         'Host
         '
@@ -468,35 +468,35 @@ Partial Class Host
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1024, 768)
-        Me.Controls.Add(Me.PictureBox0)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.PictureBox9)
-        Me.Controls.Add(Me.PictureBox10)
-        Me.Controls.Add(Me.PictureBox11)
-        Me.Controls.Add(Me.PictureBox12)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.PictureBox8)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox7)
-        Me.Controls.Add(Me.PictureBox6)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.LogoPictureBox)
+        Me.Controls.Add(Me.HostMessageLabel)
+        Me.Controls.Add(Me.QuestionCommentLabel)
+        Me.Controls.Add(Me.AnswerDChartPictureBox)
+        Me.Controls.Add(Me.AnswerCChartPictureBox)
+        Me.Controls.Add(Me.AnswerBChartPictureBox)
+        Me.Controls.Add(Me.AnswerAChartPictureBox)
+        Me.Controls.Add(Me.AnswerDPercentLabel)
+        Me.Controls.Add(Me.AnswerCPercentLabel)
+        Me.Controls.Add(Me.AnswerBPercentLabel)
+        Me.Controls.Add(Me.AnswerAPercentLabel)
+        Me.Controls.Add(Me.ClockPictureBox)
+        Me.Controls.Add(Me.GuaranteedSumLabel)
+        Me.Controls.Add(Me.FinalAnswerLetterLabel)
+        Me.Controls.Add(Me.PossibleLossLabel)
+        Me.Controls.Add(Me.CurrentWinLabel)
+        Me.Controls.Add(Me.PossibleWinLabel)
+        Me.Controls.Add(Me.QuestionsLeftLabel)
+        Me.Controls.Add(Me.LifelinesPictureBox)
+        Me.Controls.Add(Me.MoneyTreePictureBox)
+        Me.Controls.Add(Me.AnswerDTextLabel)
+        Me.Controls.Add(Me.AnswerCTextLabel)
+        Me.Controls.Add(Me.AnswerBTextLabel)
+        Me.Controls.Add(Me.AnswerATextLabel)
+        Me.Controls.Add(Me.AnswerDFramePictureBox)
+        Me.Controls.Add(Me.AnswerCFramePictureBox)
+        Me.Controls.Add(Me.AnswerBFramePictureBox)
+        Me.Controls.Add(Me.AnswerAFramePictureBox)
+        Me.Controls.Add(Me.QuestionTextLabel)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -505,49 +505,49 @@ Partial Class Host
         Me.Name = "Host"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Host"
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox0, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerDChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerCChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerBChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerAChartPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClockPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LifelinesPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MoneyTreePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerDFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerCFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerBFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnswerAFramePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox12 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox0 As System.Windows.Forms.PictureBox
+    Friend WithEvents HostMessageLabel As System.Windows.Forms.Label
+    Friend WithEvents QuestionCommentLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerDChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerCChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerBChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerAChartPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerDPercentLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCPercentLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBPercentLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerAPercentLabel As System.Windows.Forms.Label
+    Friend WithEvents ClockPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents GuaranteedSumLabel As System.Windows.Forms.Label
+    Friend WithEvents FinalAnswerLetterLabel As System.Windows.Forms.Label
+    Friend WithEvents PossibleLossLabel As System.Windows.Forms.Label
+    Friend WithEvents CurrentWinLabel As System.Windows.Forms.Label
+    Friend WithEvents PossibleWinLabel As System.Windows.Forms.Label
+    Friend WithEvents QuestionsLeftLabel As System.Windows.Forms.Label
+    Friend WithEvents LifelinesPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents MoneyTreePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerDTextLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerCTextLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerBTextLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerATextLabel As System.Windows.Forms.Label
+    Friend WithEvents AnswerDFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerCFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerBFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents AnswerAFramePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents QuestionTextLabel As System.Windows.Forms.Label
+    Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
 End Class

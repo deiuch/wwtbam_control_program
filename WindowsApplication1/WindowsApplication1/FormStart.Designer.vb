@@ -23,241 +23,241 @@ Partial Class FormStart
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormStart))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.NumericUpDown7 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.Button46 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
-        Me.DirectoryEntry1 = New System.DirectoryServices.DirectoryEntry()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StartButton = New System.Windows.Forms.Button()
+        Me.HostScreenCheckBox = New System.Windows.Forms.CheckBox()
+        Me.PlayerScreenCheckBox = New System.Windows.Forms.CheckBox()
+        Me.AudienceScreenCheckBox = New System.Windows.Forms.CheckBox()
+        Me.TitleLabel = New System.Windows.Forms.Label()
+        Me.AudienceScreenYNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AudienceScreenXNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.PlayerScreenYNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.PlayerScreenXNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.HostScreenYNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.HostScreenXNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.OpenQuestionBaseButton = New System.Windows.Forms.Button()
+        Me.QuestionBaseFileTextBox = New System.Windows.Forms.TextBox()
+        Me.QuestionBaseFileLabel = New System.Windows.Forms.Label()
+        Me.LanguageLabel = New System.Windows.Forms.Label()
+        Me.LanguageComboBox = New System.Windows.Forms.ComboBox()
+        Me.LanguagesDirectorySearcher = New System.DirectoryServices.DirectorySearcher()
+        Me.LanguagesDirectoryEntry = New System.DirectoryServices.DirectoryEntry()
+        CType(Me.AudienceScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AudienceScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HostScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HostScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'StartButton
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button1.Location = New System.Drawing.Point(72, 238)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(149, 23)
-        Me.Button1.TabIndex = 114
-        Me.Button1.Text = "START"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.StartButton.BackColor = System.Drawing.Color.White
+        Me.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.StartButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.StartButton.Location = New System.Drawing.Point(72, 238)
+        Me.StartButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.StartButton.Name = "StartButton"
+        Me.StartButton.Size = New System.Drawing.Size(149, 23)
+        Me.StartButton.TabIndex = 114
+        Me.StartButton.Text = "START"
+        Me.StartButton.UseVisualStyleBackColor = False
         '
-        'CheckBox1
+        'HostScreenCheckBox
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.ForeColor = System.Drawing.Color.White
-        Me.CheckBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox1.Location = New System.Drawing.Point(31, 58)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox1.TabIndex = 161
-        Me.CheckBox1.Text = "Host screen"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.HostScreenCheckBox.AutoSize = True
+        Me.HostScreenCheckBox.Checked = True
+        Me.HostScreenCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.HostScreenCheckBox.ForeColor = System.Drawing.Color.White
+        Me.HostScreenCheckBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.HostScreenCheckBox.Location = New System.Drawing.Point(31, 58)
+        Me.HostScreenCheckBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.HostScreenCheckBox.Name = "HostScreenCheckBox"
+        Me.HostScreenCheckBox.Size = New System.Drawing.Size(83, 17)
+        Me.HostScreenCheckBox.TabIndex = 161
+        Me.HostScreenCheckBox.Text = "Host screen"
+        Me.HostScreenCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'PlayerScreenCheckBox
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Checked = True
-        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.ForeColor = System.Drawing.Color.White
-        Me.CheckBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox2.Location = New System.Drawing.Point(31, 86)
-        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox2.TabIndex = 162
-        Me.CheckBox2.Text = "Player screen"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.PlayerScreenCheckBox.AutoSize = True
+        Me.PlayerScreenCheckBox.Checked = True
+        Me.PlayerScreenCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.PlayerScreenCheckBox.ForeColor = System.Drawing.Color.White
+        Me.PlayerScreenCheckBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.PlayerScreenCheckBox.Location = New System.Drawing.Point(31, 86)
+        Me.PlayerScreenCheckBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PlayerScreenCheckBox.Name = "PlayerScreenCheckBox"
+        Me.PlayerScreenCheckBox.Size = New System.Drawing.Size(90, 17)
+        Me.PlayerScreenCheckBox.TabIndex = 162
+        Me.PlayerScreenCheckBox.Text = "Player screen"
+        Me.PlayerScreenCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'AudienceScreenCheckBox
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Checked = True
-        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox3.ForeColor = System.Drawing.Color.White
-        Me.CheckBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox3.Location = New System.Drawing.Point(31, 115)
-        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(106, 17)
-        Me.CheckBox3.TabIndex = 163
-        Me.CheckBox3.Text = "Audience screen"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.AudienceScreenCheckBox.AutoSize = True
+        Me.AudienceScreenCheckBox.Checked = True
+        Me.AudienceScreenCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AudienceScreenCheckBox.ForeColor = System.Drawing.Color.White
+        Me.AudienceScreenCheckBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.AudienceScreenCheckBox.Location = New System.Drawing.Point(31, 115)
+        Me.AudienceScreenCheckBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.AudienceScreenCheckBox.Name = "AudienceScreenCheckBox"
+        Me.AudienceScreenCheckBox.Size = New System.Drawing.Size(106, 17)
+        Me.AudienceScreenCheckBox.TabIndex = 163
+        Me.AudienceScreenCheckBox.Text = "Audience screen"
+        Me.AudienceScreenCheckBox.UseVisualStyleBackColor = True
         '
-        'Label1
+        'TitleLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(1, 18)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.MaximumSize = New System.Drawing.Size(290, 0)
-        Me.Label1.MinimumSize = New System.Drawing.Size(290, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(290, 24)
-        Me.Label1.TabIndex = 164
-        Me.Label1.Text = "WWTBAM Control Program"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.TitleLabel.AutoSize = True
+        Me.TitleLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.TitleLabel.ForeColor = System.Drawing.Color.White
+        Me.TitleLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.TitleLabel.Location = New System.Drawing.Point(1, 18)
+        Me.TitleLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.TitleLabel.MaximumSize = New System.Drawing.Size(290, 0)
+        Me.TitleLabel.MinimumSize = New System.Drawing.Size(290, 0)
+        Me.TitleLabel.Name = "TitleLabel"
+        Me.TitleLabel.Size = New System.Drawing.Size(290, 24)
+        Me.TitleLabel.TabIndex = 164
+        Me.TitleLabel.Text = "WWTBAM Control Program"
+        Me.TitleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'NumericUpDown7
+        'AudienceScreenYNumericUpDown
         '
-        Me.NumericUpDown7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NumericUpDown7.Location = New System.Drawing.Point(215, 114)
-        Me.NumericUpDown7.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.NumericUpDown7.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.NumericUpDown7.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
-        Me.NumericUpDown7.Name = "NumericUpDown7"
-        Me.NumericUpDown7.Size = New System.Drawing.Size(50, 20)
-        Me.NumericUpDown7.TabIndex = 220
+        Me.AudienceScreenYNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AudienceScreenYNumericUpDown.Location = New System.Drawing.Point(215, 114)
+        Me.AudienceScreenYNumericUpDown.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.AudienceScreenYNumericUpDown.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.AudienceScreenYNumericUpDown.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
+        Me.AudienceScreenYNumericUpDown.Name = "AudienceScreenYNumericUpDown"
+        Me.AudienceScreenYNumericUpDown.Size = New System.Drawing.Size(50, 20)
+        Me.AudienceScreenYNumericUpDown.TabIndex = 220
         '
-        'NumericUpDown6
+        'AudienceScreenXNumericUpDown
         '
-        Me.NumericUpDown6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NumericUpDown6.Location = New System.Drawing.Point(165, 114)
-        Me.NumericUpDown6.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.NumericUpDown6.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.NumericUpDown6.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
-        Me.NumericUpDown6.Name = "NumericUpDown6"
-        Me.NumericUpDown6.Size = New System.Drawing.Size(50, 20)
-        Me.NumericUpDown6.TabIndex = 219
+        Me.AudienceScreenXNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AudienceScreenXNumericUpDown.Location = New System.Drawing.Point(165, 114)
+        Me.AudienceScreenXNumericUpDown.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.AudienceScreenXNumericUpDown.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.AudienceScreenXNumericUpDown.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
+        Me.AudienceScreenXNumericUpDown.Name = "AudienceScreenXNumericUpDown"
+        Me.AudienceScreenXNumericUpDown.Size = New System.Drawing.Size(50, 20)
+        Me.AudienceScreenXNumericUpDown.TabIndex = 219
         '
-        'NumericUpDown5
+        'PlayerScreenYNumericUpDown
         '
-        Me.NumericUpDown5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NumericUpDown5.Location = New System.Drawing.Point(215, 85)
-        Me.NumericUpDown5.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.NumericUpDown5.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.NumericUpDown5.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
-        Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.Size = New System.Drawing.Size(50, 20)
-        Me.NumericUpDown5.TabIndex = 218
+        Me.PlayerScreenYNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PlayerScreenYNumericUpDown.Location = New System.Drawing.Point(215, 85)
+        Me.PlayerScreenYNumericUpDown.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PlayerScreenYNumericUpDown.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.PlayerScreenYNumericUpDown.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
+        Me.PlayerScreenYNumericUpDown.Name = "PlayerScreenYNumericUpDown"
+        Me.PlayerScreenYNumericUpDown.Size = New System.Drawing.Size(50, 20)
+        Me.PlayerScreenYNumericUpDown.TabIndex = 218
         '
-        'NumericUpDown4
+        'PlayerScreenXNumericUpDown
         '
-        Me.NumericUpDown4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NumericUpDown4.Location = New System.Drawing.Point(165, 85)
-        Me.NumericUpDown4.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.NumericUpDown4.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.NumericUpDown4.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(50, 20)
-        Me.NumericUpDown4.TabIndex = 217
+        Me.PlayerScreenXNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PlayerScreenXNumericUpDown.Location = New System.Drawing.Point(165, 85)
+        Me.PlayerScreenXNumericUpDown.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PlayerScreenXNumericUpDown.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.PlayerScreenXNumericUpDown.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
+        Me.PlayerScreenXNumericUpDown.Name = "PlayerScreenXNumericUpDown"
+        Me.PlayerScreenXNumericUpDown.Size = New System.Drawing.Size(50, 20)
+        Me.PlayerScreenXNumericUpDown.TabIndex = 217
         '
-        'NumericUpDown3
+        'HostScreenYNumericUpDown
         '
-        Me.NumericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NumericUpDown3.Location = New System.Drawing.Point(215, 57)
-        Me.NumericUpDown3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.NumericUpDown3.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.NumericUpDown3.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(50, 20)
-        Me.NumericUpDown3.TabIndex = 216
+        Me.HostScreenYNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.HostScreenYNumericUpDown.Location = New System.Drawing.Point(215, 57)
+        Me.HostScreenYNumericUpDown.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.HostScreenYNumericUpDown.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.HostScreenYNumericUpDown.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
+        Me.HostScreenYNumericUpDown.Name = "HostScreenYNumericUpDown"
+        Me.HostScreenYNumericUpDown.Size = New System.Drawing.Size(50, 20)
+        Me.HostScreenYNumericUpDown.TabIndex = 216
         '
-        'NumericUpDown2
+        'HostScreenXNumericUpDown
         '
-        Me.NumericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NumericUpDown2.Location = New System.Drawing.Point(165, 57)
-        Me.NumericUpDown2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.NumericUpDown2.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(50, 20)
-        Me.NumericUpDown2.TabIndex = 215
+        Me.HostScreenXNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.HostScreenXNumericUpDown.Location = New System.Drawing.Point(165, 57)
+        Me.HostScreenXNumericUpDown.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.HostScreenXNumericUpDown.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.HostScreenXNumericUpDown.Minimum = New Decimal(New Integer() {5000, 0, 0, -2147483648})
+        Me.HostScreenXNumericUpDown.Name = "HostScreenXNumericUpDown"
+        Me.HostScreenXNumericUpDown.Size = New System.Drawing.Size(50, 20)
+        Me.HostScreenXNumericUpDown.TabIndex = 215
         '
-        'Button46
+        'OpenQuestionBaseButton
         '
-        Me.Button46.BackColor = System.Drawing.Color.White
-        Me.Button46.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button46.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button46.Location = New System.Drawing.Point(220, 167)
-        Me.Button46.Name = "Button46"
-        Me.Button46.Size = New System.Drawing.Size(52, 23)
-        Me.Button46.TabIndex = 222
-        Me.Button46.Text = "Open..."
-        Me.Button46.UseVisualStyleBackColor = False
+        Me.OpenQuestionBaseButton.BackColor = System.Drawing.Color.White
+        Me.OpenQuestionBaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.OpenQuestionBaseButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OpenQuestionBaseButton.Location = New System.Drawing.Point(220, 167)
+        Me.OpenQuestionBaseButton.Name = "OpenQuestionBaseButton"
+        Me.OpenQuestionBaseButton.Size = New System.Drawing.Size(52, 23)
+        Me.OpenQuestionBaseButton.TabIndex = 222
+        Me.OpenQuestionBaseButton.Text = "Open..."
+        Me.OpenQuestionBaseButton.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'QuestionBaseFileTextBox
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(31, 169)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox1.TabIndex = 221
+        Me.QuestionBaseFileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.QuestionBaseFileTextBox.Location = New System.Drawing.Point(31, 169)
+        Me.QuestionBaseFileTextBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.QuestionBaseFileTextBox.Name = "QuestionBaseFileTextBox"
+        Me.QuestionBaseFileTextBox.ReadOnly = True
+        Me.QuestionBaseFileTextBox.Size = New System.Drawing.Size(184, 20)
+        Me.QuestionBaseFileTextBox.TabIndex = 221
         '
-        'Label2
+        'QuestionBaseFileLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(28, 146)
-        Me.Label2.MaximumSize = New System.Drawing.Size(340, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(94, 13)
-        Me.Label2.TabIndex = 223
-        Me.Label2.Text = "Question base file:"
+        Me.QuestionBaseFileLabel.AutoSize = True
+        Me.QuestionBaseFileLabel.Cursor = System.Windows.Forms.Cursors.Default
+        Me.QuestionBaseFileLabel.ForeColor = System.Drawing.Color.White
+        Me.QuestionBaseFileLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.QuestionBaseFileLabel.Location = New System.Drawing.Point(28, 146)
+        Me.QuestionBaseFileLabel.MaximumSize = New System.Drawing.Size(340, 13)
+        Me.QuestionBaseFileLabel.Name = "QuestionBaseFileLabel"
+        Me.QuestionBaseFileLabel.Size = New System.Drawing.Size(94, 13)
+        Me.QuestionBaseFileLabel.TabIndex = 223
+        Me.QuestionBaseFileLabel.Text = "Question base file:"
         '
-        'Label3
+        'LanguageLabel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(28, 205)
-        Me.Label3.MaximumSize = New System.Drawing.Size(340, 13)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 13)
-        Me.Label3.TabIndex = 224
-        Me.Label3.Text = "Language:"
+        Me.LanguageLabel.AutoSize = True
+        Me.LanguageLabel.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LanguageLabel.ForeColor = System.Drawing.Color.White
+        Me.LanguageLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LanguageLabel.Location = New System.Drawing.Point(28, 205)
+        Me.LanguageLabel.MaximumSize = New System.Drawing.Size(340, 13)
+        Me.LanguageLabel.Name = "LanguageLabel"
+        Me.LanguageLabel.Size = New System.Drawing.Size(58, 13)
+        Me.LanguageLabel.TabIndex = 224
+        Me.LanguageLabel.Text = "Language:"
         '
-        'ComboBox1
+        'LanguageComboBox
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"English"})
-        Me.ComboBox1.Location = New System.Drawing.Point(92, 202)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(180, 21)
-        Me.ComboBox1.TabIndex = 225
-        Me.ComboBox1.Text = "select language"
+        Me.LanguageComboBox.FormattingEnabled = True
+        Me.LanguageComboBox.Items.AddRange(New Object() {"English"})
+        Me.LanguageComboBox.Location = New System.Drawing.Point(92, 202)
+        Me.LanguageComboBox.Name = "LanguageComboBox"
+        Me.LanguageComboBox.Size = New System.Drawing.Size(180, 21)
+        Me.LanguageComboBox.TabIndex = 225
+        Me.LanguageComboBox.Text = "select language"
         '
-        'DirectorySearcher1
+        'LanguagesDirectorySearcher
         '
-        Me.DirectorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01")
-        Me.DirectorySearcher1.SearchRoot = Me.DirectoryEntry1
-        Me.DirectorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01")
-        Me.DirectorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01")
-        Me.DirectorySearcher1.Sort.PropertyName = "Name"
+        Me.LanguagesDirectorySearcher.ClientTimeout = System.TimeSpan.Parse("-00:00:01")
+        Me.LanguagesDirectorySearcher.SearchRoot = Me.LanguagesDirectoryEntry
+        Me.LanguagesDirectorySearcher.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01")
+        Me.LanguagesDirectorySearcher.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01")
+        Me.LanguagesDirectorySearcher.Sort.PropertyName = "Name"
         '
-        'DirectoryEntry1
+        'LanguagesDirectoryEntry
         '
-        Me.DirectoryEntry1.Path = "\Languages"
+        Me.LanguagesDirectoryEntry.Path = "\Languages"
         '
         'FormStart
         '
@@ -265,22 +265,22 @@ Partial Class FormStart
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(292, 273)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button46)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.NumericUpDown7)
-        Me.Controls.Add(Me.NumericUpDown6)
-        Me.Controls.Add(Me.NumericUpDown5)
-        Me.Controls.Add(Me.NumericUpDown4)
-        Me.Controls.Add(Me.NumericUpDown3)
-        Me.Controls.Add(Me.NumericUpDown2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.LanguageComboBox)
+        Me.Controls.Add(Me.LanguageLabel)
+        Me.Controls.Add(Me.QuestionBaseFileLabel)
+        Me.Controls.Add(Me.OpenQuestionBaseButton)
+        Me.Controls.Add(Me.QuestionBaseFileTextBox)
+        Me.Controls.Add(Me.AudienceScreenYNumericUpDown)
+        Me.Controls.Add(Me.AudienceScreenXNumericUpDown)
+        Me.Controls.Add(Me.PlayerScreenYNumericUpDown)
+        Me.Controls.Add(Me.PlayerScreenXNumericUpDown)
+        Me.Controls.Add(Me.HostScreenYNumericUpDown)
+        Me.Controls.Add(Me.HostScreenXNumericUpDown)
+        Me.Controls.Add(Me.TitleLabel)
+        Me.Controls.Add(Me.AudienceScreenCheckBox)
+        Me.Controls.Add(Me.PlayerScreenCheckBox)
+        Me.Controls.Add(Me.HostScreenCheckBox)
+        Me.Controls.Add(Me.StartButton)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -288,32 +288,32 @@ Partial Class FormStart
         Me.Name = "FormStart"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WWTBAM"
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AudienceScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AudienceScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HostScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HostScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown7 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown6 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown5 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown4 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown3 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown2 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Button46 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents DirectorySearcher1 As System.DirectoryServices.DirectorySearcher
-    Friend WithEvents DirectoryEntry1 As System.DirectoryServices.DirectoryEntry
+    Friend WithEvents StartButton As System.Windows.Forms.Button
+    Friend WithEvents HostScreenCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents PlayerScreenCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents AudienceScreenCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents TitleLabel As System.Windows.Forms.Label
+    Friend WithEvents AudienceScreenYNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AudienceScreenXNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents PlayerScreenYNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents PlayerScreenXNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents HostScreenYNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents HostScreenXNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents OpenQuestionBaseButton As System.Windows.Forms.Button
+    Friend WithEvents QuestionBaseFileTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents QuestionBaseFileLabel As System.Windows.Forms.Label
+    Friend WithEvents LanguageLabel As System.Windows.Forms.Label
+    Friend WithEvents LanguageComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents LanguagesDirectorySearcher As System.DirectoryServices.DirectorySearcher
+    Friend WithEvents LanguagesDirectoryEntry As System.DirectoryServices.DirectoryEntry
 End Class

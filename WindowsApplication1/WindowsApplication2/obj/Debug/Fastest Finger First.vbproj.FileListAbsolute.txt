@@ -1,0 +1,4 @@
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication2\obj\Debug\FastestFingerFirst.EditorFFF.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication2\obj\Debug\FastestFingerFirst.FastestFingerFirst.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication2\obj\Debug\FastestFingerFirst.Resources.resources
+c:\Users\tcher\Projects\wwtbam_control_program\WindowsApplication1\WindowsApplication2\obj\Debug\Fastest Finger First.vbproj.GenerateResource.Cache

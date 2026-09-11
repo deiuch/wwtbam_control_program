@@ -23,205 +23,205 @@ Partial Class Editor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Editor))
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.QuestionListBox = New System.Windows.Forms.ListBox()
+        Me.QuestionFilePathLabel = New System.Windows.Forms.Label()
+        Me.QuestionFieldTextBox1 = New System.Windows.Forms.TextBox()
+        Me.QuestionFieldTextBox2 = New System.Windows.Forms.TextBox()
+        Me.QuestionFieldTextBox3 = New System.Windows.Forms.TextBox()
+        Me.QuestionFieldTextBox4 = New System.Windows.Forms.TextBox()
+        Me.QuestionFieldTextBox5 = New System.Windows.Forms.TextBox()
+        Me.AnswerARadioButton = New System.Windows.Forms.RadioButton()
+        Me.AnswerBRadioButton = New System.Windows.Forms.RadioButton()
+        Me.AnswerCRadioButton = New System.Windows.Forms.RadioButton()
+        Me.AnswerDRadioButton = New System.Windows.Forms.RadioButton()
+        Me.SaveBaseFileButton = New System.Windows.Forms.Button()
+        Me.OpenBaseFileButton = New System.Windows.Forms.Button()
+        Me.CreateBaseFileButton = New System.Windows.Forms.Button()
+        Me.QuestionCommentTextBox = New System.Windows.Forms.TextBox()
+        Me.QuestionCommentLabel = New System.Windows.Forms.Label()
+        Me.OpenBaseFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveBaseFileDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.SaveTemporarilyButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'QuestionListBox
         '
-        Me.ListBox1.Enabled = False
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15"})
-        Me.ListBox1.Location = New System.Drawing.Point(11, 12)
-        Me.ListBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(149, 199)
-        Me.ListBox1.TabIndex = 111
+        Me.QuestionListBox.Enabled = False
+        Me.QuestionListBox.FormattingEnabled = True
+        Me.QuestionListBox.Items.AddRange(New Object() {"Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15"})
+        Me.QuestionListBox.Location = New System.Drawing.Point(11, 12)
+        Me.QuestionListBox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.QuestionListBox.Name = "QuestionListBox"
+        Me.QuestionListBox.Size = New System.Drawing.Size(149, 199)
+        Me.QuestionListBox.TabIndex = 111
         '
-        'Label1
+        'QuestionFilePathLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(167, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 13)
-        Me.Label1.TabIndex = 112
-        Me.Label1.Text = "Question File Adress"
+        Me.QuestionFilePathLabel.AutoSize = True
+        Me.QuestionFilePathLabel.ForeColor = System.Drawing.Color.White
+        Me.QuestionFilePathLabel.Location = New System.Drawing.Point(167, 12)
+        Me.QuestionFilePathLabel.Name = "QuestionFilePathLabel"
+        Me.QuestionFilePathLabel.Size = New System.Drawing.Size(103, 13)
+        Me.QuestionFilePathLabel.TabIndex = 112
+        Me.QuestionFilePathLabel.Text = "Question File Adress"
         '
-        'TextBox1
+        'QuestionFieldTextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(170, 32)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(302, 52)
-        Me.TextBox1.TabIndex = 113
+        Me.QuestionFieldTextBox1.Location = New System.Drawing.Point(170, 32)
+        Me.QuestionFieldTextBox1.Multiline = True
+        Me.QuestionFieldTextBox1.Name = "QuestionFieldTextBox1"
+        Me.QuestionFieldTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.QuestionFieldTextBox1.Size = New System.Drawing.Size(302, 52)
+        Me.QuestionFieldTextBox1.TabIndex = 113
         '
-        'TextBox2
+        'QuestionFieldTextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(205, 92)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox2.TabIndex = 114
+        Me.QuestionFieldTextBox2.Location = New System.Drawing.Point(205, 92)
+        Me.QuestionFieldTextBox2.Name = "QuestionFieldTextBox2"
+        Me.QuestionFieldTextBox2.Size = New System.Drawing.Size(114, 20)
+        Me.QuestionFieldTextBox2.TabIndex = 114
         '
-        'TextBox3
+        'QuestionFieldTextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(358, 92)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox3.TabIndex = 115
+        Me.QuestionFieldTextBox3.Location = New System.Drawing.Point(358, 92)
+        Me.QuestionFieldTextBox3.Name = "QuestionFieldTextBox3"
+        Me.QuestionFieldTextBox3.Size = New System.Drawing.Size(114, 20)
+        Me.QuestionFieldTextBox3.TabIndex = 115
         '
-        'TextBox4
+        'QuestionFieldTextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(205, 120)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox4.TabIndex = 116
+        Me.QuestionFieldTextBox4.Location = New System.Drawing.Point(205, 120)
+        Me.QuestionFieldTextBox4.Name = "QuestionFieldTextBox4"
+        Me.QuestionFieldTextBox4.Size = New System.Drawing.Size(114, 20)
+        Me.QuestionFieldTextBox4.TabIndex = 116
         '
-        'TextBox5
+        'QuestionFieldTextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(358, 120)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox5.TabIndex = 117
+        Me.QuestionFieldTextBox5.Location = New System.Drawing.Point(358, 120)
+        Me.QuestionFieldTextBox5.Name = "QuestionFieldTextBox5"
+        Me.QuestionFieldTextBox5.Size = New System.Drawing.Size(114, 20)
+        Me.QuestionFieldTextBox5.TabIndex = 117
         '
-        'RadioButton1
+        'AnswerARadioButton
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.ForeColor = System.Drawing.Color.White
-        Me.RadioButton1.Location = New System.Drawing.Point(170, 93)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(35, 17)
-        Me.RadioButton1.TabIndex = 118
-        Me.RadioButton1.Text = "A:"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.AnswerARadioButton.AutoSize = True
+        Me.AnswerARadioButton.ForeColor = System.Drawing.Color.White
+        Me.AnswerARadioButton.Location = New System.Drawing.Point(170, 93)
+        Me.AnswerARadioButton.Name = "AnswerARadioButton"
+        Me.AnswerARadioButton.Size = New System.Drawing.Size(35, 17)
+        Me.AnswerARadioButton.TabIndex = 118
+        Me.AnswerARadioButton.Text = "A:"
+        Me.AnswerARadioButton.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'AnswerBRadioButton
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.ForeColor = System.Drawing.Color.White
-        Me.RadioButton2.Location = New System.Drawing.Point(322, 93)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(35, 17)
-        Me.RadioButton2.TabIndex = 119
-        Me.RadioButton2.Text = "B:"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.AnswerBRadioButton.AutoSize = True
+        Me.AnswerBRadioButton.ForeColor = System.Drawing.Color.White
+        Me.AnswerBRadioButton.Location = New System.Drawing.Point(322, 93)
+        Me.AnswerBRadioButton.Name = "AnswerBRadioButton"
+        Me.AnswerBRadioButton.Size = New System.Drawing.Size(35, 17)
+        Me.AnswerBRadioButton.TabIndex = 119
+        Me.AnswerBRadioButton.Text = "B:"
+        Me.AnswerBRadioButton.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'AnswerCRadioButton
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.ForeColor = System.Drawing.Color.White
-        Me.RadioButton3.Location = New System.Drawing.Point(170, 121)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(35, 17)
-        Me.RadioButton3.TabIndex = 120
-        Me.RadioButton3.Text = "C:"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.AnswerCRadioButton.AutoSize = True
+        Me.AnswerCRadioButton.ForeColor = System.Drawing.Color.White
+        Me.AnswerCRadioButton.Location = New System.Drawing.Point(170, 121)
+        Me.AnswerCRadioButton.Name = "AnswerCRadioButton"
+        Me.AnswerCRadioButton.Size = New System.Drawing.Size(35, 17)
+        Me.AnswerCRadioButton.TabIndex = 120
+        Me.AnswerCRadioButton.Text = "C:"
+        Me.AnswerCRadioButton.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'AnswerDRadioButton
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.ForeColor = System.Drawing.Color.White
-        Me.RadioButton4.Location = New System.Drawing.Point(322, 121)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(36, 17)
-        Me.RadioButton4.TabIndex = 121
-        Me.RadioButton4.Text = "D:"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.AnswerDRadioButton.AutoSize = True
+        Me.AnswerDRadioButton.ForeColor = System.Drawing.Color.White
+        Me.AnswerDRadioButton.Location = New System.Drawing.Point(322, 121)
+        Me.AnswerDRadioButton.Name = "AnswerDRadioButton"
+        Me.AnswerDRadioButton.Size = New System.Drawing.Size(36, 17)
+        Me.AnswerDRadioButton.TabIndex = 121
+        Me.AnswerDRadioButton.Text = "D:"
+        Me.AnswerDRadioButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'SaveBaseFileButton
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(128, 226)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 23)
-        Me.Button2.TabIndex = 122
-        Me.Button2.Text = "Save base file"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.SaveBaseFileButton.BackColor = System.Drawing.Color.White
+        Me.SaveBaseFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SaveBaseFileButton.Location = New System.Drawing.Point(128, 226)
+        Me.SaveBaseFileButton.Name = "SaveBaseFileButton"
+        Me.SaveBaseFileButton.Size = New System.Drawing.Size(110, 23)
+        Me.SaveBaseFileButton.TabIndex = 122
+        Me.SaveBaseFileButton.Text = "Save base file"
+        Me.SaveBaseFileButton.UseVisualStyleBackColor = False
         '
-        'Button3
+        'OpenBaseFileButton
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Location = New System.Drawing.Point(244, 226)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(110, 23)
-        Me.Button3.TabIndex = 123
-        Me.Button3.Text = "Open file..."
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.OpenBaseFileButton.BackColor = System.Drawing.Color.White
+        Me.OpenBaseFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.OpenBaseFileButton.Location = New System.Drawing.Point(244, 226)
+        Me.OpenBaseFileButton.Name = "OpenBaseFileButton"
+        Me.OpenBaseFileButton.Size = New System.Drawing.Size(110, 23)
+        Me.OpenBaseFileButton.TabIndex = 123
+        Me.OpenBaseFileButton.Text = "Open file..."
+        Me.OpenBaseFileButton.UseVisualStyleBackColor = False
         '
-        'Button4
+        'CreateBaseFileButton
         '
-        Me.Button4.BackColor = System.Drawing.Color.White
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button4.Location = New System.Drawing.Point(360, 226)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(110, 23)
-        Me.Button4.TabIndex = 124
-        Me.Button4.Text = "Create new file..."
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.CreateBaseFileButton.BackColor = System.Drawing.Color.White
+        Me.CreateBaseFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CreateBaseFileButton.Location = New System.Drawing.Point(360, 226)
+        Me.CreateBaseFileButton.Name = "CreateBaseFileButton"
+        Me.CreateBaseFileButton.Size = New System.Drawing.Size(110, 23)
+        Me.CreateBaseFileButton.TabIndex = 124
+        Me.CreateBaseFileButton.Text = "Create new file..."
+        Me.CreateBaseFileButton.UseVisualStyleBackColor = False
         '
-        'TextBox6
+        'QuestionCommentTextBox
         '
-        Me.TextBox6.Location = New System.Drawing.Point(170, 160)
-        Me.TextBox6.Multiline = True
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox6.Size = New System.Drawing.Size(302, 51)
-        Me.TextBox6.TabIndex = 125
+        Me.QuestionCommentTextBox.Location = New System.Drawing.Point(170, 160)
+        Me.QuestionCommentTextBox.Multiline = True
+        Me.QuestionCommentTextBox.Name = "QuestionCommentTextBox"
+        Me.QuestionCommentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.QuestionCommentTextBox.Size = New System.Drawing.Size(302, 51)
+        Me.QuestionCommentTextBox.TabIndex = 125
         '
-        'Label2
+        'QuestionCommentLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(167, 144)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 13)
-        Me.Label2.TabIndex = 126
-        Me.Label2.Text = "Question comment:"
+        Me.QuestionCommentLabel.AutoSize = True
+        Me.QuestionCommentLabel.ForeColor = System.Drawing.Color.White
+        Me.QuestionCommentLabel.Location = New System.Drawing.Point(167, 144)
+        Me.QuestionCommentLabel.Name = "QuestionCommentLabel"
+        Me.QuestionCommentLabel.Size = New System.Drawing.Size(98, 13)
+        Me.QuestionCommentLabel.TabIndex = 126
+        Me.QuestionCommentLabel.Text = "Question comment:"
         '
-        'OpenFileDialog1
+        'OpenBaseFileDialog
         '
-        Me.OpenFileDialog1.FileName = "*.questions"
-        Me.OpenFileDialog1.Filter = "Question base files (*.questions)|All files (*.*)"
-        Me.OpenFileDialog1.InitialDirectory = "\Bases"
-        Me.OpenFileDialog1.Title = "Open question base file"
+        Me.OpenBaseFileDialog.FileName = "*.questions"
+        Me.OpenBaseFileDialog.Filter = "Question base files (*.questions)|All files (*.*)"
+        Me.OpenBaseFileDialog.InitialDirectory = "\Bases"
+        Me.OpenBaseFileDialog.Title = "Open question base file"
         '
-        'SaveFileDialog1
+        'SaveBaseFileDialog
         '
-        Me.SaveFileDialog1.CreatePrompt = True
-        Me.SaveFileDialog1.Filter = "Question base files (*.questions)|All files (*.*)"
-        Me.SaveFileDialog1.InitialDirectory = "Bases\"
-        Me.SaveFileDialog1.Title = "Save question base file"
+        Me.SaveBaseFileDialog.CreatePrompt = True
+        Me.SaveBaseFileDialog.Filter = "Question base files (*.questions)|All files (*.*)"
+        Me.SaveBaseFileDialog.InitialDirectory = "Bases\"
+        Me.SaveBaseFileDialog.Title = "Save question base file"
         '
-        'Button1
+        'SaveTemporarilyButton
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(12, 226)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 23)
-        Me.Button1.TabIndex = 127
-        Me.Button1.Text = "Save temporarily"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SaveTemporarilyButton.BackColor = System.Drawing.Color.White
+        Me.SaveTemporarilyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SaveTemporarilyButton.Location = New System.Drawing.Point(12, 226)
+        Me.SaveTemporarilyButton.Name = "SaveTemporarilyButton"
+        Me.SaveTemporarilyButton.Size = New System.Drawing.Size(110, 23)
+        Me.SaveTemporarilyButton.TabIndex = 127
+        Me.SaveTemporarilyButton.Text = "Save temporarily"
+        Me.SaveTemporarilyButton.UseVisualStyleBackColor = False
         '
         'Editor
         '
@@ -229,23 +229,23 @@ Partial Class Editor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(484, 261)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.RadioButton4)
-        Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.SaveTemporarilyButton)
+        Me.Controls.Add(Me.QuestionCommentLabel)
+        Me.Controls.Add(Me.QuestionCommentTextBox)
+        Me.Controls.Add(Me.CreateBaseFileButton)
+        Me.Controls.Add(Me.OpenBaseFileButton)
+        Me.Controls.Add(Me.SaveBaseFileButton)
+        Me.Controls.Add(Me.AnswerDRadioButton)
+        Me.Controls.Add(Me.AnswerCRadioButton)
+        Me.Controls.Add(Me.AnswerBRadioButton)
+        Me.Controls.Add(Me.AnswerARadioButton)
+        Me.Controls.Add(Me.QuestionFieldTextBox5)
+        Me.Controls.Add(Me.QuestionFieldTextBox4)
+        Me.Controls.Add(Me.QuestionFieldTextBox3)
+        Me.Controls.Add(Me.QuestionFieldTextBox2)
+        Me.Controls.Add(Me.QuestionFieldTextBox1)
+        Me.Controls.Add(Me.QuestionFilePathLabel)
+        Me.Controls.Add(Me.QuestionListBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -258,23 +258,23 @@ Partial Class Editor
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents QuestionListBox As System.Windows.Forms.ListBox
+    Friend WithEvents QuestionFilePathLabel As System.Windows.Forms.Label
+    Friend WithEvents QuestionFieldTextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents QuestionFieldTextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents QuestionFieldTextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents QuestionFieldTextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents QuestionFieldTextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents AnswerARadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents AnswerBRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents AnswerCRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents AnswerDRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents SaveBaseFileButton As System.Windows.Forms.Button
+    Friend WithEvents OpenBaseFileButton As System.Windows.Forms.Button
+    Friend WithEvents CreateBaseFileButton As System.Windows.Forms.Button
+    Friend WithEvents QuestionCommentTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents QuestionCommentLabel As System.Windows.Forms.Label
+    Friend WithEvents OpenBaseFileDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents SaveBaseFileDialog As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents SaveTemporarilyButton As System.Windows.Forms.Button
 End Class
