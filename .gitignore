@@ -8,7 +8,9 @@
 !**/bin/Debug/Languages/
 !**/bin/Debug/Source/
 !**/bin/Debug/Source_RUS/
-!**/bin/Debug/wwtbam_set.ini
+
+# Per-machine settings; recreated with defaults on first run
+**/wwtbam_set.ini
 
 # Visual Studio user state
 .vs/
