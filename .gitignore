@@ -1,0 +1,22 @@
+# Build output
+**/obj/
+**/bin/Debug/*
+**/bin/Release/
+
+# Game data is loaded from bin/Debug at runtime, so it stays under version control
+!**/bin/Debug/Bases/
+!**/bin/Debug/Languages/
+!**/bin/Debug/Source/
+!**/bin/Debug/Source_RUS/
+!**/bin/Debug/wwtbam_set.ini
+
+# Visual Studio user state
+.vs/
+*.suo
+*.user
+*.vspscc
+*.vssscc
+
+# Signing keys
+*.pfx
+*.snk
