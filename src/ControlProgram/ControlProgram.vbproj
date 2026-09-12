@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <PublishUrl>C:\111\</PublishUrl>
