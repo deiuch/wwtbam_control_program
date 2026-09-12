@@ -194,8 +194,8 @@
         AnswerCPercentNumericUpDown.Value = percentsC
         AnswerDPercentNumericUpDown.Value = percentsD
         percentsSum = AnswerAPercentNumericUpDown.Value + AnswerBPercentNumericUpDown.Value + AnswerCPercentNumericUpDown.Value + AnswerDPercentNumericUpDown.Value
-        TotalVotesLabel.Text = GameControlForm.currentBlock1(114, 3) & voicesSum
-        TotalPercentLabel.Text = GameControlForm.currentBlock1(115, 3) & percentsSum & "%"
+        TotalVotesLabel.Text = GameControlForm.currentBlock1(114, 3) & " " & voicesSum
+        TotalPercentLabel.Text = GameControlForm.currentBlock1(115, 3) & " " & percentsSum & "%"
         If percentsSum <> 100 Then
             TotalPercentLabel.ForeColor = Color.Red
         Else
@@ -205,7 +205,7 @@
 
     Private Sub AnswerAPercentNumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles AnswerAPercentNumericUpDown.ValueChanged, AnswerBPercentNumericUpDown.ValueChanged, AnswerCPercentNumericUpDown.ValueChanged, AnswerDPercentNumericUpDown.ValueChanged
         percentsSum = AnswerAPercentNumericUpDown.Value + AnswerBPercentNumericUpDown.Value + AnswerCPercentNumericUpDown.Value + AnswerDPercentNumericUpDown.Value
-        TotalPercentLabel.Text = GameControlForm.currentBlock1(115, 3) & percentsSum & "%"
+        TotalPercentLabel.Text = GameControlForm.currentBlock1(115, 3) & " " & percentsSum & "%"
         If percentsSum <> 100 Then
             TotalPercentLabel.ForeColor = Color.Red
         Else

@@ -18,7 +18,7 @@ Partial Class AskTheAudienceForm
     Private components As System.ComponentModel.IContainer
 
     'Примечание: следующая процедура является обязательной для конструктора форм Windows Forms
-    'Для ее изменения используйте конструктор форм Windows Form.  
+    'Для ее изменения используйте конструктор форм Windows Form.
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
@@ -79,7 +79,7 @@ Partial Class AskTheAudienceForm
         Me.TotalPercentLabel.Name = "TotalPercentLabel"
         Me.TotalPercentLabel.Size = New System.Drawing.Size(68, 13)
         Me.TotalPercentLabel.TabIndex = 76
-        Me.TotalPercentLabel.Text = "All percents: "
+        Me.TotalPercentLabel.Text = "Total percentage:"
         '
         'ExecuteButton
         '
@@ -102,7 +102,7 @@ Partial Class AskTheAudienceForm
         Me.StartVotingButton.Name = "StartVotingButton"
         Me.StartVotingButton.Size = New System.Drawing.Size(100, 23)
         Me.StartVotingButton.TabIndex = 74
-        Me.StartVotingButton.Text = "Start Voiting"
+        Me.StartVotingButton.Text = "Start Voting"
         Me.StartVotingButton.UseVisualStyleBackColor = False
         '
         'TotalVotesLabel
@@ -114,7 +114,7 @@ Partial Class AskTheAudienceForm
         Me.TotalVotesLabel.Name = "TotalVotesLabel"
         Me.TotalVotesLabel.Size = New System.Drawing.Size(58, 13)
         Me.TotalVotesLabel.TabIndex = 73
-        Me.TotalVotesLabel.Text = "All voices: "
+        Me.TotalVotesLabel.Text = "Total votes:"
         '
         'AnswerDPercentSignLabel
         '

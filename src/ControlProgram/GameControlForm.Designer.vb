@@ -18,7 +18,7 @@ Partial Class GameControlForm
     Private components As System.ComponentModel.IContainer
 
     'Примечание: следующая процедура является обязательной для конструктора форм Windows Forms
-    'Для ее изменения используйте конструктор форм Windows Form.  
+    'Для ее изменения используйте конструктор форм Windows Form.
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
@@ -617,7 +617,7 @@ Partial Class GameControlForm
         Me.RevealCorrectAnswerButton.Name = "RevealCorrectAnswerButton"
         Me.RevealCorrectAnswerButton.Size = New System.Drawing.Size(100, 23)
         Me.RevealCorrectAnswerButton.TabIndex = 156
-        Me.RevealCorrectAnswerButton.Text = "What's correct"
+        Me.RevealCorrectAnswerButton.Text = "What's Correct"
         Me.RevealCorrectAnswerButton.UseVisualStyleBackColor = False
         '
         'StopMusicButton
@@ -694,14 +694,14 @@ Partial Class GameControlForm
         '
         Me.TomorrowsNamesButton.BackColor = System.Drawing.Color.White
         Me.TomorrowsNamesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.TomorrowsNamesButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.25!)
+        Me.TomorrowsNamesButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
         Me.TomorrowsNamesButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.TomorrowsNamesButton.Location = New System.Drawing.Point(590, 280)
         Me.TomorrowsNamesButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TomorrowsNamesButton.Name = "TomorrowsNamesButton"
         Me.TomorrowsNamesButton.Size = New System.Drawing.Size(100, 23)
         Me.TomorrowsNamesButton.TabIndex = 147
-        Me.TomorrowsNamesButton.Text = "Tomorrows Names"
+        Me.TomorrowsNamesButton.Text = "Tomorrow's Names"
         Me.TomorrowsNamesButton.UseVisualStyleBackColor = False
         '
         'TimesUpButton
@@ -750,14 +750,14 @@ Partial Class GameControlForm
         '
         Me.SeeYouLaterButton.BackColor = System.Drawing.Color.White
         Me.SeeYouLaterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SeeYouLaterButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.SeeYouLaterButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
         Me.SeeYouLaterButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.SeeYouLaterButton.Location = New System.Drawing.Point(590, 222)
         Me.SeeYouLaterButton.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.SeeYouLaterButton.Name = "SeeYouLaterButton"
         Me.SeeYouLaterButton.Size = New System.Drawing.Size(100, 23)
         Me.SeeYouLaterButton.TabIndex = 143
-        Me.SeeYouLaterButton.Text = "See you later (P1)"
+        Me.SeeYouLaterButton.Text = "See You Later (P1)"
         Me.SeeYouLaterButton.UseVisualStyleBackColor = False
         '
         'StartTheGameButton
@@ -897,7 +897,7 @@ Partial Class GameControlForm
         Me.TakeTheMoneyButton.Name = "TakeTheMoneyButton"
         Me.TakeTheMoneyButton.Size = New System.Drawing.Size(100, 23)
         Me.TakeTheMoneyButton.TabIndex = 133
-        Me.TakeTheMoneyButton.Text = "Take a money"
+        Me.TakeTheMoneyButton.Text = "Take the money"
         Me.TakeTheMoneyButton.UseVisualStyleBackColor = False
         '
         'ToggleLifelinesPanelButton
@@ -996,7 +996,7 @@ Partial Class GameControlForm
         Me.LightsDownButton.Name = "LightsDownButton"
         Me.LightsDownButton.Size = New System.Drawing.Size(100, 23)
         Me.LightsDownButton.TabIndex = 126
-        Me.LightsDownButton.Text = "Lx"
+        Me.LightsDownButton.Text = "LX"
         Me.LightsDownButton.UseVisualStyleBackColor = False
         '
         'ReceiveAnswerDButton
@@ -1163,7 +1163,7 @@ Partial Class GameControlForm
         Me.AskQuestionButton.Name = "AskQuestionButton"
         Me.AskQuestionButton.Size = New System.Drawing.Size(149, 23)
         Me.AskQuestionButton.TabIndex = 113
-        Me.AskQuestionButton.Text = "Ask it"
+        Me.AskQuestionButton.Text = "Ask It"
         Me.AskQuestionButton.UseVisualStyleBackColor = False
         '
         'QuestionPreviewLabel
