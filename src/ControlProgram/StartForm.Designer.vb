@@ -18,7 +18,7 @@ Partial Class StartForm
     Private components As System.ComponentModel.IContainer
 
     'Примечание: следующая процедура является обязательной для конструктора форм Windows Forms
-    'Для ее изменения используйте конструктор форм Windows Form.  
+    'Для ее изменения используйте конструктор форм Windows Form.
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
@@ -39,8 +39,6 @@ Partial Class StartForm
         Me.QuestionBaseFileLabel = New System.Windows.Forms.Label()
         Me.LanguageLabel = New System.Windows.Forms.Label()
         Me.LanguageComboBox = New System.Windows.Forms.ComboBox()
-        Me.LanguagesDirectorySearcher = New System.DirectoryServices.DirectorySearcher()
-        Me.LanguagesDirectoryEntry = New System.DirectoryServices.DirectoryEntry()
         CType(Me.AudienceScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AudienceScreenXNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerScreenYNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -247,18 +245,6 @@ Partial Class StartForm
         Me.LanguageComboBox.TabIndex = 225
         Me.LanguageComboBox.Text = "select language"
         '
-        'LanguagesDirectorySearcher
-        '
-        Me.LanguagesDirectorySearcher.ClientTimeout = System.TimeSpan.Parse("-00:00:01")
-        Me.LanguagesDirectorySearcher.SearchRoot = Me.LanguagesDirectoryEntry
-        Me.LanguagesDirectorySearcher.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01")
-        Me.LanguagesDirectorySearcher.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01")
-        Me.LanguagesDirectorySearcher.Sort.PropertyName = "Name"
-        '
-        'LanguagesDirectoryEntry
-        '
-        Me.LanguagesDirectoryEntry.Path = "\Languages"
-        '
         'StartForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -314,6 +300,4 @@ Partial Class StartForm
     Friend WithEvents QuestionBaseFileLabel As System.Windows.Forms.Label
     Friend WithEvents LanguageLabel As System.Windows.Forms.Label
     Friend WithEvents LanguageComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents LanguagesDirectorySearcher As System.DirectoryServices.DirectorySearcher
-    Friend WithEvents LanguagesDirectoryEntry As System.DirectoryServices.DirectoryEntry
 End Class
