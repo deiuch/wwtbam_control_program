@@ -375,7 +375,7 @@
             Case 0
                 BackgroundMusic.Stop()
                 winampOn = 0
-                SoundCues.Play("\MUSIC\Let's See Q1.wav")
+                SoundCues.Play("source\MUSIC\Let's See Q1.wav")
             Case 5, 10, 15
                 BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Q10 - Lx.wav")
                 winampOn = 1
