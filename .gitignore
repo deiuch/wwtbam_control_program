@@ -3,7 +3,7 @@
 **/bin/
 /dist/
 
-/src/*/Assets.local/
+/src/Assets.local/
 
 # Per-machine settings; recreated with defaults on first run
 **/wwtbam_set.ini

@@ -203,13 +203,6 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Target Name="CopyGameAssets" AfterTargets="Build">
-    <ItemGroup>
-      <LocalAsset Include="$(MSBuildProjectDirectory)\Assets.local\**\*" />
-      <GameAsset Include="$(MSBuildProjectDirectory)\Assets\**\*" Exclude="@(LocalAsset-&gt;'$(MSBuildProjectDirectory)\Assets\%(RecursiveDir)%(Filename)%(Extension)')" />
-    </ItemGroup>
-    <Copy SourceFiles="@(GameAsset)" DestinationFiles="@(GameAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(LocalAsset)" DestinationFiles="@(LocalAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
-  </Target>
+  <Import Project="..\Assets.targets" />
   <Import Project="..\Package.targets" />
 </Project>

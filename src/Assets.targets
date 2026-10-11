@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="CopyGameAssets" AfterTargets="Build">
+    <ItemGroup>
+      <LocalAsset Include="$(MSBuildThisFileDirectory)Assets.local\**\*" />
+      <GameAsset Include="$(MSBuildThisFileDirectory)Assets\**\*" Exclude="@(LocalAsset-&gt;'$(MSBuildThisFileDirectory)Assets\%(RecursiveDir)%(Filename)%(Extension)')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(GameAsset)" DestinationFiles="@(GameAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LocalAsset)" DestinationFiles="@(LocalAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+</Project>
