@@ -197,11 +197,12 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <!-- The code resolves game data via CurDir(), so it must sit beside the executable. -->
   <Target Name="CopyGameAssets" AfterTargets="Build">
     <ItemGroup>
-      <GameAsset Include="$(MSBuildProjectDirectory)\Assets\**\*" />
+      <LocalAsset Include="$(MSBuildProjectDirectory)\Assets.local\**\*" />
+      <GameAsset Include="$(MSBuildProjectDirectory)\Assets\**\*" Exclude="@(LocalAsset-&gt;'$(MSBuildProjectDirectory)\Assets\%(RecursiveDir)%(Filename)%(Extension)')" />
     </ItemGroup>
     <Copy SourceFiles="@(GameAsset)" DestinationFiles="@(GameAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LocalAsset)" DestinationFiles="@(LocalAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
   </Target>
 </Project>

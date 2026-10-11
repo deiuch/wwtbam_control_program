@@ -2,6 +2,8 @@
 **/obj/
 **/bin/
 
+/src/*/Assets.local/
+
 # Per-machine settings; recreated with defaults on first run
 **/wwtbam_set.ini
 
