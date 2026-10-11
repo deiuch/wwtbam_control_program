@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReleasePackageDir>$(MSBuildThisFileDirectory)..\dist\WWTBAM Control Program\</ReleasePackageDir>
+    <FastestFingerFirstDir>$(MSBuildThisFileDirectory)FastestFingerFirst\</FastestFingerFirstDir>
+    <FastestFingerFirstOutDir>$(FastestFingerFirstDir)bin\$(Configuration)\</FastestFingerFirstOutDir>
+  </PropertyGroup>
+  <Target Name="PackageRelease" AfterTargets="CopyGameAssets" Condition="'$(Configuration)' == 'Release'">
+    <Error Condition="!Exists('$(FastestFingerFirstOutDir)Fastest Finger First.exe')" Text="The release package needs Fastest Finger First built in $(Configuration); build the whole solution." />
+    <GetAssemblyIdentity AssemblyFiles="$(OutDir)$(TargetFileName)">
+      <Output TaskParameter="Assemblies" ItemName="ReleaseAssembly" />
+    </GetAssemblyIdentity>
+    <PropertyGroup>
+      <ReleaseVersion>%(ReleaseAssembly.Version)</ReleaseVersion>
+      <ReleasePackageZip>$(MSBuildThisFileDirectory)..\dist\WWTBAM Control Program v.$([System.Version]::Parse($(ReleaseVersion)).ToString(3)).zip</ReleasePackageZip>
+    </PropertyGroup>
+    <ItemGroup>
+      <ReleaseProgram Include="$(OutDir)$(TargetFileName);$(FastestFingerFirstOutDir)Fastest Finger First.exe" />
+      <FastestFingerFirstLocalAsset Include="$(FastestFingerFirstDir)Assets.local\**\*" Exclude="@(GameAsset-&gt;'$(FastestFingerFirstDir)Assets.local\%(RecursiveDir)%(Filename)%(Extension)');@(LocalAsset-&gt;'$(FastestFingerFirstDir)Assets.local\%(RecursiveDir)%(Filename)%(Extension)')" />
+      <FastestFingerFirstAsset Include="$(FastestFingerFirstDir)Assets\**\*" Exclude="@(GameAsset-&gt;'$(FastestFingerFirstDir)Assets\%(RecursiveDir)%(Filename)%(Extension)');@(LocalAsset-&gt;'$(FastestFingerFirstDir)Assets\%(RecursiveDir)%(Filename)%(Extension)');@(FastestFingerFirstLocalAsset-&gt;'$(FastestFingerFirstDir)Assets\%(RecursiveDir)%(Filename)%(Extension)')" />
+      <AttachmentFile Include="$(MSBuildThisFileDirectory)..\Important attachments\**\*" />
+    </ItemGroup>
+    <RemoveDir Directories="$(ReleasePackageDir)" />
+    <Copy SourceFiles="@(ReleaseProgram)" DestinationFolder="$(ReleasePackageDir)" UseHardlinksIfPossible="true" />
+    <Copy SourceFiles="@(GameAsset)" DestinationFiles="@(GameAsset-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
+    <Copy SourceFiles="@(LocalAsset)" DestinationFiles="@(LocalAsset-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
+    <Copy SourceFiles="@(FastestFingerFirstAsset)" DestinationFiles="@(FastestFingerFirstAsset-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
+    <Copy SourceFiles="@(FastestFingerFirstLocalAsset)" DestinationFiles="@(FastestFingerFirstLocalAsset-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
+    <Copy SourceFiles="@(AttachmentFile)" DestinationFiles="@(AttachmentFile-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
+    <Exec Command="powershell -NoProfile -NonInteractive -Command &quot;Add-Type -AssemblyName System.Drawing; $pixel = New-Object Drawing.Bitmap 1, 1; $pixel.SetPixel(0, 0, [Drawing.Color]::FromArgb(42, 42, 42)); $pixel.Save('$(ReleasePackageDir)Fill.png', [Drawing.Imaging.ImageFormat]::Png)&quot;" />
+    <ZipDirectory SourceDirectory="$(ReleasePackageDir)" DestinationFile="$(ReleasePackageZip)" Overwrite="true" />
+    <Message Importance="high" Text="Release package: $([System.IO.Path]::GetFullPath('$(ReleasePackageZip)'))" />
+  </Target>
+</Project>

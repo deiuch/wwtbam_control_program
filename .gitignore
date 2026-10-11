@@ -1,6 +1,7 @@
 # Build output
 **/obj/
 **/bin/
+/dist/
 
 /src/*/Assets.local/
 

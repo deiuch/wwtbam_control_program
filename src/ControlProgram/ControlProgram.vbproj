@@ -205,4 +205,5 @@
     <Copy SourceFiles="@(GameAsset)" DestinationFiles="@(GameAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
     <Copy SourceFiles="@(LocalAsset)" DestinationFiles="@(LocalAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
   </Target>
+  <Import Project="..\Package.targets" />
 </Project>
