@@ -10,75 +10,53 @@
     <RootNamespace>ControlProgram</RootNamespace>
     <AssemblyName>WWTBAM Control Program</AssemblyName>
     <AppDesignerFolder>MyProject</AppDesignerFolder>
-    <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
+    <ApplicationManifest>MyProject\app.manifest</ApplicationManifest>
+    <DefineTrace>true</DefineTrace>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionExplicit>On</OptionExplicit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>ICON.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>MyProject\app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
-    <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
-    <Import Include="System.Data" />
     <Import Include="System.Drawing" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
-    <Import Include="System.Xml.Linq" />
-    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutForm.Designer.vb">
       <DependentUpon>AboutForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AboutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskTheAudienceForm.Designer.vb">
+      <DependentUpon>AskTheAudienceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AskTheAudienceForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AudienceScreenForm.Designer.vb">
@@ -94,40 +72,22 @@
     <Compile Include="FastestFingerEditorForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FiftyFiftyForm.Designer.vb">
-      <DependentUpon>FiftyFiftyForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FiftyFiftyForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AskTheAudienceForm.Designer.vb">
-      <DependentUpon>AskTheAudienceForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AskTheAudienceForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuestionEditorForm.Designer.vb">
-      <DependentUpon>QuestionEditorForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="QuestionEditorForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FastestFingerFirstForm.Designer.vb">
       <DependentUpon>FastestFingerFirstForm.vb</DependentUpon>
     </Compile>
     <Compile Include="FastestFingerFirstForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhoneAFriendForm.Designer.vb">
-      <DependentUpon>PhoneAFriendForm.vb</DependentUpon>
+    <Compile Include="FiftyFiftyForm.Designer.vb">
+      <DependentUpon>FiftyFiftyForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="PhoneAFriendForm.vb">
+    <Compile Include="FiftyFiftyForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm.Designer.vb">
-      <DependentUpon>StartForm.vb</DependentUpon>
+    <Compile Include="GameControlForm.Designer.vb">
+      <DependentUpon>GameControlForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="StartForm.vb">
+    <Compile Include="GameControlForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HostScreenForm.Designer.vb">
@@ -137,19 +97,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IONetwork.vb" />
-    <Compile Include="GameControlForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameControlForm.Designer.vb">
-      <DependentUpon>GameControlForm.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MyProject\AssemblyInfo.vb" />
     <Compile Include="MyProject\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="MyProject\AssemblyInfo.vb" />
     <Compile Include="MyProject\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,17 +113,38 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PhoneAFriendForm.Designer.vb">
+      <DependentUpon>PhoneAFriendForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneAFriendForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PlayerScreenForm.Designer.vb">
       <DependentUpon>PlayerScreenForm.vb</DependentUpon>
     </Compile>
     <Compile Include="PlayerScreenForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="QuestionEditorForm.Designer.vb">
+      <DependentUpon>QuestionEditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionEditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Server.vb" />
+    <Compile Include="StartForm.Designer.vb">
+      <DependentUpon>StartForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskTheAudienceForm.resx">
+      <DependentUpon>AskTheAudienceForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AudienceScreenForm.resx">
       <DependentUpon>AudienceScreenForm.vb</DependentUpon>
@@ -178,29 +152,17 @@
     <EmbeddedResource Include="FastestFingerEditorForm.resx">
       <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FiftyFiftyForm.resx">
-      <DependentUpon>FiftyFiftyForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AskTheAudienceForm.resx">
-      <DependentUpon>AskTheAudienceForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuestionEditorForm.resx">
-      <DependentUpon>QuestionEditorForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FastestFingerFirstForm.resx">
       <DependentUpon>FastestFingerFirstForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhoneAFriendForm.resx">
-      <DependentUpon>PhoneAFriendForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StartForm.resx">
-      <DependentUpon>StartForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HostScreenForm.resx">
-      <DependentUpon>HostScreenForm.vb</DependentUpon>
+    <EmbeddedResource Include="FiftyFiftyForm.resx">
+      <DependentUpon>FiftyFiftyForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameControlForm.resx">
       <DependentUpon>GameControlForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostScreenForm.resx">
+      <DependentUpon>HostScreenForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyProject\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -208,11 +170,21 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhoneAFriendForm.resx">
+      <DependentUpon>PhoneAFriendForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayerScreenForm.resx">
       <DependentUpon>PlayerScreenForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuestionEditorForm.resx">
+      <DependentUpon>QuestionEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="MyProject\app.manifest" />
     <None Include="MyProject\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -223,7 +195,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- The code resolves game data via CurDir(), so it must sit beside the executable. -->
