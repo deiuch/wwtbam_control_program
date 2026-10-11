@@ -47,6 +47,9 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Shared\Audio.vb">
+      <Link>Audio.vb</Link>
+    </Compile>
     <Compile Include="..\Shared\TextFile.vb">
       <Link>TextFile.vb</Link>
     </Compile>
@@ -68,7 +71,6 @@
     <Compile Include="AudienceScreenForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Audio.vb" />
     <Compile Include="Client.vb" />
     <Compile Include="FastestFingerEditorForm.Designer.vb">
       <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>

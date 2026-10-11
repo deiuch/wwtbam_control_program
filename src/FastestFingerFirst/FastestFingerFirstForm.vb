@@ -73,6 +73,7 @@ Public Class FastestFingerFirstForm
         End If
         OpenContestantsListDialog.FileName = "Bases\" & currentBlock1(2, 3) & "contestants.con"
         sourcePath = CurDir() & "\Source"
+        AudioOutput.Open(sourcePath & "\MUSIC") 'Загружается заранее, чтобы первый трек запустился без задержки
         langSource = CurDir() & currentBlock1(3, 3)
         OpenQuestionBaseDialog.InitialDirectory = CurDir() & "Bases\"
         OpenQuestionBaseDialog.FileName = "Bases\" & currentBlock1(2, 3) & "qualify.fff"
@@ -383,7 +384,7 @@ Public Class FastestFingerFirstForm
             ContestantNameTextBox.Visible = False
             ContestantTownTextBox.Visible = False
             StartContestantButton.Visible = False
-            My.Computer.Audio.Play("source\MUSIC\Standby for Q.wav")
+            SoundCues.Play("source\MUSIC\Standby for Q.wav")
             QuestionFieldLabel16.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
         Else
             If contNumber <> 1 Then
@@ -430,15 +431,15 @@ Public Class FastestFingerFirstForm
             Case 0
                 If EnterNamesLaterCheckBox.Checked = False Then
                     stepOK = 1
-                    My.Computer.Audio.Play("source\MUSIC\Standby for Q.wav")
+                    SoundCues.Play("source\MUSIC\Standby for Q.wav")
                     QuestionFieldLabel16.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
                 End If
             Case 1
                 stepOK = 2
-                My.Computer.Audio.Play("source\MUSIC\Three Beeps.wav")
+                SoundCues.Play("source\MUSIC\Three Beeps.wav")
             Case 2
                 stepOK = 3
-                My.Computer.Audio.Play("source\MUSIC\Fastest finger first.wav")
+                SoundCues.Play("source\MUSIC\Fastest finger first.wav")
                 contTime = 0
                 TimeLimitTimer.Start()
                 startTimer = System.DateTime.Now.Ticks
@@ -461,7 +462,7 @@ Public Class FastestFingerFirstForm
                         TimeLimitTimer.Stop()
                         stopTimer = System.DateTime.Now.Ticks
                         contTime = Math.Round((stopTimer - startTimer) / 100000) / 100
-                        My.Computer.Audio.Play("source\MUSIC\Fastest finger first end.wav")
+                        SoundCues.Play("source\MUSIC\Fastest finger first end.wav")
                         ClockTimer.Stop()
                         clockFrame = 62
                         ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
