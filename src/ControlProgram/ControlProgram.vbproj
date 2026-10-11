@@ -65,6 +65,7 @@
     <Compile Include="AudienceScreenForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Audio.vb" />
     <Compile Include="Client.vb" />
     <Compile Include="FastestFingerEditorForm.Designer.vb">
       <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>

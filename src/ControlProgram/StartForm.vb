@@ -10,7 +10,8 @@ Public Class StartForm
     Private Sub FormStart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MaximizeBox = False
         GameControlForm.OpenQuestionBaseDialog.InitialDirectory = "\Bases"
-        My.Computer.Audio.Play("source\MUSIC\Roll 1.wav")
+        AudioOutput.Open(CurDir() & "\Source\MUSIC")
+        SoundCues.Play("source\MUSIC\Roll 1.wav")
         HostScreenForm.Hide()
         PlayerScreenForm.Hide()
         AudienceScreenForm.Hide()
@@ -161,7 +162,7 @@ Public Class StartForm
             For x = 1 To ini.GetUpperBound(0)
                 GameControlForm.ini(x) = ini(x)
             Next
-            My.Computer.Audio.Play("source\MUSIC\Roll 2.wav")
+            SoundCues.Play("source\MUSIC\Roll 2.wav")
             GameControlForm.HostVisibleCheckBox.Checked = HostScreenCheckBox.Checked
             GameControlForm.PlayerVisibleCheckBox.Checked = PlayerScreenCheckBox.Checked
             GameControlForm.AudienceVisibleCheckBox.Checked = AudienceScreenCheckBox.Checked

@@ -69,7 +69,7 @@
             AnswerDLetterLabel.Text = ""
             GameControlForm.ReceiveAnswerDButton.BackColor = Color.White
         End If
-        My.Computer.Audio.Play("source\MUSIC\50-50.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\50-50.wav")
         GameControlForm.FiftyFiftyAvailableCheckBox.Checked = False
         GameControlForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & GameControlForm.activ50 & GameControlForm.activPAF & GameControlForm.activATA & ".png"
         HostScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & GameControlForm.activ50 & GameControlForm.activPAF & GameControlForm.activATA & ".png"
