@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    runs-on: windows-latest
+    outputs:
+      tag: ${{ steps.check.outputs.tag }}
+      changed: ${{ steps.check.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout: |
+            .github/scripts/check-versions.ps1
+            src/ControlProgram/MyProject/AssemblyInfo.vb
+            src/FastestFingerFirst/MyProject/AssemblyInfo.vb
+          sparse-checkout-cone-mode: false
+
+      - name: Check versions
+        id: check
+        shell: pwsh
+        run: >
+          .github/scripts/check-versions.ps1
+          -Base '${{ github.event.pull_request.base.sha || github.event.before }}'
+          -Tag '${{ github.ref_type == 'tag' && github.ref_name || '' }}'
+
+  package:
+    needs: versions
+    if: >-
+      github.ref_type == 'tag' || github.event_name == 'workflow_dispatch' ||
+      (github.ref_name == github.event.repository.default_branch && github.event_name == 'push' && needs.versions.outputs.changed == 'true')
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    env:
+      RELEASE_TAG: ${{ github.ref_type == 'tag' && github.ref_name || needs.versions.outputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tag the new version
+        if: github.ref_name == github.event.repository.default_branch && github.event_name == 'push'
+        shell: pwsh
+        run: |
+          $commit = git rev-parse HEAD
+          $tagged = git ls-remote --tags origin "refs/tags/$env:RELEASE_TAG" "refs/tags/$env:RELEASE_TAG^{}" | ForEach-Object { ($_ -split '\s+')[0] } | Select-Object -Last 1
+          if (-not $tagged) {
+            git tag $env:RELEASE_TAG
+            git push origin "refs/tags/$env:RELEASE_TAG"
+            Write-Host "Tagged $commit as $env:RELEASE_TAG"
+          } elseif ($tagged -ne $commit) {
+            Write-Host "::error::Tag $env:RELEASE_TAG already exists on $tagged, not on $commit; bump the version again"
+            exit 1
+          }
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - name: Build and package
+        run: msbuild src\WWTBAM.sln -p:Configuration=Release -m -nologo -verbosity:minimal
+
+      - name: Publish the release
+        if: github.event_name == 'push'
+        shell: pwsh
+        run: |
+          $zip = Get-Item dist\*.zip
+          gh release view $env:RELEASE_TAG *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $env:RELEASE_TAG $zip.FullName --clobber
+          } else {
+            gh release create $env:RELEASE_TAG $zip.FullName --title $zip.BaseName --generate-notes
+          }
+
+      - name: Keep the archive
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-package
+          path: dist/*.zip
+          retention-days: 7
