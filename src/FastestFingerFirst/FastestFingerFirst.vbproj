@@ -1,114 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29860B36-71EF-46D3-8FE6-012CB44EA621}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>FastestFingerFirst.My.MyApplication</StartupObject>
-    <RootNamespace>FastestFingerFirst</RootNamespace>
     <AssemblyName>Fastest Finger First</AssemblyName>
-    <AppDesignerFolder>MyProject</AppDesignerFolder>
-    <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionStrict>Off</OptionStrict>
-    <OptionInfer>On</OptionInfer>
-    <ApplicationIcon>ICON.ico</ApplicationIcon>
-    <ApplicationManifest>MyProject\app.manifest</ApplicationManifest>
-    <DefineTrace>true</DefineTrace>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-    <DefineDebug>true</DefineDebug>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <RootNamespace>FastestFingerFirst</RootNamespace>
+    <StartupObject>FastestFingerFirst.My.MyApplication</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Compile Update="*Form.vb" SubType="Form" />
+    <Compile Update="MyProject\Application.Designer.vb" AutoGen="True" DependentUpon="Application.myapp" DesignTime="True" />
+    <Compile Update="MyProject\Resources.Designer.vb" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
+    <Compile Update="MyProject\Settings.Designer.vb" AutoGen="True" DependentUpon="Settings.settings" DesignTimeSharedInput="True" />
+    <EmbeddedResource Update="MyProject\Resources.resx" Generator="VbMyResourcesResXFileCodeGenerator" LastGenOutput="Resources.Designer.vb" CustomToolNamespace="My.Resources" />
+    <None Update="MyProject\Application.myapp" Generator="MyApplicationCodeGenerator" LastGenOutput="Application.Designer.vb" />
+    <None Update="MyProject\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.vb" CustomToolNamespace="My" />
   </ItemGroup>
-  <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Drawing" />
-    <Import Include="System.Linq" />
-    <Import Include="System.Windows.Forms" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\Shared\Audio.vb">
-      <Link>Audio.vb</Link>
-    </Compile>
-    <Compile Include="..\Shared\TextFile.vb">
-      <Link>TextFile.vb</Link>
-    </Compile>
-    <Compile Include="FastestFingerEditorForm.Designer.vb">
-      <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FastestFingerEditorForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FastestFingerFirstForm.Designer.vb">
-      <DependentUpon>FastestFingerFirstForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FastestFingerFirstForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MyProject\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="MyProject\AssemblyInfo.vb" />
-    <Compile Include="MyProject\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MyProject\Settings.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="FastestFingerEditorForm.resx">
-      <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FastestFingerFirstForm.resx">
-      <DependentUpon>FastestFingerFirstForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyProject\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="MyProject\app.manifest" />
-    <None Include="MyProject\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="MyProject\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <CustomToolNamespace>My</CustomToolNamespace>
-      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="..\Assets.targets" />
 </Project>

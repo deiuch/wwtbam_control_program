@@ -1,0 +1,41 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Prefer32Bit>true</Prefer32Bit>
+    <MyType>WindowsForms</MyType>
+    <AppDesignerFolder>MyProject</AppDesignerFolder>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
+    <ApplicationManifest>MyProject\app.manifest</ApplicationManifest>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Shared\*.vb" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <LocalAsset Include="$(MSBuildThisFileDirectory)Assets.local\**\*" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\**\*" Exclude="@(LocalAsset-&gt;'$(MSBuildThisFileDirectory)Assets\%(RecursiveDir)%(Filename)%(Extension)')" Link="%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" GameAsset="true" />
+    <Content Include="@(LocalAsset)" Link="%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" GameAsset="true" />
+  </ItemGroup>
+</Project>
