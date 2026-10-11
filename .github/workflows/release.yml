@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - name: Check that the tag matches the program version
+        if: github.ref_type == 'tag'
+        shell: pwsh
+        run: |
+          $info = Get-Content src/ControlProgram/MyProject/AssemblyInfo.vb -Raw
+          $version = [version][regex]::Match($info, 'AssemblyVersion\("([^"]+)"\)').Groups[1].Value
+          $expected = "v$($version.ToString(3))"
+          if ('${{ github.ref_name }}' -ne $expected) {
+            Write-Error "Tag ${{ github.ref_name }} does not match AssemblyVersion $version in AssemblyInfo.vb (expected tag $expected)"
+            exit 1
+          }
+
+      - name: Build and package
+        run: msbuild src\WWTBAM.sln -p:Configuration=Release -m -nologo -verbosity:minimal
+
+      - name: Publish the release
+        if: github.ref_type == 'tag'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $zip = Get-Item dist\*.zip
+          gh release view '${{ github.ref_name }}' *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload '${{ github.ref_name }}' $zip.FullName --clobber
+          } else {
+            gh release create '${{ github.ref_name }}' $zip.FullName --title $zip.BaseName --generate-notes
+          }
+
+      - name: Keep the archive
+        if: github.ref_type != 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-package
+          path: dist/*.zip
+          retention-days: 7
