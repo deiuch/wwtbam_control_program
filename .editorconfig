@@ -1,0 +1,17 @@
+root = true
+
+[*]
+insert_final_newline = true
+charset = utf-8
+
+[*.{vb,resx,vbproj,sln,settings,myapp,manifest,config}]
+charset = utf-8-bom
+
+[*.resx]
+insert_final_newline = false
+
+[src/*/Assets/**.{questions,con,fff,lng,txt}]
+charset = utf-8-bom
+
+[docs/*.txt]
+charset = utf-8-bom

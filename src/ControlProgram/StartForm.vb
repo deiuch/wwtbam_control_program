@@ -17,10 +17,10 @@ Public Class StartForm
         AudienceScreenForm.Hide()
         'ini-файл
         If My.Computer.FileSystem.FileExists(CurDir() & "\wwtbam_set.ini") = False Then
-            FileClose(1)
-            FileOpen(1, CurDir() & "\wwtbam_set.ini", OpenMode.Output)
-            Print(1, "|1|1|1|0|0|0|0|0|0||English|127.0.0.1|8000|||")
-            FileClose(1)
+            TextFile.Close()
+            TextFile.Open(CurDir() & "\wwtbam_set.ini")
+            TextFile.Write("|1|1|1|0|0|0|0|0|0||English|127.0.0.1|8000|||" & Chr(13) & Chr(10))
+            TextFile.Close()
         End If
         Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(CurDir() & "\wwtbam_set.ini", System.Text.Encoding.Default)
             MyReader.TextFieldType = FileIO.FieldType.Delimited
@@ -192,10 +192,10 @@ Public Class StartForm
         ini(9) = AudienceScreenYNumericUpDown.Value
         ini(10) = QuestionBaseFileTextBox.Text
         ini(11) = LanguageComboBox.SelectedItem
-        FileClose(1)
-        FileOpen(1, CurDir() & "\wwtbam_set.ini", OpenMode.Output)
-        Print(1, "|" & ini(1) & "|" & ini(2) & "|" & ini(3) & "|" & ini(4) & "|" & ini(5) & "|" & ini(6) & "|" & ini(7) & "|" & ini(8) & "|" & ini(9) & "|" & ini(10) & "|" & ini(11) & "|" & ini(12) & "|" & ini(13) & "|" & ini(14) & "|" & ini(15) & "|")
-        FileClose(1)
+        TextFile.Close()
+        TextFile.Open(CurDir() & "\wwtbam_set.ini")
+        TextFile.Write("|" & ini(1) & "|" & ini(2) & "|" & ini(3) & "|" & ini(4) & "|" & ini(5) & "|" & ini(6) & "|" & ini(7) & "|" & ini(8) & "|" & ini(9) & "|" & ini(10) & "|" & ini(11) & "|" & ini(12) & "|" & ini(13) & "|" & ini(14) & "|" & ini(15) & "|" & Chr(13) & Chr(10))
+        TextFile.Close()
         If Me.Cursor <> Cursors.WaitCursor Then
             End
         End If

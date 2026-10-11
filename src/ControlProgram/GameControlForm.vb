@@ -2792,10 +2792,10 @@
         ini(10) = FileNameQ
         ini(12) = ServerIpTextBox.Text
         ini(13) = ServerPortTextBox.Text
-        FileClose(1)
-        FileOpen(1, CurDir() & "\wwtbam_set.ini", OpenMode.Output)
-        Print(1, "|" & ini(1) & "|" & ini(2) & "|" & ini(3) & "|" & ini(4) & "|" & ini(5) & "|" & ini(6) & "|" & ini(7) & "|" & ini(8) & "|" & ini(9) & "|" & ini(10) & "|" & ini(11) & "|" & ini(12) & "|" & ini(13) & "|" & ini(14) & "|" & ini(15) & "|")
-        FileClose(1)
+        TextFile.Close()
+        TextFile.Open(CurDir() & "\wwtbam_set.ini")
+        TextFile.Write("|" & ini(1) & "|" & ini(2) & "|" & ini(3) & "|" & ini(4) & "|" & ini(5) & "|" & ini(6) & "|" & ini(7) & "|" & ini(8) & "|" & ini(9) & "|" & ini(10) & "|" & ini(11) & "|" & ini(12) & "|" & ini(13) & "|" & ini(14) & "|" & ini(15) & "|" & Chr(13) & Chr(10))
+        TextFile.Close()
         HostScreenForm.Close()
         PlayerScreenForm.Close()
         AudienceScreenForm.Close()

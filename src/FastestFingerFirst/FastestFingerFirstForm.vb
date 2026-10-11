@@ -32,10 +32,10 @@ Public Class FastestFingerFirstForm
         LanguageComboBox.Items.Clear()
         'ini-файл
         If My.Computer.FileSystem.FileExists(CurDir() & "\wwtbam_set.ini") = False Then
-            FileClose(1)
-            FileOpen(1, CurDir() & "\wwtbam_set.ini", OpenMode.Output)
-            Print(1, "|1|1|1|0|0|0|0|0|0||English|127.0.0.1|8000|||")
-            FileClose(1)
+            TextFile.Close()
+            TextFile.Open(CurDir() & "\wwtbam_set.ini")
+            TextFile.Write("|1|1|1|0|0|0|0|0|0||English|127.0.0.1|8000|||" & Chr(13) & Chr(10))
+            TextFile.Close()
         End If
         Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(CurDir() & "\wwtbam_set.ini", System.Text.Encoding.Default)
             MyReader.TextFieldType = FileIO.FieldType.Delimited
@@ -401,8 +401,8 @@ Public Class FastestFingerFirstForm
                     contNumber = contQuant
                     stepOK = 4
                     Dim tmpText As String
-                    FileClose(1)
-                    FileOpen(1, SaveContestantsListDialog.FileName, OpenMode.Output)
+                    TextFile.Close()
+                    TextFile.Open(SaveContestantsListDialog.FileName)
                     For i1 = 1 To currentBlock3.GetUpperBound(0)
                         If currentBlock3(i1, 1) <> Nothing Then
                             tmpText = "|" & i1 & "|"
@@ -411,10 +411,10 @@ Public Class FastestFingerFirstForm
                                 If currentBlock3(i1, i2) <> "" Then currentBlock3(i1, i2) = currentBlock3(i1, i2).Replace("|", "")
                                 tmpText = tmpText & currentBlock3(i1, i2) & "|"
                             Next
-                            Print(1, tmpText & Chr(13) & Chr(10))
+                            TextFile.Write(tmpText & Chr(13) & Chr(10))
                         End If
                     Next
-                    FileClose(1)
+                    TextFile.Close()
                     MsgBox(currentBlock1(150, 6) & "! " & currentBlock1(150, 7) & ": " & SaveContestantsListDialog.FileName, MsgBoxStyle.Information, currentBlock1(150, 6))
                     Me.Close()
                 End If
@@ -815,8 +815,8 @@ Public Class FastestFingerFirstForm
         SaveContestantsListDialog.CheckPathExists = True
         If SaveContestantsListDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             Dim tmpText As String
-            FileClose(1)
-            FileOpen(1, SaveContestantsListDialog.FileName, OpenMode.Output)
+            TextFile.Close()
+            TextFile.Open(SaveContestantsListDialog.FileName)
             For i1 = 1 To currentBlock3.GetUpperBound(0)
                 If currentBlock3(i1, 1) <> Nothing Then
                     tmpText = "|" & i1 & "|"
@@ -825,10 +825,10 @@ Public Class FastestFingerFirstForm
                         If currentBlock3(i1, i2) <> "" Then currentBlock3(i1, i2) = currentBlock3(i1, i2).Replace("|", "")
                         tmpText = tmpText & currentBlock3(i1, i2) & "|"
                     Next
-                    Print(1, tmpText & Chr(13) & Chr(10))
+                    TextFile.Write(tmpText & Chr(13) & Chr(10))
                 End If
             Next
-            FileClose(1)
+            TextFile.Close()
             MsgBox(currentBlock1(150, 6) & "! " & currentBlock1(150, 7) & ": " & SaveContestantsListDialog.FileName, MsgBoxStyle.Information, currentBlock1(150, 6))
             Me.Close()
         End If

@@ -2014,49 +2014,49 @@
                 End If
                 ContestantFieldTextBox1.Focus()
                 QualifyingWinnerButton.Focus()
-                FileClose(1)
-                FileOpen(1, OpenContestantsListDialog.FileName, OpenMode.Output)
+                TextFile.Close()
+                TextFile.Open(OpenContestantsListDialog.FileName)
                 Dim n As Integer = 1
                 If ContestantFieldTextBox1.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox1.Text & "|" & ContestantFieldTextBox11.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox1.Text & "|" & ContestantFieldTextBox11.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox2.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox2.Text & "|" & ContestantFieldTextBox12.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox2.Text & "|" & ContestantFieldTextBox12.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox3.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox3.Text & "|" & ContestantFieldTextBox13.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox3.Text & "|" & ContestantFieldTextBox13.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox4.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox4.Text & "|" & ContestantFieldTextBox14.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox4.Text & "|" & ContestantFieldTextBox14.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox5.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox5.Text & "|" & ContestantFieldTextBox15.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox5.Text & "|" & ContestantFieldTextBox15.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox6.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox6.Text & "|" & ContestantFieldTextBox16.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox6.Text & "|" & ContestantFieldTextBox16.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox7.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox7.Text & "|" & ContestantFieldTextBox17.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox7.Text & "|" & ContestantFieldTextBox17.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox8.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox8.Text & "|" & ContestantFieldTextBox18.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox8.Text & "|" & ContestantFieldTextBox18.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox9.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox9.Text & "|" & ContestantFieldTextBox19.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox9.Text & "|" & ContestantFieldTextBox19.Text & "|0|" & Chr(13) & Chr(10))
                     n = n + 1
                 End If
                 If ContestantFieldTextBox10.Text <> Nothing Then
-                    Print(1, "|" & n & "|" & ContestantFieldTextBox10.Text & "|" & ContestantFieldTextBox20.Text & "|0|" & Chr(13) & Chr(10))
+                    TextFile.Write("|" & n & "|" & ContestantFieldTextBox10.Text & "|" & ContestantFieldTextBox20.Text & "|0|" & Chr(13) & Chr(10))
                 End If
-                FileClose(1)
+                TextFile.Close()
             End If
             CorrectAnswersButton.BackColor = Color.White
             SoundCues.Play("source\MUSIC\Qualifying Winner.wav")

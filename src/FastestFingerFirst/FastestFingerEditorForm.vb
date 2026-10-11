@@ -189,8 +189,8 @@ Public Class FastestFingerEditorForm
                 SaveTemporarilyButton.PerformClick()
             End If
             SaveBaseFileDialog.FileName = OpenBaseFileDialog.FileName
-            FileClose(1)
-            FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
+            TextFile.Close()
+            TextFile.Open(SaveBaseFileDialog.FileName)
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 tmpText = ""
                 For i2 = 1 To FastestFingerFirstForm.maxCow
@@ -203,9 +203,9 @@ Public Class FastestFingerEditorForm
                     tmpText = tmpText & currentBlock2(i1, i2) & "|"
                     If currentBlock2(i1, i2) <> "" Then currentBlock2(i1, i2) = currentBlock2(i1, i2).Replace("¶", Chr(13) & Chr(10)) 'Замена переноса строки
                 Next
-        Print(1, tmpText & Chr(13) & Chr(10))
+        TextFile.Write(tmpText & Chr(13) & Chr(10))
             Next
-        FileClose(1)
+        TextFile.Close()
         Else
         My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Exclamation)
         End If
@@ -314,17 +314,17 @@ Public Class FastestFingerEditorForm
             Try
                 FileCopy(CurDir() & "\Bases\" & FastestFingerFirstForm.currentBlock1(2, 3) & "Qualify.fff", SaveBaseFileDialog.FileName)
             Catch
-                FileClose(1)
-                FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
-                Print(1, "|1|Fatest Finger 1 Question.|Answer A1|Answer B1|Answer C1|Answer D1|1|2|3|4|Comment for question 1.|" & Chr(13) & Chr(10) & _
-                      "|2|Fatest Finger 2 Question.|Answer A2|Answer B2|Answer C2|Answer D2|1|2|3|4|Comment for question 2.|" & Chr(13) & Chr(10) & _
-                      "|3|Fatest Finger 3 Question.|Answer A3|Answer B3|Answer C3|Answer D3|1|2|3|4|Comment for question 3.|" & Chr(13) & Chr(10) & _
-                      "|4|Fatest Finger 4 Question.|Answer A4|Answer B4|Answer C4|Answer D4|1|2|3|4|Comment for question 4.|" & Chr(13) & Chr(10) & _
-                      "|5|Fatest Finger 5 Question.|Answer A5|Answer B5|Answer C5|Answer D5|1|2|3|4|Comment for question 5.|" & Chr(13) & Chr(10) & _
-                      "|6|Fatest Finger 6 Question.|Answer A6|Answer B6|Answer C6|Answer D6|1|2|3|4|Comment for question 6.|" & Chr(13) & Chr(10) & _
-                      "|7|Fatest Finger 7 Question.|Answer A7|Answer B7|Answer C7|Answer D7|1|2|3|4|Comment for question 7.|" & Chr(13) & Chr(10) & _
-                      "|8|Fatest Finger 8 Question.|Answer A8|Answer B8|Answer C8|Answer D8|1|2|3|4|Comment for question 8.|" & Chr(13) & Chr(10))
-                FileClose(1)
+                TextFile.Close()
+                TextFile.Open(SaveBaseFileDialog.FileName)
+                TextFile.Write("|1|Fastest Finger 1 Question.|Answer A1|Answer B1|Answer C1|Answer D1|1|2|3|4|Comment for question 1.|" & Chr(13) & Chr(10) & _
+                      "|2|Fastest Finger 2 Question.|Answer A2|Answer B2|Answer C2|Answer D2|1|2|3|4|Comment for question 2.|" & Chr(13) & Chr(10) & _
+                      "|3|Fastest Finger 3 Question.|Answer A3|Answer B3|Answer C3|Answer D3|1|2|3|4|Comment for question 3.|" & Chr(13) & Chr(10) & _
+                      "|4|Fastest Finger 4 Question.|Answer A4|Answer B4|Answer C4|Answer D4|1|2|3|4|Comment for question 4.|" & Chr(13) & Chr(10) & _
+                      "|5|Fastest Finger 5 Question.|Answer A5|Answer B5|Answer C5|Answer D5|1|2|3|4|Comment for question 5.|" & Chr(13) & Chr(10) & _
+                      "|6|Fastest Finger 6 Question.|Answer A6|Answer B6|Answer C6|Answer D6|1|2|3|4|Comment for question 6.|" & Chr(13) & Chr(10) & _
+                      "|7|Fastest Finger 7 Question.|Answer A7|Answer B7|Answer C7|Answer D7|1|2|3|4|Comment for question 7.|" & Chr(13) & Chr(10) & _
+                      "|8|Fastest Finger 8 Question.|Answer A8|Answer B8|Answer C8|Answer D8|1|2|3|4|Comment for question 8.|" & Chr(13) & Chr(10))
+                TextFile.Close()
             End Try
             OpenBaseFileDialog.FileName = SaveBaseFileDialog.FileName
             FileNameQ = OpenBaseFileDialog.FileName

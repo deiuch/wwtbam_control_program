@@ -219,8 +219,8 @@ Public Class QuestionEditorForm
                 SaveTemporarilyButton.PerformClick()
             End If
             SaveBaseFileDialog.FileName = OpenBaseFileDialog.FileName
-            FileClose(1)
-            FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
+            TextFile.Close()
+            TextFile.Open(SaveBaseFileDialog.FileName)
             For i1 = 1 To currentBlock2.GetUpperBound(0)
                 tmpText = ""
                 For i2 = 1 To GameControlForm.maxCow
@@ -233,9 +233,9 @@ Public Class QuestionEditorForm
                     tmpText = tmpText & currentBlock2(i1, i2) & "|"
                     If currentBlock2(i1, i2) <> "" Then currentBlock2(i1, i2) = currentBlock2(i1, i2).Replace("¶", Chr(13) & Chr(10)) 'Замена переноса строки
                 Next
-                Print(1, tmpText & Chr(13) & Chr(10))
+                TextFile.Write(tmpText & Chr(13) & Chr(10))
             Next
-        FileClose(1)
+        TextFile.Close()
         Else
         My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Exclamation)
         End If
@@ -344,9 +344,9 @@ Public Class QuestionEditorForm
             Try
                 FileCopy(CurDir() & "\Bases\" & GameControlForm.currentBlock1(2, 3) & "Base_Example.questions", SaveBaseFileDialog.FileName)
             Catch
-                FileClose(1)
-                FileOpen(1, SaveBaseFileDialog.FileName, OpenMode.Output)
-                Print(1, "|1|First question?|Answer A1|Answer B1|Answer C1|Answer D1|1|Comment for question number 1.|" & Chr(13) & Chr(10) & _
+                TextFile.Close()
+                TextFile.Open(SaveBaseFileDialog.FileName)
+                TextFile.Write("|1|First question?|Answer A1|Answer B1|Answer C1|Answer D1|1|Comment for question number 1.|" & Chr(13) & Chr(10) & _
                       "|2|Second question?|Answer A2|Answer B2|Answer C2|Answer D2|1|Comment for question number 2.|" & Chr(13) & Chr(10) & _
                       "|3|Third question?|Answer A3|Answer B3|Answer C3|Answer D3|1|Comment for question number 3.|" & Chr(13) & Chr(10) & _
                       "|4|Fourth question?|Answer A4|Answer B4|Answer C4|Answer D4|1|Comment for question number 4.|" & Chr(13) & Chr(10) & _
@@ -361,7 +361,7 @@ Public Class QuestionEditorForm
                       "|13|Thirteenth question?|Answer A13|Answer B13|Answer C13|Answer D13|1|Comment for question number 13.|" & Chr(13) & Chr(10) & _
                       "|14|Fourteenth question?|Answer A14|Answer B14|Answer C14|Answer D14|1|Comment for question number 14.|" & Chr(13) & Chr(10) & _
                       "|15|Fifteenth question?|Answer A15|Answer B15|Answer C15|Answer D15|1|Comment for question number 15.|" & Chr(13) & Chr(10))
-                FileClose(1)
+                TextFile.Close()
             End Try
             OpenBaseFileDialog.FileName = SaveBaseFileDialog.FileName
             FileNameQ = OpenBaseFileDialog.FileName

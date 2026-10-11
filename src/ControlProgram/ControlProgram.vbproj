@@ -47,6 +47,9 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Shared\TextFile.vb">
+      <Link>TextFile.vb</Link>
+    </Compile>
     <Compile Include="AboutForm.Designer.vb">
       <DependentUpon>AboutForm.vb</DependentUpon>
     </Compile>

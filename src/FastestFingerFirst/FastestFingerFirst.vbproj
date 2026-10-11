@@ -47,6 +47,9 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Shared\TextFile.vb">
+      <Link>TextFile.vb</Link>
+    </Compile>
     <Compile Include="FastestFingerEditorForm.Designer.vb">
       <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>
     </Compile>
