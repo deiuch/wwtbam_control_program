@@ -23,7 +23,6 @@ Partial Class FastestFingerFirstForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FastestFingerFirstForm))
         Me.ExplainRulesButton = New System.Windows.Forms.Button()
         Me.AskQuestionButton = New System.Windows.Forms.Button()
         Me.ThreeBeepsButton = New System.Windows.Forms.Button()
@@ -974,7 +973,7 @@ Partial Class FastestFingerFirstForm
         Me.Controls.Add(Me.ExplainRulesButton)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "FastestFingerFirstForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

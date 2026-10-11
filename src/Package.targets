@@ -19,13 +19,11 @@
       <ReleaseProgram Include="$(OutDir)$(TargetFileName);$(FastestFingerFirstOutDir)Fastest Finger First.exe" />
       <ReleaseAsset Include="@(Content)" Condition="'%(Content.GameAsset)' == 'true'" />
       <DocFile Include="$(MSBuildThisFileDirectory)..\docs\**\*" />
-      <FontFile Include="$(MSBuildThisFileDirectory)..\fonts\**\*" />
     </ItemGroup>
     <RemoveDir Directories="$(ReleasePackageDir)" />
     <Copy SourceFiles="@(ReleaseProgram)" DestinationFolder="$(ReleasePackageDir)" UseHardlinksIfPossible="true" />
     <Copy SourceFiles="@(ReleaseAsset)" DestinationFiles="@(ReleaseAsset-&gt;'$(ReleasePackageDir)%(Link)')" UseHardlinksIfPossible="true" />
     <Copy SourceFiles="@(DocFile)" DestinationFiles="@(DocFile-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
-    <Copy SourceFiles="@(FontFile)" DestinationFiles="@(FontFile-&gt;'$(ReleasePackageDir)%(RecursiveDir)%(Filename)%(Extension)')" UseHardlinksIfPossible="true" />
     <Exec Command="powershell -NoProfile -NonInteractive -Command &quot;Add-Type -AssemblyName System.Drawing; $pixel = New-Object Drawing.Bitmap 1, 1; $pixel.SetPixel(0, 0, [Drawing.Color]::FromArgb(42, 42, 42)); $pixel.Save('$(ReleasePackageDir)Fill.png', [Drawing.Imaging.ImageFormat]::Png)&quot;" />
     <ZipDirectory SourceDirectory="$(ReleasePackageDir)" DestinationFile="$(ReleasePackageZip)" Overwrite="true" />
     <Message Importance="high" Text="Release package: $([System.IO.Path]::GetFullPath('$(ReleasePackageZip)'))" />

@@ -27,6 +27,7 @@ Public Class FastestFingerFirstForm
     Public maxCow As Integer = 8 'Максимальное кол-во колоннок в файле вопросов
 
     Private Sub FastestFingerFirst_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        EmbeddedFonts.Apply(Me)
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         LanguageComboBox.Items.Clear()
@@ -157,12 +158,12 @@ Public Class FastestFingerFirstForm
         InstructionsLabel.Text = currentBlock1(148, 3).Replace("¶", Chr(13) & Chr(10)) '1
         EnterNamesLaterCheckBox.Text = currentBlock1(149, 3) '2
         'Шрифты
-        QuestionFieldLabel16.Font = New Font(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
-        QuestionFieldLabel17.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        QuestionFieldLabel18.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        QuestionFieldLabel19.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        QuestionFieldLabel20.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
-        InstructionsLabel.Font = New Font(currentBlock1(5, 3), Int(currentBlock1(4, 4)) - 8.25)
+        QuestionFieldLabel16.Font = EmbeddedFonts.Create(currentBlock1(4, 3), Int(currentBlock1(4, 4)))
+        QuestionFieldLabel17.Font = EmbeddedFonts.Create(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        QuestionFieldLabel18.Font = EmbeddedFonts.Create(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        QuestionFieldLabel19.Font = EmbeddedFonts.Create(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        QuestionFieldLabel20.Font = EmbeddedFonts.Create(currentBlock1(5, 3), Int(currentBlock1(5, 4)))
+        InstructionsLabel.Font = EmbeddedFonts.Create(currentBlock1(5, 3), Int(currentBlock1(4, 4)) - 8.25)
     End Sub
 
     Private Sub openfilesdata(sender As Object)

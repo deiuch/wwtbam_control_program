@@ -182,7 +182,7 @@ Partial Class FastestFingerFirstForm
         'AnswerDFramePictureBox
         '
         Me.AnswerDFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerDFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerDFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerDFramePictureBox.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.D_BLACK
         Me.AnswerDFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerDFramePictureBox.Location = New System.Drawing.Point(512, 572)
         Me.AnswerDFramePictureBox.Name = "AnswerDFramePictureBox"
@@ -194,9 +194,9 @@ Partial Class FastestFingerFirstForm
         'AnswerCFramePictureBox
         '
         Me.AnswerCFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerCFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerCFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.C_BLACK
         Me.AnswerCFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.AnswerCFramePictureBox.InitialImage = CType(resources.GetObject("AnswerCFramePictureBox.InitialImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.InitialImage = Global.FastestFingerFirst.My.Resources.Resources.LEFT
         Me.AnswerCFramePictureBox.Location = New System.Drawing.Point(0, 572)
         Me.AnswerCFramePictureBox.Name = "AnswerCFramePictureBox"
         Me.AnswerCFramePictureBox.Size = New System.Drawing.Size(512, 57)
@@ -207,7 +207,7 @@ Partial Class FastestFingerFirstForm
         'AnswerBFramePictureBox
         '
         Me.AnswerBFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerBFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerBFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerBFramePictureBox.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.B_BLACK
         Me.AnswerBFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerBFramePictureBox.Location = New System.Drawing.Point(512, 507)
         Me.AnswerBFramePictureBox.Name = "AnswerBFramePictureBox"
@@ -219,7 +219,7 @@ Partial Class FastestFingerFirstForm
         'AnswerAFramePictureBox
         '
         Me.AnswerAFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerAFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerAFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerAFramePictureBox.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.A_BLACK
         Me.AnswerAFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerAFramePictureBox.Location = New System.Drawing.Point(0, 507)
         Me.AnswerAFramePictureBox.Name = "AnswerAFramePictureBox"
@@ -247,7 +247,7 @@ Partial Class FastestFingerFirstForm
         'QuestionFramePictureBox
         '
         Me.QuestionFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.QuestionFramePictureBox.BackgroundImage = CType(resources.GetObject("QuestionFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.QuestionFramePictureBox.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.QUESTION
         Me.QuestionFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.QuestionFramePictureBox.InitialImage = Nothing
         Me.QuestionFramePictureBox.Location = New System.Drawing.Point(0, 396)
@@ -799,7 +799,7 @@ Partial Class FastestFingerFirstForm
         'KeypadPictureBox6
         '
         Me.KeypadPictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.KeypadPictureBox6.BackgroundImage = CType(resources.GetObject("KeypadPictureBox6.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox6.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.FFF_Answer1
         Me.KeypadPictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.KeypadPictureBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeypadPictureBox6.Location = New System.Drawing.Point(193, 640)
@@ -812,7 +812,7 @@ Partial Class FastestFingerFirstForm
         'KeypadPictureBox7
         '
         Me.KeypadPictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.KeypadPictureBox7.BackgroundImage = CType(resources.GetObject("KeypadPictureBox7.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox7.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.FFF_Answer1
         Me.KeypadPictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.KeypadPictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeypadPictureBox7.Location = New System.Drawing.Point(355, 640)
@@ -825,7 +825,7 @@ Partial Class FastestFingerFirstForm
         'KeypadPictureBox8
         '
         Me.KeypadPictureBox8.BackColor = System.Drawing.Color.Transparent
-        Me.KeypadPictureBox8.BackgroundImage = CType(resources.GetObject("KeypadPictureBox8.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox8.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.FFF_Answer1
         Me.KeypadPictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.KeypadPictureBox8.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeypadPictureBox8.Location = New System.Drawing.Point(515, 640)
@@ -838,7 +838,7 @@ Partial Class FastestFingerFirstForm
         'KeypadPictureBox9
         '
         Me.KeypadPictureBox9.BackColor = System.Drawing.Color.Transparent
-        Me.KeypadPictureBox9.BackgroundImage = CType(resources.GetObject("KeypadPictureBox9.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox9.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.FFF_Answer1
         Me.KeypadPictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.KeypadPictureBox9.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeypadPictureBox9.Location = New System.Drawing.Point(675, 640)
@@ -851,7 +851,7 @@ Partial Class FastestFingerFirstForm
         'KeypadPictureBox10
         '
         Me.KeypadPictureBox10.BackColor = System.Drawing.Color.Transparent
-        Me.KeypadPictureBox10.BackgroundImage = CType(resources.GetObject("KeypadPictureBox10.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox10.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.FFF_Answer1
         Me.KeypadPictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.KeypadPictureBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeypadPictureBox10.Location = New System.Drawing.Point(13, 640)
@@ -864,7 +864,7 @@ Partial Class FastestFingerFirstForm
         'KeypadPictureBox11
         '
         Me.KeypadPictureBox11.BackColor = System.Drawing.Color.Transparent
-        Me.KeypadPictureBox11.BackgroundImage = CType(resources.GetObject("KeypadPictureBox11.BackgroundImage"), System.Drawing.Image)
+        Me.KeypadPictureBox11.BackgroundImage = Global.FastestFingerFirst.My.Resources.Resources.FFF_Answer1
         Me.KeypadPictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.KeypadPictureBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeypadPictureBox11.Location = New System.Drawing.Point(857, 640)
@@ -1022,7 +1022,7 @@ Partial Class FastestFingerFirstForm
         '
         'ClockPictureBox
         '
-        Me.ClockPictureBox.Image = CType(resources.GetObject("ClockPictureBox.Image"), System.Drawing.Image)
+        Me.ClockPictureBox.Image = Global.FastestFingerFirst.My.Resources.Resources.Clock__62_
         Me.ClockPictureBox.Location = New System.Drawing.Point(355, 44)
         Me.ClockPictureBox.Name = "ClockPictureBox"
         Me.ClockPictureBox.Size = New System.Drawing.Size(315, 315)
@@ -1109,7 +1109,7 @@ Partial Class FastestFingerFirstForm
         Me.Controls.Add(Me.QuestionFramePictureBox)
         Me.Controls.Add(Me.ClockPictureBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.FastestFingerFirst.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "FastestFingerFirstForm"
         Me.Text = "Fastest Finger First"

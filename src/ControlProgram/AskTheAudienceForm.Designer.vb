@@ -22,7 +22,6 @@ Partial Class AskTheAudienceForm
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AskTheAudienceForm))
         Me.TotalPercentLabel = New System.Windows.Forms.Label()
         Me.ExecuteButton = New System.Windows.Forms.Button()
         Me.StartVotingButton = New System.Windows.Forms.Button()
@@ -307,7 +306,7 @@ Partial Class AskTheAudienceForm
         'AnswerDChartPictureBox
         '
         Me.AnswerDChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerDChartPictureBox.Image = CType(resources.GetObject("AnswerDChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerDChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerDChartPictureBox.Location = New System.Drawing.Point(409, 60)
         Me.AnswerDChartPictureBox.Name = "AnswerDChartPictureBox"
         Me.AnswerDChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -318,7 +317,7 @@ Partial Class AskTheAudienceForm
         'AnswerCChartPictureBox
         '
         Me.AnswerCChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerCChartPictureBox.Image = CType(resources.GetObject("AnswerCChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerCChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerCChartPictureBox.Location = New System.Drawing.Point(360, 60)
         Me.AnswerCChartPictureBox.Name = "AnswerCChartPictureBox"
         Me.AnswerCChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -329,7 +328,7 @@ Partial Class AskTheAudienceForm
         'AnswerBChartPictureBox
         '
         Me.AnswerBChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerBChartPictureBox.Image = CType(resources.GetObject("AnswerBChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerBChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerBChartPictureBox.Location = New System.Drawing.Point(311, 60)
         Me.AnswerBChartPictureBox.Name = "AnswerBChartPictureBox"
         Me.AnswerBChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -340,7 +339,7 @@ Partial Class AskTheAudienceForm
         'AnswerAChartPictureBox
         '
         Me.AnswerAChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerAChartPictureBox.Image = CType(resources.GetObject("AnswerAChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerAChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerAChartPictureBox.Location = New System.Drawing.Point(262, 60)
         Me.AnswerAChartPictureBox.Name = "AnswerAChartPictureBox"
         Me.AnswerAChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -425,7 +424,7 @@ Partial Class AskTheAudienceForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.ControlProgram.My.Resources.Resources.ATA_bg
         Me.ClientSize = New System.Drawing.Size(484, 361)
         Me.Controls.Add(Me.TotalPercentLabel)
         Me.Controls.Add(Me.ExecuteButton)
@@ -462,7 +461,7 @@ Partial Class AskTheAudienceForm
         Me.Controls.Add(Me.StartAskTheAudienceButton)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "AskTheAudienceForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

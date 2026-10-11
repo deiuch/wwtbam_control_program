@@ -23,7 +23,6 @@ Partial Class GameControlForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GameControlForm))
         Me.MoneyTakenCheckBox = New System.Windows.Forms.CheckBox()
         Me.BigQuitButton = New System.Windows.Forms.Button()
         Me.LittleQuitButton = New System.Windows.Forms.Button()
@@ -1368,7 +1367,7 @@ Partial Class GameControlForm
         'LifelinesPictureBox
         '
         Me.LifelinesPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.LifelinesPictureBox.Image = CType(resources.GetObject("LifelinesPictureBox.Image"), System.Drawing.Image)
+        Me.LifelinesPictureBox.Image = Global.ControlProgram.My.Resources.Resources._000
         Me.LifelinesPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LifelinesPictureBox.Location = New System.Drawing.Point(462, 198)
         Me.LifelinesPictureBox.Name = "LifelinesPictureBox"
@@ -1380,7 +1379,7 @@ Partial Class GameControlForm
         'MoneyTreePictureBox
         '
         Me.MoneyTreePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MoneyTreePictureBox.Image = CType(resources.GetObject("MoneyTreePictureBox.Image"), System.Drawing.Image)
+        Me.MoneyTreePictureBox.Image = Global.ControlProgram.My.Resources.Resources.TREE_0
         Me.MoneyTreePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.MoneyTreePictureBox.Location = New System.Drawing.Point(462, 198)
         Me.MoneyTreePictureBox.Name = "MoneyTreePictureBox"
@@ -1392,7 +1391,7 @@ Partial Class GameControlForm
         'AnswerDFramePictureBox
         '
         Me.AnswerDFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerDFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerDFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerDFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.D_BLACK
         Me.AnswerDFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerDFramePictureBox.Location = New System.Drawing.Point(504, 663)
         Me.AnswerDFramePictureBox.Name = "AnswerDFramePictureBox"
@@ -1403,9 +1402,9 @@ Partial Class GameControlForm
         'AnswerCFramePictureBox
         '
         Me.AnswerCFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerCFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerCFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.C_BLACK
         Me.AnswerCFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.AnswerCFramePictureBox.InitialImage = CType(resources.GetObject("AnswerCFramePictureBox.InitialImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.InitialImage = Global.ControlProgram.My.Resources.Resources.LEFT
         Me.AnswerCFramePictureBox.Location = New System.Drawing.Point(-8, 663)
         Me.AnswerCFramePictureBox.Name = "AnswerCFramePictureBox"
         Me.AnswerCFramePictureBox.Size = New System.Drawing.Size(512, 57)
@@ -1415,7 +1414,7 @@ Partial Class GameControlForm
         'AnswerBFramePictureBox
         '
         Me.AnswerBFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerBFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerBFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerBFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.B_BLACK
         Me.AnswerBFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerBFramePictureBox.Location = New System.Drawing.Point(504, 598)
         Me.AnswerBFramePictureBox.Name = "AnswerBFramePictureBox"
@@ -1426,7 +1425,7 @@ Partial Class GameControlForm
         'AnswerAFramePictureBox
         '
         Me.AnswerAFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerAFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerAFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerAFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.A_BLACK
         Me.AnswerAFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerAFramePictureBox.Location = New System.Drawing.Point(-8, 598)
         Me.AnswerAFramePictureBox.Name = "AnswerAFramePictureBox"
@@ -1437,7 +1436,7 @@ Partial Class GameControlForm
         'QuestionFramePictureBox
         '
         Me.QuestionFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.QuestionFramePictureBox.BackgroundImage = CType(resources.GetObject("QuestionFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.QuestionFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.QUESTION
         Me.QuestionFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.QuestionFramePictureBox.InitialImage = Nothing
         Me.QuestionFramePictureBox.Location = New System.Drawing.Point(-8, 487)
@@ -1717,7 +1716,7 @@ Partial Class GameControlForm
         Me.Controls.Add(Me.QuestionNumberNumericUpDown)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "GameControlForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

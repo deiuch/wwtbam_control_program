@@ -11,6 +11,7 @@
     Dim percentsSum As Integer
 
     Private Sub FormATA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        EmbeddedFonts.Apply(Me)
         Me.MaximizeBox = False
         AnswerAChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
         AnswerBChartPictureBox.ImageLocation = "source\GRAPH COLUMN.png"
@@ -35,10 +36,10 @@
         TotalVotesLabel.Text = GameControlForm.currentBlock1(114, 3) '4
         TotalPercentLabel.Text = GameControlForm.currentBlock1(115, 3) '5
         ExecuteButton.Text = GameControlForm.currentBlock1(116, 3) '6
-        AnswerAResultLabel.Font = New Font(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
-        AnswerBResultLabel.Font = New Font(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
-        AnswerCResultLabel.Font = New Font(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
-        AnswerDResultLabel.Font = New Font(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
+        AnswerAResultLabel.Font = EmbeddedFonts.Create(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
+        AnswerBResultLabel.Font = EmbeddedFonts.Create(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
+        AnswerCResultLabel.Font = EmbeddedFonts.Create(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
+        AnswerDResultLabel.Font = EmbeddedFonts.Create(GameControlForm.currentBlock1(6, 3), Int(GameControlForm.currentBlock1(6, 4)))
     End Sub
 
     Private Sub StartAskTheAudienceButton_Click(sender As Object, e As EventArgs) Handles StartAskTheAudienceButton.Click

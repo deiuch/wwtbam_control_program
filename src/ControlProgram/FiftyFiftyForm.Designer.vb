@@ -22,7 +22,6 @@ Partial Class FiftyFiftyForm
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FiftyFiftyForm))
         Me.AnswerDLetterLabel = New System.Windows.Forms.Label()
         Me.AnswerCLetterLabel = New System.Windows.Forms.Label()
         Me.AnswerBLetterLabel = New System.Windows.Forms.Label()
@@ -173,7 +172,7 @@ Partial Class FiftyFiftyForm
         Me.Controls.Add(Me.KeepAnswerACheckBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "FiftyFiftyForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

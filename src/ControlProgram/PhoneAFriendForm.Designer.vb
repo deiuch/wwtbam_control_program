@@ -23,7 +23,6 @@ Partial Class PhoneAFriendForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PhoneAFriendForm))
         Me.StopClockButton = New System.Windows.Forms.Button()
         Me.StartClockButton = New System.Windows.Forms.Button()
         Me.StartPhoneAFriendButton = New System.Windows.Forms.Button()
@@ -74,7 +73,7 @@ Partial Class PhoneAFriendForm
         '
         'ClockPictureBox
         '
-        Me.ClockPictureBox.Image = CType(resources.GetObject("ClockPictureBox.Image"), System.Drawing.Image)
+        Me.ClockPictureBox.Image = Global.ControlProgram.My.Resources.Resources.Clock__62_
         Me.ClockPictureBox.Location = New System.Drawing.Point(35, 18)
         Me.ClockPictureBox.Name = "ClockPictureBox"
         Me.ClockPictureBox.Size = New System.Drawing.Size(315, 315)
@@ -93,7 +92,7 @@ Partial Class PhoneAFriendForm
         Me.Controls.Add(Me.ClockPictureBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "PhoneAFriendForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

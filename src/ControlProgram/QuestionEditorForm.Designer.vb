@@ -22,7 +22,6 @@ Partial Class QuestionEditorForm
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QuestionEditorForm))
         Me.QuestionListBox = New System.Windows.Forms.ListBox()
         Me.QuestionFilePathLabel = New System.Windows.Forms.Label()
         Me.QuestionFieldTextBox1 = New System.Windows.Forms.TextBox()
@@ -248,7 +247,7 @@ Partial Class QuestionEditorForm
         Me.Controls.Add(Me.QuestionListBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "QuestionEditorForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

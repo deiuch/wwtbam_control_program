@@ -22,7 +22,6 @@ Partial Class StartForm
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartForm))
         Me.StartButton = New System.Windows.Forms.Button()
         Me.HostScreenCheckBox = New System.Windows.Forms.CheckBox()
         Me.PlayerScreenCheckBox = New System.Windows.Forms.CheckBox()
@@ -269,7 +268,7 @@ Partial Class StartForm
         Me.Controls.Add(Me.StartButton)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.MaximizeBox = False
         Me.Name = "StartForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

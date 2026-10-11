@@ -32,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Shared\*.vb" Link="%(Filename)%(Extension)" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Shared\Fonts\*" Link="Fonts\%(Filename)%(Extension)" LogicalName="Fonts.%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <LocalAsset Include="$(MSBuildThisFileDirectory)Assets.local\**\*" />

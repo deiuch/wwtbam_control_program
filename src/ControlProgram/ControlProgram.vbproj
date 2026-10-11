@@ -8,10 +8,8 @@
     <Compile Update="*Form.vb" SubType="Form" />
     <Compile Update="MyProject\Application.Designer.vb" AutoGen="True" DependentUpon="Application.myapp" DesignTime="True" />
     <Compile Update="MyProject\Resources.Designer.vb" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
-    <Compile Update="MyProject\Settings.Designer.vb" AutoGen="True" DependentUpon="Settings.settings" DesignTimeSharedInput="True" />
     <EmbeddedResource Update="MyProject\Resources.resx" Generator="VbMyResourcesResXFileCodeGenerator" LastGenOutput="Resources.Designer.vb" CustomToolNamespace="My.Resources" />
     <None Update="MyProject\Application.myapp" Generator="MyApplicationCodeGenerator" LastGenOutput="Application.Designer.vb" />
-    <None Update="MyProject\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.vb" CustomToolNamespace="My" />
   </ItemGroup>
   <Import Project="..\Package.targets" />
 </Project>

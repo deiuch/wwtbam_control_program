@@ -22,7 +22,6 @@ Partial Class PlayerScreenForm
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PlayerScreenForm))
         Me.MoneyWonPictureBox = New System.Windows.Forms.PictureBox()
         Me.AnswerDChartPictureBox = New System.Windows.Forms.PictureBox()
         Me.AnswerCChartPictureBox = New System.Windows.Forms.PictureBox()
@@ -77,7 +76,7 @@ Partial Class PlayerScreenForm
         'AnswerDChartPictureBox
         '
         Me.AnswerDChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerDChartPictureBox.Image = CType(resources.GetObject("AnswerDChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerDChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerDChartPictureBox.Location = New System.Drawing.Point(550, 298)
         Me.AnswerDChartPictureBox.Name = "AnswerDChartPictureBox"
         Me.AnswerDChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -89,7 +88,7 @@ Partial Class PlayerScreenForm
         'AnswerCChartPictureBox
         '
         Me.AnswerCChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerCChartPictureBox.Image = CType(resources.GetObject("AnswerCChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerCChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerCChartPictureBox.Location = New System.Drawing.Point(501, 298)
         Me.AnswerCChartPictureBox.Name = "AnswerCChartPictureBox"
         Me.AnswerCChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -101,7 +100,7 @@ Partial Class PlayerScreenForm
         'AnswerBChartPictureBox
         '
         Me.AnswerBChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerBChartPictureBox.Image = CType(resources.GetObject("AnswerBChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerBChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerBChartPictureBox.Location = New System.Drawing.Point(452, 298)
         Me.AnswerBChartPictureBox.Name = "AnswerBChartPictureBox"
         Me.AnswerBChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -113,7 +112,7 @@ Partial Class PlayerScreenForm
         'AnswerAChartPictureBox
         '
         Me.AnswerAChartPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AnswerAChartPictureBox.Image = CType(resources.GetObject("AnswerAChartPictureBox.Image"), System.Drawing.Image)
+        Me.AnswerAChartPictureBox.Image = Global.ControlProgram.My.Resources.Resources.GRAPH_COLUMN
         Me.AnswerAChartPictureBox.Location = New System.Drawing.Point(403, 298)
         Me.AnswerAChartPictureBox.Name = "AnswerAChartPictureBox"
         Me.AnswerAChartPictureBox.Size = New System.Drawing.Size(37, 240)
@@ -195,7 +194,7 @@ Partial Class PlayerScreenForm
         'LifelinesPictureBox
         '
         Me.LifelinesPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.LifelinesPictureBox.Image = CType(resources.GetObject("LifelinesPictureBox.Image"), System.Drawing.Image)
+        Me.LifelinesPictureBox.Image = Global.ControlProgram.My.Resources.Resources._000
         Me.LifelinesPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LifelinesPictureBox.Location = New System.Drawing.Point(675, 270)
         Me.LifelinesPictureBox.Name = "LifelinesPictureBox"
@@ -207,7 +206,7 @@ Partial Class PlayerScreenForm
         'MoneyTreePictureBox
         '
         Me.MoneyTreePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MoneyTreePictureBox.Image = CType(resources.GetObject("MoneyTreePictureBox.Image"), System.Drawing.Image)
+        Me.MoneyTreePictureBox.Image = Global.ControlProgram.My.Resources.Resources.TREE_0
         Me.MoneyTreePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.MoneyTreePictureBox.Location = New System.Drawing.Point(675, 270)
         Me.MoneyTreePictureBox.Name = "MoneyTreePictureBox"
@@ -283,7 +282,7 @@ Partial Class PlayerScreenForm
         'AnswerDFramePictureBox
         '
         Me.AnswerDFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerDFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerDFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerDFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.D_BLACK
         Me.AnswerDFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerDFramePictureBox.Location = New System.Drawing.Point(512, 187)
         Me.AnswerDFramePictureBox.Name = "AnswerDFramePictureBox"
@@ -294,9 +293,9 @@ Partial Class PlayerScreenForm
         'AnswerCFramePictureBox
         '
         Me.AnswerCFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerCFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerCFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.C_BLACK
         Me.AnswerCFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.AnswerCFramePictureBox.InitialImage = CType(resources.GetObject("AnswerCFramePictureBox.InitialImage"), System.Drawing.Image)
+        Me.AnswerCFramePictureBox.InitialImage = Global.ControlProgram.My.Resources.Resources.LEFT
         Me.AnswerCFramePictureBox.Location = New System.Drawing.Point(0, 187)
         Me.AnswerCFramePictureBox.Name = "AnswerCFramePictureBox"
         Me.AnswerCFramePictureBox.Size = New System.Drawing.Size(512, 57)
@@ -306,7 +305,7 @@ Partial Class PlayerScreenForm
         'AnswerBFramePictureBox
         '
         Me.AnswerBFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerBFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerBFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerBFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.B_BLACK
         Me.AnswerBFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerBFramePictureBox.Location = New System.Drawing.Point(512, 122)
         Me.AnswerBFramePictureBox.Name = "AnswerBFramePictureBox"
@@ -317,7 +316,7 @@ Partial Class PlayerScreenForm
         'AnswerAFramePictureBox
         '
         Me.AnswerAFramePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.AnswerAFramePictureBox.BackgroundImage = CType(resources.GetObject("AnswerAFramePictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AnswerAFramePictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.A_BLACK
         Me.AnswerAFramePictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.AnswerAFramePictureBox.Location = New System.Drawing.Point(0, 122)
         Me.AnswerAFramePictureBox.Name = "AnswerAFramePictureBox"
@@ -345,7 +344,7 @@ Partial Class PlayerScreenForm
         '
         Me.PrizePictureBox.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.PrizePictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.PrizePictureBox.Image = CType(resources.GetObject("PrizePictureBox.Image"), System.Drawing.Image)
+        Me.PrizePictureBox.Image = Global.ControlProgram.My.Resources.Resources.LINE
         Me.PrizePictureBox.Location = New System.Drawing.Point(0, 0)
         Me.PrizePictureBox.Name = "PrizePictureBox"
         Me.PrizePictureBox.Size = New System.Drawing.Size(1024, 249)
@@ -356,7 +355,7 @@ Partial Class PlayerScreenForm
         'LogoPictureBox
         '
         Me.LogoPictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.LogoPictureBox.BackgroundImage = CType(resources.GetObject("LogoPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.LogoPictureBox.BackgroundImage = Global.ControlProgram.My.Resources.Resources.LOGO_FEEL
         Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.LogoPictureBox.Size = New System.Drawing.Size(50, 50)
@@ -385,7 +384,7 @@ Partial Class PlayerScreenForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.ControlProgram.My.Resources.Resources.Player_Screen
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1024, 768)
         Me.Controls.Add(Me.LogoPictureBox)
@@ -414,7 +413,7 @@ Partial Class PlayerScreenForm
         Me.Controls.Add(Me.PrizePictureBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = Global.ControlProgram.My.Resources.Resources.ICON
         Me.Location = New System.Drawing.Point(0, 768)
         Me.MaximizeBox = False
         Me.Name = "PlayerScreenForm"
