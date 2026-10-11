@@ -67,7 +67,7 @@ jobs:
       - uses: microsoft/setup-msbuild@v2
 
       - name: Build and package
-        run: msbuild src\WWTBAM.sln -p:Configuration=Release -m -nologo -verbosity:minimal
+        run: msbuild WWTBAM.sln -p:Configuration=Release -m -nologo -verbosity:minimal
 
       - name: Publish the release
         if: github.event_name == 'push'
