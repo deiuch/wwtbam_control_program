@@ -16,15 +16,22 @@ jobs:
 
       - uses: microsoft/setup-msbuild@v2
 
-      - name: Check that the tag matches the program version
-        if: github.ref_type == 'tag'
+      - name: Check versions
         shell: pwsh
         run: |
-          $info = Get-Content src/ControlProgram/MyProject/AssemblyInfo.vb -Raw
-          $version = [version][regex]::Match($info, 'AssemblyVersion\("([^"]+)"\)').Groups[1].Value
-          $expected = "v$($version.ToString(3))"
-          if ('${{ github.ref_name }}' -ne $expected) {
-            Write-Error "Tag ${{ github.ref_name }} does not match AssemblyVersion $version in AssemblyInfo.vb (expected tag $expected)"
+          $versions = foreach ($project in 'ControlProgram', 'FastestFingerFirst') {
+            $info = Get-Content "src/$project/MyProject/AssemblyInfo.vb" -Raw
+            foreach ($attribute in 'AssemblyVersion', 'AssemblyFileVersion') {
+              [pscustomobject]@{ Name = "$project $attribute"; Version = [regex]::Match($info, "$attribute\(""([^""]+)""\)").Groups[1].Value }
+            }
+          }
+          if (@($versions.Version | Sort-Object -Unique).Count -ne 1) {
+            Write-Error ("Both programs must have one version: " + (($versions | ForEach-Object { "$($_.Name) = '$($_.Version)'" }) -join ', '))
+            exit 1
+          }
+          $expected = "v$(([version]$versions[0].Version).ToString(3))"
+          if ('${{ github.ref_type }}' -eq 'tag' -and '${{ github.ref_name }}' -ne $expected) {
+            Write-Error "Tag ${{ github.ref_name }} does not match the programs' version $($versions[0].Version) (expected tag $expected)"
             exit 1
           }
 

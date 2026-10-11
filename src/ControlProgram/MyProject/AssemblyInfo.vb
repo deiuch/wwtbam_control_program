@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 <Assembly: Guid("cbcb6089-c036-4701-aa4c-16b1cd95aa54")>
 
-<Assembly: AssemblyVersion("1.2.0.0")>
-<Assembly: AssemblyFileVersion("1.2.0.0")>
+<Assembly: AssemblyVersion("1.3.0.0")>
+<Assembly: AssemblyFileVersion("1.3.0.0")>
 
 <Assembly: NeutralResourcesLanguageAttribute("en")>

@@ -619,22 +619,21 @@
         End If
         If TimerTick <> 0 Then
             TodaysNamesButton.BackColor = Color.White
-            My.Computer.Audio.Stop()
+            SoundCues.Stop()
             NameCycleTimer.Stop()
             NameSequenceTimer.Stop()
             TimerTick = 0
             AudienceScreenForm.ContestantNameLabel.Visible = False
             AudienceScreenForm.ContestantTownLabel.Visible = False
             AudienceScreenForm.BackgroundImage = System.Drawing.Bitmap.FromFile(GameControlForm.langSource & "\BG4.jpg")
-            Shell("source\BAT\stop_back_music1.bat")
+            BackgroundMusic.Stop()
             GameControlForm.winampOn = 0
         Else
             TodaysNamesButton.BackColor = Color.Aqua
             NameCycleTimer.Interval = 3200
             AudienceScreenForm.BackgroundImage = System.Drawing.Bitmap.FromFile(GameControlForm.langSource & "\FFF\AudienceFFF.png")
-            My.Computer.Audio.Stop()
-            GameControlForm.batFileName = Chr(34) & GameControlForm.sourcePath & "\MUSIC\Today's Names with ten.wav" & Chr(34)
-            Shell("source\BAT\run2_back_music1.bat " & GameControlForm.batFileName)
+            SoundCues.Stop()
+            BackgroundMusic.PlayOnce(GameControlForm.sourcePath & "\MUSIC\Today's Names with ten.wav")
             GameControlForm.winampOn = 1
             NameCycleTimer.Start()
             NameSequenceTimer.Start()
@@ -797,8 +796,8 @@
     Private Sub NameSequenceTimer_Tick(sender As Object, e As EventArgs) Handles NameSequenceTimer.Tick
         NameCycleTimer.Stop()
         NameSequenceTimer.Stop()
-        My.Computer.Audio.Play("source\MUSIC\Today's Names end.wav")
-        Shell("source\BAT\stop_back_music1.bat")
+        SoundCues.Play("source\MUSIC\Today's Names end.wav")
+        BackgroundMusic.Stop()
         GameControlForm.winampOn = 0
         AudienceScreenForm.BackgroundImage = System.Drawing.Bitmap.FromFile(GameControlForm.langSource & "\BG4.jpg")
         AudienceScreenForm.ContestantNameLabel.Visible = False
@@ -825,7 +824,7 @@
         AudienceScreenForm.FffAnswer2FramePictureBox.Visible = False
         AudienceScreenForm.FffAnswer3FramePictureBox.Visible = False
         AudienceScreenForm.FffAnswer4FramePictureBox.Visible = False
-        My.Computer.Audio.Play("source\MUSIC\Explain the games.wav")
+        SoundCues.Play("source\MUSIC\Explain the games.wav")
         rules = True
     End Sub
 
@@ -912,13 +911,12 @@
         AudienceScreenForm.FffAnswer2FramePictureBox.Visible = False
         AudienceScreenForm.FffAnswer3FramePictureBox.Visible = False
         AudienceScreenForm.FffAnswer4FramePictureBox.Visible = False
-        My.Computer.Audio.Stop()
+        SoundCues.Stop()
         If rules = True Then
-            My.Computer.Audio.Play("source\MUSIC\Explain the games end.wav")
+            SoundCues.Play("source\MUSIC\Explain the games end.wav")
             rules = False
         End If
-        GameControlForm.batFileName = Chr(34) & GameControlForm.sourcePath & "\MUSIC\Standby for Q.wav" & Chr(34)
-        Shell("source\BAT\run2_back_music1.bat " & GameControlForm.batFileName)
+        BackgroundMusic.PlayOnce(GameControlForm.sourcePath & "\MUSIC\Standby for Q.wav")
         GameControlForm.winampOn = 1
         GameControlForm.QuestionTextLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
         TodaysNamesButton.BackColor = Color.White
@@ -958,9 +956,9 @@
 
     Private Sub ThreeBeepsButton_Click(sender As Object, e As EventArgs) Handles ThreeBeepsButton.Click
         'Three beeps
-        Shell("source\BAT\stop_back_music1.bat")
+        BackgroundMusic.Stop()
         GameControlForm.winampOn = 0
-        My.Computer.Audio.Play("source\MUSIC\Three Beeps.wav")
+        SoundCues.Play("source\MUSIC\Three Beeps.wav")
     End Sub
 
     Private Sub StartTimerButton_Click(sender As Object, e As EventArgs) Handles StartTimerButton.Click
@@ -974,8 +972,7 @@
                 TimerTick = 0
                 AudienceScreenForm.ContestantNameLabel.Visible = False
                 AudienceScreenForm.ContestantTownLabel.Visible = False
-                GameControlForm.batFileName = Chr(34) & GameControlForm.sourcePath & "\MUSIC\Fastest finger first.wav" & Chr(34)
-                Shell("source\BAT\run2_back_music1.bat " & GameControlForm.batFileName)
+                BackgroundMusic.PlayOnce(GameControlForm.sourcePath & "\MUSIC\Fastest finger first.wav")
                 GameControlForm.winampOn = 1
                 GameControlForm.QuestionTextLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 3)
                 GameControlForm.AnswerATextLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 4)
@@ -1055,8 +1052,8 @@
                 CorrectAnswersButton.BackColor = Color.White
                 '\Конец скрытия таблицы
             Case Color.Green
-                My.Computer.Audio.Play("source\MUSIC\Fastest finger first end.wav")
-                Shell("source\BAT\stop_back_music1.bat")
+                SoundCues.Play("source\MUSIC\Fastest finger first end.wav")
+                BackgroundMusic.Stop()
                 GameControlForm.winampOn = 0
                 AudienceScreenForm.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
                 ClockTimer.Stop()
@@ -1134,8 +1131,7 @@
         CorrectAnswersButton.BackColor = Color.White
         '\Конец скрытия таблицы
         If fourth <> 0 Then
-            GameControlForm.batFileName = Chr(34) & GameControlForm.sourcePath & "\MUSIC\What's the Order.wav" & Chr(34)
-            Shell("source\BAT\run_back_music1.bat " & GameControlForm.batFileName)
+            BackgroundMusic.PlayLoop(GameControlForm.sourcePath & "\MUSIC\What's the Order.wav")
             GameControlForm.winampOn = 1
             AudienceScreenForm.QuestionTextLabel.Visible = False
             AudienceScreenForm.AnswerATextLabel.Visible = False
@@ -1197,17 +1193,17 @@
                     GameControlForm.AnswerDTextLabel.ForeColor = Color.Black
             End Select
             If GameControlForm.winampOn <> 0 Then
-                Shell("source\BAT\stop_back_music1.bat")
+                BackgroundMusic.Stop()
                 GameControlForm.winampOn = 0
             End If
-            My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
+            SoundCues.Play("source\MUSIC\Q1-5 - Yes.wav")
         End If
     End Sub
 
     Private Sub RightOrder1Button_Click(sender As Object, e As EventArgs) Handles RightOrder1Button.Click
         '1st answer in order
         If fourth <> 0 And orderDemo = True Then
-            My.Computer.Audio.Play("source\MUSIC\1st in Order.wav")
+            SoundCues.Play("source\MUSIC\1st in Order.wav")
             AudienceScreenForm.FffAnswer1FramePictureBox.Visible = True
             AudienceScreenForm.FffAnswer1Label.Visible = True
             Select Case first
@@ -1230,7 +1226,7 @@
     Private Sub RightOrder2Button_Click(sender As Object, e As EventArgs) Handles RightOrder2Button.Click
         '2nd answer in order
         If fourth <> 0 And orderDemo = True Then
-            My.Computer.Audio.Play("source\MUSIC\2nd in Order.wav")
+            SoundCues.Play("source\MUSIC\2nd in Order.wav")
             AudienceScreenForm.FffAnswer2FramePictureBox.Visible = True
             AudienceScreenForm.FffAnswer2Label.Visible = True
             Select Case second
@@ -1253,7 +1249,7 @@
     Private Sub RightOrder3Button_Click(sender As Object, e As EventArgs) Handles RightOrder3Button.Click
         '3rd answer in order
         If fourth <> 0 And orderDemo = True Then
-            My.Computer.Audio.Play("source\MUSIC\3rd in Order.wav")
+            SoundCues.Play("source\MUSIC\3rd in Order.wav")
             AudienceScreenForm.FffAnswer3FramePictureBox.Visible = True
             AudienceScreenForm.FffAnswer3Label.Visible = True
             Select Case third
@@ -1276,7 +1272,7 @@
     Private Sub RightOrder4Button_Click(sender As Object, e As EventArgs) Handles RightOrder4Button.Click
         '4th answer in order
         If fourth <> 0 And orderDemo = True Then
-            My.Computer.Audio.Play("source\MUSIC\4th in Order.wav")
+            SoundCues.Play("source\MUSIC\4th in Order.wav")
             AudienceScreenForm.FffAnswer4FramePictureBox.Visible = True
             AudienceScreenForm.FffAnswer4Label.Visible = True
             Select Case fourth
@@ -1437,13 +1433,11 @@
             Case Color.Gold 'Показ результатов
                 CorrectAnswersButton.BackColor = Color.Green
                 If ContestantFieldTextBox25.Text = 0 And ContestantFieldTextBox26.Text = 0 And ContestantFieldTextBox24.Text = 0 And ContestantFieldTextBox27.Text = 0 And ContestantFieldTextBox23.Text = 0 And ContestantFieldTextBox28.Text = 0 And ContestantFieldTextBox22.Text = 0 And ContestantFieldTextBox29.Text = 0 And ContestantFieldTextBox21.Text = 0 And ContestantFieldTextBox30.Text = 0 Then
-                    GameControlForm.batFileName = Chr(34) & GameControlForm.sourcePath & "\MUSIC\Whoosh.wav" & Chr(34)
-                    Shell("source\BAT\run2_back_music1.bat " & GameControlForm.batFileName)
+                    BackgroundMusic.PlayOnce(GameControlForm.sourcePath & "\MUSIC\Whoosh.wav")
                     QualifyingWinnerButton.Enabled = False
                     AskQuestionButton.BackColor = Color.Gold
                 Else
-                    GameControlForm.batFileName = Chr(34) & GameControlForm.sourcePath & "\MUSIC\Correct Answers.wav" & Chr(34)
-                    Shell("source\BAT\run2_back_music1.bat " & GameControlForm.batFileName)
+                    BackgroundMusic.PlayOnce(GameControlForm.sourcePath & "\MUSIC\Correct Answers.wav")
                     Timer2tick = 0
                     ResultsRevealTimer.Start()
                     QualifyingWinnerButton.BackColor = Color.Gold
@@ -2065,7 +2059,7 @@
                 FileClose(1)
             End If
             CorrectAnswersButton.BackColor = Color.White
-            My.Computer.Audio.Play("source\MUSIC\Qualifying Winner.wav")
+            SoundCues.Play("source\MUSIC\Qualifying Winner.wav")
         End If
     End Sub
 

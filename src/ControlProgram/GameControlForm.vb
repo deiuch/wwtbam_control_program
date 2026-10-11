@@ -14,10 +14,9 @@
     Public playerAnswerNumber As Integer 'Номер принятого ответа игрока
     Public numberRightAnswer As Integer 'Номер правильного ответа ИГРОКУ/ВЕДУЩЕМУ
     Public questionNumber As Integer 'Номер текущего вопроса
-    Public batFileName As String 'Имя музыкального файла для *.bat
     Public sourcePath As String 'Путь ресурсной папки
     Public langSource As String 'Путь ресурсов локализации
-    Public winampOn As Integer 'Состояние работы внешнего проигрывателя
+    Public winampOn As Integer 'Включена ли фоновая музыка
     Public winNumber As Integer 'Кол-во выигранных вопросов
     Public activ50 As String 'Состояние блокировки 50-50
     Public activPAF As String 'Состояние блокировки Звонка другу
@@ -259,51 +258,40 @@
         End If
         Select Case questionNumber
             Case 0 To 5
-                'Обращение к *.bat файлу для включения внешнего проигрывателя
+                'Включение фоновой музыки
                 If winampOn <> 1 Or questionNumber = 0 Then
-                    batFileName = Chr(34) & sourcePath & "\MUSIC\Q1-5 Bed Loop.wav" & Chr(34)
-                    Shell("source\BAT\run_back_music1.bat " & batFileName)
+                    BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q1-5 Bed Loop.wav")
                     winampOn = 1
                 End If
             Case 6
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q6 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q6 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 7
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q7 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q7 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 8
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q8 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q8 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 9
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q9 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q9 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 10
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q10 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q10 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 11
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q11 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q11 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 12
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q12 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q12 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 13
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q13 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q13 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 14
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q14 - Heartbeat Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q14 - Heartbeat Loop.wav")
                 winampOn = 1
             Case 15
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q15 - Heartbeat (R1 000 000) Loop.wav" & Chr(34)
-                Shell("source\BAT\run_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Q15 - Heartbeat (R1 000 000) Loop.wav")
                 winampOn = 1
         End Select
         'Сеть
@@ -331,7 +319,7 @@
 
     Private Sub StopSoundButton_Click(sender As Object, e As EventArgs) Handles StopSoundButton.Click
         'Stop Sound
-        My.Computer.Audio.Stop()
+        SoundCues.Stop()
     End Sub
 
     Private Sub LightsDownButton_Click(sender As Object, e As EventArgs) Handles LightsDownButton.Click
@@ -385,28 +373,23 @@
         AnswerIndicatorLabel.Text = currentBlock1(39, 3) 'Answer Indicator
         Select Case questionNumber
             Case 0
-                Shell("source\BAT\stop_back_music1.bat")
+                BackgroundMusic.Stop()
                 winampOn = 0
-                My.Computer.Audio.Play("\MUSIC\Let's See Q1.wav")
+                SoundCues.Play("\MUSIC\Let's See Q1.wav")
             Case 5, 10, 15
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q10 - Lx.wav" & Chr(34)
-                Shell("source\BAT\run2_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Q10 - Lx.wav")
                 winampOn = 1
             Case 6, 11
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q6 - Lx.wav" & Chr(34)
-                Shell("source\BAT\run2_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Q6 - Lx.wav")
                 winampOn = 1
             Case 7, 12
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q7-12 - Lx.wav" & Chr(34)
-                Shell("source\BAT\run2_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Q7-12 - Lx.wav")
                 winampOn = 1
             Case 8, 13
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q8-13 - Lx.wav" & Chr(34)
-                Shell("source\BAT\run2_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Q8-13 - Lx.wav")
                 winampOn = 1
             Case 9, 14
-                batFileName = Chr(34) & sourcePath & "\MUSIC\Q9-14 - Lx.wav" & Chr(34)
-                Shell("source\BAT\run2_back_music1.bat " & batFileName)
+                BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Q9-14 - Lx.wav")
                 winampOn = 1
         End Select
         If QuestionNumberNumericUpDown.Value < 15 And QuestionNumberNumericUpDown.Value > -1 Then
@@ -468,21 +451,21 @@
         HostScreenForm.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
-            Shell("source\BAT\stop_back_music1.bat")
+            BackgroundMusic.Stop()
             winampOn = 0
         End If
         If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
-                    My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q6-11 -  Are you sure.wav")
                 Case 7, 12
-                    My.Computer.Audio.Play("source\MUSIC\Q7-12 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q7-12 - Are you sure.wav")
                 Case 8, 13
-                    My.Computer.Audio.Play("source\MUSIC\Q8-13 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q8-13 - Are you sure.wav")
                 Case 9, 14
-                    My.Computer.Audio.Play("source\MUSIC\Q9-14 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q9-14 - Are you sure.wav")
                 Case 10, 15
-                    My.Computer.Audio.Play("source\MUSIC\Q10-15 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q10-15 - Are you sure.wav")
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
@@ -545,21 +528,21 @@
         HostScreenForm.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
-            Shell("source\BAT\stop_back_music1.bat")
+            BackgroundMusic.Stop()
             winampOn = 0
         End If
         If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
-                    My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q6-11 -  Are you sure.wav")
                 Case 7, 12
-                    My.Computer.Audio.Play("source\MUSIC\Q7-12 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q7-12 - Are you sure.wav")
                 Case 8, 13
-                    My.Computer.Audio.Play("source\MUSIC\Q8-13 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q8-13 - Are you sure.wav")
                 Case 9, 14
-                    My.Computer.Audio.Play("source\MUSIC\Q9-14 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q9-14 - Are you sure.wav")
                 Case 10, 15
-                    My.Computer.Audio.Play("source\MUSIC\Q10-15 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q10-15 - Are you sure.wav")
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
@@ -622,21 +605,21 @@
         HostScreenForm.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
-            Shell("source\BAT\stop_back_music1.bat")
+            BackgroundMusic.Stop()
             winampOn = 0
         End If
         If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
-                    My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q6-11 -  Are you sure.wav")
                 Case 7, 12
-                    My.Computer.Audio.Play("source\MUSIC\Q7-12 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q7-12 - Are you sure.wav")
                 Case 8, 13
-                    My.Computer.Audio.Play("source\MUSIC\Q8-13 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q8-13 - Are you sure.wav")
                 Case 9, 14
-                    My.Computer.Audio.Play("source\MUSIC\Q9-14 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q9-14 - Are you sure.wav")
                 Case 10, 15
-                    My.Computer.Audio.Play("source\MUSIC\Q10-15 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q10-15 - Are you sure.wav")
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
@@ -699,21 +682,21 @@
         HostScreenForm.QuestionCommentLabel.Text = currentBlock2(QuestionListBox.SelectedIndex + 1, 9)
         commentShow = True
         If winampOn <> 0 And questionNumber > 5 Then
-            Shell("source\BAT\stop_back_music1.bat")
+            BackgroundMusic.Stop()
             winampOn = 0
         End If
         If MoneyTakenCheckBox.Checked = False Then
             Select Case questionNumber
                 Case 6, 11
-                    My.Computer.Audio.Play("source\MUSIC\Q6-11 -  Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q6-11 -  Are you sure.wav")
                 Case 7, 12
-                    My.Computer.Audio.Play("source\MUSIC\Q7-12 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q7-12 - Are you sure.wav")
                 Case 8, 13
-                    My.Computer.Audio.Play("source\MUSIC\Q8-13 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q8-13 - Are you sure.wav")
                 Case 9, 14
-                    My.Computer.Audio.Play("source\MUSIC\Q9-14 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q9-14 - Are you sure.wav")
                 Case 10, 15
-                    My.Computer.Audio.Play("source\MUSIC\Q10-15 - Are you sure.wav", AudioPlayMode.Background)
+                    SoundCues.Play("source\MUSIC\Q10-15 - Are you sure.wav")
             End Select
         End If
         If playerAnswerNumber = numberRightAnswer Then
@@ -773,7 +756,7 @@
                 MoneyWonRevealTimer.Start()
                 Select Case questionNumber
                     Case 0
-                        My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q1-5 - Yes.wav")
                         winNumber = 0
                         HostScreenForm.PossibleWinLabel.Text = "100" 'Возможный выигрыш
                         HostScreenForm.CurrentWinLabel.Text = "0" 'Текущий выигрыш
@@ -782,7 +765,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W0.png")
                     Case 1
-                        My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q1-5 - Yes.wav")
                         winNumber = 1
                         HostScreenForm.PossibleWinLabel.Text = "200"
                         HostScreenForm.CurrentWinLabel.Text = "100"
@@ -791,7 +774,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W1.png")
                     Case 2
-                        My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q1-5 - Yes.wav")
                         winNumber = 2
                         HostScreenForm.PossibleWinLabel.Text = "300"
                         HostScreenForm.CurrentWinLabel.Text = "200"
@@ -800,7 +783,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W2.png")
                     Case 3
-                        My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q1-5 - Yes.wav")
                         winNumber = 3
                         HostScreenForm.PossibleWinLabel.Text = "500"
                         HostScreenForm.CurrentWinLabel.Text = "200"
@@ -809,7 +792,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W3.png")
                     Case 4
-                        My.Computer.Audio.Play("source\MUSIC\Q1-5 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q1-5 - Yes.wav")
                         winNumber = 4
                         HostScreenForm.PossibleWinLabel.Text = "1,000"
                         HostScreenForm.CurrentWinLabel.Text = "500"
@@ -818,8 +801,8 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W4.png")
                     Case 5
-                        My.Computer.Audio.Play("source\MUSIC\R1000 Winner.wav", AudioPlayMode.Background)
-                        Shell("source\BAT\stop_back_music1.bat")
+                        SoundCues.Play("source\MUSIC\R1000 Winner.wav")
+                        BackgroundMusic.Stop()
                         winampOn = 0
                         winNumber = 5
                         HostScreenForm.PossibleWinLabel.Text = "2,000"
@@ -829,7 +812,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W5.png")
                     Case 6
-                        My.Computer.Audio.Play("source\MUSIC\Q6 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q6 - Yes.wav")
                         winNumber = 6
                         HostScreenForm.PossibleWinLabel.Text = "4,000"
                         HostScreenForm.CurrentWinLabel.Text = "2,000"
@@ -838,7 +821,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W6.png")
                     Case 7
-                        My.Computer.Audio.Play("source\MUSIC\Q7 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q7 - Yes.wav")
                         winNumber = 7
                         HostScreenForm.PossibleWinLabel.Text = "8,000"
                         HostScreenForm.CurrentWinLabel.Text = "4,000"
@@ -847,7 +830,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W7.png")
                     Case 8
-                        My.Computer.Audio.Play("source\MUSIC\Q8 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q8 - Yes.wav")
                         winNumber = 8
                         HostScreenForm.PossibleWinLabel.Text = "16,000"
                         HostScreenForm.CurrentWinLabel.Text = "8,000"
@@ -856,7 +839,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W8.png")
                     Case 9
-                        My.Computer.Audio.Play("source\MUSIC\Q9 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q9 - Yes.wav")
                         winNumber = 9
                         HostScreenForm.PossibleWinLabel.Text = "32,000"
                         HostScreenForm.CurrentWinLabel.Text = "16,000"
@@ -865,7 +848,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W9.png")
                     Case 10
-                        My.Computer.Audio.Play("source\MUSIC\R32000 - Winner.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\R32000 - Winner.wav")
                         winNumber = 10
                         HostScreenForm.PossibleWinLabel.Text = "64,000"
                         HostScreenForm.CurrentWinLabel.Text = "32,000"
@@ -874,7 +857,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W10.png")
                     Case 11
-                        My.Computer.Audio.Play("source\MUSIC\Q11 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q11 - Yes.wav")
                         winNumber = 11
                         HostScreenForm.PossibleWinLabel.Text = "125,000"
                         HostScreenForm.CurrentWinLabel.Text = "64,000"
@@ -883,7 +866,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W11.png")
                     Case 12
-                        My.Computer.Audio.Play("source\MUSIC\Q12 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q12 - Yes.wav")
                         winNumber = 12
                         HostScreenForm.PossibleWinLabel.Text = "250,000"
                         HostScreenForm.CurrentWinLabel.Text = "125,000"
@@ -892,7 +875,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W12.png")
                     Case 13
-                        My.Computer.Audio.Play("source\MUSIC\Q13 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q13 - Yes.wav")
                         winNumber = 13
                         HostScreenForm.PossibleWinLabel.Text = "500,000"
                         HostScreenForm.CurrentWinLabel.Text = "250,000"
@@ -901,7 +884,7 @@
                         PlayerScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W13.png")
                     Case 14
-                        My.Computer.Audio.Play("source\MUSIC\Q14 - Yes.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q14 - Yes.wav")
                         winNumber = 14
                         HostScreenForm.PossibleWinLabel.Text = "1,000,000"
                         HostScreenForm.CurrentWinLabel.Text = "500,000"
@@ -911,7 +894,7 @@
                         AudienceScreenForm.MoneyWonPictureBox.BackgroundImage = System.Drawing.Bitmap.FromFile(langSource & "\TREE\W14.png")
                     Case 15
                         HostScreenForm.QuestionsLeftLabel.Text = "Qaway: 0"
-                        My.Computer.Audio.Play("source\MUSIC\R1 000 000 - Winner.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\R1 000 000 - Winner.wav")
                         winNumber = 15
                         HostScreenForm.PossibleWinLabel.Text = "1,000,000"
                         HostScreenForm.CurrentWinLabel.Text = "1,000,000"
@@ -956,39 +939,39 @@
             Else
                 Select Case questionNumber
                     Case 0 To 5
-                        My.Computer.Audio.Play("source\MUSIC\Q1-5 - No.wav", AudioPlayMode.Background)
-                        Shell("source\BAT\stop_back_music1.bat")
+                        SoundCues.Play("source\MUSIC\Q1-5 - No.wav")
+                        BackgroundMusic.Stop()
                         winampOn = 0
                         winNumber = 0
                     Case 6
-                        My.Computer.Audio.Play("source\MUSIC\Q6 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q6 - No.wav")
                         winNumber = 5
                     Case 7
-                        My.Computer.Audio.Play("source\MUSIC\Q7 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q7 - No.wav")
                         winNumber = 5
                     Case 8
-                        My.Computer.Audio.Play("source\MUSIC\Q8 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q8 - No.wav")
                         winNumber = 5
                     Case 9
-                        My.Computer.Audio.Play("source\MUSIC\Q9 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q9 - No.wav")
                         winNumber = 5
                     Case 10
-                        My.Computer.Audio.Play("source\MUSIC\R32000 - Loser.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\R32000 - Loser.wav")
                         winNumber = 5
                     Case 11
-                        My.Computer.Audio.Play("source\MUSIC\Q11 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q11 - No.wav")
                         winNumber = 10
                     Case 12
-                        My.Computer.Audio.Play("source\MUSIC\Q12 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q12 - No.wav")
                         winNumber = 10
                     Case 13
-                        My.Computer.Audio.Play("source\MUSIC\Q13 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q13 - No.wav")
                         winNumber = 10
                     Case 14
-                        My.Computer.Audio.Play("source\MUSIC\Q14 - No.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\Q14 - No.wav")
                         winNumber = 10
                     Case 15
-                        My.Computer.Audio.Play("source\MUSIC\R1 000 000 - Loser.wav", AudioPlayMode.Background)
+                        SoundCues.Play("source\MUSIC\R1 000 000 - Loser.wav")
                         winNumber = 10
                 End Select
                 PrizeRevealTimer.Start()
@@ -1112,8 +1095,7 @@
 
     Private Sub OpeningTitlesButton_Click(sender As Object, e As EventArgs) Handles OpeningTitlesButton.Click
         'Opening Titles
-        batFileName = Chr(34) & sourcePath & "\MUSIC\Millionaire Opening.wav" & Chr(34)
-        Shell("source\BAT\run2_back_music1.bat " & batFileName)
+        BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Millionaire Opening.wav")
         winampOn = 1
         If splashOn = False Then
             ToggleLogoButton.PerformClick()
@@ -1133,8 +1115,8 @@
 
     Private Sub HostEntranceButton_Click(sender As Object, e As EventArgs) Handles HostEntranceButton.Click
         'HostScreenForm Entrance
-        My.Computer.Audio.Play(sourcePath & "\MUSIC\Host Entrance #2.wav")
-        Shell("source\BAT\stopfade_back_music1.bat")
+        SoundCues.Play(sourcePath & "\MUSIC\Host Entrance #2.wav")
+        BackgroundMusic.FadeOut()
         winampOn = 0
         HostEntranceButton.BackColor = Color.White
         LetsPlayButton.BackColor = Color.FromArgb(255, 128, 128)
@@ -1143,10 +1125,9 @@
 
     Private Sub LetsPlayButton_Click(sender As Object, e As EventArgs) Handles LetsPlayButton.Click
         'Let's Play
-        batFileName = Chr(34) & sourcePath & "\MUSIC\Lets Play.wav" & Chr(34)
-        Shell("source\BAT\run2_back_music1.bat " & batFileName)
+        BackgroundMusic.PlayOnce(sourcePath & "\MUSIC\Lets Play.wav")
         winampOn = 1
-        My.Computer.Audio.Stop()
+        SoundCues.Stop()
         QuestionNumberNumericUpDown.Value = 1
         LetsPlayButton.BackColor = Color.White
         LightsToCentreButton.BackColor = Color.FromArgb(255, 128, 128)
@@ -1156,8 +1137,8 @@
 
     Private Sub LightsToCentreButton_Click(sender As Object, e As EventArgs) Handles LightsToCentreButton.Click
         'LX To Centre
-        My.Computer.Audio.Play("source\MUSIC\LX To Centre.wav", AudioPlayMode.Background)
-        Shell("source\BAT\stopfade_back_music1.bat " & batFileName)
+        SoundCues.Play("source\MUSIC\LX To Centre.wav")
+        BackgroundMusic.FadeOut()
         winampOn = 0
         LightsToCentreButton.BackColor = Color.White
         LifelineExplanationsButton.BackColor = Color.FromArgb(255, 128, 128)
@@ -1166,8 +1147,7 @@
     Private Sub LifelineExplanationsButton_Click(sender As Object, e As EventArgs) Handles LifelineExplanationsButton.Click
         'Lifeline Explanations
         If winampOn <> 1 Then
-            batFileName = Chr(34) & sourcePath & "\MUSIC\Lifeline Explanations.wav" & Chr(34)
-            Shell("source\BAT\run_back_music1.bat " & batFileName)
+            BackgroundMusic.PlayLoop(sourcePath & "\MUSIC\Lifeline Explanations.wav")
             winampOn = 1
         End If
         LifelineExplanationsButton.BackColor = Color.White
@@ -1192,7 +1172,7 @@
 
     Private Sub FiftyFiftyMusicButton_Click(sender As Object, e As EventArgs) Handles FiftyFiftyMusicButton.Click
         '50:50 Ping
-        My.Computer.Audio.Play("source\MUSIC\50-50 Ping.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\50-50 Ping.wav")
         LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
         HostScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
         PlayerScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\1" & activPAF & activATA & ".png"
@@ -1210,7 +1190,7 @@
 
     Private Sub PhoneAFriendMusicButton_Click(sender As Object, e As EventArgs) Handles PhoneAFriendMusicButton.Click
         'PAF Ping
-        My.Computer.Audio.Play("source\MUSIC\Phone a Friend Ping.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Phone a Friend Ping.wav")
         LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
         HostScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
         PlayerScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & "1" & activATA & ".png"
@@ -1228,7 +1208,7 @@
 
     Private Sub AskTheAudienceMusicButton_Click(sender As Object, e As EventArgs) Handles AskTheAudienceMusicButton.Click
         'ATA Ping
-        My.Computer.Audio.Play("source\MUSIC\Audience Ping.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Audience Ping.wav")
         LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
         HostScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
         PlayerScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & "1.png"
@@ -1403,9 +1383,9 @@
         AnswerDTextLabel.ForeColor = Color.White
         AnswerIndicatorLabel.BackColor = Color.DarkGray
         AnswerIndicatorLabel.Text = currentBlock1(39, 3) 'Answer Indicator
-        Shell("source\BAT\stop_back_music1.bat")
+        BackgroundMusic.Stop()
         winampOn = 0
-        My.Computer.Audio.Play("source\MUSIC\Let's See Q1.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Let's See Q1.wav")
         MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         HostScreenForm.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
         PlayerScreenForm.MoneyTreePictureBox.ImageLocation = langSource & "\TREE\TREE_" & winNumber & ".png"
@@ -1463,19 +1443,19 @@
 
     Private Sub SeeYouLaterButton_Click(sender As Object, e As EventArgs) Handles SeeYouLaterButton.Click
         'See Yoy Later (P1)
-        Shell("source\BAT\stop_back_music1.bat")
+        BackgroundMusic.Stop()
         winampOn = 0
-        My.Computer.Audio.Play("source\MUSIC\See you later (End of Part 1).wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\See you later (End of Part 1).wav")
     End Sub
 
     Private Sub HelloAgainButton_Click(sender As Object, e As EventArgs) Handles HelloAgainButton.Click
         'Hello Again (P2)
-        My.Computer.Audio.Play("source\MUSIC\Hello Again (Begin of part 2).wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Hello Again (Begin of part 2).wav")
     End Sub
 
     Private Sub GoodbyePunterButton_Click(sender As Object, e As EventArgs) Handles GoodbyePunterButton.Click
         'Goodbye Punter
-        My.Computer.Audio.Play("source\MUSIC\Goodbye Punter.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Goodbye Punter.wav")
         ClearFormsButton.PerformClick()
         MoneyTreeLevel0Button.PerformClick()
         QuestionNumberNumericUpDown.Value = 1
@@ -1515,8 +1495,8 @@
 
     Private Sub TimesUpButton_Click(sender As Object, e As EventArgs) Handles TimesUpButton.Click
         'Time's Up
-        My.Computer.Audio.Play("source\MUSIC\Time's Up.wav", AudioPlayMode.Background)
-        Shell("source\BAT\stop_back_music1.bat")
+        SoundCues.Play("source\MUSIC\Time's Up.wav")
+        BackgroundMusic.Stop()
         winampOn = 0
         'Перекрашивание кнопок-подсказок
         AskQuestionButton.BackColor = Color.White
@@ -1538,7 +1518,7 @@
 
     Private Sub TomorrowsNamesButton_Click(sender As Object, e As EventArgs) Handles TomorrowsNamesButton.Click
         'Tomorrows Names
-        My.Computer.Audio.Play("source\MUSIC\Tomorrows Names.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Tomorrows Names.wav")
         If splashOn = False Then ToggleLogoButton.PerformClick()
         'Перекрашивание кнопок-подсказок
         LetsPlayButton.BackColor = Color.White
@@ -1548,19 +1528,19 @@
 
     Private Sub ClosingTitlesButton_Click(sender As Object, e As EventArgs) Handles ClosingTitlesButton.Click
         'Closing Titles
-        My.Computer.Audio.Play("source\MUSIC\Millionaire Closing.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Millionaire Closing.wav")
         'Перекрашивание кнопок-подсказок
         ClosingTitlesButton.BackColor = Color.White
     End Sub
 
     Private Sub StereoTestButton_Click(sender As Object, e As EventArgs) Handles StereoTestButton.Click
         'Stereo Test
-        My.Computer.Audio.Play("source\MUSIC\Stereo Test.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Stereo Test.wav")
     End Sub
 
     Private Sub SmsClockButton_Click(sender As Object, e As EventArgs) Handles SmsClockButton.Click
         'SMS Clock
-        My.Computer.Audio.Play("source\MUSIC\sms_clock.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\sms_clock.wav")
     End Sub
 
     Private Sub OpenQuestionBaseButton_Click_1(sender As Object, e As EventArgs) Handles OpenQuestionBaseButton.Click
@@ -1830,7 +1810,7 @@
 
     Private Sub StopMusicButton_Click(sender As Object, e As EventArgs) Handles StopMusicButton.Click
         'Stop музыки в проигрывателе
-        Shell("source\BAT\stop_back_music1.bat")
+        BackgroundMusic.Stop()
         winampOn = 0
     End Sub
 
@@ -1906,7 +1886,7 @@
     Private Sub TakeTheMoneyButton_Click(sender As Object, e As EventArgs) Handles TakeTheMoneyButton.Click
         'Take a money
         If MoneyTakenCheckBox.Checked = False Then
-            Shell("source\BAT\stopfade_back_music1.bat")
+            BackgroundMusic.FadeOut()
             winampOn = 0
             PrizeRevealTimer.Start()
             If winNumber < 15 Then
@@ -1990,12 +1970,12 @@
 
     Private Sub LittleQuitButton_Click(sender As Object, e As EventArgs) Handles LittleQuitButton.Click
         'Little Quitter
-        My.Computer.Audio.Play("source\MUSIC\Little Quitter.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Little Quitter.wav")
     End Sub
 
     Private Sub BigQuitButton_Click(sender As Object, e As EventArgs) Handles BigQuitButton.Click
         'Big Quitter
-        My.Computer.Audio.Play("source\MUSIC\Big Quitter.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Big Quitter.wav")
     End Sub
 
     Private Sub FiftyFiftyAvailableCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles FiftyFiftyAvailableCheckBox.CheckedChanged
@@ -2825,7 +2805,7 @@
         QuestionEditorForm.Close()
         FastestFingerFirstForm.Close()
         AboutForm.Close()
-        Shell("source\BAT\stop_back_music1.bat", AppWinStyle.MinimizedNoFocus)
+        BackgroundMusic.Stop()
         End
     End Sub
 
@@ -3547,7 +3527,7 @@
                     PlayerScreenForm.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (1).png"
                     HostScreenForm.ClockPictureBox.Visible = False
                     PlayerScreenForm.ClockPictureBox.Visible = False
-                    My.Computer.Audio.Stop()
+                    SoundCues.Stop()
                 Case "@paf_clock_start" 'PAF EnableAnswerAButton
                     PhoneAFriendForm.ClockTimer.Stop()
                     PhoneAFriendForm.clockFrame = 1
@@ -3556,18 +3536,18 @@
                     PhoneAFriendForm.ClockTimer.Start()
                     HostScreenForm.ClockPictureBox.Visible = True
                     PlayerScreenForm.ClockPictureBox.Visible = True
-                    My.Computer.Audio.Stop()
+                    SoundCues.Stop()
                 Case "@paf_clock_stop" 'PAF EnableAnswerBButton
                     PhoneAFriendForm.ClockTimer.Stop()
                     PhoneAFriendAvailableCheckBox.Checked = False
                     HostScreenForm.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
                     PlayerScreenForm.ClockPictureBox.ImageLocation = "source\CLOCK\Clock (62).png"
-                    My.Computer.Audio.Stop()
+                    SoundCues.Stop()
                 Case "@paf_closed" 'PAF closed
                     PhoneAFriendForm.ClockTimer.Stop()
                     HostScreenForm.ClockPictureBox.Visible = False
                     PlayerScreenForm.ClockPictureBox.Visible = False
-                    My.Computer.Audio.Stop()
+                    SoundCues.Stop()
                     HostScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
                     PlayerScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
                 Case "@ata_start_voting" 'ATA EnableAnswerAButton
@@ -3636,7 +3616,7 @@
                     PlayerScreenForm.AnswerBChartPictureBox.Visible = False
                     PlayerScreenForm.AnswerCChartPictureBox.Visible = False
                     PlayerScreenForm.AnswerDChartPictureBox.Visible = False
-                    My.Computer.Audio.Stop()
+                    SoundCues.Stop()
                     HostScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
                     PlayerScreenForm.LifelinesPictureBox.ImageLocation = "source\LIFELINES\" & activ50 & activPAF & activATA & ".png"
                     'Case "@sync" 'Синхронизация
@@ -3667,7 +3647,7 @@
 
     Private Sub Client_Disconnected(sender As Object, e As EventArgs) Handles Client.Disconnected
         'При отключении соединения
-        My.Computer.Audio.Play("source\MUSIC\Timp Hit.wav", AudioPlayMode.Background)
+        SoundCues.Play("source\MUSIC\Timp Hit.wav")
         If Me.WindowState <> FormWindowState.Normal Then Me.WindowState = FormWindowState.Normal
         ConnectButton.Text = currentBlock1(33, 3) 'Connect
         ConnectButton.BackColor = Color.Orange
