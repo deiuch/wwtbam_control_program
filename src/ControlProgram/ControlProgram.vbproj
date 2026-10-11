@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08CF0382-9BF3-47E6-BE6F-96A6A1A3C2E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ControlProgram.My.MyApplication</StartupObject>
+    <RootNamespace>ControlProgram</RootNamespace>
+    <AssemblyName>WWTBAM Control Program</AssemblyName>
+    <AppDesignerFolder>MyProject</AppDesignerFolder>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
+    <ApplicationManifest>MyProject\app.manifest</ApplicationManifest>
+    <DefineTrace>true</DefineTrace>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.Designer.vb">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskTheAudienceForm.Designer.vb">
+      <DependentUpon>AskTheAudienceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AskTheAudienceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudienceScreenForm.Designer.vb">
+      <DependentUpon>AudienceScreenForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AudienceScreenForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client.vb" />
+    <Compile Include="FastestFingerEditorForm.Designer.vb">
+      <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FastestFingerEditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastestFingerFirstForm.Designer.vb">
+      <DependentUpon>FastestFingerFirstForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FastestFingerFirstForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiftyFiftyForm.Designer.vb">
+      <DependentUpon>FiftyFiftyForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FiftyFiftyForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameControlForm.Designer.vb">
+      <DependentUpon>GameControlForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GameControlForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HostScreenForm.Designer.vb">
+      <DependentUpon>HostScreenForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HostScreenForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IONetwork.vb" />
+    <Compile Include="MyProject\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="MyProject\AssemblyInfo.vb" />
+    <Compile Include="MyProject\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProject\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PhoneAFriendForm.Designer.vb">
+      <DependentUpon>PhoneAFriendForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneAFriendForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerScreenForm.Designer.vb">
+      <DependentUpon>PlayerScreenForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerScreenForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionEditorForm.Designer.vb">
+      <DependentUpon>QuestionEditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionEditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Server.vb" />
+    <Compile Include="StartForm.Designer.vb">
+      <DependentUpon>StartForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskTheAudienceForm.resx">
+      <DependentUpon>AskTheAudienceForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudienceScreenForm.resx">
+      <DependentUpon>AudienceScreenForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastestFingerEditorForm.resx">
+      <DependentUpon>FastestFingerEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastestFingerFirstForm.resx">
+      <DependentUpon>FastestFingerFirstForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiftyFiftyForm.resx">
+      <DependentUpon>FiftyFiftyForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameControlForm.resx">
+      <DependentUpon>GameControlForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostScreenForm.resx">
+      <DependentUpon>HostScreenForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyProject\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneAFriendForm.resx">
+      <DependentUpon>PhoneAFriendForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerScreenForm.resx">
+      <DependentUpon>PlayerScreenForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionEditorForm.resx">
+      <DependentUpon>QuestionEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="MyProject\app.manifest" />
+    <None Include="MyProject\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="MyProject\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="CopyGameAssets" AfterTargets="Build">
+    <ItemGroup>
+      <LocalAsset Include="$(MSBuildProjectDirectory)\Assets.local\**\*" />
+      <GameAsset Include="$(MSBuildProjectDirectory)\Assets\**\*" Exclude="@(LocalAsset-&gt;'$(MSBuildProjectDirectory)\Assets\%(RecursiveDir)%(Filename)%(Extension)')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(GameAsset)" DestinationFiles="@(GameAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LocalAsset)" DestinationFiles="@(LocalAsset-&gt;'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+  <Import Project="..\Package.targets" />
+</Project>

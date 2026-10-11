@@ -1,0 +1,20 @@
+# Build output
+**/obj/
+**/bin/
+/dist/
+
+/src/*/Assets.local/
+
+# Per-machine settings; recreated with defaults on first run
+**/wwtbam_set.ini
+
+# Visual Studio user state
+.vs/
+*.suo
+*.user
+*.vspscc
+*.vssscc
+
+# Signing keys
+*.pfx
+*.snk
